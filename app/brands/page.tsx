@@ -4,8 +4,6 @@ import Footer from "@/app/components/footer/Footer";
 
 
 const BrandsPage = () => {
-
-
     return (
 
         <>
