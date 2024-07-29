@@ -9,7 +9,9 @@
     --background-start-rgb: 214, 219, 220;
     --background-end-rgb: 255, 255, 255;
 }
+
 s
+
 @media (prefers-color-scheme: dark) {
     :root {
         --foreground-rgb: 255, 255, 255;
@@ -17,6 +19,8 @@ s
         --background-end-rgb: 0, 0, 0;
     }
 }
+
+
 
 body {
     color: rgb(var(--foreground-rgb));
@@ -28,11 +32,22 @@ body {
     font-family: "Varta", sans-serif !important;
     font-optical-sizing: auto;
     font-style: normal;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+
 }
 
 
+.scroll-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    will-change: transform;
+}
 
-input, h1, h2  {
+input, h1, h2 {
     font-family: "EB Garamond", serif;
     font-optical-sizing: auto;
     font-weight: 800;

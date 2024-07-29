@@ -1,3 +1,4 @@
+'use client'
 import {Box, Flex, Text, VStack, HStack, Link, SimpleGrid} from "@chakra-ui/react";
 import {FaInstagram, FaFacebook} from "react-icons/fa";
 import {Btn} from "@/app/components/ui/Btn";
@@ -6,7 +7,7 @@ import {LogoHorizontal} from "@/app/components/ui/LogoHorizontal";
 import {FiChevronUp} from "react-icons/fi"; // Import the arrow down icon
 import {animateScroll as scroll} from 'react-scroll';
 
-const Footer = () => {
+export const Footer = () => {
     const scrollToTop = () => {
         scroll.scrollToTop({
             duration: 500,
@@ -38,7 +39,7 @@ const Footer = () => {
                     <Text mb={[2, 0]} display={['none', 'flex']}>Follow us on social Media</Text>
                     <HStack spacing={4} fontSize={['4xl', 'md']}>
                         <Link href="#" aria-label="Instagram">
-                            <FaInstagram  />
+                            <FaInstagram/>
                         </Link>
                         <Link href="#" aria-label="Facebook">
                             <FaFacebook/>
@@ -93,4 +94,3 @@ const Footer = () => {
     );
 };
 
-export default Footer;

@@ -1,24 +1,14 @@
 'use client'
-import React, {useRef, useState} from "react";
-import {Box, Flex, Text, IconButton, Input, Checkbox, Radio, Divider} from "@chakra-ui/react";
+import React, {useState} from "react";
+import {Box, Flex, Text, Radio, Divider, Link} from "@chakra-ui/react";
 import {Btn} from "@/app/components/ui/Btn";
-import Images from "next/image";
-import {ArrowBackIcon, ArrowForwardIcon} from "@chakra-ui/icons";
-import AdonisImg from "@/app/assets/images/Adonis.png";
+import Image from "next/image";
 
-const brands = [
-    {name: "Adonis", type: "White Wine, Red Wine", imgSrc: AdonisImg},
-    {name: "Arak Al Assi", type: "Regular, Extra", imgSrc: AdonisImg},
-    {name: "Al Assi Vinegar", type: "Apple Cider, Red Grape Wine", imgSrc: AdonisImg},
-    {name: "Brand 4", type: "Sample Type", imgSrc: AdonisImg},
-    {name: "Brand 5", type: "Sample Type", imgSrc: AdonisImg},
-    // Add more brands as needed
-];
-
-export const BrandsSection = () => {
-    const scrollContainerRef = useRef(null);
+export const BrandsSection = ({isLanding, brands, imageUrl}) => {
+    const scrollContainerRef = React.useRef(null);
     const [selectedCategory, setSelectedCategory] = useState('All brands');
-
+    console.log(imageUrl)
+    const allCategories = ['All brands', ...new Set(brands.flatMap(brand => brand.categories))];
 
     const handleRadioClick = (category) => {
         setSelectedCategory(category);
@@ -36,28 +26,23 @@ export const BrandsSection = () => {
         }
     };
 
+    const filteredBrands = brands.filter(brand =>
+        selectedCategory === 'All brands' || brand.categories.includes(selectedCategory)
+    );
+
     return (
         <Box py={10} position="relative" pl={12}>
             <Flex gap={8}>
-                <Radio value='All brands' onChange={() => handleRadioClick('All brands')}
-                       isChecked={selectedCategory === 'All brands'}>
-                    All brands
-                </Radio>
-                <Radio value='Spirits' onChange={() => handleRadioClick('Spirits')}
-                       isChecked={selectedCategory === 'Spirits'}>
-                    Spirits
-                </Radio>
-                <Radio value='Wine' onChange={() => handleRadioClick('Wine')} isChecked={selectedCategory === 'Wine'}>
-                    Wine
-                </Radio>
-                <Radio value='Vinegars' onChange={() => handleRadioClick('Vinegars')}
-                       isChecked={selectedCategory === 'Vinegars'}>
-                    Vinegars
-                </Radio>
-                <Radio value='Ethanod' onChange={() => handleRadioClick('Ethanod')}
-                       isChecked={selectedCategory === 'Ethanod'}>
-                    Ethanol
-                </Radio>
+                {allCategories.map((category) => (
+                    <Radio
+                        key={category}
+                        value={category}
+                        onChange={() => handleRadioClick(category)}
+                        isChecked={selectedCategory === category}
+                    >
+                        {category}
+                    </Radio>
+                ))}
             </Flex>
             <Divider p={2} mb={8}/>
 
@@ -72,8 +57,7 @@ export const BrandsSection = () => {
                     }
                 }}
                 mb={2}>
-                {brands.filter((brand) =>
-                    selectedCategory === 'All brands' ? true : brand.type.includes(selectedCategory)).map((brand, index) => (
+                {filteredBrands.map((brand, index) => (
                     <Flex
                         key={index}
                         flexDirection="column"
@@ -85,25 +69,26 @@ export const BrandsSection = () => {
                         flexShrink={0}
                         width="280px"
                     >
-                        <Images
-                            src={brand.imgSrc}
-                            alt={brand.name}
-                            boxSize="200px"
+                        <Image
+                            src={imageUrl}
+                            alt={brand.brand_name}
+                            width={200}
+                            height={200}
                             objectFit="cover"
-                            mb={2}
-                            width="100"
-                            height="100"
-                            quality={100}
                         />
-                        <Text fontWeight="bold">{brand.name}</Text>
-                        <Text fontSize="sm" color="gray.600" mb={4}>
-                            {brand.type}
+                        <Text fontSize="xs" color="gray.600" mt={4}>
+                            {/*{brand.categories.join(", ")}*/}
                         </Text>
-                        <Btn variant="secondary" text="Discover our brand"/>
+                        <Text fontSize="xl" fontWeight="bold" fontFamily={"EB Garamond"}
+                              mb={4}>{brand.brand_name}</Text>
+                        <Link href={`/brands/${brand.slug}`}>
+
+                            <Btn variant="secondary" text="Discover our brand"/>
+                        </Link>
                     </Flex>
                 ))}
             </Flex>
-            <Flex justifyContent={'end'} p={12}  mb={2} gap={12}>
+            <Flex justifyContent={'end'} p={12} mb={2} gap={12}>
                 <Box _hover={{cursor: 'pointer'}}>
                     <svg onClick={scrollLeft} width="69" height="16" viewBox="0 0 69 16" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
@@ -121,9 +106,14 @@ export const BrandsSection = () => {
                     </svg>
                 </Box>
             </Flex>
-            <Flex>
-                <Btn variant={'primaryBlack'} text={'Discover our brands'}/>
-            </Flex>
+            {isLanding && (
+
+                <Flex>
+                    <Btn variant={'primaryBlack'} text={'Discover our brands'}/>
+
+                </Flex>
+
+            )}
         </Box>
     );
 };

@@ -39,7 +39,7 @@ export const HeroBanner = () => {
                 maxWidth="600px"
                 left="3%"
             >
-                <Heading fontFamily={"EB Garamond"} fontSize="4xl" fontWeight="bold" mb={8} as={"h2"}>
+                <Heading fontFamily={"EB Garamond"} fontSize="6xl" fontWeight="bold" mb={8} as={"h2"}>
                     Master distillers and fermenters for four generations
                 </Heading>
                 <Text fontSize="lg" mb={8}>
@@ -59,10 +59,10 @@ export const HeroBanner = () => {
                 width="100%"
                 textAlign="center"
             >
-                <Text fontSize="sm" >
+                <Text fontSize="sm">
                     Scroll down
                 </Text>
-                <Icon as={FiChevronDown} w={6} h={6} />
+                <Icon as={FiChevronDown} w={6} h={6}/>
             </Box>
         </Flex>
     );
