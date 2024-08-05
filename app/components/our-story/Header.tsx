@@ -10,7 +10,7 @@ export const OurStoryHeader = ({header, imageUrlHeader}) => {
             justify="center"
             align="center"
             width="100vw"
-            height="100vh"
+            height={["90vh", "100vh"]}
             position="relative"
             overflow="hidden"
         >
@@ -21,6 +21,7 @@ export const OurStoryHeader = ({header, imageUrlHeader}) => {
                 objectFit="cover"
                 quality={100}
                 width="100vw"
+                height={'100vh'}
             />
 
             <Flex
@@ -28,12 +29,12 @@ export const OurStoryHeader = ({header, imageUrlHeader}) => {
                 zIndex={1}
                 justifyContent={'center'}
                 flexDirection='column'
-                maxW={'65%'}
+                maxW={['90%', "90%", '65%']}
             >
                 <Heading color={'black'} fontFamily={"EB Garamond"} fontSize="4xl" fontWeight="bold" mb={8} as={"h2"}>
                     {header.title}
                 </Heading>
-                <Text fontSize="md" mb={4} color={'black'} >
+                <Text fontSize="md" mb={4} color={'black'}>
                     {header.description}
                 </Text>
             </Flex>

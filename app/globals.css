@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Varta:wght@300..700&display=swap');
 @font-face {
     font-family: 'EB Garamond';
     src: url('../app/assets/fonts/EB_Garamond/static/EBGaramond-ExtraBold.ttf');
