@@ -7,7 +7,8 @@ import {Footer} from "@/app/components/footer/Footer";
 import {StickyImage} from "@/app/components/brands/StickyImage";
 import {sanityFetch} from '@/app/sanity/client';
 import {HeaderBrands} from "@/app/components/brands/Header";
-import {urlFor} from '@/app/sanity/urlFor'; // Import your helper function
+import {urlFor} from '@/app/sanity/urlFor';
+import SmoothScroll from "@/app/SmoothScroll"; // Import your helper function
 
 const BRAND_QUERY = `*[_type == "brands" && slug.current == $slug][0]{
   brand_name,
@@ -23,7 +24,14 @@ const BRAND_QUERY = `*[_type == "brands" && slug.current == $slug][0]{
   mainImage,
   secondaryImage,
   tertiaryImage,
+    brand_short_desc,
   categories[]->{title},
+}`;
+const BRANDS_FOOTER = `*[_type == "brands"] {
+  brand_name,
+  "slug": slug.current,
+  "mainImage": mainImage.asset->url,
+  "categories": categories[]->title
 }`;
 
 const BrandPage = async ({params}: { params: { slug: string } }) => {
@@ -31,7 +39,9 @@ const BrandPage = async ({params}: { params: { slug: string } }) => {
         query: BRAND_QUERY,
         params: {slug: params.slug}
     });
-
+    const brands = await sanityFetch({
+        query: BRANDS_FOOTER,
+    });
     const imageUrls = [
         brand.mainImage ? urlFor(brand.mainImage).url() : null,
         brand.secondaryImage ? urlFor(brand.secondaryImage).url() : null,
@@ -41,25 +51,28 @@ const BrandPage = async ({params}: { params: { slug: string } }) => {
     if (!brand) {
         return <div>Brand not found</div>;
     }
-
+    console.log("Brand data:", brand);
+    console.log("Brands footer data:", brands);
 
     return (
         <>
-            <Navbar/>
-            <Flex mt={32} flexDirection="column" position="relative">
-                <HeaderBrands brand={brand}/>
-                <StickyImage imageUrls={imageUrls} brandName={brand?.brand_name}/>
-                <SocialBrands
-                    quote={brand?.brand_quote_social_section}
-                    description={brand?.brand_description_first_p_technicals}
-                    technicalSheetUrl={brand?.link_to_technical_sheet}
-                    brandWebsiteUrl={brand?.link_to_brand}
-                />
-                {/*<ExploreMore brands={brand}/>*/}
-                <OurStorySection/>
+            <Navbar brands={brands}/>
+            <SmoothScroll>
+                <Flex mt={32} flexDirection="column" position="relative">
+                    <HeaderBrands brand={brand}/>
+                    <StickyImage imageUrls={imageUrls} brandName={brand?.brand_name}/>
+                    <SocialBrands
+                        quote={brand?.brand_quote_social_section}
+                        description={brand?.brand_description_first_p_technical}
+                        technicalSheetUrl={brand?.link_to_technical_sheet}
+                        brandWebsiteUrl={brand?.link_to_brand}
+                    />
+                    {/*<ExploreMore brands={brand}/>*/}
+                    <OurStorySection/>
 
-            </Flex>
-            <Footer/>
+                </Flex>
+                <Footer brands={brands}/>
+            </SmoothScroll>
         </>
     );
 };

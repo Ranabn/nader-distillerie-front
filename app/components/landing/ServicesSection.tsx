@@ -1,29 +1,29 @@
 import {Box, Flex, Heading, Text, Button, Image, VStack} from "@chakra-ui/react";
 import React from "react";
-import Craft from "@/app/assets/images/craft.png"
-import Noel from "@/app/assets/images/noel.png"
+import Craft from "@/app/assets/images/services/usine01.png"
+import Noel from "@/app/assets/images/services/usine02.png"
 import {Btn} from "@/app/components/ui/Btn";
 
 const SectionItem = ({subtitle, title, description, buttonText, imageSrc}) => (
-    <Flex flexDirection={['column', 'column', 'row']} mb={8} gap={10} alignItems="center">
-        <Image src={imageSrc} alt={title} width={600} objectFit="cover" height={400} mr={6}/>
-        <VStack align="start">
-            <Text color={'gray.600'}>{subtitle}</Text>
-            <Flex flexDirection="column" gap={4}>
-                <Heading fontSize="4xl" fontWeight="bold" mb={2} fontFamily={"EB Garamond"}>{title}</Heading>
+    <Flex flexDirection={['column', 'column', 'row']} mb={14} gap={24} alignItems="center">
+        <Image src={imageSrc} alt={title} width={650} minWidth={650} objectFit="cover" height={400}/>
+        <Flex flexDirection={'column'}>
+            <Text color={'#12191F'}>{subtitle}</Text>
+            <Flex flexDirection="column" gap={2}>
+                <Heading fontSize="4xl" fontWeight="bold" mb={0} fontFamily={"EB Garamond"}>{title}</Heading>
                 <Text>{description}</Text>
-                <Box>
-                    <Btn variant="secondary" text={buttonText}/>
-                </Box>
+                <Flex w={['100%', '40%', '40%']}>
+                    <Btn size={'xs'} variant="secondary" text={buttonText}/>
+                </Flex>
             </Flex>
 
-        </VStack>
+        </Flex>
     </Flex>
 );
 
 const serviceSection = () => {
     return (
-        <Box as="section" py={12} p={12}>
+        <Box as="section" py={[6, 8, 12]} p={[4, 8, 8]} bg={'white'}>
             <SectionItem
                 subtitle="Private Label"
                 title="Craft your identity"

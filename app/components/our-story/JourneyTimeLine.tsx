@@ -1,40 +1,65 @@
 'use client'
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Drawing from "@/app/assets/images/drawing.png";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
-export const JourneyTimeline = () => {
+export const JourneyTimeline = ({ timeline, onScrollProgress }) => {
     const containerRef = useRef(null);
+    const [containerTop, setContainerTop] = useState(0);
+    const [isHorizontalScrolling, setIsHorizontalScrolling] = useState(false);
+    const [hasReachedEnd, setHasReachedEnd] = useState(false);
 
-    const timelineItems = [
-        {
-            year: "1950",
-            title: "Family tradition begins",
-            description: "Khalil Bou Nader starts distilling with his father in Mtein, continuing the family's artisan winemaking and arak distillation.",
-        },
-        {
-            year: "1950",
-            title: "Family tradition begins",
-            description: "Khalil Bou Nader starts distilling with his father in Mtein, continuing the family's artisan winemaking and arak distillation.",
-        },
-        {
-            year: "1950",
-            title: "Family tradition begins",
-            description: "Khalil Bou Nader starts distilling with his father in Mtein, continuing the family's artisan winemaking and arak distillation.",
-        },
-        {
-            year: "1950",
-            title: "Family tradition begins",
-            description: "Khalil Bou Nader starts distilling with his father in Mtein, continuing the family's artisan winemaking and arak distillation.",
-        },
-        {
-            year: "1950",
-            title: "Family tradition begins",
-            description: "Khalil Bou Nader starts distilling with his father in Mtein, continuing the family's artisan winemaking and arak distillation.",
-        },
-        // Additional timeline items...
-    ];
+    const timelineWidth = timeline.length * 350 + 1000; // 1000px for the initial text and extra space
+
+    const x = useMotionValue(0);
+    const springX = useSpring(x, { stiffness: 1000, damping: 100 });
+
+    useEffect(() => {
+        const updateContainerTop = () => {
+            if (containerRef.current) {
+                const rect = containerRef.current.getBoundingClientRect();
+                setContainerTop(rect.top + window.scrollY);
+            }
+        };
+
+        updateContainerTop();
+        window.addEventListener('resize', updateContainerTop);
+        return () => window.removeEventListener('resize', updateContainerTop);
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            const containerRect = containerRef.current.getBoundingClientRect();
+
+            if (scrollPosition >= containerTop && !hasReachedEnd) {
+                setIsHorizontalScrolling(true);
+                window.scrollTo(0, containerTop);
+            } else {
+                setIsHorizontalScrolling(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [containerTop, hasReachedEnd]);
+
+    const handleWheel = (e) => {
+        if (isHorizontalScrolling) {
+            e.preventDefault();
+            const newX = springX.get() - e.deltaY;
+            const limitedX = Math.max(-(timelineWidth - window.innerWidth), Math.min(0, newX));
+            x.set(limitedX);
+
+            const progress = Math.abs(limitedX) / (timelineWidth - window.innerWidth);
+            onScrollProgress(progress);
+
+            if (progress >= 1 && !hasReachedEnd) {
+                setHasReachedEnd(true);
+                setIsHorizontalScrolling(false);
+            }
+        }
+    };
 
     return (
         <Box
@@ -42,36 +67,37 @@ export const JourneyTimeline = () => {
             height="100vh"
             overflow="hidden"
             position="relative"
+            mt={24}
+            onWheel={handleWheel}
         >
             <Flex
                 as={motion.div}
+                style={{ x: springX }}
                 alignItems="center"
                 height="100%"
-                overflowX="auto"
-                overflowY="hidden"
                 flexDirection="row"
-                drag="x" // Enable drag scrolling
-                dragConstraints={{ left: -5000, right: 0 }} // Adjust constraints based on content width
             >
                 <Flex
                     gap={20}
-                    pl={12}
+                    pl={8}
                     alignItems={'center'}
                     flexDirection="row"
-                    minWidth={`${timelineItems.length * 350}px`} // Ensure enough width for items
+                    width={`${timelineWidth}px`}
                 >
                     <Box minWidth="400px" fontSize="4xl" fontFamily="EB Garamond" fontWeight="bold">
                         A journey of growth, skill, and unwavering dedication
                     </Box>
-                    {timelineItems.map((item, index) => (
-                        <Flex key={index} flexDirection="column" minWidth="300px">
-                            <Box width={300}>
-                                <Image src={Drawing.src} alt="drawing"/>
-                            </Box>
-                            <Flex flexDirection="column">
-                                <Text mt={4}>{item.year}</Text>
-                                <Text fontSize="4xl" fontFamily="EB Garamond" fontWeight="bold">{item.title}</Text>
-                                <Text mt={4}>{item.description}</Text>
+                    {timeline.map((item, index) => (
+                        <Flex key={index} gap={10}>
+                            <Flex flexDirection="column" minWidth="300px">
+                                <Box width={420} height={420}>
+                                    <Image src={item.imageUrl} alt="drawing" width="100%" height="100%" objectFit="cover" />
+                                </Box>
+                                <Flex flexDirection="column">
+                                    <Text mt={4}>{item.year}</Text>
+                                    <Text fontSize="4xl" fontFamily="EB Garamond" fontWeight="bold">{item.title}</Text>
+                                    <Text mt={4}>{item.description}</Text>
+                                </Flex>
                             </Flex>
                         </Flex>
                     ))}

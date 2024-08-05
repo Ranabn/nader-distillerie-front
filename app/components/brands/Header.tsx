@@ -7,12 +7,12 @@ export const HeaderBrands = ({brand}) => {
     }
 
     return (
-        <Flex             minHeight={'350px'}
-                          flexDirection="column" p={12} w={'50%'} mb={16}>
+        <Flex minHeight={'350px'}
+              flexDirection="column" p={8} w={'50%'} mb={16}>
             <Text fontSize="5xl" fontFamily="EB Garamond" fontWeight="800">
                 {brand.brand_name}
             </Text>
-            <Text mb={4} fontSize="3xl" fontWeight="300">
+            <Text mb={4} fontSize="3xl" fontWeight="300" textTransform={'uppercase'}>
                 {brand.brand_quote}
             </Text>
             <Box mb={4}>

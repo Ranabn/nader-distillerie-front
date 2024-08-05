@@ -14,20 +14,31 @@ import {
 } from '@chakra-ui/react';
 import {Navbar} from "@/app/components/navigation/navbar";
 import {Footer} from "@/app/components/footer/Footer";
+import {sanityFetch} from "@/app/sanity/client";
 
-const ContactPage = () => {
+const BRANDS_QUERY = `*[_type == "brands"] {
+  brand_name,
+  "slug": slug.current,
+  "mainImage": mainImage.asset->url,
+  "categories": categories[]->title
+}`;
+const ContactPage = async () => {
+    const brands = await sanityFetch({
+        query: BRANDS_QUERY,
+    });
+
     return (
         <Flex direction="column">
-            <Navbar/>
-            <Flex  mt={20} direction="column"   justifyContent={'space-between'}  p={12} >
-                <Flex w={'100%'} gap={10} >
-                    <Flex direction="column" w={'50%'} >
-                        <Text fontSize="4xl" fontFamily="EB Garamond" fontWeight="800" >Get in touch</Text>
+            <Navbar brands={brands}/>
+            <Flex mt={20} direction="column" justifyContent={'space-between'} p={8}>
+                <Flex w={'100%'} gap={10}>
+                    <Flex direction="column" w={'50%'}>
+                        <Text fontSize="4xl" fontFamily="EB Garamond" fontWeight="800">Get in touch</Text>
                         <Text mb={8}>Explain your project, we will get back to you as soon as possible.</Text>
 
                         <Grid templateColumns="repeat(2, 1fr)" gap={6}>
                             <GridItem colSpan={2}>
-                                <FormControl  id="reason" mb={4}>
+                                <FormControl id="reason" mb={4}>
                                     <Select placeholder="Become a reseller">
                                         <option value="reseller">Become a reseller</option>
                                         <option value="support">Support</option>
@@ -92,7 +103,7 @@ const ContactPage = () => {
                     </Flex>
                 </Flex>
             </Flex>
-            <Footer/>
+            <Footer brands={brands}/>
         </Flex>
 
     );

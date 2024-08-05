@@ -4,40 +4,47 @@ import {Navbar} from "@/app/components/navigation/navbar";
 import {HeroBanner} from "@/app/components/landing/HeroBanner";
 import {BrandsSection} from "@/app/components/landing/BrandsSection";
 import {OurStorySection} from "@/app/components/landing/OurStorySection";
-import {ProductsSection} from "@/app/components/landing/ProductsSection";
-import ServiceSection from "@/app/components/landing/ServicesSection";
 import {Footer} from "@/app/components/footer/Footer";
 import SmoothScroll from "@/app/SmoothScroll";
 import {sanityFetch} from '@/app/sanity/client';
-import {LandingWrapper} from "@/app/components/ui/LandingWrapper";
 import {urlFor} from "@/app/sanity/urlFor";
+import {Test} from "@/app/components/Test";
 
 
 const BRANDS_QUERY = `*[_type == "brands"] {
   brand_name,
   "slug": slug.current,
   "mainImage": mainImage.asset->url,
-  "categories": categories[]->title
+  "categories": categories[]->title,
+  brand_short_desc
 }`;
+
+
 export default async function Home() {
     const brands = await sanityFetch({
         query: BRANDS_QUERY,
     });
-    const imageUrl = [
-        brands.mainImage ? urlFor(brands.mainImage).url() : null,
-    ].filter(Boolean);
+    const imageUrls = brands.map(brand =>
+        brand.mainImage ? urlFor(brand.mainImage).url() : null
+    ).filter(Boolean);
 
     return (
         <>
-            <Flex direction="column" maxWidth={'100%'}>
-                <LandingWrapper/>
-
-                <BrandsSection isLanding={true} brands={brands} imageUrl={imageUrl}/>
-                <OurStorySection/>
-                <ProductsSection/>
-                <ServiceSection/>
-                <Footer/>
+            <Flex direction="column" overflow={'hidden'}>
+                <Navbar brands={brands}/>
+                <SmoothScroll>
+                    <HeroBanner/>
+                    <BrandsSection isLanding={true} brands={brands} imageUrls={imageUrls}/>
+                    <OurStorySection/>
+                    <Box position="relative">
+                        <Test brands={brands}/>
+                        <Box position="relative" mt={["-90vh","-120vh","-60vh"]}>
+                            <Footer brands={brands}/>
+                        </Box>
+                    </Box>
+                </SmoothScroll>
             </Flex>
+
         </>
     );
 }

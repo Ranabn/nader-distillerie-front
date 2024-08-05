@@ -57,6 +57,7 @@ export const StickyImage = ({imageUrls, brandName}) => {
             zIndex: 0,
             x: direction < 0 ? 1000 : -1000,
             opacity: 0,
+
         }),
     };
 
@@ -76,7 +77,7 @@ export const StickyImage = ({imageUrls, brandName}) => {
                 alignItems={'center'}
                 as={motion.div}
                 position="sticky"
-                top="20%"
+                top="5%"
                 style={{y}}
             >
                 <Box position="relative" width="475px" height="475px" overflow="hidden">
@@ -103,14 +104,15 @@ export const StickyImage = ({imageUrls, brandName}) => {
                         />
                     </AnimatePresence>
                 </Box>
-                <Flex alignItems={'center'} gap={6} mt={4}>
+                <Flex alignItems={'center'} gap={4} mt={4}>
                     <IconButton
                         aria-label="Previous image"
                         icon={<FiChevronLeft/>}
                         onClick={handlePrevImage}
                         variant="ghost"
                         color="white"
-                        size="lg"
+                        size="sm"
+                        w={'10%'}
                     />
                     <Box>
                         <Text fontSize="4xl" fontFamily="EB Garamond" fontWeight="800">{brandName}</Text>
@@ -122,7 +124,9 @@ export const StickyImage = ({imageUrls, brandName}) => {
                         onClick={handleNextImage}
                         variant="ghost"
                         color="white"
-                        size="lg"
+                        size="sm"
+                        w={'10%'}
+
                     />
                 </Flex>
             </Flex>

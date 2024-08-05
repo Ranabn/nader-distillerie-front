@@ -6,16 +6,13 @@ import {HeroBanner} from "@/app/components/landing/HeroBanner";
 import {useRef, useState, useEffect} from "react";
 
 
-export const LandingWrapper = () => {
+export const LandingWrapper = ({brands}) => {
     const ref = useRef(null);
 
 
     return (
         <>
-            <Navbar refer={ref}/>
-            <Box ref={ref} id="brands-section">
                 <HeroBanner/>
-            </Box>
         </>
 
     )

@@ -26,13 +26,15 @@ export const SocialBrands = ({quote, description, technicalSheetUrl, brandWebsit
         >
             <Flex flexDirection="column" p={12} w="60%" gap={8} justifyContent={'center'}>
                 <Box>
-                    <Text mb={4} fontSize="3xl" fontWeight="300">
+                    <Text mb={4} fontSize="3xl" fontWeight="300" textTransform={'uppercase'}>
                         {quote && (
                             quote
                         )}
                     </Text>
                     <Text mb={4}>
-                        {description}
+                        {description && (
+                            description
+                        )}
                     </Text>
                 </Box>
 

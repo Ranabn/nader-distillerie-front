@@ -7,7 +7,7 @@ import {LogoHorizontal} from "@/app/components/ui/LogoHorizontal";
 import {FiChevronUp} from "react-icons/fi"; // Import the arrow down icon
 import {animateScroll as scroll} from 'react-scroll';
 
-export const Footer = () => {
+export const Footer = ({brands}) => {
     const scrollToTop = () => {
         scroll.scrollToTop({
             duration: 500,
@@ -16,8 +16,7 @@ export const Footer = () => {
     };
 
     return (
-        <Box bg="#12191F" color="white" py={[8, 12]} px={[4, 8, 12]}>
-
+        <Box bg="#12191F" color="white" px={[4, 8, 8]}>
             <Flex display={['flex', 'none', 'none']} _hover={{cursor: 'pointer'}} gap={2} flexDir='column' mb={4}
                   alignItems='center'
                   aria-label="Scroll to top" onClick={scrollToTop}>
@@ -25,18 +24,18 @@ export const Footer = () => {
                 <Text>Back to top</Text>
             </Flex>
             <Flex gap={10} flexDirection={["flex", "flex", "row"]} justifyContent="space-between"
-                  alignItems={["center", "center", "center"]} mb={[8, 10]}>
-                <LogoHorizontal mb={[4, 4, 0]}/>
+                  alignItems={["center", "center", "start"]} p={4} mb={[8, 10]}>
+                <LogoHorizontal/>
 
-                <Flex display={['none', 'flex', 'flex']} _hover={{cursor: 'pointer'}} gap={2} flexDir='column'
+                <Flex display={['none', 'flex', 'flex']} _hover={{cursor: 'pointer'}} flexDir='column'
                       alignItems='center'
                       aria-label="Scroll to top" onClick={scrollToTop}>
-                    <FiChevronUp size={24}/>
-                    <Text>Back to top</Text>
+                    <FiChevronUp size={16}/>
+                    <Text fontSize={'xs'}>Back to top</Text>
                 </Flex>
 
                 <Flex flexDirection={["column", "row"]} alignItems="center" gap={[2, 4]}>
-                    <Text mb={[2, 0]} display={['none', 'flex']}>Follow us on social Media</Text>
+                    <Text fontSize={'xs'} mb={[2, 0]} display={['none', 'flex']}>Follow us on social Media</Text>
                     <HStack spacing={4} fontSize={['4xl', 'md']}>
                         <Link href="#" aria-label="Instagram">
                             <FaInstagram/>
@@ -49,20 +48,20 @@ export const Footer = () => {
             </Flex>
 
             <SimpleGrid columns={[1, 2, 3, 5]} spacing={[8]} mb={8}>
-                <Flex w={'100%'}>
-                    <Btn variant="primaryWhite" text="WORK TOGETHER"/>
+                <Flex w={['100%', '80%']}>
+                    <Link href={'/contact'} _hover={{textDecoration: 'none'}}>
+
+                        <Btn size={'xs'} variant="primaryWhite" text="WORK TOGETHER"/>
+                    </Link>
                 </Flex>
 
                 <VStack align="flex-start">
                     <Text fontWeight="bold" mb={2}>Brands</Text>
-                    <Link>Mystic Grove</Link>
-                    <Link>Mystic Duke</Link>
-                    <Link>Arak Baalbeck</Link>
-                    <Link>Arak Al Assi</Link>
-                    <Link>Domaine des princes</Link>
-                    <Link>Adonis</Link>
-                    <Link>Al Assi Vinegar</Link>
-                    <Link>Medica170</Link>
+                    {brands.map((brand) => (
+                        <Link key={brand.slug} href={`/brands/${brand.slug}`}>
+                            {brand.brand_name}
+                        </Link>
+                    ))}
                 </VStack>
 
                 <VStack align="flex-start">
@@ -93,4 +92,3 @@ export const Footer = () => {
         </Box>
     );
 };
-

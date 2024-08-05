@@ -1,5 +1,4 @@
 import {defineStyleConfig, keyframes} from '@chakra-ui/react';
-
 // Define the keyframes for the hover-in animation
 const fillAnimationIn = keyframes`
     0% {
@@ -24,9 +23,50 @@ const Button = defineStyleConfig({
     baseStyle: {
         fontWeight: '600',
         borderRadius: 'none',
-        padding: '24px',
+        transition: 'all 0.3s ease',
+        letterSpacing:'.1em'
+    },
+    sizes: {
+        xs: {
+            padding: '16px',
+            width: '120px',
+            height: '48px',
+            fontSize: '14px',
+        },
+        sm: {
+            padding: '16px',
+            width: '160px',
+            height: '48px',
+            fontSize: '14px',
+        },
+        md: {
+            padding: '20px',
+            width: '208px',
+            height: '61px',
+            fontSize: '16px',
+        },
+        lg: {
+            padding: '24px',
+            width: '240px',
+            height: '72px',
+            fontSize: '18px',
+        },
     },
     variants: {
+        primary: {
+            bg: 'var(--button-bg, white)',
+            color: 'var(--button-color, black)',
+            position: 'relative',
+            backgroundSize: '100% 200%',
+            backgroundPosition: '0 0%',
+            transition: 'all 0.3s ease',
+            bgGradient: 'linear(to-t, #224452 0%, #224452 50%, var(--button-bg, white) 50%, var(--button-bg, white) 100%)',
+            animation: `${fillAnimationOut} 0.3s forwards`,
+            _hover: {
+                color: 'white',
+                animation: `${fillAnimationIn} 0.3s forwards`,
+            },
+        },
         primaryWhite: {
             bg: 'white',
             color: 'black',
@@ -69,7 +109,6 @@ const Button = defineStyleConfig({
                 color: 'black',
                 bg: '#D2CDBF',
                 border: '1px solid transparent',
-
             },
         },
         tertiary: {
@@ -77,14 +116,12 @@ const Button = defineStyleConfig({
             padding: '0',
             bg: 'transparent',
             color: 'black',
-            fontSize: '18px',
             display: 'inline-flex',
             fontWeight: 400,
             position: 'relative',
             backgroundSize: '100% 200%',
             backgroundPosition: '0 0%',
             transition: 'all 0.3s ease',
-
             _hover: {
                 textDecoration: 'underline'
             },
@@ -96,8 +133,9 @@ const Button = defineStyleConfig({
         },
     },
     defaultProps: {
-        variant: 'primaryWhite', // Set a single default variant
+        variant: 'primaryWhite',
+        size: 'md',
     },
 });
 
-export default Button;
+export default Button
