@@ -1,13 +1,19 @@
 'use client'
-import React from "react";
+import React, {useRef} from "react";
 import {Flex, Box, Image} from "@chakra-ui/react";
-import {motion} from "framer-motion";
+import {motion, useScroll, useTransform} from "framer-motion";
 
-export const Gallery = ({images, timelineProgress}) => {
-    const y = `${-40 * timelineProgress}%`;
+export const Gallery = ({images}) => {
+    const ref = useRef(null);
+    const {scrollYProgress} = useScroll({
+        target: ref,
+        offset: ["start end", "end start"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
 
     return (
-        <Box position="relative" overflow="visible" bg="white">
+        <Box ref={ref} position="relative" overflow="visible" bg="white">
             <motion.div
                 style={{y}}
                 initial={{y: 0}}
@@ -18,7 +24,7 @@ export const Gallery = ({images, timelineProgress}) => {
                         <Box
                             key={index}
                             w="31%"
-                            height="300px"
+                            height="300px" // Set a fixed height for the image container
                             position="relative"
                             overflow="hidden"
                         >
@@ -27,8 +33,8 @@ export const Gallery = ({images, timelineProgress}) => {
                                 alt={`Image ${index + 1}`}
                                 objectFit="cover"
                                 width="100%"
-                                height="100%"
-                                layout="fill"
+                                height="100%" // Ensure the image covers the entire container
+                                layout="fill" // Ensure image fits container dimensions
                             />
                         </Box>
                     ))}

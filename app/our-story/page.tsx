@@ -6,6 +6,7 @@ import SmoothScroll from "@/app/SmoothScroll";
 import {sanityFetch} from "@/app/sanity/client";
 import {urlFor} from "@/app/sanity/urlFor";
 import {OurStoryClientWrapper} from "@/app/components/our-story/OurStoryClientWrapper";
+import {Footer} from "@/app/components/footer/Footer";
 
 const BRANDS_QUERY = `*[_type == "brands"] {
   brand_name,
@@ -46,8 +47,7 @@ const OurStoryPage = async () => {
         <>
             <Navbar brands={brands}/>
             <SmoothScroll>
-                <Flex direction="column" maxWidth={'100%'}>
-                    <Box overflowY="auto">
+                <Flex direction="column" >
                         <OurStoryHeader header={ourStory?.header} imageUrlHeader={imageUrlHeader}/>
                         <Stats stats={ourStory?.stats}/>
                         <OurStoryClientWrapper
@@ -55,8 +55,10 @@ const OurStoryPage = async () => {
                             galleryWithImages={galleryWithImages}
                             brands={brands}
                         />
-                    </Box>
                 </Flex>
+                <Box position="relative" mt={["-90vh", "-120vh", "-60vh"]}>
+                    <Footer brands={brands}/>
+                </Box>
             </SmoothScroll>
         </>
     );
