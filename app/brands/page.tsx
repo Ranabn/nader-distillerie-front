@@ -7,6 +7,14 @@ import {sanityFetch} from "@/app/sanity/client";
 import {urlFor} from "@/app/sanity/urlFor";
 import SmoothScroll from "@/app/SmoothScroll";
 
+interface Brand {
+    brand_name: string;
+    slug: string;
+    mainImage: string;
+    categories: string[];
+    brand_short_desc: string;
+}
+
 const BRANDS_QUERY = `*[_type == "brands"] {
   brand_name,
   "slug": slug.current,
@@ -17,9 +25,10 @@ const BRANDS_QUERY = `*[_type == "brands"] {
 }`;
 const BrandsPage = async () => {
 
-    const brands = await sanityFetch({
+    const brands = await sanityFetch<Brand[]>({
         query: BRANDS_QUERY,
     });
+    // @ts-ignore
     const imageUrls = brands.map(brand =>
         brand.mainImage ? urlFor(brand.mainImage).url() : null
     ).filter(Boolean);
@@ -34,7 +43,7 @@ const BrandsPage = async () => {
                     <BrandsSection isLanding={false} brands={brands} imageUrls={imageUrls}/>
                 </Box>
                 <ExternalBox/>
-            <Footer brands={brands}/>
+                <Footer brands={brands}/>
             </SmoothScroll>
 
         </Flex>
