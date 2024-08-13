@@ -18,6 +18,7 @@ export const SocialBrands = ({quote, description, technicalSheetUrl, brandWebsit
                 left: 0,
                 right: 0,
                 bottom: 0,
+                //@ts-ignore
                 backgroundImage: Background.src, // Your PNG path here
                 backgroundSize: "cover",
                 backgroundPosition: "center",
@@ -26,7 +27,7 @@ export const SocialBrands = ({quote, description, technicalSheetUrl, brandWebsit
         >
             <Flex flexDirection="column" p={12} w="60%" gap={8} justifyContent={'center'}>
                 <Box>
-                    <Text mb={4} fontSize="3xl" fontWeight="300" textTransform={'uppercase'}>
+                    <Text mb={4} fontSize="3xl" fontWeight="300" textTransform='uppercase'>
                         {quote && (
                             quote
                         )}

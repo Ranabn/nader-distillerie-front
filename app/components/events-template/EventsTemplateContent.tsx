@@ -8,6 +8,7 @@ import wine from "@/app/assets/images/wines.png"
 
 export const EventsTemplateContent = () => {
 
+    //@ts-ignore
     const images = [
         craft.src,
         wine.src,

@@ -27,7 +27,7 @@ export const HeroBanner = () => {
                     src={Background.src}
                     alt={"background"}
                     quality={100}
-                    objectFit={{base: 'cover', md: 'cover'}}
+                    objectFit="cover"
                     objectPosition={{base: 'center', md: 'bottom'}}
                     width="100%"
                     height="100%"
@@ -60,7 +60,7 @@ export const HeroBanner = () => {
                 </Heading>
                 <Text fontSize={["md", "lg"]} mb={[4, 6, 10]} lineHeight={'30.4px'}>
                     We harvest the finest gifts of nature in a bottle, offering you <br/> the perfect glass to celebrate
-                    life's special moments.
+                    life&apos;s special moments.
                 </Text>
                 <Box width={["100%", "30%"]}>
                     <Btn size={'sm'} variant="primaryWhite" text="WORK TOGETHER"/>
@@ -77,7 +77,7 @@ export const HeroBanner = () => {
                 <Text fontSize="sm">
                     Scroll down
                 </Text>
-                <Icon as={FiChevronDown} w={6} h={6}/>
+                <Icon as={FiChevronDown as any} w={6} h={6}/>
             </Box>
         </Flex>
     );

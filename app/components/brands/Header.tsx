@@ -12,7 +12,7 @@ export const HeaderBrands = ({brand}) => {
             <Text fontSize="5xl" fontFamily="EB Garamond" fontWeight="800">
                 {brand.brand_name}
             </Text>
-            <Text mb={4} fontSize="3xl" fontWeight="300" textTransform={'uppercase'}>
+            <Text mb={4} fontSize="3xl" fontWeight="300" textTransform='uppercase'>
                 {brand.brand_quote}
             </Text>
             <Box mb={4}>
