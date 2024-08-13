@@ -42,7 +42,7 @@ const useFitText = (text) => {
     return { fontSize, spanRef };
 };
 
-export const Product3DSection = ({sections}) => {
+export const Product3DSection = ({sections}: any) => {
     const {scrollY} = useViewportScroll();
     const [scrollYValue, setScrollYValue] = useState(0);
     const scrollRef = useRef();

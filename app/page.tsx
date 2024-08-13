@@ -39,7 +39,7 @@ export default async function Home() {
                     <OurStorySection/>
                     <Box position="relative">
                         <Test brands={brands}/>
-                        <Box position="relative" mt={["-90vh","-120vh","-60vh"]}>
+                        <Box position="relative" mt={["-90vh", "-120vh", "-60vh"]}>
                             <Footer brands={brands}/>
                         </Box>
                     </Box>
