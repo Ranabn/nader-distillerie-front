@@ -52,6 +52,7 @@ const BRANDS_FOOTER = `*[_type == "brands"] {
 }`;
 
 const BrandPage = async ({params}: { params: { slug: string } }) => {
+    // @ts-ignore
     const brand = await sanityFetch({
         query: BRAND_QUERY,
         params: {slug: params.slug}
@@ -61,8 +62,11 @@ const BrandPage = async ({params}: { params: { slug: string } }) => {
     });
     //@ts-ignore
     const imageUrls = [
+        //@ts-ignore
         brand.mainImage ? urlFor(brand.mainImage).url() : null,
+        //@ts-ignore
         brand.secondaryImage ? urlFor(brand.secondaryImage).url() : null,
+        //@ts-ignore
         brand.tertiaryImage ? urlFor(brand.tertiaryImage).url() : null,
     ].filter(Boolean); // Remove any null values
 
