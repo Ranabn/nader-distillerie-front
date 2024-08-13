@@ -5,15 +5,14 @@ import {Testimonial} from "@/app/components/events-template/Testimonial";
 import {ExternalBox} from "@/app/components/ui/ExternalBoxe";
 import craft from "@/app/assets/images/craft.png"
 import wine from "@/app/assets/images/wines.png"
+import {sanityFetch} from "@/app/sanity/client";
 
-export const EventsTemplateContent = () => {
+export const EventsTemplateContent = async () => {
 
     //@ts-ignore
     const images = [
         craft.src,
         wine.src,
-
-        // Add more image URLs as needed
     ];
 
     const testimonial = {
