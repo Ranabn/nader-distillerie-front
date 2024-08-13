@@ -43,7 +43,7 @@ extend({ImageShaderMaterial});
 export const ImagePlane = ({texture, active, transitionProgress}) => {
     const ImagePlane = ({texture, transitionProgress}) => {
         const ref = useRef();
-
+//com
         useFrame(({clock}) => {
             if (ref.current && ref.current.material) {
                 ref.current.material.uniforms.uTime.value = clock.getElapsedTime();
