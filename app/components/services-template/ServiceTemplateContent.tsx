@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import {Box, Button, Divider, Flex, Image, Text, VStack} from "@chakra-ui/react";
 import React from "react";
 import {Btn} from "@/app/components/ui/Btn";

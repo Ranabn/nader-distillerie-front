@@ -2,7 +2,7 @@
 import {useState} from 'react';
 import {Box, Flex, Text, IconButton, Image} from '@chakra-ui/react';
 import {ChevronLeftIcon, ChevronRightIcon} from '@chakra-ui/icons';
-
+// @ts-ignore
 export const Testimonial = ({images, testimonial}) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 

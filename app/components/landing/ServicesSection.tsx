@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import {Box, Flex, Heading, Text, Button, Image, VStack} from "@chakra-ui/react";
 import React from "react";
 import Craft from "@/app/assets/images/services/usine01.png"

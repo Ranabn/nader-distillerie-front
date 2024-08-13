@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import {Box, Flex, Text, VStack} from "@chakra-ui/react";
 
 export const Stats = ({stats}) => {

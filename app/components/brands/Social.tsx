@@ -2,7 +2,19 @@ import {Flex, Text, Box} from "@chakra-ui/react";
 import {Btn} from "@/app/components/ui/Btn";
 import Background from "@/app/assets/images/background-brands.png";
 
-export const SocialBrands = ({quote, description, technicalSheetUrl, brandWebsiteUrl}) => {
+// Define the TypeScript interface for the props
+interface SocialBrandsProps {
+    quote: string;
+    description: string;
+    technicalSheetUrl: string;
+    brandWebsiteUrl: string;
+}
+
+// Define the SocialBrands component with typed props
+export const SocialBrands = ({
+                                 quote,
+                                 description,
+                             }: SocialBrandsProps) => {
     return (
         <Flex
             minHeight={'550px'}
@@ -44,7 +56,7 @@ export const SocialBrands = ({quote, description, technicalSheetUrl, brandWebsit
                     <Text>Download our technical data sheets</Text>
                 </Box>
                 <Box w="25%">
-                    <Btn variant="primaryWhite" text="BECOME A RESELLER"/>
+                    <Btn variant="primaryWhite" size="md" text="BECOME A RESELLER"/>
                 </Box>
                 <Text>Learn more on Mystic Grove website</Text>
             </Flex>

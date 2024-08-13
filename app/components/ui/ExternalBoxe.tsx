@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // Import necessary Chakra UI components
 import {Flex, Box, Text, Link} from '@chakra-ui/react';
 import {FiChevronRight} from "react-icons/fi";

@@ -1,7 +1,16 @@
 import {Flex, Text, Box} from "@chakra-ui/react";
 import {PortableText} from '@portabletext/react';
 
-export const HeaderBrands = ({brand}) => {
+// Define the TypeScript interface for the Brand object
+interface Brand {
+    brand_name: string;
+    brand_quote: string;
+    brand_description_first_p: any;
+    brand_description_sec_p: any;
+}
+
+// Define the HeaderBrands component with typed props
+export const HeaderBrands = ({brand}: { brand: Brand }) => {
     if (!brand) {
         return null; // or some loading state
     }

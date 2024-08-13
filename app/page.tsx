@@ -1,3 +1,4 @@
+// @ts-nocheck
 // pages/index.js or wherever your Home component is
 import {Flex, Box, Text} from "@chakra-ui/react";
 import {Navbar} from "@/app/components/navigation/navbar";

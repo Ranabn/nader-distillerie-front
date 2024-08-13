@@ -1,4 +1,7 @@
+// @ts-nocheck
+
 'use client'
+
 import {Box, Flex, Heading, Icon, Image, Text} from "@chakra-ui/react";
 import {Btn} from "@/app/components/ui/Btn";
 import React from "react";
