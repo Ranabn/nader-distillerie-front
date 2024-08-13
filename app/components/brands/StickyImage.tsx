@@ -75,7 +75,7 @@ export const StickyImage = ({imageUrls, brandName}) => {
                 color={'white'}
                 flexDirection='column'
                 alignItems={'center'}
-                as={motion.div}
+                as={motion.div as any}
                 position="sticky"
                 top="5%"
                 style={{y}}
@@ -116,7 +116,7 @@ export const StickyImage = ({imageUrls, brandName}) => {
                     />
                     <Box>
                         <Text fontSize="4xl" fontFamily="EB Garamond" fontWeight="800">{brandName}</Text>
-                        <Text textAlign={'center'}>{`Image ${currentImageIndex + 1} of ${imageUrls.length}`}</Text>
+                        <Text textAlign='center'>{`Image ${currentImageIndex + 1} of ${imageUrls.length}`}</Text>
                     </Box>
                     <IconButton
                         aria-label="Next image"

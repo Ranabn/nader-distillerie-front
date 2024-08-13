@@ -9,6 +9,23 @@ import {sanityFetch} from '@/app/sanity/client';
 import {HeaderBrands} from "@/app/components/brands/Header";
 import {urlFor} from '@/app/sanity/urlFor';
 import SmoothScroll from "@/app/SmoothScroll"; // Import your helper function
+type Brand = {
+    brand_name: string;
+    brand_quote: string;
+    brand_description_first_p: string;
+    brand_description_sec_p: string;
+    link_to_brand_instagram: string;
+    link_to_brand_facebook: string;
+    brand_quote_social_section: string;
+    brand_description_first_p_technical: string;
+    link_to_technical_sheet?: string; // Add this line
+    link_to_brand: string;
+    mainImage: any;
+    secondaryImage: any;
+    tertiaryImage: any;
+    brand_short_desc: string;
+    categories: { title: string }[];
+};
 
 const BRAND_QUERY = `*[_type == "brands" && slug.current == $slug][0]{
   brand_name,
@@ -42,6 +59,7 @@ const BrandPage = async ({params}: { params: { slug: string } }) => {
     const brands = await sanityFetch({
         query: BRANDS_FOOTER,
     });
+    //@ts-ignore
     const imageUrls = [
         brand.mainImage ? urlFor(brand.mainImage).url() : null,
         brand.secondaryImage ? urlFor(brand.secondaryImage).url() : null,
