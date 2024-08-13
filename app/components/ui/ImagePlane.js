@@ -1,10 +1,10 @@
 "use client";
-import React, { useRef } from "react";
-import { useFrame } from "@react-three/fiber";
-import { shaderMaterial } from "@react-three/drei";
-import { extend } from "@react-three/fiber";
+import React, {useRef} from "react";
+import {useFrame} from "@react-three/fiber";
+import {shaderMaterial} from "@react-three/drei";
+import {extend} from "@react-three/fiber";
 import * as THREE from "three";
-import { motion } from "framer-motion-3d";
+import {motion} from "framer-motion-3d";
 
 const ImageShaderMaterial = shaderMaterial(
     {
@@ -38,27 +38,29 @@ const ImageShaderMaterial = shaderMaterial(
   `
 );
 
-extend({ ImageShaderMaterial });
+extend({ImageShaderMaterial});
 
-export const ImagePlane = ({ texture, active, transitionProgress }) => {const ImagePlane = ({ texture, transitionProgress }) => {
-    const ref = useRef();
+export const ImagePlane = ({texture, active, transitionProgress}) => {
+    const ImagePlane = ({texture, transitionProgress}) => {
+        const ref = useRef();
+//com
+        useFrame(({clock}) => {
+            if (ref.current && ref.current.material) {
+                ref.current.material.uniforms.uTime.value = clock.getElapsedTime();
+                ref.current.material.uniforms.uDistortion.value = 1 - transitionProgress;
+            }
+        });
 
-    useFrame(({ clock }) => {
-        if (ref.current && ref.current.material) {
-            ref.current.material.uniforms.uTime.value = clock.getElapsedTime();
-            ref.current.material.uniforms.uDistortion.value = 1 - transitionProgress;
-        }
-    });
-
-    return (
-        <mesh ref={ref} scale={[2, 2, 2]} position={[0, 0, 0]}>
-            <planeGeometry args={[2, 2]} />
-            <imageShaderMaterial
-                attach="material"
-                uTexture={texture}
-                transparent
-                opacity={transitionProgress}
-            />
-        </mesh>
-    );
-};
+        return (
+            <mesh ref={ref} scale={[2, 2, 2]} position={[0, 0, 0]}>
+                <planeGeometry args={[2, 2]}/>
+                <imageShaderMaterial
+                    attach="material"
+                    uTexture={texture}
+                    transparent
+                    opacity={transitionProgress}
+                />
+            </mesh>
+        );
+    }
+}
