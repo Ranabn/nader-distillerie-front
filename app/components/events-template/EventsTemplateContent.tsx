@@ -74,7 +74,7 @@ export const EventsTemplateContent = () => {
                     <Text fontSize="lg">
                         Ready to build your brand with us?
                     </Text>
-                    <Btn variant='primaryBlack' text='Request a consultation'/>
+                    <Btn variant='primaryBlack' text='Request a consultation' size={'md'}/>
                 </Flex>
 
                 <Flex mt={20} justifyContent={'center'}>

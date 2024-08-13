@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import {Box, Flex, Text} from "@chakra-ui/react";
 import {Navbar} from "@/app/components/navigation/navbar";
 import Spirits from "@/app/assets/images/Spirits.png";

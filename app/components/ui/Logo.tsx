@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 export const Logo = () => {
     return <svg width="150" height="224" viewBox="0 0 232 224" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path

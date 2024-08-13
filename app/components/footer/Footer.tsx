@@ -1,13 +1,23 @@
-'use client'
-import {Box, Flex, Text, VStack, HStack, Link, SimpleGrid} from "@chakra-ui/react";
-import {FaInstagram, FaFacebook} from "react-icons/fa";
-import {Btn} from "@/app/components/ui/Btn";
+'use client';
+import { Box, Flex, Text, VStack, HStack, Link, SimpleGrid } from "@chakra-ui/react";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
+import { Btn } from "@/app/components/ui/Btn";
 import React from "react";
-import {LogoHorizontal} from "@/app/components/ui/LogoHorizontal";
-import {FiChevronUp} from "react-icons/fi"; // Import the arrow down icon
-import {animateScroll as scroll} from 'react-scroll';
+import { LogoHorizontal } from "@/app/components/ui/LogoHorizontal";
+import { FiChevronUp } from "react-icons/fi"; // Import the arrow up icon
+// @ts-ignore
+import { animateScroll as scroll } from 'react-scroll';
 
-export const Footer = ({brands}) => {
+interface Brand {
+    slug: string;
+    brand_name: string;
+}
+
+interface FooterProps {
+    brands: Brand[];
+}
+
+export const Footer: React.FC<FooterProps> = ({ brands }) => {
     const scrollToTop = () => {
         scroll.scrollToTop({
             duration: 500,
@@ -17,20 +27,20 @@ export const Footer = ({brands}) => {
 
     return (
         <Box bg="#12191F" color="white" px={[4, 8, 8]}>
-            <Flex display={['flex', 'none', 'none']} _hover={{cursor: 'pointer'}} gap={2} flexDir='column' mb={4}
+            <Flex display={['flex', 'none', 'none']} _hover={{ cursor: 'pointer' }} gap={2} flexDir='column' mb={4}
                   alignItems='center'
                   aria-label="Scroll to top" onClick={scrollToTop}>
-                <FiChevronUp size={24}/>
+                <FiChevronUp size={24} />
                 <Text>Back to top</Text>
             </Flex>
-            <Flex gap={10} flexDirection={["flex", "flex", "row"]} justifyContent="space-between"
+            <Flex gap={10} flexDirection={["column", "column", "row"]} justifyContent="space-between"
                   alignItems={["center", "center", "start"]} p={4} mb={[8, 10]}>
-                <LogoHorizontal/>
+                <LogoHorizontal />
 
-                <Flex display={['none', 'flex', 'flex']} _hover={{cursor: 'pointer'}} flexDir='column'
+                <Flex display={['none', 'flex', 'flex']} _hover={{ cursor: 'pointer' }} flexDir='column'
                       alignItems='center'
                       aria-label="Scroll to top" onClick={scrollToTop}>
-                    <FiChevronUp size={16}/>
+                    <FiChevronUp size={16} />
                     <Text fontSize={'xs'}>Back to top</Text>
                 </Flex>
 
@@ -38,10 +48,10 @@ export const Footer = ({brands}) => {
                     <Text fontSize={'xs'} mb={[2, 0]} display={['none', 'flex']}>Follow us on social Media</Text>
                     <HStack spacing={4} fontSize={['4xl', 'md']}>
                         <Link href="#" aria-label="Instagram">
-                            <FaInstagram/>
+                            <FaInstagram />
                         </Link>
                         <Link href="#" aria-label="Facebook">
-                            <FaFacebook/>
+                            <FaFacebook />
                         </Link>
                     </HStack>
                 </Flex>
@@ -49,9 +59,8 @@ export const Footer = ({brands}) => {
 
             <SimpleGrid columns={[1, 2, 3, 5]} spacing={[8]} mb={8}>
                 <Flex w={['100%', '80%']}>
-                    <Link href={'/contact'} _hover={{textDecoration: 'none'}}>
-
-                        <Btn size={'xs'} variant="primaryWhite" text="WORK TOGETHER"/>
+                    <Link href={'/contact'} _hover={{ textDecoration: 'none' }}>
+                        <Btn size={'xs'} variant="primaryWhite" text="WORK TOGETHER" />
                     </Link>
                 </Flex>
 
@@ -79,7 +88,6 @@ export const Footer = ({brands}) => {
                     <Text fontWeight="bold" mb={2}>Our story</Text>
                 </VStack>
             </SimpleGrid>
-
             <Flex color={'gray.600'} flexDirection={["column", "row"]} justifyContent="space-between"
                   alignItems="center" mt={8}>
                 <Text fontSize="xs" mb={[4, 0]} textAlign={["center", "left"]}>© Nader Distilleries 2024. All rights

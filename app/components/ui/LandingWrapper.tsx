@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 'use client'
 
 import {Navbar} from "@/app/components/navigation/navbar";

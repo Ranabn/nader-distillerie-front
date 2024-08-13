@@ -91,7 +91,7 @@ const BrandPage = async ({params}: { params: { slug: string } }) => {
                     <SocialBrands
                         quote={brand?.brand_quote_social_section}
                         description={brand?.brand_description_first_p_technical}
-                        technicalSheetUrl={brand?.link_to_technical_sheet}
+                        technicalSheetUrl={brand?.link_to_technical_sheet || ""}
                         brandWebsiteUrl={brand?.link_to_brand}
                     />
                     {/* <ExploreMore brands={brand} /> */}

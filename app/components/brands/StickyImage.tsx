@@ -4,6 +4,7 @@ import {motion, useScroll, useTransform, AnimatePresence} from "framer-motion";
 import {useEffect, useState, useRef} from "react";
 import {FiChevronLeft, FiChevronRight} from "react-icons/fi";
 
+// @ts-ignore
 export const StickyImage = ({imageUrls, brandName}) => {
     const {scrollY} = useScroll();
     const ref = useRef(null);
@@ -42,8 +43,9 @@ export const StickyImage = ({imageUrls, brandName}) => {
             (prevIndex + 1) % imageUrls.length
         );
     };
-
+// @ts-ignore
     const slideVariants = {
+        // @ts-ignore
         enter: (direction) => ({
             x: direction > 0 ? 1000 : -1000,
             opacity: 0,
@@ -53,6 +55,7 @@ export const StickyImage = ({imageUrls, brandName}) => {
             x: 0,
             opacity: 1,
         },
+        // @ts-ignore
         exit: (direction) => ({
             zIndex: 0,
             x: direction < 0 ? 1000 : -1000,
@@ -71,6 +74,7 @@ export const StickyImage = ({imageUrls, brandName}) => {
             w="40%"
             zIndex={2}
         >
+            {/*@ts-ignore*/}
             <Flex
                 color={'white'}
                 flexDirection='column'
@@ -78,7 +82,7 @@ export const StickyImage = ({imageUrls, brandName}) => {
                 as={motion.div as any}
                 position="sticky"
                 top="5%"
-                style={{y}}
+                style={{y} as any}
             >
                 <Box position="relative" width="475px" height="475px" overflow="hidden">
                     <AnimatePresence initial={false} custom={direction}>

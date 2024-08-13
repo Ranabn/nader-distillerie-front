@@ -3,8 +3,19 @@
 
 import {Card, Flex, Text, CardBody, Image, Divider} from "@chakra-ui/react";
 
+interface Brand {
+    category: string;
+    name: string;
+    imageSrc: string;
+}
 
-export const ExploreMore = ({brands}) => {
+// Define the props type for the ExploreMore component
+interface ExploreMoreProps {
+    brands: Brand[];
+}
+
+// Define the ExploreMore component with typed props
+export const ExploreMore = ({brands}: ExploreMoreProps) => {
     return (
         <Flex flexDirection="column" p={12} backgroundColor="#E8E5DC">
             <Text fontSize="4xl" fontFamily="EB Garamond" fontWeight="800">

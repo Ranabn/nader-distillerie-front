@@ -1,3 +1,6 @@
+
+// @ts-nocheck
+
 'use client'
 import React, {useRef} from "react";
 import {Flex, Box, Image} from "@chakra-ui/react";

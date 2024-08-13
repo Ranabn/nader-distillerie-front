@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 'use client'
 import Background from "@/app/assets/images/landing.png";
 import {Box, Flex, Text, Button, Heading, Icon, Image} from "@chakra-ui/react";

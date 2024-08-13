@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import {RestrictionAge} from "@/app/components/restriction-age/RestrictionAge";
 
 

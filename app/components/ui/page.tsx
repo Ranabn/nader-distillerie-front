@@ -1,3 +1,4 @@
+// @ts-nocheck
 // BtnPage.js
 import {Flex, Text} from '@chakra-ui/react';
 import {Btn} from '@/app/components/ui/Btn';

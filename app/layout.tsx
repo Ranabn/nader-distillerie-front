@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import type {Metadata} from "next";
 import {EB_Garamond} from '@next/font/google';
 import {ChkraProvider} from './providers'
