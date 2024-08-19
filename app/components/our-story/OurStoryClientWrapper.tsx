@@ -21,9 +21,10 @@ export const OurStoryClientWrapper = ({timelineWithImages, galleryWithImages, br
             <Flex direction="column" overflow={'hidden'} display={['flex', 'none']}>
                 <ResponsiveJourneyTimeline timeline={timelineWithImages}/>
             </Flex>
+            <Box position="relative" mb={10}> {/* Add margin-bottom to create space before the footer */}
                 <Gallery images={galleryWithImages}/>
-                <Footer brands={brands}/> {/* Move the footer outside the Box */}
-
+            </Box>
+            <Footer brands={brands}/> {/* Move the footer outside the Box */}
         </>
     );
 };
