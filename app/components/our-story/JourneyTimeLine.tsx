@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 'use client'
 import {useRef, useEffect} from "react";
 import {Box, Flex, Image, Text} from "@chakra-ui/react";
@@ -20,7 +18,7 @@ export const JourneyTimeline = ({timeline}) => {
                 const scrollContent = scrollContainer.firstChild;
                 const scrollContentWidth = scrollContent.scrollWidth;
                 const viewportWidth = window.innerWidth;
-                const heightPercentage = (scrollContentWidth / viewportWidth) * 100;
+                const heightPercentage = (scrollContentWidth / viewportWidth) * 90;
                 scrollContainer.style.setProperty('--scroll-height', `${heightPercentage}vh`);
             }
         };
@@ -34,20 +32,19 @@ export const JourneyTimeline = ({timeline}) => {
         <Box
             ref={targetRef}
             height="var(--scroll-height)"
-            // position="relative"
+            position="relative"
             sx={{
                 '--scroll-height': '50vh',
                 '& > div': {
                     position: 'sticky',
                     top: 300,
-                    // height: '0vh',
                 }
             }}
         >
             <Flex>
                 <motion.div
                     style={{x}}
-                    className="flex gap-10 absolute top-1/2 -translate-y-1/2" // Reduced gap
+                    className="flex gap-10 absolute top-1/2 -translate-y-1/2"
                 >
                     <Flex minWidth="400px" fontSize="4xl" fontFamily="EB Garamond" fontWeight="bold"
                           alignItems={'center'}>

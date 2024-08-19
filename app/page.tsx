@@ -28,7 +28,7 @@ export default async function Home() {
     const imageUrls = brands.map(brand =>
         brand.mainImage ? urlFor(brand.mainImage).url() : null
     ).filter(Boolean);
-
+//comment
     return (
         <>
             <Flex direction="column" overflow={'hidden'}>
@@ -39,7 +39,7 @@ export default async function Home() {
                     <OurStorySection/>
                     <Box position="relative">
                         <Test brands={brands}/>
-                        <Box position="relative" mt={["-90vh", "-120vh", "-60vh"]}>
+                        <Box position="relative" mt={["-90vh", "-120vh", "-60vh"]} pt={40}>
                             <Footer brands={brands}/>
                         </Box>
                     </Box>

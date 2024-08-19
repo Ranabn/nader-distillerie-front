@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 'use client'
 import {useState, useRef} from 'react';
 import {Box, Flex} from "@chakra-ui/react";
@@ -8,6 +6,7 @@ import Gallery from "@/app/components/our-story/Gallery";
 import {Footer} from "@/app/components/footer/Footer";
 import {motion, useScroll, useTransform, useMotionValue, useSpring} from "framer-motion";
 import {ResponsiveJourneyTimeline} from "@/app/components/our-story/ResponsiveJourneyTimeline";
+import {Test} from "@/app/components/Test";
 
 export const OurStoryClientWrapper = ({timelineWithImages, galleryWithImages, brands}) => {
 
@@ -21,10 +20,13 @@ export const OurStoryClientWrapper = ({timelineWithImages, galleryWithImages, br
             <Flex direction="column" overflow={'hidden'} display={['flex', 'none']}>
                 <ResponsiveJourneyTimeline timeline={timelineWithImages}/>
             </Flex>
-            <Box position="relative" mb={10}> {/* Add margin-bottom to create space before the footer */}
-                <Gallery images={galleryWithImages}/>
+            <Box position="relative">
+                <Gallery  images={galleryWithImages}/>
+                <Box position="relative" mt={["-90vh", "-120vh", "-60vh"]} pt={40} >
+                    <Footer brands={brands}/>
+                </Box>
             </Box>
-            <Footer brands={brands}/> {/* Move the footer outside the Box */}
+
         </>
     );
 };
