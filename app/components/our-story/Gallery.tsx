@@ -1,4 +1,3 @@
-
 // @ts-nocheck
 
 'use client'
@@ -13,7 +12,8 @@ export const Gallery = ({images}) => {
         offset: ["start end", "end start"]
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
+    // Adjust the input range and output range for a smoother parallax effect
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
 
     return (
         <Box ref={ref} position="relative" overflow="visible" bg="white">
@@ -22,7 +22,7 @@ export const Gallery = ({images}) => {
                 initial={{y: 0}}
                 transition={{type: "spring", stiffness: 100}}
             >
-                <Flex wrap="wrap" gap={4} justify="center" bg="white" pt={10} >
+                <Flex wrap="wrap" gap={4} justify="center" bg="white">
                     {images.map((image, index) => (
                         <Box
                             key={index}

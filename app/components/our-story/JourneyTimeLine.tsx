@@ -1,58 +1,80 @@
 // @ts-nocheck
 
 'use client'
-import {useRef, useEffect, useState} from "react";
+import {useRef, useEffect} from "react";
 import {Box, Flex, Image, Text} from "@chakra-ui/react";
-import {motion, useScroll, useTransform} from "framer-motion";
-import SmoothScroll from "@/app/SmoothScroll";
+import {motion, useTransform, useScroll} from "framer-motion";
 
-export const JourneyTimeline = ({timeline, x}) => {
+export const JourneyTimeline = ({timeline}) => {
+    const targetRef = useRef(null);
+    const {scrollYProgress} = useScroll({
+        target: targetRef,
+    });
+
+    const x = useTransform(scrollYProgress, [0, 1], ["1%", "-85%"]);
+
+    useEffect(() => {
+        const updateHeight = () => {
+            const scrollContainer = targetRef.current;
+            if (scrollContainer) {
+                const scrollContent = scrollContainer.firstChild;
+                const scrollContentWidth = scrollContent.scrollWidth;
+                const viewportWidth = window.innerWidth;
+                const heightPercentage = (scrollContentWidth / viewportWidth) * 100;
+                scrollContainer.style.setProperty('--scroll-height', `${heightPercentage}vh`);
+            }
+        };
+
+        updateHeight();
+        window.addEventListener('resize', updateHeight);
+        return () => window.removeEventListener('resize', updateHeight);
+    }, [timeline]);
 
     return (
-        <Flex
-            height="130vh"
-            position="relative"
+        <Box
+            ref={targetRef}
+            height="var(--scroll-height)"
+            // position="relative"
+            sx={{
+                '--scroll-height': '50vh',
+                '& > div': {
+                    position: 'sticky',
+                    top: 300,
+                    // height: '0vh',
+                }
+            }}
         >
-            <Flex
-                alignItems="center"
-                height="100%"
-                flexDirection="row"
-            >
-                <motion.div style={{x}}>
-
-                    <Flex
-                        gap={20}
-                        pl={8}
-                        alignItems={'center'}
-                        flexDirection="row"
-                    >
-
-                        <Box minWidth="400px" fontSize="4xl" fontFamily="EB Garamond" fontWeight="bold">
-                            A journey of growth, skill, and unwavering dedication
-                        </Box>
-                        {timeline.map((item, index) => (
-
-                            <Flex key={index} gap={10}>
-                                <Flex flexDirection="column" minWidth="300px">
-                                    <Box width={420} height={420}>
-                                        <Image src={item.imageUrl} alt="drawing" width="100%" height="100%"
-                                               objectFit="cover"/>
-                                    </Box>
-                                    <Flex flexDirection="column">
-                                        <Text mt={4}>{item.year}</Text>
-                                        <Text fontSize="4xl" fontFamily="EB Garamond"
-                                              fontWeight="bold">{item.title}</Text>
-                                        <Text mt={4}>{item.description}</Text>
-                                    </Flex>
-                                </Flex>
-                            </Flex>
-                        ))}
-
+            <Flex>
+                <motion.div
+                    style={{x}}
+                    className="flex gap-10 absolute top-1/2 -translate-y-1/2" // Reduced gap
+                >
+                    <Flex minWidth="400px" fontSize="4xl" fontFamily="EB Garamond" fontWeight="bold"
+                          alignItems={'center'}>
+                        A journey of growth, <br/> skill, and unwavering dedication
                     </Flex>
-
+                    {timeline.map((item, index) => (
+                        <Flex key={index} flexDirection="column" minWidth="300px">
+                            <Box width={420} height={420} position="relative" overflow="hidden">
+                                <Image
+                                    src={item.imageUrl}
+                                    alt="drawing"
+                                    width="100%"
+                                    height="100%"
+                                    objectFit="cover"
+                                    transition="transform 0.3s"
+                                    _hover={{transform: "scale(1.1)"}}
+                                />
+                            </Box>
+                            <Flex flexDirection="column" mt={2}>
+                                <Text>{item.year}</Text>
+                                <Text fontSize="4xl" fontFamily="EB Garamond" fontWeight="bold">{item.title}</Text>
+                                <Text mt={2}>{item.description}</Text>
+                            </Flex>
+                        </Flex>
+                    ))}
                 </motion.div>
-
             </Flex>
-        </Flex>
+        </Box>
     );
 };

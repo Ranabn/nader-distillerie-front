@@ -11,27 +11,19 @@ import {ResponsiveJourneyTimeline} from "@/app/components/our-story/ResponsiveJo
 
 export const OurStoryClientWrapper = ({timelineWithImages, galleryWithImages, brands}) => {
 
-    const targetRef = useRef(0)
-    const {scrollYProgress} = useScroll({target: targetRef})
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-55%"])
-
     return (
         <>
-            <Flex ref={targetRef} direction="column" maxWidth={'100%'} overflow={'hidden'} display={['none', 'flex']}>
+            <Flex direction="column" maxWidth={'100%'} overflow={'hidden'} display={['none', 'flex']}>
                 <JourneyTimeline
-                    x={x}
                     timeline={timelineWithImages}
                 />
             </Flex>
-            <Flex  direction="column"  overflow={'hidden'} display={['flex', 'none']}>
-               <ResponsiveJourneyTimeline   timeline={timelineWithImages}/>
+            <Flex direction="column" overflow={'hidden'} display={['flex', 'none']}>
+                <ResponsiveJourneyTimeline timeline={timelineWithImages}/>
             </Flex>
-            <Box position="relative">
                 <Gallery images={galleryWithImages}/>
-
-            </Box>
+                <Footer brands={brands}/> {/* Move the footer outside the Box */}
 
         </>
     );
 };
-
