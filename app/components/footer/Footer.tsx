@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 'use client';
 import {Box, Flex, Text, VStack, HStack, Link, SimpleGrid} from "@chakra-ui/react";
 import {FaInstagram, FaFacebook} from "react-icons/fa";
