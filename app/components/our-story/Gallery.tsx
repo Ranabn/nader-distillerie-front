@@ -12,8 +12,7 @@ export const Gallery = ({images}) => {
         offset: ["start end", "end start"]
     });
 
-    // Adjust the input range and output range for a smoother parallax effect
-    const y = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
 
     return (
         <Box ref={ref} position="relative" overflow="visible" bg="white">

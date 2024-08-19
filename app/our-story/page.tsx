@@ -58,10 +58,11 @@ const OurStoryPage = async () => {
                         brands={brands}
                     />
                 </Flex>
-                <Box position="relative" mt={["-90vh", "-120vh", "-60vh"]}>
-                    <Footer brands={brands}/>
-                </Box>
+                {/*<Box position="relative" mt={10}>*/}
+                {/*    <Footer brands={brands}/>*/}
+                {/*</Box>*/}
             </SmoothScroll>
+
         </>
     );
 };
