@@ -28,7 +28,7 @@ export default async function Home() {
     const imageUrls = brands.map(brand =>
         brand.mainImage ? urlFor(brand.mainImage).url() : null
     ).filter(Boolean);
-
+//comment
     return (
         <>
             <Flex direction="column" overflow={'hidden'}>
