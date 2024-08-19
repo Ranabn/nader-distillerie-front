@@ -49,14 +49,14 @@ const OurStoryPage = async () => {
         <>
             <Navbar brands={brands}/>
             <SmoothScroll>
-                <Flex direction="column" >
-                        <OurStoryHeader header={ourStory?.header} imageUrlHeader={imageUrlHeader}/>
-                        <Stats stats={ourStory?.stats}/>
-                        <OurStoryClientWrapper
-                            timelineWithImages={timelineWithImages}
-                            galleryWithImages={galleryWithImages}
-                            brands={brands}
-                        />
+                <Flex direction="column">
+                    <OurStoryHeader header={ourStory?.header} imageUrlHeader={imageUrlHeader}/>
+                    <Stats stats={ourStory?.stats}/>
+                    <OurStoryClientWrapper
+                        timelineWithImages={timelineWithImages}
+                        galleryWithImages={galleryWithImages}
+                        brands={brands}
+                    />
                 </Flex>
                 <Box position="relative" mt={["-90vh", "-120vh", "-60vh"]}>
                     <Footer brands={brands}/>
