@@ -54,7 +54,9 @@ export default async function HomeProduct() {
         <Box>
             <Navbar brands={brands}/>
             <SmoothScroll>
+{/*
                 <Product3DSection sections={sections}/>
+*/}
                 <OurStorySection/>
                 <Footer brands={brands}/>
             </SmoothScroll>
