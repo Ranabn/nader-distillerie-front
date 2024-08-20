@@ -41,7 +41,7 @@ export const NotAllowed = () => {
                     </Box>
 
                     <Text textAlign="center" color="white" fontSize={"sm"}>
-                        This info is all part of our commitment to responsible drinking. More information on
+                        This info is all part of our commitment to responsible drinking. <br/> More information on
                         responsibledrinking.org
                     </Text>
 

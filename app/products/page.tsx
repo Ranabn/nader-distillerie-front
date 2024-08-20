@@ -24,37 +24,37 @@ export default async function HomeProduct() {
     const brands = await sanityFetch({
         query: BRANDS_QUERY,
     }) || [];
-    // const sections = [
-    //     {
-    //         id: 1,
-    //         text: "Spirits",
-    //         imageUrl: Spirits.src,
-    //         description: "We meticulously craft a range of spirits, including vodka, gin, whisky, brandy, and arak. Our commitment to quality begins with the careful selection of raw materials, sourced from the finest locations globally. We prioritize locally sourced ingredients, leveraging the richness of the Mediterranean land and the diverse nature hosting us."
-    //     },
-    //     {
-    //         id: 2,
-    //         text: "Wine",
-    //         imageUrl: Grape.src,
-    //         description: "Our red, rosé, and white wines each weave a story that encapsulates the essence of the region’s climate and soil. Our expertise lies in skillfully unveiling the unique expression of these terroirs in every wine we produce."
-    //     },
-    //     {
-    //         id: 3,
-    //         text: "Vinegars",
-    //         imageUrl: Vinegars.src,
-    //         description: "We specialize in crafting natural apple cider and red wine vinegars, renowned for their tangy and fruity flavors. Aligned with our commitment to sustainability, we valorize apples that would typically go to waste due to aesthetic standards and use our own wines as base. This leads to products that minimize food waste and promote a circular economy, while boasting exceptional taste."
-    //     },
-    //     {
-    //         id: 4,
-    //         text: "Ethanol",
-    //         imageUrl: Eth.src,
-    //         description: "Our food-grade ethanol is produced through the fractional distillation of a fermentation mash, imparting a high neutral profile and ensuring exceptional purity. We tailor our offerings to diverse applications, providing various qualities based on the intended use."
-    //     },
-    // ];
+    const sections = [
+        {
+            id: 1,
+            text: "Spirits",
+            imageUrl: Spirits.src,
+            description: "We meticulously craft a range of spirits, including vodka, gin, whisky, brandy, and arak. Our commitment to quality begins with the careful selection of raw materials, sourced from the finest locations globally. We prioritize locally sourced ingredients, leveraging the richness of the Mediterranean land and the diverse nature hosting us."
+        },
+        {
+            id: 2,
+            text: "Wine",
+            imageUrl: Grape.src,
+            description: "Our red, rosé, and white wines each weave a story that encapsulates the essence of the region’s climate and soil. Our expertise lies in skillfully unveiling the unique expression of these terroirs in every wine we produce."
+        },
+        {
+            id: 3,
+            text: "Vinegars",
+            imageUrl: Vinegars.src,
+            description: "We specialize in crafting natural apple cider and red wine vinegars, renowned for their tangy and fruity flavors. Aligned with our commitment to sustainability, we valorize apples that would typically go to waste due to aesthetic standards and use our own wines as base. This leads to products that minimize food waste and promote a circular economy, while boasting exceptional taste."
+        },
+        {
+            id: 4,
+            text: "Ethanol",
+            imageUrl: Eth.src,
+            description: "Our food-grade ethanol is produced through the fractional distillation of a fermentation mash, imparting a high neutral profile and ensuring exceptional purity. We tailor our offerings to diverse applications, providing various qualities based on the intended use."
+        },
+    ];
     return (
         <Box>
             <Navbar brands={brands}/>
             <SmoothScroll>
-                {/*<Product3DSection sections={sections}/>*/}
+                <Product3DSection sections={sections}/>
                 <OurStorySection/>
                 <Footer brands={brands}/>
             </SmoothScroll>

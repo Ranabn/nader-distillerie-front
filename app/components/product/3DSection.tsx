@@ -94,17 +94,7 @@ export const Product3DSection = ({sections}: any) => {
                                 alignItems="center"
                                 padding="2rem"
                             >
-                                {/*<Text*/}
-                                {/*    textAlign="center"*/}
-                                {/*    color="white"*/}
-                                {/*    fontSize="xl"*/}
-                                {/*    marginBottom="1rem"*/}
-                                {/*    left="0"*/}
-                                {/*    right="0"*/}
-                                {/*    bottom="40%"*/}
-                                {/*>*/}
-                                {/*    {sec.description}*/}
-                                {/*</Text>*/}
+
                                 <Text
                                     fontFamily="EB Garamond"
                                     ref={spanRef}
@@ -116,7 +106,7 @@ export const Product3DSection = ({sections}: any) => {
                                     letterSpacing="wide"
                                     lineHeight="0.8"
                                     position="absolute"
-                                    bottom="18%"
+                                    bottom="10%"
                                     left="0"
                                     right="0"
                                     whiteSpace="nowrap"
