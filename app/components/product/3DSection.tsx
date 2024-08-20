@@ -1,6 +1,7 @@
 // @ts-nocheck
-
 'use client'
+
+
 import {useEffect, useRef, useState} from 'react';
 import {Box, Text} from "@chakra-ui/react";
 import {motion, useViewportScroll} from "framer-motion";
@@ -8,6 +9,7 @@ import Image from "next/image";
 import {ArrowDownIcon} from "@chakra-ui/icons";
 
 // Custom hook to calculate font size
+// @ts-ignore
 const useFitText = (text) => {
     const [fontSize, setFontSize] = useState(100);
     const spanRef = useRef(null);
@@ -15,7 +17,7 @@ const useFitText = (text) => {
     useEffect(() => {
         const resizeText = () => {
             if (!spanRef.current) return;
-
+// @ts-ignore
             const containerWidth = spanRef.current.offsetWidth;
             let low = 1;
             let high = 500;
@@ -39,7 +41,7 @@ const useFitText = (text) => {
         return () => window.removeEventListener('resize', resizeText);
     }, [text]);
 
-    return { fontSize, spanRef };
+    return {fontSize, spanRef};
 };
 
 export const Product3DSection = ({sections}: any) => {
@@ -59,7 +61,7 @@ export const Product3DSection = ({sections}: any) => {
                 const offset = index * window.innerHeight;
                 const translateY = (scrollYValue - offset) * 0.2;
                 // eslint-disable-next-line react-hooks/rules-of-hooks
-                const { fontSize, spanRef } = useFitText(sec.text);
+                const {fontSize, spanRef} = useFitText(sec.text);
 
                 return (
                     <Box

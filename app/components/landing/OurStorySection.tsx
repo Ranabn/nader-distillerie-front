@@ -1,5 +1,5 @@
 // @ts-nocheck
-
+'use client'
 import React from "react";
 import {Box, Flex, Text, Image, Heading} from "@chakra-ui/react";
 import OurStory from "@/app/assets/images/our-story-landing.png";
