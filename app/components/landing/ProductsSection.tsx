@@ -46,7 +46,7 @@ const lineAnimation = keyframes`
 
 export const ProductsSection = () => (
     <Box p={[4, 8, 8]} bg={'white'}>
-        <Flex alignItems="center" justifyContent="space-between" mb={2} alignContent={'center'}>
+        <Flex alignItems="center" justifyContent="space-between" mb={4} alignContent={'center'}>
             <Heading fontSize="4xl" fontWeight="800" fontFamily="EB Garamond">
                 Our Products
             </Heading>

@@ -24,18 +24,18 @@ const Button = defineStyleConfig({
         fontWeight: '600',
         borderRadius: 'none',
         transition: 'all 0.3s ease',
-        letterSpacing:'.1em'
+        letterSpacing: '.1em'
     },
     sizes: {
         xs: {
             padding: '16px',
-            width: '120px',
+            minWidth: '120px',
             height: '48px',
             fontSize: '14px',
         },
         sm: {
             padding: '16px',
-            width: '160px',
+            width:'100%',
             height: '48px',
             fontSize: '14px',
         },

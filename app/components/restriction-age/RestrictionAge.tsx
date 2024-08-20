@@ -107,16 +107,17 @@ export const RestrictionAge = () => {
                                 value={digit}
                                 onChange={(e) => handleYearChange(index, e.target.value)}
                                 textAlign="center"
-                                fontSize="4xl"
+                                fontSize="8xl"
                                 color="white"
                                 bg="transparent"
                                 borderRadius={'none'}
                                 border={"0.4px solid white"}
                                 placeholder={'Y'}
                                 width="100%"
-                                height="140px"
+                                height="190px"
                                 _hover={{borderColor: "white"}}
                                 _focus={{borderColor: "white", outline: "none"}}
+                                _placeholder={{ color: 'white' }}
                             />
                         ))}
                     </Flex>
@@ -138,7 +139,7 @@ export const RestrictionAge = () => {
                             </option>
                         ))}
                     </Select>
-                    <Button isDisabled={isBtnDisabled} colorScheme="teal" size="lg" width="100%"
+                    <Button isDisabled={isBtnDisabled} colorScheme="teal" height={'10px'}  width="100%"
                             onClick={(e) => handleAgeResponse(Date.now())}>
                         Enter the website
                     </Button>

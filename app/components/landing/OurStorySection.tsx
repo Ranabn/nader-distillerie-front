@@ -6,7 +6,7 @@ import OurStory from "@/app/assets/images/our-story-landing.png";
 import {Btn} from "@/app/components/ui/Btn";
 
 export const OurStorySection = () => (
-    <Box p={[4, 8, 8]}>
+    <Box p={[4, 8, 8]} mb={10}>
         <Flex
             direction={{base: "column", md: "row"}}
             justifyContent="space-between"
