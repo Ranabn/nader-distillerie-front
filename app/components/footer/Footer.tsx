@@ -35,8 +35,8 @@ export const Footer = ({brands}: any) => {
                 <FiChevronUp size={24}/>
                 <Text>Back to top</Text>
             </Flex>
-            <Flex gap={10} flexDirection={["column", "column", "row"]} justifyContent="space-between"
-                  alignItems={["center", "center", "start"]} p={4} mb={[8, 10]}>
+            <Flex gap={10} flexDirection={["flex", "column", "row"]} justifyContent="space-between"
+                  alignItems={["center", "center", "start"]} mb={[8, 10]}>
                 <LogoHorizontal/>
 
                 <Flex display={['none', 'flex', 'flex']} _hover={{cursor: 'pointer'}} flexDir='column'
@@ -46,7 +46,7 @@ export const Footer = ({brands}: any) => {
                     <Text fontSize={'xs'}>Back to top</Text>
                 </Flex>
 
-                <Flex flexDirection={["column", "row"]} alignItems="center" gap={[2, 4]}>
+                <Flex flexDirection={["column", "row"]} alignItems="center" gap={[2, 4]} mt={4}>
                     <Text fontSize={'xs'} mb={[2, 0]} display={['none', 'flex']}>Follow us on social Media</Text>
                     <HStack spacing={4} fontSize={['4xl', 'md']}>
                         <Link href="#" aria-label="Instagram">
@@ -61,35 +61,41 @@ export const Footer = ({brands}: any) => {
 
             <SimpleGrid columns={[1, 2, 3, 5]} spacing={[8]} mb={8}>
                 <Flex w={['100%', '80%']}>
-                    <Link href={'/contact'} _hover={{textDecoration: 'none'}}>
+                    <Link href={'/contact'} _hover={{textDecoration: 'none'}} width={["100%", "30%"]}  mb={4}
+                          display={['flex', 'none']}>
+                        <Btn size={'sm'} variant="primaryWhite" text="WORK TOGETHER"/>
+                    </Link>
+                    <Link href={'/contact'} _hover={{textDecoration: 'none'}} display={['none', 'flex']} >
                         <Btn size={'xs'} variant="primaryWhite" text="WORK TOGETHER"/>
                     </Link>
                 </Flex>
+                <Flex gap={20}>
+                    <Flex align="flex-start" flexDirection={'column'} gap={4}>
+                        <Text fontWeight="bold" mb={2}>Brands</Text>
+                        {/*@ts-ignore*/}
+                        {brands.map((brand) => (
+                            <Link key={brand.slug} href={`/brands/${brand.slug}`}>
+                                {brand.brand_name}
+                            </Link>
+                        ))}
+                    </Flex>
 
-                <VStack align="flex-start">
-                    <Text fontWeight="bold" mb={2}>Brands</Text>
-                    {/*@ts-ignore*/}
-                    {brands.map((brand) => (
-                        <Link key={brand.slug} href={`/brands/${brand.slug}`}>
-                            {brand.brand_name}
-                        </Link>
-                    ))}
-                </VStack>
+                    <Flex align="flex-start" flexDirection={'column'}>
+                        <Text fontWeight="bold" mb={2}>Products</Text>
+                    </Flex>
+                </Flex>
+                <Flex gap={20}>
+                    <Flex align="flex-start" flexDirection={'column'} gap={4}>
+                        <Text fontWeight="bold" mb={2}>Services</Text>
+                        <Link>Private Label</Link>
+                        <Link>Raw Material</Link>
+                        <Link>Events</Link>
+                    </Flex>
 
-                <VStack align="flex-start">
-                    <Text fontWeight="bold" mb={2}>Products</Text>
-                </VStack>
-
-                <VStack align="flex-start">
-                    <Text fontWeight="bold" mb={2}>Services</Text>
-                    <Link>Private Label</Link>
-                    <Link>Raw Material</Link>
-                    <Link>Events</Link>
-                </VStack>
-
-                <VStack align="flex-start">
-                    <Text fontWeight="bold" mb={2}>Our story</Text>
-                </VStack>
+                    <Flex align="flex-start" flexDirection={'column'}>
+                        <Text fontWeight="bold" mb={2}>Our story</Text>
+                    </Flex>
+                </Flex>
             </SimpleGrid>
             <Flex color={'gray.600'} flexDirection={["column", "row"]} justifyContent="space-between"
                   alignItems="center" mt={8}>
