@@ -32,18 +32,18 @@ export const Footer = ({brands}: any) => {
             <Flex display={['flex', 'none', 'none']} _hover={{cursor: 'pointer'}} gap={2} flexDir='column' mb={4}
                   alignItems='center'
                   aria-label="Scroll to top" onClick={scrollToTop}>
-                <FiChevronUp size={24}/>
+                <FiChevronUp size={32}/>
                 <Text>Back to top</Text>
             </Flex>
-            <Flex gap={10} flexDirection={["flex", "column", "row"]} justifyContent="space-between"
+            <Flex pt={1} gap={10} flexDirection={["flex", "column", "row"]} justifyContent="space-between"
                   alignItems={["center", "center", "start"]} mb={[8, 10]}>
                 <LogoHorizontal/>
 
                 <Flex display={['none', 'flex', 'flex']} _hover={{cursor: 'pointer'}} flexDir='column'
                       alignItems='center'
-                      aria-label="Scroll to top" onClick={scrollToTop}>
-                    <FiChevronUp size={16}/>
-                    <Text fontSize={'xs'}>Back to top</Text>
+                      aria-label="Scroll to top" onClick={scrollToTop} pt={1}>
+                    <FiChevronUp size={22}/>
+                    <Text fontSize={'md'}>Back to top</Text>
                 </Flex>
 
                 <Flex flexDirection={["column", "row"]} alignItems="center" gap={[2, 4]} mt={4}>
@@ -59,18 +59,18 @@ export const Footer = ({brands}: any) => {
                 </Flex>
             </Flex>
 
-            <SimpleGrid columns={[1, 2, 3, 5]} spacing={[8]} mb={8}>
+            <SimpleGrid columns={[1, 2, 3, 5]} gap={34} mb={8}>
                 <Flex w={['100%', '80%']}>
-                    <Link href={'/contact'} _hover={{textDecoration: 'none'}} width={["100%", "30%"]}  mb={4}
+                    <Link href={'/contact'} _hover={{textDecoration: 'none'}} width={["100%", "30%"]} mb={4}
                           display={['flex', 'none']}>
                         <Btn size={'sm'} variant="primaryWhite" text="WORK TOGETHER"/>
                     </Link>
-                    <Link href={'/contact'} _hover={{textDecoration: 'none'}} display={['none', 'flex']} >
+                    <Link href={'/contact'} _hover={{textDecoration: 'none'}} display={['none', 'flex']}>
                         <Btn size={'xs'} variant="primaryWhite" text="WORK TOGETHER"/>
                     </Link>
                 </Flex>
-                <Flex gap={20}>
-                    <Flex align="flex-start" flexDirection={'column'} gap={4}>
+                <Flex gap={[20, 10]}>
+                    <Flex flexDirection={'column'} gap={4}>
                         <Text fontWeight="bold" mb={2}>Brands</Text>
                         {/*@ts-ignore*/}
                         {brands.map((brand) => (
@@ -84,7 +84,7 @@ export const Footer = ({brands}: any) => {
                         <Text fontWeight="bold" mb={2}>Products</Text>
                     </Flex>
                 </Flex>
-                <Flex gap={20}>
+                <Flex gap={[20, 10]}>
                     <Flex align="flex-start" flexDirection={'column'} gap={4}>
                         <Text fontWeight="bold" mb={2}>Services</Text>
                         <Link>Private Label</Link>
