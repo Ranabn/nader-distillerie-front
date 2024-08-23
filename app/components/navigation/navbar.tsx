@@ -204,7 +204,7 @@ const MenuIcon = ({background}) => (
     <Flex width={['100%', '100%', '100%']} justifyContent={'space-between'} p={[2, 0]}>
         <LogoHorizontal background={background.color}/>
         <svg
-            width="40px"
+            width="34px"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
             fill={background.color}

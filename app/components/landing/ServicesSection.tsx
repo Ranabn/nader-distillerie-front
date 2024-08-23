@@ -7,15 +7,18 @@ import Noel from "@/app/assets/images/services/usine02.png"
 import {Btn} from "@/app/components/ui/Btn";
 
 const SectionItem = ({subtitle, title, description, buttonText, imageSrc}) => (
-    <Flex flexDirection={['column', 'column', 'row']}  mt={20} gap={24} alignItems="center">
+    <Flex flexDirection={['column', 'column', 'row']} mt={[6, 20]} gap={[12, 24]} alignItems="center">
         <Image src={imageSrc} alt={title} width={650} minWidth={650} objectFit="cover" height={400}/>
         <Flex flexDirection={'column'}>
             <Text color={'#12191F'}>{subtitle}</Text>
             <Flex flexDirection="column" gap={2}>
                 <Heading fontSize="4xl" fontWeight="bold" mb={0} fontFamily={"EB Garamond"}>{title}</Heading>
                 <Text>{description}</Text>
-                <Flex w={['100%', '40%', '40%']}>
+                <Flex w={['100%', '40%', '40%']} display={['none', 'flex']} mt={2}>
                     <Btn size={'xs'} variant="secondary" text={buttonText}/>
+                </Flex>
+                <Flex w={['100%', '40%', '40%']} display={['flex', 'none']} mt={2}>
+                    <Btn size={'sm'} variant="secondary" text={buttonText}/>
                 </Flex>
             </Flex>
 
@@ -26,6 +29,13 @@ const SectionItem = ({subtitle, title, description, buttonText, imageSrc}) => (
 const serviceSection = () => {
     return (
         <Box as="section" py={[6, 8, 12]} p={[4, 8, 8]} bg={'white'}>
+            <Heading display={['flex', 'none']}
+                     fontSize="4xl"
+                     fontWeight="bold"
+                     fontFamily='EB Garamond, serif'
+            >
+                Our Services
+            </Heading>
             <SectionItem
                 subtitle="Private Label"
                 title="Craft your identity"
