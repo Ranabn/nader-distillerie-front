@@ -41,7 +41,9 @@ export const Navbar = ({brands}) => {
             }
         }
     };
+
     useEffect(() => {
+
         if (localStorage.getItem('isAllowed') === 'false' || localStorage.getItem('isAllowed') == null || localStorage.getItem('isAllowed') == undefined || localStorage.getItem('isAllowed') == '') {
             router.push('/restriction-age');
         }
