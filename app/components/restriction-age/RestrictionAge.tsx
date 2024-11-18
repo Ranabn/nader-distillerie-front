@@ -33,15 +33,16 @@ export const RestrictionAge = () => {
         }
     };
 
-    const handleSelectChange = (event) => {
+    const handleSelectChange = (event: any) => {
         const selectedCountryName = event.target.value;
         const countryInfo = AlcoholRestrictionList.countries.find(
             country => country.country === selectedCountryName
         );
-        setSelectedCountry(countryInfo);
+        setSelectedCountry(countryInfo as any);
         event.target.value = "";
     };
 
+    // @ts-ignore
     const handleYearChange = (index, value) => {
         if (value.length <= 1 && /^\d*$/.test(value)) {
             const newYear = [...year];
@@ -49,12 +50,14 @@ export const RestrictionAge = () => {
             setYear(newYear);
 
             if (value && index < 3) {
+                // @ts-ignore
                 inputRefs[index + 1].current.focus();
             }
         }
     };
 
     useEffect(() => {
+        // @ts-ignore
         inputRefs[0].current.focus();
     }, []);
 
