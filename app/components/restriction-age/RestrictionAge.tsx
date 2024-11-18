@@ -14,7 +14,7 @@ export const RestrictionAge = () => {
     const [isBtnDisabled, setIsBtnDisabled] = useState(true);
     const router = useRouter();
 
-    const handleAgeResponse = (e) => {
+    const handleAgeResponse = (e: any) => {
         const currentDate = new Date(e);
         const currentYear = currentDate.getFullYear();
         const birthYear = parseInt(year.join(''), 10);
