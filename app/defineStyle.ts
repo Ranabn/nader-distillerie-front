@@ -24,7 +24,10 @@ const Button = defineStyleConfig({
         fontWeight: '600',
         borderRadius: 'none',
         transition: 'all 0.3s ease',
-        letterSpacing: '.1em'
+        letterSpacing: '.1em',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center', // Ensure text is horizontally and vertically centered
     },
     sizes: {
         xs: {
@@ -34,10 +37,8 @@ const Button = defineStyleConfig({
             fontSize: '14px',
         },
         sm: {
-            padding: '16px',
-            width:'100%',
-            height: '48px',
-            fontSize: '14px',
+            height: '61px',
+            fontSize: '20px',
         },
         md: {
             padding: '20px',

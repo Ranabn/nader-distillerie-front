@@ -1,46 +1,45 @@
-// @ts-nocheck
-
 'use client';
-import {useState, useRef, useEffect} from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from "next/image";
-import {Flex, Box, Text, Button, Select, VStack, Input} from "@chakra-ui/react";
 import Background from '@/app/assets/images/age-restriction.jpeg';
-import {Logo} from '@/app/components/ui/Logo';
-import {useRouter} from "next/navigation";
+import { Logo } from '@/app/components/ui/Logo';
+import { useRouter } from "next/navigation";
 import AlcoholRestrictionList from "@/utils/alcohol-restriction.json";
+import '../../restriction-age.css';
 
 export const RestrictionAge = () => {
     const [year, setYear] = useState(['', '', '', '']);
-    const [selectedCountry, setSelectedCountry] = useState({country: '', alcoholRestrictionAge: null});
+    const [selectedCountry, setSelectedCountry] = useState({ country: '', alcoholRestrictionAge: null });
     const inputRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
-    const [isBtnDisabled, setIsBtnDisabled] = useState(true)
+    const [isBtnDisabled, setIsBtnDisabled] = useState(true);
     const router = useRouter();
 
-
     const handleAgeResponse = (e) => {
-        // Convert the timestamp `e` to a Date object for the current date
         const currentDate = new Date(e);
-        // Extract the current year from the dates
         const currentYear = currentDate.getFullYear();
         const birthYear = parseInt(year.join(''), 10);
-        // Calculate the age or difference in years
         const age = currentYear - birthYear;
-        if (age >= 18 && (selectedCountry?.country !== '' && selectedCountry?.alcoholRestrictionAge !== 'Prohibited' && selectedCountry?.alcoholRestrictionAge !== undefined)) {
-            localStorage.setItem('isAllowed', 'true')
-            router.push("/")
+
+        if (age >= 18 && (
+            selectedCountry?.country !== '' &&
+            selectedCountry?.alcoholRestrictionAge !== 'Prohibited' &&
+            selectedCountry?.alcoholRestrictionAge !== undefined
+        )) {
+            localStorage.setItem('isAllowed', 'true');
+            router.push("/");
         } else {
-            localStorage.setItem('isAllowed', 'false')
-            router.push("/restriction-age/not-allowed")
+            localStorage.setItem('isAllowed', 'false');
+            router.push("/restriction-age/not-allowed");
         }
     };
 
-
     const handleSelectChange = (event) => {
         const selectedCountryName = event.target.value;
-        const countryInfo = AlcoholRestrictionList.countries.find(country => country.country === selectedCountryName);
+        const countryInfo = AlcoholRestrictionList.countries.find(
+            country => country.country === selectedCountryName
+        );
         setSelectedCountry(countryInfo);
-        console.log('Selected country:', countryInfo?.country);
-        console.log('Alcohol restriction age:', countryInfo?.alcoholRestrictionAge);
+        event.target.value = "";
     };
 
     const handleYearChange = (index, value) => {
@@ -60,97 +59,83 @@ export const RestrictionAge = () => {
     }, []);
 
     useEffect(() => {
-        if (selectedCountry?.country !== '' && year[3] !== '') {
-            setIsBtnDisabled(false)
-        } else {
-            setIsBtnDisabled(true)
-
-        }
+        setIsBtnDisabled(!(selectedCountry?.country !== '' && year[3] !== ''));
     }, [selectedCountry?.country, year]);
+
     return (
-        <Flex justify="center" align="center" width="100%" height="100vh" position="relative" overflow="hidden">
+        <div className="restriction-container">
             <Image
                 src={Background}
-                alt={'background'}
+                alt="background"
                 layout="fill"
                 objectFit="cover"
                 quality={100}
+                className="background-image"
+            />
+            <div className="overlay" />
 
-            />
-            <Box
-                position="absolute"
-                top={0}
-                left={0}
-                width="100%"
-                height="100%"
-                bg="blackAlpha.400" // Chakra's way of setting opacity
-            />
-            <Flex direction="column" align="center" gap={14} justify="center" position="absolute"
-                  width={["100%", "45%"]} padding={[6, 0]}
-                  height="100%">
-                <Box textAlign="center">
-                    <Logo/>
-                </Box>
-                <Box textAlign="center">
-                    <Text color="white" fontSize={'sm'}>
+            <div className="content-wrapper">
+                <div className="logo-container">
+                    <Logo />
+                </div>
+
+                <div className="content-section">
+                    <p className="description-text">
                         To visit our website, you must be of legal drinking/purchasing age in your location of
-                        residence. If there is no legal age for consuming alcohol in your location, you must be over 21.
-                    </Text>
-                </Box>
-                <VStack width="100%">
-                    <Flex mb={8} justifyContent={'space-around'} alignItems={'center'} alignContent={'center'}
-                          width="100%">
+                        <br />residence. If there is no legal age for consuming alcohol in your location, you must be over 21.
+                    </p>
+
+                    <div className="year-input-container">
                         {year.map((digit, index) => (
-                            <Input
+                            <input
                                 key={index}
                                 ref={inputRefs[index]}
                                 value={digit}
                                 onChange={(e) => handleYearChange(index, e.target.value)}
-                                textAlign="center"
-                                fontSize="8xl"
-                                color="white"
-                                bg="transparent"
-                                borderRadius={'none'}
-                                border={"0.4px solid white"}
-                                placeholder={'Y'}
-                                width="100%"
-                                height="190px"
-                                _hover={{borderColor: "white"}}
-                                _focus={{borderColor: "white", outline: "none"}}
-                                _placeholder={{ color: 'white' }}
+                                className="year-input"
+                                placeholder="Y"
+                                type="text"
+                                maxLength={1}
                             />
                         ))}
-                    </Flex>
-                    <Select
-                        mb={2}
-                        placeholder="COUNTRY"
-                        color="white"
-                        bg="blackAlpha.600"
-                        borderColor="white"
-                        border={'1px'}
-                        borderRadius={'none'}
-                        _hover={{borderColor: "white"}}
-                        onChange={handleSelectChange}
+                    </div>
+
+                    <div className="country-select-container">
+                        <div className="country-label">
+                            <span>COUNTRY</span>
+                            <span>{selectedCountry.country}</span>
+                        </div>
+                        <select
+                            className="country-select"
+                            onChange={handleSelectChange}
+                        >
+                            <option value="" hidden></option>
+                            {AlcoholRestrictionList.countries.map((country, index) => (
+                                <option key={index} value={country.country}>
+                                    {country.country}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
+                    <button
+                        className={`enter-button ${isBtnDisabled ? 'disabled' : ''}`}
+                        onClick={(e) => handleAgeResponse(Date.now())}
+                        disabled={isBtnDisabled}
                     >
-                        {AlcoholRestrictionList.countries.map((country, index) => (
-                            <option key={index} value={country.country}
-                                    style={{backgroundColor: 'black', color: 'white'}}>
-                                {country.country}
-                            </option>
-                        ))}
-                    </Select>
-                    <Button isDisabled={isBtnDisabled} colorScheme="teal" height={'10px'}  width="100%"
-                            onClick={(e) => handleAgeResponse(Date.now())}>
                         Enter the website
-                    </Button>
-                    <Text color="white" fontSize="sm" textAlign="center" mt={4}>
-                        By entering this site, you are agreeing to our <a href="#"
-                                                                          style={{textDecoration: 'underline'}}>Terms &
-                        Conditions</a>, <a href="#" style={{textDecoration: 'underline'}}>Privacy Policy</a> and <a
-                        href="#" style={{textDecoration: 'underline'}}>Cookies Policy</a>.
-                    </Text>
-                </VStack>
-            </Flex>
-        </Flex>
+                    </button>
+
+                    <p className="terms-text">
+                        By entering this site, you are agreeing to our{' '}
+                        <a href="#">Terms & Conditions</a>,{' '}
+                        <a href="#">Privacy Policy</a> and{' '}
+                        <a href="#">Cookies Policy</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
     );
 };
+
+export default RestrictionAge;

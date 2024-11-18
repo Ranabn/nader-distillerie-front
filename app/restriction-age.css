@@ -1,0 +1,224 @@
+.restriction-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    padding-top: 96px;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.content-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    width: 48%;
+    height: 100%;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.description-text {
+    text-align: center;
+    color: white;
+    font-size: 1.17rem;
+    margin-bottom: 24px;
+}
+
+.year-input-container {
+    display: flex;
+    margin-bottom: 24px;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.year-input {
+    text-align: center;
+    font-size: 6rem;
+    color: white;
+    background: transparent;
+    border: 0.4px solid white;
+    width: 100%;
+    height: 200px;
+}
+
+.year-input::placeholder {
+    color: white;
+}
+
+.year-input:hover,
+.year-input:focus {
+    border-color: white;
+    outline: none;
+    box-shadow: none;
+}
+
+.country-select-container {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.country-label {
+    position: absolute;
+    left: 20px;
+    color: white;
+    display: flex;
+    gap: 24px;
+    pointer-events: none;
+}
+
+.country-select {
+    height: 64px;
+    color: white;
+    border: 1px solid white;
+    background: transparent;
+    width: 100%;
+}
+
+.country-select:hover,
+.country-select:focus {
+    border-color: white;
+    outline: none;
+    box-shadow: none;
+}
+
+.country-select option {
+    background-color: black;
+    color: white;
+}
+
+.terms-text {
+    color: white;
+    font-size: 16px;
+}
+
+.terms-text a {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1300px) {
+    .content-wrapper {
+        width: 60%;
+    }
+    .description-text {
+        text-align: center;
+        color: white;
+        font-size: 1rem;
+        margin-bottom: 24px;
+    }
+    .year-input {
+        font-size: 5rem;
+        height: 160px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .content-wrapper {
+        width: 60%;
+    }
+
+    .year-input {
+        font-size: 5rem;
+        height: 160px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content-wrapper {
+        width: 80%;
+        padding: 0 24px;
+    }
+
+    .year-input {
+        font-size: 4rem;
+        height: 120px;
+    }
+
+    .description-text br {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content-wrapper {
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .year-input {
+        font-size: 3rem;
+        height: 100px;
+    }
+
+    .logo-container {
+        margin-bottom: 48px;
+        padding-bottom: 24px;
+    }
+
+    .country-select-container {
+        height: 56px;
+    }
+
+    .country-select {
+        height: 56px;
+    }
+}
+
+.enter-button {
+    width: 100%;
+    height: 64px;
+    background-color: white;
+    color: black;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.enter-button:hover {
+    opacity: 0.9;
+}
+
+.enter-button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media screen and (max-width: 480px) {
+    .enter-button {
+        height: 56px;
+    }
+}

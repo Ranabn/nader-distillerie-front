@@ -56,3 +56,34 @@ input, h1, h2 {
     font-weight: 800;
     font-style: normal;
 }
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    width: 254.2px; /* Default size for larger screens */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1440px) {
+    .logo {
+        width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 100px;
+    }
+}
