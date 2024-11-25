@@ -37,26 +37,31 @@ export const Footer = ({brands}: any) => {
             </Flex>
             <Flex pt={1} gap={10} flexDirection={["flex", "column", "row"]} justifyContent="space-between"
                   alignItems={["center", "center", "start"]} mb={[8, 10]}>
-                <LogoHorizontal/>
+                <Flex width={"33%"}>
+                    <LogoHorizontal/>
 
-                <Flex display={['none', 'flex', 'flex']} _hover={{cursor: 'pointer'}} flexDir='column'
+                </Flex>
+
+                <Flex width={"33%"} display={['none', 'flex', 'flex']} _hover={{cursor: 'pointer'}} flexDir='column'
                       alignItems='center'
                       aria-label="Scroll to top" onClick={scrollToTop} pt={1}>
                     <FiChevronUp size={22}/>
-                    <Text fontSize={'md'}>Back to top</Text>
-                </Flex>
+                    <Text fontSize={['md', '18px']}>Back to top</Text>
 
-                <Flex flexDirection={["column", "row"]} alignItems="center" gap={[2, 4]} mt={4}>
-                    <Text fontSize={'xs'} mb={[2, 0]} display={['none', 'flex']}>Follow us on social Media</Text>
-                    <HStack spacing={4} fontSize={['4xl', 'md']}>
-                        <Link href="#" aria-label="Instagram">
-                            <FaInstagram/>
-                        </Link>
-                        <Link href="#" aria-label="Facebook">
-                            <FaFacebook/>
-                        </Link>
-                    </HStack>
                 </Flex>
+                <Flex width={"33%"}> </Flex>
+
+                {/*<Flex flexDirection={["column", "row"]} alignItems="center" gap={[2, 4]} mt={4}>*/}
+                {/*    <Text fontSize={'xs'} mb={[2, 0]} display={['none', 'flex']}>Follow us on social Media</Text>*/}
+                {/*    <HStack spacing={4} fontSize={['4xl', 'md']}>*/}
+                {/*        <Link href="#" aria-label="Instagram">*/}
+                {/*            <FaInstagram/>*/}
+                {/*        </Link>*/}
+                {/*        <Link href="#" aria-label="Facebook">*/}
+                {/*            <FaFacebook/>*/}
+                {/*        </Link>*/}
+                {/*    </HStack>*/}
+                {/*</Flex>*/}
             </Flex>
 
             <SimpleGrid columns={[1, 2, 3, 5]} gap={34} mb={8}>
@@ -70,8 +75,8 @@ export const Footer = ({brands}: any) => {
                     </Link>
                 </Flex>
                 <Flex gap={[20, 10]}>
-                    <Flex flexDirection={'column'} gap={4}>
-                        <Text fontWeight="bold" mb={2}>Brands</Text>
+                    <Flex flexDirection={'column'}  fontSize={"18px"} gap={4}>
+                        <Text fontWeight="bold" fontSize={"20px"} mb={2}>Brands</Text>
                         {/*@ts-ignore*/}
                         {brands.map((brand) => (
                             <Link key={brand.slug} href={`/brands/${brand.slug}`}>
@@ -81,19 +86,19 @@ export const Footer = ({brands}: any) => {
                     </Flex>
 
                     <Flex align="flex-start" flexDirection={'column'}>
-                        <Text fontWeight="bold" mb={2}>Products</Text>
+                        <Text fontWeight="bold" fontSize={"20px"}  mb={2}>Products</Text>
                     </Flex>
                 </Flex>
                 <Flex gap={[20, 10]}>
-                    <Flex align="flex-start" flexDirection={'column'} gap={4}>
-                        <Text fontWeight="bold" mb={2}>Services</Text>
+                    <Flex align="flex-start" flexDirection={'column'} fontSize={"18px"} gap={4}>
+                        <Text fontWeight="bold" fontSize={"20px"}  mb={2}>Services</Text>
                         <Link>Private Label</Link>
                         <Link>Raw Material</Link>
                         <Link>Events</Link>
                     </Flex>
 
                     <Flex align="flex-start" flexDirection={'column'}>
-                        <Text fontWeight="bold" mb={2}>Our story</Text>
+                        <Text fontWeight="bold" fontSize={"20px"}  mb={2}>Our story</Text>
                     </Flex>
                 </Flex>
             </SimpleGrid>

@@ -9,6 +9,7 @@ import {sanityFetch} from '@/app/sanity/client';
 import {HeaderBrands} from "@/app/components/brands/Header";
 import {urlFor} from '@/app/sanity/urlFor';
 import SmoothScroll from "@/app/SmoothScroll"; // Import your helper function
+import OurStory from "@/app/assets/images/our_story_brands.png";
 
 type Brand = {
     brand_name: string;
@@ -81,6 +82,8 @@ const BrandPage = async ({params}: { params: { slug: string } }) => {
         return <div>Brand not found</div>;
     }
 
+    const storyImg = OurStory.src
+
     return (
         <>
             <Navbar brands={brands}/>
@@ -94,8 +97,8 @@ const BrandPage = async ({params}: { params: { slug: string } }) => {
                         technicalSheetUrl={brand?.link_to_technical_sheet || ""}
                         brandWebsiteUrl={brand?.link_to_brand}
                     />
-                    {/* <ExploreMore brands={brand} /> */}
-                    <OurStorySection/>
+                     <ExploreMore brands={brands} />
+                    <OurStorySection storyImg={storyImg}/>
                 </Flex>
                 <Footer brands={brands}/>
             </SmoothScroll>

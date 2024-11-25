@@ -21,14 +21,14 @@ export const ExternalBox = () => {
 
             >
                 <Link href={'/contact'} _hover={{textDecoration: 'none'}}>
-                    <Flex alignItems={'center'} justifyContent={'space-between'} mb={4} fontSize="xl">
+                    <Flex alignItems={'center'} justifyContent={'space-between'} mb={4} fontSize={["xl", "28px"]}>
                         <Text fontWeight="800" fontFamily={"EB Garamond"}>
                             Become a reseller
                         </Text>
                         <FiChevronRight/>
                     </Flex>
 
-                    <Text mb={2}>
+                    <Text mb={2} fontSize={["md", "18px"]} >
                         Distributors, retailers and food professionals—partner with us today.
                     </Text>
                 </Link>

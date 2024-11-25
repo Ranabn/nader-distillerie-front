@@ -18,14 +18,14 @@ export const Test = () => {
 
     return (
         <Box ref={ref} position="relative" overflow="visible" bg="white">
-            <motion.div
-                style={{ y }}
-                initial={{ y: 0 }}
-                transition={{ type: "spring", stiffness: 100 }}
-            >
+            {/*<motion.div*/}
+            {/*    style={{ y }}*/}
+            {/*    initial={{ y: 0 }}*/}
+            {/*    transition={{ type: "spring", stiffness: 100 }}*/}
+            {/*>*/}
                 <ProductsSection />
                 <ServiceSection />
-            </motion.div>
+            {/*</motion.div>*/}
         </Box>
     );
 };

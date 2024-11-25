@@ -68,10 +68,10 @@ export const StickyImage = ({imageUrls, brandName}) => {
         <Box
             ref={ref}
             position="absolute"
-            top="0%"
+            top="-3%"
             right="0"
             h="calc(100vh - 100px)"
-            w="40%"
+            w="50%"
             zIndex={2}
         >
             {/*@ts-ignore*/}
@@ -81,10 +81,9 @@ export const StickyImage = ({imageUrls, brandName}) => {
                 alignItems={'center'}
                 as={motion.div as any}
                 position="sticky"
-                top="5%"
                 style={{y} as any}
             >
-                <Box position="relative" width="475px" height="475px" overflow="hidden">
+                <Box position="relative" width="500px" height="600px" overflow="hidden">
                     <AnimatePresence initial={false} custom={direction}>
                         <motion.img
                             key={currentImageIndex}
@@ -108,19 +107,20 @@ export const StickyImage = ({imageUrls, brandName}) => {
                         />
                     </AnimatePresence>
                 </Box>
-                <Flex alignItems={'center'} gap={4} mt={4}>
+                <Flex alignItems={'center'} justifyContent={'center'} mt={4} width={"100%"}>
                     <IconButton
                         aria-label="Previous image"
                         icon={<FiChevronLeft/>}
                         onClick={handlePrevImage}
                         variant="ghost"
                         color="white"
-                        size="sm"
-                        w={'10%'}
+                        width={"30%"}
+                        _hover={{"background":"none"}}
                     />
                     <Box>
-                        <Text fontSize="4xl" fontFamily="EB Garamond" fontWeight="800">{brandName}</Text>
-                        <Text textAlign='center'>{`Image ${currentImageIndex + 1} of ${imageUrls.length}`}</Text>
+                        <Text width={"100%"} fontSize={["4xl", "48px"]} fontFamily="EB Garamond"
+                              fontWeight="800">{brandName}</Text>
+                        {/*<Text textAlign='center'>{`Image ${currentImageIndex + 1} of ${imageUrls.length}`}</Text>*/}
                     </Box>
                     <IconButton
                         aria-label="Next image"
@@ -128,8 +128,8 @@ export const StickyImage = ({imageUrls, brandName}) => {
                         onClick={handleNextImage}
                         variant="ghost"
                         color="white"
-                        size="sm"
-                        w={'10%'}
+                        width={"30%"}
+                        _hover={{"background":"none"}}
 
                     />
                 </Flex>

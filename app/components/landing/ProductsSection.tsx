@@ -47,7 +47,7 @@ const lineAnimation = keyframes`
 export const ProductsSection = () => (
     <Box p={[4, 8, 8]} bg={'white'}>
         <Flex alignItems="center" justifyContent="space-between" mb={4} alignContent={'center'}>
-            <Heading fontSize="4xl" fontWeight="800" fontFamily="EB Garamond">
+            <Heading fontSize={["4xl", "48px"]} fontWeight="800" fontFamily="EB Garamond">
                 Our Products
             </Heading>
             <Flex
@@ -57,16 +57,16 @@ export const ProductsSection = () => (
                 _hover={{
                     "&::after": {
                         content: '""',
-                        position: "absolute",
-                        bottom: "-2px",
+                        // position: "absolute",
+                        // bottom: "-2px",
                         left: 0,
                         height: "0.8px",
                         backgroundColor: "currentColor",
-                        animation: `${lineAnimation} 0.3s forwards`
+                        // animation: `${lineAnimation} 0.3s forwards`
                     }
                 }}
             >
-                <Text fontSize="sm" _hover={{cursor: 'pointer'}}>See All Products</Text>
+                <Text fontSize={["sm","18px"]} _hover={{cursor: 'pointer'}}>See All Products</Text>
                 <FiArrowRight/>
             </Flex>
         </Flex>
@@ -85,7 +85,7 @@ export const ProductsSection = () => (
                 >
                     <Box
                         width="100%"
-                        height={180}
+                        height={"242.44px"}
                         mb={2}
                         overflow="hidden"
                         position="relative"
@@ -108,8 +108,8 @@ export const ProductsSection = () => (
                             />
                         </Box>
                     </Box>
-                    <Text fontWeight="semi-bold" fontSize="xl">{product.name}</Text>
-                    <Text fontSize="sm" color="gray.600">
+                    <Text fontWeight="semi-bold" fontSize={["xl", "24px"]}>{product.name}</Text>
+                    <Text fontSize={["sm", "18px"]} color="gray.600">
                         {product.description}
                     </Text>
                 </Flex>

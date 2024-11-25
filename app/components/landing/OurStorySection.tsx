@@ -5,7 +5,7 @@ import {Box, Flex, Text, Image, Heading} from "@chakra-ui/react";
 import OurStory from "@/app/assets/images/our-story-landing.png";
 import {Btn} from "@/app/components/ui/Btn";
 
-export const OurStorySection = () => (
+export const OurStorySection = ({storyImg}) => (
     <Box p={[4, 8, 8]} mb={10}>
         <Flex
             direction={{base: "column", md: "row"}}
@@ -20,9 +20,10 @@ export const OurStorySection = () => (
                 pr={{base: 0, md: 8}}
                 mb={{base: 4, md: 0}}
                 width={{base: "100%", md: "35%"}}
+                fontSize={"18px"}
             >
                 <Heading
-                    fontSize="4xl"
+                    fontSize={["4xl", "48px"]}
                     fontWeight="bold"
                     mb={2}
                     fontFamily='EB Garamond, serif'
@@ -37,23 +38,24 @@ export const OurStorySection = () => (
                     Evolving over the years, we have expanded our craft to encompass a diverse spectrum of spirits,
                     wines, and more.
                 </Text>
-                <Flex w={['100%', '40%', '40%']} mt={4}>
-                    <Btn size={'sm'} variant="secondary" text="Discover our legacy"/>
+                <Flex w={['100%', '40%', '100%']} mt={4}>
+                    <Btn size={'md'} variant="secondary" text="Discover our legacy"/>
                 </Flex>
             </Flex>
-            <Box
-                width={{base: "100%", md: "50%"}}
-                display="flex"
+            <Flex
+                width={["100%", "50%", "40%"]}
+                flexDirection={"column"}
                 justifyContent="flex-end"
             >
                 <Image
-                    src={OurStory.src}
+                    src={storyImg ? storyImg : OurStory.src}
                     alt="Our Story"
                     objectFit="cover"
                     width="600px"
                     height="600px"
                 />
-            </Box>
+
+            </Flex>
         </Flex>
     </Box>
 );

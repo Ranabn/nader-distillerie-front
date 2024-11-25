@@ -13,11 +13,24 @@ export const Navbar = ({brands}) => {
     const router = useRouter();
     const params = useParams();
     const pathname = usePathname()
-    const [background, setBackground] = useState({
-        color: 'white',
-        background: 'transparent'
-    });
-    const [buttonStyle, setButtonStyle] = useState({});
+
+    const getInitialBackground = (pathname) => {
+        if (['/', '/products'].includes(pathname)) {
+            return { color: 'white', background: 'transparent' };
+        } else {
+            return { color: 'black', background: 'white' };
+        }
+    };
+
+    const getInitialButtonStyle = (pathname) => {
+        if (['/', '/products'].includes(pathname)) {
+            return { '--button-bg': 'white', '--button-color': 'black' };
+        } else {
+            return { '--button-bg': 'black', '--button-color': 'white' };
+        }
+    };
+    const [background, setBackground] = useState(getInitialBackground(pathname));
+    const [buttonStyle, setButtonStyle] = useState(getInitialButtonStyle(pathname));
 
     const toggle = () => {
         setIsOpen(!isOpen);
@@ -43,21 +56,23 @@ export const Navbar = ({brands}) => {
     };
 
     useEffect(() => {
-
-        if (localStorage.getItem('isAllowed') === 'false' || localStorage.getItem('isAllowed') == null || localStorage.getItem('isAllowed') == undefined || localStorage.getItem('isAllowed') == '') {
+        // Restriction redirection
+        if (
+            localStorage.getItem('isAllowed') === 'false' ||
+            localStorage.getItem('isAllowed') == null ||
+            localStorage.getItem('isAllowed') == undefined ||
+            localStorage.getItem('isAllowed') == ''
+        ) {
             router.push('/restriction-age');
         }
-        if (pathname == '/brands' || pathname === '/services' || pathname === '/services/templates/service' || pathname === '/services/templates/events' || pathname === '/our-story' || pathname === '/contact' || pathname.startsWith('/brands')) {
-            setBackground({
-                color: 'black',
-                background: 'white'
-            });
-            setButtonStyle({
-                '--button-bg': 'black',
-                '--button-color': 'white',
-            });
+
+        // Update background and button styles based on pathname
+        if (['/brands', '/services', '/our-story', '/contact'].includes(pathname) || pathname.startsWith('/brands')) {
+            setBackground({ color: 'black', background: 'white' });
+            setButtonStyle({ '--button-bg': 'black', '--button-color': 'white' });
         }
     }, [router, pathname]);
+
 
     useEffect(() => {
         if (isOpen) {
@@ -72,26 +87,14 @@ export const Navbar = ({brands}) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (!isOpen && pathname === '/' || pathname == '/products') {
+            if (!isOpen && ['/', '/products'].includes(pathname)) {
                 const scrollPosition = window.scrollY;
                 if (scrollPosition > 0) {
-                    setBackground({
-                        color: 'black',
-                        background: 'white'
-                    });
-                    setButtonStyle({
-                        '--button-bg': 'black',
-                        '--button-color': 'white',
-                    });
+                    setBackground({ color: 'black', background: 'white' });
+                    setButtonStyle({ '--button-bg': 'black', '--button-color': 'white' });
                 } else {
-                    setBackground({
-                        color: 'white',
-                        background: 'transparent'
-                    });
-                    setButtonStyle({
-                        '--button-bg': 'white',
-                        '--button-color': 'black',
-                    });
+                    setBackground({ color: 'white', background: 'transparent' });
+                    setButtonStyle({ '--button-bg': 'white', '--button-color': 'black' });
                 }
             }
         };
@@ -118,7 +121,6 @@ export const Navbar = ({brands}) => {
 
     return (
         <Flex
-
             position="fixed"
             top={0}
             left={0}
@@ -159,7 +161,7 @@ export const Navbar = ({brands}) => {
                         <SimpleGrid columns={[1, 2, 3, 5]} spacing={[8]} mb={8}>
 
                             <Flex justifyContent={'start'} gap={28}>
-                                <Flex align="flex-start" gap={4} flexDirection={'column'}>
+                                <Flex align="flex-start" gap={4} flexDirection={["column"]}>
                                     <Text fontWeight="bold" fontSize={'xl'} mb={2}>Brands</Text>
                                     {brands.map((brand) => (
                                         <Link fontSize={'xl'} key={brand.slug} href={`/brands/${brand.slug}`}>
@@ -172,8 +174,8 @@ export const Navbar = ({brands}) => {
                                 </Flex>
                             </Flex>
                             <Flex justifyContent={'start'} gap={28}>
-                                <Flex align="flex-start" gap={4} flexDirection={'column'}>
-                                    <Text fontWeight="bold" fontSize={'xl'} mb={2}>Services</Text>
+                                <Flex align="flex-start" gap={4} flexDirection={["column"]}>
+                                    <Text fontWeight="bold" fontSize={['xl']} mb={2}>Services</Text>
                                     <Link fontSize={'xl'}>Private Label</Link>
                                     <Link fontSize={'xl'}>Raw Material</Link>
                                     <Link fontSize={'xl'}>Events</Link>
@@ -281,11 +283,13 @@ const MenuLinks = ({background, buttonStyle}) => {
                 </Link>
             </Flex>
             <Flex
-                gap={8}
+                gap={10}
                 align="center"
                 pt={[4, 4, 0, 0]}
+                pb={4}
+                mt={4}
                 flexDir={["column", "row"]}
-                fontSize={"md"}>
+                fontSize={"md", "18px"}>
                 <Flex alignItems={'center'} gap={2}>
                     <MenuItem to="/brands" isActive={pathname.startsWith('/brands')} background={background}>
                         Brands
@@ -312,7 +316,7 @@ const MenuLinks = ({background, buttonStyle}) => {
                     Our Story
                 </MenuItem>
                 <MenuItem to="/contact" isLast isActive={pathname === '/contact'} background={background}>
-                    <Btn size="sm" variant={buttonVariant} text="WORK TOGETHER"/>
+                    <Btn size="md" variant={buttonVariant} text="WORK TOGETHER"/>
                 </MenuItem>
             </Flex>
         </Flex>

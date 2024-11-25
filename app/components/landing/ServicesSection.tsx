@@ -7,15 +7,15 @@ import Noel from "@/app/assets/images/services/usine02.png"
 import {Btn} from "@/app/components/ui/Btn";
 
 const SectionItem = ({subtitle, title, description, buttonText, imageSrc}) => (
-    <Flex flexDirection={['column', 'column', 'row']} mt={[6, 20]} gap={[12, 24]} alignItems="center">
-        <Image src={imageSrc} alt={title} width={650} minWidth={650} objectFit="cover" height={400}/>
+    <Flex flexDirection={['column', 'column', 'row']} mt={[6, 20]} gap={[12, 32]} alignItems="center">
+        <Image src={imageSrc} alt={title} width={650} minWidth={"815px"} objectFit="cover" height={"459px"}/>
         <Flex flexDirection={'column'}>
-            <Text color={'#12191F'}>{subtitle}</Text>
+            <Text fontSize={["24px"]} color={'#12191F'}>{subtitle}</Text>
             <Flex flexDirection="column" gap={2}>
-                <Heading fontSize="4xl" fontWeight="bold" mb={0} fontFamily={"EB Garamond"}>{title}</Heading>
-                <Text>{description}</Text>
+                <Heading fontSize={["4xl", "48px"]} fontWeight="bold" mb={0} fontFamily={"EB Garamond"}>{title}</Heading>
+                <Text fontSize={"18px"}>{description}</Text>
                 <Flex w={['100%', '40%', '40%']} display={['none', 'flex']} mt={2}>
-                    <Btn size={'xs'} variant="secondary" text={buttonText}/>
+                    <Btn size={'md'} variant="secondary" text={buttonText}/>
                 </Flex>
                 <Flex w={['100%', '40%', '40%']} display={['flex', 'none']} mt={2}>
                     <Btn size={'sm'} variant="secondary" text={buttonText}/>

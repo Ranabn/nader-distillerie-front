@@ -82,7 +82,7 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                         onChange={() => handleRadioClick(category)}
                         isChecked={selectedCategory === category}
                     >
-                        <Text fontWeight={selectedCategory === category ? '800' : ''} fontSize={'sm'}>
+                        <Text fontWeight={selectedCategory === category ? '800' : ''} fontSize={['sm', '18px']}>
                             {category}
                         </Text>
                     </Radio>
@@ -126,10 +126,10 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                                 objectFit="contain"
                             />
                         </Box>
-                        <Text fontSize="xs" color="gray.600" mt={4}>
+                        <Text fontSize={["xs", "18px"]} color="gray.600" mt={4}>
                             {brand.brand_short_desc.toUpperCase()}
                         </Text>
-                        <Text fontSize="2xl" fontWeight="bold" fontFamily={"EB Garamond"}
+                        <Text fontSize={["2xl", "32px"]} fontWeight="bold" fontFamily={"EB Garamond"}
                               mb={10}>{brand.brand_name}</Text>
                         <Link href={`/brands/${brand.slug}`}>
 
@@ -164,7 +164,7 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                 <Flex w={['100%', '40%', '18%']} mt={6}>
                     <Link href={`/brands`}>
                         <Box width={["88vw", "100%"]} p={2} pr={3}>
-                            <Btn size={'sm'} variant={'primaryBlack'} text={'Discover our brands'}/>
+                            <Btn size={'smmd'} variant={'primaryBlack'} text={'Discover our brands'}/>
                         </Box>
                     </Link>
                 </Flex>

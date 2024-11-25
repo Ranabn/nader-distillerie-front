@@ -37,14 +37,14 @@ export const SocialBrands = ({
                 opacity: 0.04, // Adjust this to change the image opacity
             }}
         >
-            <Flex flexDirection="column" p={12} w="60%" gap={8} justifyContent={'center'}>
+            <Flex flexDirection="column" p={12} w="50%" gap={8} justifyContent={'center'}>
                 <Box>
-                    <Text mb={4} fontSize="3xl" fontWeight="300" textTransform='uppercase'>
+                    <Text mb={4} fontSize={["3xl", "32px"]} fontWeight="300" textTransform='uppercase'>
                         {quote && (
                             quote
                         )}
                     </Text>
-                    <Text mb={4}>
+                    <Text mb={4} fontSize={"18px"}>
                         {description && (
                             description
                         )}

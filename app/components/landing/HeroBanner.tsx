@@ -63,18 +63,19 @@ export const HeroBanner = () => {
                 left="2.3%"
                 flexDirection='column'
             >
-                <Heading fontFamily={"EB Garamond"} fontSize={["4xl", "5xl", "5xl"]} fontWeight="bold" mb={[4, 6, 8]}
+                <Heading fontFamily={"EB Garamond"} fontSize={["4xl", "5xl", "48px"]} fontWeight="bold" mb={[4, 6, 8]}
                          lineHeight={'1.3em'}
                          as={"h2"} p={[2, 0]}>
                     Master distillers and <br/> fermenters
                     for four generations.
                 </Heading>
-                <Text p={[2, 0]} fontSize={["2xl", "md", "lg"]} mb={[4, 6, 10]} lineHeight={['40.4px', '30.4px']}>
+                <Text p={[2, 0]} fontSize={["2xl", "md", "24px"]} mb={[4, 6, 10]} lineHeight={['40.4px', '38.4px']}>
                     We harvest the finest gifts of nature in a bottle, offering you<br/> the perfect glass to celebrate
                     life&apos;s special moments.
                 </Text>
-                <Box width={["100%", "30%"]} p={2} pr={3}>
-                    <Btn size={'sm'} variant="primaryWhite" text="WORK TOGETHER"/>
+                <Box width={["100%", "30%"]} pr={3}>
+                    <Btn size={'md'} text="WORK TOGETHER" variant="primaryWhite"/>
+
                 </Box>
             </Flex>
             <Box

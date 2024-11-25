@@ -15,7 +15,8 @@ interface ExploreMoreProps {
 }
 
 // Define the ExploreMore component with typed props
-export const ExploreMore = ({brands}: ExploreMoreProps) => {
+export const ExploreMore = ({brands}: any) => {
+
     return (
         <Flex flexDirection="column" p={12} backgroundColor="#E8E5DC">
             <Text fontSize="4xl" fontFamily="EB Garamond" fontWeight="800">
@@ -23,15 +24,26 @@ export const ExploreMore = ({brands}: ExploreMoreProps) => {
             </Text>
             <Divider border="black" colorScheme="blackAlpha" mb={8}/>
             <Flex gap={8}>
-                {brands.map((brand, index) => (
-                    <Card key={index} boxShadow="none" borderRadius="none">
+                {/*@ts-ignore*/}
+                {brands.slice(0, 3).map((brand, index) => ( // Limit to 3 items
+                    <Card key={index} boxShadow="none" borderRadius="none" width={["33%", "453px"]} height={"624px"}>
                         <CardBody>
-                            <Flex flexDirection="column" justifyContent="center" textAlign="center">
-                                <Text>{brand.category}</Text>
-                                <Text fontSize="xl" fontFamily="EB Garamond" fontWeight="800">
-                                    {brand.name}
-                                </Text>
-                                <Image src={brand.imageSrc} alt={brand.name} mr={8} ml="auto"/>
+                            <Flex flexDirection="column" height={"100%"} justifyContent="space-between" textAlign="center">
+                                <Flex flexDirection="column">
+                                    <Text>{brand.categories}</Text>
+                                    <Text fontSize="xl" fontFamily="EB Garamond" fontWeight="800">
+                                        {brand.brand_name}
+                                    </Text>
+                                </Flex>
+                                <Image
+                                    src={brand.mainImage}
+                                    alt={brand.name}
+                                    objectFit="contain"
+                                    width="100%"
+                                    maxHeight="400px"
+                                    aspectRatio={1}
+                                />
+                                <Flex></Flex>
                             </Flex>
                         </CardBody>
                     </Card>

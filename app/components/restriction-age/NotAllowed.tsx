@@ -9,7 +9,7 @@ export const NotAllowed = () => {
     return (
 
         <>
-            <Flex justify="center" align="center" width="100%" height="100vh" position="relative" overflow="hidden">
+            <Flex justify="center"  width="100%" height="100vh" position="relative" overflow="hidden">
                 <Image
                     src={Background}
                     alt={'background'}
@@ -26,20 +26,20 @@ export const NotAllowed = () => {
                     height="100%"
                     bg="blackAlpha.400" // Chakra's way of setting opacity
                 />
-                <Flex mb={20} direction="column" align="center"  justify="space-around" position="absolute"
+                <Flex mb={20} direction="column" justifyContent={'space-around'}   position="absolute"
                       width={["100%", "60%"]}
-                      height="100%">
+                      height="80%">
                     <Box  textAlign="center">
                         <Logo/>
                     </Box>
                     <Box textAlign="center">
-                        <Text color="white" fontSize={"36px"} as={"h1"}>
+                        <Text color="white" fontSize={"48px"} as={"h1"}>
                             Unfortunately, due to your age or location <br/>
                             we cannot let you enter our site at this time
                         </Text>
                     </Box>
 
-                    <Text textAlign="center" color="white" fontSize={"sm"}>
+                    <Text textAlign="center" color="white" fontSize={"18px"}>
                         This info is all part of our commitment to responsible drinking. <br/> More information on {' '}
                         <Link href={'responsibledrinking.org'} textDecoration="underline" >responsibledrinking.org</Link>
                     </Text>

@@ -44,13 +44,13 @@ const Button = defineStyleConfig({
             padding: '20px',
             width: '208px',
             height: '61px',
-            fontSize: '16px',
+            fontSize: '20px',
         },
         lg: {
             padding: '24px',
             width: '240px',
             height: '72px',
-            fontSize: '18px',
+            fontSize: '20px',
         },
     },
     variants: {
@@ -81,6 +81,16 @@ const Button = defineStyleConfig({
                 color: 'white',
                 animation: `${fillAnimationIn} 0.3s forwards`,
             },
+            _disabled: {
+                animation: 'none',        // Disable animation
+                bg: 'gray.300',           // Optional: Change the background color
+                color: 'gray.500',        // Optional: Change the text color
+                cursor: 'not-allowed',    // Optional: Show "not-allowed" cursor
+                _hover: {
+                    bg: 'gray.300',      // Ensure hover doesn't change the color
+                    color: 'gray.500',   // Prevent hover text color changes
+                },
+            },
         },
         primaryBlack: {
             bg: 'black',
@@ -94,6 +104,16 @@ const Button = defineStyleConfig({
             _hover: {
                 color: 'white',
                 animation: `${fillAnimationIn} 0.3s forwards`,
+            },
+            _disabled: {
+                animation: 'none',        // Disable animation
+                bg: 'gray.300',           // Optional: Change the background color
+                color: 'gray.500',        // Optional: Change the text color
+                cursor: 'not-allowed',    // Optional: Show "not-allowed" cursor
+                _hover: {
+                    bg: 'gray.300',      // Ensure hover doesn't change the color
+                    color: 'gray.500',   // Prevent hover text color changes
+                },
             },
         },
         secondary: {
@@ -110,6 +130,11 @@ const Button = defineStyleConfig({
                 color: 'black',
                 bg: '#D2CDBF',
                 border: '1px solid transparent',
+            },
+            _disabled: {
+                animation: 'none', // Disable animation
+                bg: 'gray.300',   // Optional: Change the background color
+                color: 'gray.500' // Optional: Change the text color
             },
         },
         tertiary: {

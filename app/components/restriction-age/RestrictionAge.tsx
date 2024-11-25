@@ -1,15 +1,16 @@
 'use client';
-import { useState, useRef, useEffect } from 'react';
+import {useState, useRef, useEffect} from 'react';
 import Image from "next/image";
 import Background from '@/app/assets/images/age-restriction.jpeg';
-import { Logo } from '@/app/components/ui/Logo';
-import { useRouter } from "next/navigation";
+import {Logo} from '@/app/components/ui/Logo';
+import {useRouter} from "next/navigation";
 import AlcoholRestrictionList from "@/utils/alcohol-restriction.json";
 import '../../restriction-age.css';
+import {Btn} from "@/app/components/ui/Btn";
 
 export const RestrictionAge = () => {
     const [year, setYear] = useState(['', '', '', '']);
-    const [selectedCountry, setSelectedCountry] = useState({ country: '', alcoholRestrictionAge: null });
+    const [selectedCountry, setSelectedCountry] = useState({country: '', alcoholRestrictionAge: null});
     const inputRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
     const [isBtnDisabled, setIsBtnDisabled] = useState(true);
     const router = useRouter();
@@ -75,17 +76,18 @@ export const RestrictionAge = () => {
                 quality={100}
                 className="background-image"
             />
-            <div className="overlay" />
+            <div className="overlay"/>
 
             <div className="content-wrapper">
                 <div className="logo-container">
-                    <Logo />
+                    <Logo/>
                 </div>
 
                 <div className="content-section">
                     <p className="description-text">
                         To visit our website, you must be of legal drinking/purchasing age in your location of
-                        <br />residence. If there is no legal age for consuming alcohol in your location, you must be over 21.
+                        <br/>residence. If there is no legal age for consuming alcohol in your location, you must be
+                        over 21.
                     </p>
 
                     <div className="year-input-container">
@@ -120,14 +122,9 @@ export const RestrictionAge = () => {
                             ))}
                         </select>
                     </div>
-
-                    <button
-                        className={`enter-button ${isBtnDisabled ? 'disabled' : ''}`}
-                        onClick={(e) => handleAgeResponse(Date.now())}
-                        disabled={isBtnDisabled}
-                    >
-                        Enter the website
-                    </button>
+                    {/*@ts-ignore*/}
+                    <Btn text={"Enter the website"} size={'sm'} onClick={(e) => handleAgeResponse(Date.now())}
+                         isDisabled={isBtnDisabled}/>
 
                     <p className="terms-text">
                         By entering this site, you are agreeing to our{' '}
