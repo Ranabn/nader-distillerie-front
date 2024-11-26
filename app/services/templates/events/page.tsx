@@ -6,7 +6,7 @@ import {
 } from '@chakra-ui/react';
 import {Navbar} from "@/app/components/navigation/navbar";
 import {Footer} from "@/app/components/footer/Footer";
-import {EventsTemplateContent} from "@/app/components/events-template/EventsTemplateContent";
+import {Ethanol} from "@/app/components/services/Ethanol";
 import {sanityFetch} from "@/app/sanity/client";
 
 const BRANDS_QUERY = `*[_type == "brands"] {
@@ -23,7 +23,7 @@ const EventTemplatePage = async () => {
         <Flex flexDir='column'>
             <Navbar/>
             <Box mt={28}>
-                <EventsTemplateContent/>
+                <Ethanol/>
             </Box>
 
             <Footer brands={brands}/>

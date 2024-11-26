@@ -66,7 +66,7 @@ export const ProductsSection = () => (
                     }
                 }}
             >
-                <Text fontSize={["sm","18px"]} _hover={{cursor: 'pointer'}}>See All Products</Text>
+                <Text fontSize={["sm","18px"]} _hover={{cursor: 'pointer'}}>See all products</Text>
                 <FiArrowRight/>
             </Flex>
         </Flex>

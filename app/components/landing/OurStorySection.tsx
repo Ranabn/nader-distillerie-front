@@ -13,6 +13,7 @@ export const OurStorySection = ({storyImg}) => (
             alignItems="center"
             width="100%"
             mt={10}
+            gap={40}
         >
             <Flex
                 flexDirection="column"
@@ -30,11 +31,11 @@ export const OurStorySection = ({storyImg}) => (
                 >
                     Our Story
                 </Heading>
-                <Text mb={2}>
+                <Text mb={2} fontSize={"18px"}>
                     Established in 1950 in the picturesque mountain village of Mtein, Lebanon, our family-owned company
                     has woven a narrative deeply rooted in the distillation of Arak, our national aniseed spirit.
                 </Text>
-                <Text>
+                <Text fontSize={"18px"}>
                     Evolving over the years, we have expanded our craft to encompass a diverse spectrum of spirits,
                     wines, and more.
                 </Text>
@@ -43,7 +44,7 @@ export const OurStorySection = ({storyImg}) => (
                 </Flex>
             </Flex>
             <Flex
-                width={["100%", "50%", "40%"]}
+                width={["100%", "50%", "60%"]}
                 flexDirection={"column"}
                 justifyContent="flex-end"
             >
@@ -51,8 +52,8 @@ export const OurStorySection = ({storyImg}) => (
                     src={storyImg ? storyImg : OurStory.src}
                     alt="Our Story"
                     objectFit="cover"
-                    width="600px"
-                    height="600px"
+                    width="800px"
+                    height="800px"
                 />
 
             </Flex>

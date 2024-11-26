@@ -87,3 +87,33 @@ input, h1, h2 {
         width: 100px;
     }
 }
+
+.custom-pagination {
+    position: relative; /* Position relative to Swiper container */
+    margin-top: 16px;   /* Add spacing below the image */
+    text-align: center; /* Center align dots */
+}
+.custom-pagination-2 {
+    position: relative; /* Position relative to Swiper container */
+    margin-top: 16px;   /* Add spacing below the image */
+    text-align: center; /* Center align dots */
+}
+.custom-pagination .swiper-pagination-bullet {
+    background: #000; /* Dot color */
+    opacity: 0.5;
+}
+.custom-pagination-2 .swiper-pagination-bullet {
+    background: #000; /* Dot color */
+    opacity: 0.5;
+}
+
+.custom-pagination  .swiper-pagination-bullet-active {
+    background: #333; /* Active dot color */
+    opacity: 1;
+}
+
+
+.custom-pagination-2  .swiper-pagination-bullet-active {
+    background: #333; /* Active dot color */
+    opacity: 1;
+}

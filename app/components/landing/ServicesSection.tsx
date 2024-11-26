@@ -7,7 +7,7 @@ import Noel from "@/app/assets/images/services/usine02.png"
 import {Btn} from "@/app/components/ui/Btn";
 
 const SectionItem = ({subtitle, title, description, buttonText, imageSrc}) => (
-    <Flex flexDirection={['column', 'column', 'row']} mt={[6, 20]} gap={[12, 32]} alignItems="center">
+    <Flex flexDirection={['column', 'column', 'row']} mt={8} mb={[6, 20]} gap={[12, 32]} alignItems="center">
         <Image src={imageSrc} alt={title} width={650} minWidth={"815px"} objectFit="cover" height={"459px"}/>
         <Flex flexDirection={'column'}>
             <Text fontSize={["24px"]} color={'#12191F'}>{subtitle}</Text>
