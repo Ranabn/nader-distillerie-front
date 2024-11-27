@@ -87,33 +87,52 @@ input, h1, h2 {
         width: 100px;
     }
 }
-
 .custom-pagination {
-    position: relative; /* Position relative to Swiper container */
-    margin-top: 16px;   /* Add spacing below the image */
-    text-align: center; /* Center align dots */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    overflow: hidden; /* Hide dots that overflow */
+    position: relative;
+    transition: transform 0.3s ease-in-out; /* Smooth sliding effect */
 }
 .custom-pagination-2 {
-    position: relative; /* Position relative to Swiper container */
-    margin-top: 16px;   /* Add spacing below the image */
-    text-align: center; /* Center align dots */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    overflow: hidden; /* Hide dots that overflow */
+    position: relative;
+    transition: transform 0.3s ease-in-out; /* Smooth sliding effect */
 }
 .custom-pagination .swiper-pagination-bullet {
-    background: #000; /* Dot color */
-    opacity: 0.5;
+    width: 12.8px; /* Default dot size */
+    height: 12.8px;
+    background-color: #b0bec5; /* Light gray color for inactive dots */
+    border-radius: 50%; /* Makes dots circular */
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth size/color transition */
 }
 .custom-pagination-2 .swiper-pagination-bullet {
-    background: #000; /* Dot color */
-    opacity: 0.5;
+    width: 12.8px; /* Default dot size */
+    height: 12.8px;
+    background-color: #b0bec5; /* Light gray color for inactive dots */
+    border-radius: 50%; /* Makes dots circular */
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth size/color transition */
 }
 
-.custom-pagination  .swiper-pagination-bullet-active {
-    background: #333; /* Active dot color */
-    opacity: 1;
+.custom-pagination .swiper-pagination-bullet-active {
+    width: 32px; /* Larger size for the active dot */
+    height: 12.8px;
+    border-radius: 16px;
+    background-color: #1a202c; /* Darker color for the active dot */
 }
-
-
-.custom-pagination-2  .swiper-pagination-bullet-active {
-    background: #333; /* Active dot color */
-    opacity: 1;
+.custom-pagination-2 .swiper-pagination-bullet-active {
+    width: 32px; /* Larger size for the active dot */
+    height: 12.8px;
+    border-radius: 16px;
+    background-color: #1a202c; /* Darker color for the active dot */
 }

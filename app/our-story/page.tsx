@@ -48,7 +48,7 @@ const OurStoryPage = async () => {
     return (
         <>
             <Navbar brands={brands}/>
-            <SmoothScroll>
+            {/*<SmoothScroll>*/}
                 <Flex direction="column">
                     <OurStoryHeader header={ourStory?.header} imageUrlHeader={imageUrlHeader}/>
                     <Stats stats={ourStory?.stats}/>
@@ -61,7 +61,7 @@ const OurStoryPage = async () => {
                 {/*<Box position="relative" mt={10}>*/}
                 {/*    <Footer brands={brands}/>*/}
                 {/*</Box>*/}
-            </SmoothScroll>
+            {/*</SmoothScroll>*/}
 
         </>
     );

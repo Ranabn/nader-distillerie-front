@@ -1,5 +1,6 @@
 // @ts-nocheck
 'use client'
+import {useRef, useEffect, useState} from "react";
 import {Box, Button, Divider, Flex, Image, Link, Text, List, UnorderedList, ListItem} from "@chakra-ui/react";
 import React from "react";
 import {Btn} from "@/app/components/ui/Btn";
@@ -10,12 +11,43 @@ import gifts from "@/app/assets/images/gifts.png"
 import testimony1 from "@/app/assets/images/testimony1.png";
 import testimony2 from "@/app/assets/images/testimony2.png";
 import quotes from "@/app/assets/images/quotes.png";
+import arrowright from "@/app/assets/images/arrowright.png";
+import arrowleft from "@/app/assets/images/arrowleft.png";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import {Pagination} from "swiper/modules";
 import 'swiper/css/pagination';
 
 export const Gifts = () => {
+    const swiperRef1 = useRef(2);
+    const swiperRef2 = useRef(2);
+    const paginationRef = useRef(null);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const updatePaginationPosition = (swiper) => {
+        // Update active index
+        setActiveIndex(swiper.activeIndex);
+
+        // Center the active bullet
+        const bullets = paginationRef.current?.children;
+        if (bullets && bullets.length > 0) {
+            const activeBullet = bullets[swiper.activeIndex];
+            const paginationWidth = paginationRef.current.offsetWidth;
+            const activeBulletLeft = activeBullet.offsetLeft;
+            const centerPosition = paginationWidth / 2 - activeBullet.offsetWidth / 2;
+
+            paginationRef.current.style.transform = `translateX(${
+                centerPosition - activeBulletLeft
+            }px)`;
+        }
+    };
+    useEffect(() => {
+        if (swiperRef1.current) {
+            // Initialize the pagination position for the first render
+            setActiveIndex(2)
+            updatePaginationPosition(activeIndex);
+            console.log(activeIndex)
+        }
+    }, []);
 
     return (
         <Box>
@@ -75,7 +107,7 @@ export const Gifts = () => {
                     <Btn variant='primaryBlack' size={"md"} text='Request a consultation'/>
                 </Flex>
             </Box>
-            <Flex flexDirection={"column"} p={10} gap={20}>
+            <Flex flexDirection={"column"} p={10} gap={20} mb={20}>
                 <Flex justify={'center'} mb={14}>
                     <Text fontSize={'48px'} fontWeight="bold" fontFamily={"EB Garamond"}>Customer testimony</Text>
                 </Flex>
@@ -99,10 +131,23 @@ export const Gifts = () => {
                     </Flex>
                     <Box width={"44%"}>
                         <Swiper
+                            onSwiper={(swiper) => {
+                                swiperRef1.current = swiper;
+                                swiper.slideTo(2, 0); // Set initial slide to 2 without animation
+                                setActiveIndex(2);   // Set the activeIndex state
+                                updatePaginationPosition(swiper); // Update the pagination position
+                            }}
+                            onSlideChange={(swiper) => {
+                                setActiveIndex(swiper.activeIndex);
+                                updatePaginationPosition(swiper);
+                            }}
+                            initialSlide={2} // Ensure Swiper starts at index 2
                             pagination={{
                                 clickable: true,
-                                el: ".custom-pagination", // Attach to a custom element
+                                el: ".custom-pagination",
+                                renderBullet: (index, className) => `<span class="${className}"></span>`,
                             }}
+                            loop={true}
                             modules={[Pagination]}
                             className="mySwiper"
                             spaceBetween={0}
@@ -125,8 +170,53 @@ export const Gifts = () => {
                                     height="100%"
                                 />
                             </SwiperSlide>
+                            <SwiperSlide>
+                                <Image
+                                    src={testimony1.src}
+                                    alt="Our Story"
+                                    objectFit="cover"
+                                    width="100%"
+                                    height="100%"
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <Image
+                                    src={testimony1.src}
+                                    alt="Our Story"
+                                    objectFit="cover"
+                                    width="100%"
+                                    height="100%"
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <Image
+                                    src={testimony1.src}
+                                    alt="Our Story"
+                                    objectFit="cover"
+                                    width="100%"
+                                    height="100%"
+                                />
+                            </SwiperSlide>
                         </Swiper>
-                        <div className={"custom-pagination"} />
+                        <Flex mt={6}>
+                            <Image
+                                src={arrowleft.src}
+                                alt="Previous"
+                                width="68px"
+                                height="16px"
+                                onClick={() => swiperRef1.current?.slidePrev()}
+                                style={{cursor: "pointer"}}
+                            />
+                            <div className={"custom-pagination"}/>
+                            <Image
+                                src={arrowright.src}
+                                alt="Next"
+                                width="68px"
+                                height="16px"
+                                onClick={() => swiperRef1.current?.slideNext()}
+                                style={{cursor: "pointer"}}
+                            />
+                        </Flex>
                     </Box>
 
                 </Flex>
@@ -149,14 +239,54 @@ export const Gifts = () => {
                     </Flex>
                     <Box width={"44%"}>
                         <Swiper
+                            onSwiper={(swiper) => {
+                                swiperRef2.current = swiper;
+                                swiper.slideTo(2, 0); // Set initial slide to 2 without animation
+                                setActiveIndex(2);   // Set the activeIndex state
+                                updatePaginationPosition(swiper); // Update the pagination position
+                            }}
+                            onSlideChange={(swiper) => {
+                                setActiveIndex(swiper.activeIndex);
+                                updatePaginationPosition(swiper);
+                            }}
+                            initialSlide={2} // Ensure Swiper starts at index 2
                             pagination={{
                                 clickable: true,
-                                el: ".custom-pagination-2", // Unique class for this Swiper
+                                el: ".custom-pagination-2",
+                                renderBullet: (index, className) => `<span class="${className}"></span>`,
                             }}
+                            loop={true}
                             modules={[Pagination]}
                             className="mySwiper"
                             spaceBetween={0}
                         >
+                            <SwiperSlide>
+                                <Image
+                                    src={testimony2.src}
+                                    alt="Testimonial 2 Slide 1"
+                                    objectFit="cover"
+                                    width="100%"
+                                    height="100%"
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <Image
+                                    src={testimony2.src}
+                                    alt="Testimonial 2 Slide 1"
+                                    objectFit="cover"
+                                    width="100%"
+                                    height="100%"
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <Image
+                                    src={testimony2.src}
+                                    alt="Testimonial 2 Slide 1"
+                                    objectFit="cover"
+                                    width="100%"
+                                    height="100%"
+                                />
+                            </SwiperSlide>
                             <SwiperSlide>
                                 <Image
                                     src={testimony2.src}
@@ -176,7 +306,25 @@ export const Gifts = () => {
                                 />
                             </SwiperSlide>
                         </Swiper>
-                        <div className={"custom-pagination-2"} />
+                        <Flex mt={6} justifyContent="center" gap={4}>
+                            <Image
+                                src={arrowleft.src}
+                                alt="Previous"
+                                width="68px"
+                                height="16px"
+                                onClick={() => swiperRef2.current?.slidePrev()}
+                                style={{cursor: "pointer"}}
+                            />
+                            <div className={"custom-pagination-2"}/>
+                            <Image
+                                src={arrowright.src}
+                                alt="Next"
+                                width="68px"
+                                height="16px"
+                                onClick={() => swiperRef2.current?.slideNext()}
+                                style={{cursor: "pointer"}}
+                            />
+                        </Flex>
                     </Box>
                 </Flex>
             </Flex>
@@ -185,6 +333,8 @@ export const Gifts = () => {
                     width={"50%"}
                     m={10}
                     justifyContent={'center'}
+                    height={"250px"}
+
                 >
                     <Flex borderWidth="1px"
                           borderColor={'black'}
@@ -197,18 +347,18 @@ export const Gifts = () => {
                           _hover={{cursor: 'pointer'}}
 
                     >
-                        <Link href={'/contact'} _hover={{textDecoration: 'none'}}>
+                        <Link href={'/services/ethanol'} _hover={{textDecoration: 'none'}}>
                             <Flex alignItems={'center'} justifyContent={'space-between'} mb={4}
                                   fontSize={["xl", "28px"]}>
                                 <Text fontWeight="800" fontFamily={"EB Garamond"} color={"#333333"}>
-                                    Craft your identity
+                                    Ethanol for every industry
                                 </Text>
                                 <FiChevronRight/>
                             </Flex>
 
                             <Text mb={2} fontSize={["md", "18px"]} color={"#333333"}>
-                                Craft your unique identity with our private label offerings. Let us shape your brand
-                                together.
+                                Our ethanol caters to various industries, including pharmaceuticals, perfumery, home
+                                care, and beverages. Discover the perfect ethanol solution for your industry with us.
                             </Text>
                         </Link>
 
@@ -233,19 +383,18 @@ export const Gifts = () => {
                           _hover={{cursor: 'pointer'}}
 
                     >
-                        <Link href={'/contact'} _hover={{textDecoration: 'none'}}>
+                        <Link href={'/services/label-drinks'} _hover={{textDecoration: 'none'}}>
                             <Flex alignItems={'center'} justifyContent={'space-between'} mb={4}
                                   fontSize={["xl", "28px"]}>
                                 <Text fontWeight="800" fontFamily={"EB Garamond"} color={"#333333"}>
-                                    Customize your gifts
+                                    Craft your identity
                                 </Text>
                                 <FiChevronRight/>
                             </Flex>
 
                             <Text mb={2} fontSize={["md", "18px"]} color={"#333333"}>
-                                Be it company gifts, wedding giveaways, or any special occasion, we design gifts that
-                                leave
-                                a lasting impression. Make your events memorable with our customized gifts.
+                                Craft your unique identity with our private label offerings. Let us shape your brand
+                                together.
                             </Text>
                         </Link>
 

@@ -1,79 +1,110 @@
 // @ts-nocheck
-
-'use client'
-import {useRef, useEffect} from "react";
+import {useEffect, useRef} from "react";
 import {Box, Flex, Image, Text} from "@chakra-ui/react";
-import {motion, useTransform, useScroll} from "framer-motion";
+import {gsap} from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 
-export const JourneyTimeline = ({timeline}) => {
-    const targetRef = useRef(null);
-    const {scrollYProgress} = useScroll({
-        target: targetRef,
-    });
+gsap.registerPlugin(ScrollTrigger);
 
-    const x = useTransform(scrollYProgress, [0, 1], ["1%", "-85%"]);
+export const JourneyTimeline = ({timeline}: any) => {
+    const containerRef = useRef(null);
+    const wrapperRef = useRef(null);
 
     useEffect(() => {
-        const updateHeight = () => {
-            const scrollContainer = targetRef.current;
-            if (scrollContainer) {
-                const scrollContent = scrollContainer.firstChild;
-                const scrollContentWidth = scrollContent.scrollWidth;
-                const viewportWidth = window.innerWidth;
-                const heightPercentage = (scrollContentWidth / viewportWidth) * 90;
-                scrollContainer.style.setProperty('--scroll-height', `${heightPercentage}vh`);
-            }
-        };
+        const container = containerRef.current;
+        const wrapper = wrapperRef.current;
 
-        updateHeight();
-        window.addEventListener('resize', updateHeight);
-        return () => window.removeEventListener('resize', updateHeight);
-    }, [timeline]);
+        // Ensure the effect runs after DOM is ready
+        // @ts-ignore
+        const scrollWidth = container.scrollWidth - window.innerWidth;
+
+        // Destroy existing ScrollTrigger instances to prevent conflicts
+        // @ts-ignore
+        ScrollTrigger.getAll().forEach(t => t.kill());
+
+        // Horizontal scrolling animation
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: wrapper,
+                start: "top top",
+                end: () => `+=${scrollWidth}`,
+                scrub: 1, // Smoother scrubbing
+                pin: true,
+                pinSpacing: true,
+                anticipatePin: 1,
+                invalidateOnRefresh: true // Recalculate on resize
+            }
+        });
+
+        tl.to(container, {
+            x: -scrollWidth,
+            ease: "none"
+        });
+
+        // Cleanup function
+        return () => {
+            tl.scrollTrigger.kill();
+        };
+    }, [timeline]); // Add timeline to dependency array
 
     return (
-        <Box
-            ref={targetRef}
-            height="var(--scroll-height)"
-            position="relative"
-            sx={{
-                '--scroll-height': '50vh',
-                '& > div': {
-                    position: 'sticky',
-                    top: 300,
-                }
-            }}
-        >
-            <Flex>
-                <motion.div
-                    style={{x}}
-                    className="flex gap-10 absolute top-1/2 -translate-y-1/2"
+        <Box ref={wrapperRef} position="relative" height="100vh" width="100%">
+            <Box
+                ref={containerRef}
+                display="flex"
+                height="100%"
+                position="absolute"
+                top={0}
+                left={0}
+                right={0}
+            >
+                <Flex
+                    gap={10}
+                    width="max-content"
+                    px={4}
+                    alignItems="center"
                 >
-                    <Flex minWidth="400px" fontSize="4xl" fontFamily="EB Garamond" fontWeight="bold"
-                          alignItems={'center'}>
+                    <Flex
+                        minWidth="500px"
+                        fontSize={["4xl", "48px"]}
+                        fontFamily="EB Garamond"
+                        fontWeight="bold"
+                    >
                         A journey of growth, <br/> skill, and unwavering dedication
                     </Flex>
                     {timeline.map((item, index) => (
-                        <Flex key={index} flexDirection="column" minWidth="300px">
-                            <Box width={420} height={420} position="relative" overflow="hidden">
+                        <Flex
+                            key={index}
+                            flexDirection="column"
+                            minWidth="420px"
+                        >
+                            <Box
+                                width={420}
+                                height={420}
+                                position="relative"
+                                overflow="hidden"
+                            >
                                 <Image
                                     src={item.imageUrl}
                                     alt="drawing"
-                                    width="100%"
-                                    height="100%"
+                                    width="420px"
+                                    height="420px"
                                     objectFit="cover"
                                     transition="transform 0.3s"
                                     _hover={{transform: "scale(1.1)"}}
                                 />
                             </Box>
-                            <Flex flexDirection="column" mt={2}>
-                                <Text>{item.year}</Text>
-                                <Text fontSize="4xl" fontFamily="EB Garamond" fontWeight="bold">{item.title}</Text>
-                                <Text mt={2}>{item.description}</Text>
+                            <Flex flexDirection="column" mt={4} width={"420px"} height={"243px"}>
+                                <Text fontSize={["24px"]}>{item.year}</Text>
+                                <Text fontSize={["4xl", "48px"]} fontFamily="EB Garamond" fontWeight="bold">
+                                    {item.title}
+                                </Text>
+                                <Text mt={2} fontSize={["18px"]}>{item.description}</Text>
                             </Flex>
                         </Flex>
                     ))}
-                </motion.div>
-            </Flex>
+                </Flex>
+            </Box>
         </Box>
     );
 };

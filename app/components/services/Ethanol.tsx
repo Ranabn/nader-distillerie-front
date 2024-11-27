@@ -97,7 +97,7 @@ export const Ethanol = () => {
                           _hover={{cursor: 'pointer'}}
 
                     >
-                        <Link href={'/contact'} _hover={{textDecoration: 'none'}}>
+                        <Link href={'/services/label-drinks'} _hover={{textDecoration: 'none'}}>
                             <Flex alignItems={'center'} justifyContent={'space-between'} mb={4}
                                   fontSize={["xl", "28px"]}>
                                 <Text fontWeight="800" fontFamily={"EB Garamond"} color={"#333333"}>
@@ -133,7 +133,7 @@ export const Ethanol = () => {
                           _hover={{cursor: 'pointer'}}
 
                     >
-                        <Link href={'/contact'} _hover={{textDecoration: 'none'}}>
+                        <Link href={'/services/gifts'} _hover={{textDecoration: 'none'}}>
                             <Flex alignItems={'center'} justifyContent={'space-between'} mb={4}
                                   fontSize={["xl", "28px"]}>
                                 <Text fontWeight="800" fontFamily={"EB Garamond"} color={"#333333"}>

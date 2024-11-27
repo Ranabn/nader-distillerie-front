@@ -12,7 +12,7 @@ export const Gallery = ({images}) => {
         offset: ["start end", "end start"]
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
 
     return (
         <Box ref={ref} position="relative" overflow="visible" bg="white">

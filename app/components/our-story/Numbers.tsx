@@ -17,10 +17,10 @@ export const Stats = ({stats}) => {
             {stats.map((stat, index) => (
                 <Flex key={index} textAlign="center" justifyContent="center" mb={[4, 4, 0]}>
                     <Flex alignItems="center" flexDirection='column'>
-                        <Text fontSize="5xl" fontWeight="bold" fontFamily={"EB Garamond"}>
+                        <Text fontSize={["5xl", "72px"]} fontWeight="bold" fontFamily={"EB Garamond"}>
                             {stat.value}
                         </Text>
-                        <Text fontSize="sm">
+                        <Text fontSize={["sm", "18px"]}>
                             {stat.label}
                         </Text>
                     </Flex>

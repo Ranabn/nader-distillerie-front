@@ -34,10 +34,10 @@ export const OurStoryHeader = ({header, imageUrlHeader}) => {
                 flexDirection='column'
                 maxW={['90%', "90%", '65%']}
             >
-                <Heading color={'black'} fontFamily={"EB Garamond"} fontSize="4xl" fontWeight="bold" mb={8} as={"h2"}>
+                <Heading color={'black'} fontFamily={"EB Garamond"} fontSize={["4xl", "48px"]} fontWeight="bold" mb={8} as={"h2"}>
                     {header.title}
                 </Heading>
-                <Text fontSize="md" mb={4} color={'black'}>
+                <Text fontSize={["md", "18px"]} mb={4} color={'black'} >
                     {header.description}
                 </Text>
             </Flex>
