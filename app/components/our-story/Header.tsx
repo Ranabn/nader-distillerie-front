@@ -34,10 +34,11 @@ export const OurStoryHeader = ({header, imageUrlHeader}) => {
                 flexDirection='column'
                 maxW={['90%', "90%", '65%']}
             >
-                <Heading color={'black'} fontFamily={"EB Garamond"} fontSize={["4xl", "48px"]} fontWeight="bold" mb={8} as={"h2"}>
+                <Heading color={'black'} fontFamily={"EB Garamond"} fontSize={["4xl", "48px"]} fontWeight="bold" mb={8}
+                         as={"h2"}>
                     {header.title}
                 </Heading>
-                <Text fontSize={["md", "18px"]} mb={4} color={'black'} >
+                <Text fontSize={["md", "18px"]} mb={4} color={'black'}>
                     {header.description}
                 </Text>
             </Flex>
@@ -52,8 +53,29 @@ export const OurStoryHeader = ({header, imageUrlHeader}) => {
                 <Text fontSize="sm">
                     Scroll down
                 </Text>
-                <Icon as={FiChevronDown} w={6} h={6}/>
+                <Icon
+                    as={FiChevronDown as any}
+                    w={6}
+                    h={6}
+                    animation="upDownFade 2s infinite"
+                />
             </Box>
+            <style jsx global>{`
+                @keyframes upDownFade {
+                    0% {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                    50% {
+                        transform: translateY(-10px);
+                        opacity: 0.5;
+                    }
+                    100% {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+            `}</style>
         </Flex>
     );
 }

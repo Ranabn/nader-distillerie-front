@@ -35,7 +35,7 @@ export const HeroBanner = () => {
                     height="100%"
                 />
                 <Box
-                    display={["flex","flex", "none"]}
+                    display={["flex", "flex", "none"]}
                     position="absolute"
                     top={0}
                     left={0}
@@ -86,11 +86,31 @@ export const HeroBanner = () => {
                 width="100%"
                 textAlign="center"
             >
-                <Text fontSize="sm">
-                    Scroll down
+                <Text fontSize={["sm", "18px"]}> Scroll down
                 </Text>
-                <Icon as={FiChevronDown as any} w={6} h={6}/>
+                <Icon
+                    as={FiChevronDown as any}
+                    w={6}
+                    h={6}
+                    animation="upDownFade 2s infinite"
+                />
             </Box>
+            <style jsx global>{`
+                @keyframes upDownFade {
+                    0% {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                    50% {
+                        transform: translateY(-10px);
+                        opacity: 0.5;
+                    }
+                    100% {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+            `}</style>
         </Flex>
     );
 };

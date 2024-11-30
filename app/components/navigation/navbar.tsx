@@ -16,17 +16,17 @@ export const Navbar = ({brands}) => {
 
     const getInitialBackground = (pathname) => {
         if (['/', '/products'].includes(pathname)) {
-            return { color: 'white', background: 'transparent' };
+            return {color: 'white', background: 'transparent'};
         } else {
-            return { color: 'black', background: 'white' };
+            return {color: 'black', background: 'white'};
         }
     };
 
     const getInitialButtonStyle = (pathname) => {
         if (['/', '/products'].includes(pathname)) {
-            return { '--button-bg': 'white', '--button-color': 'black' };
+            return {'--button-bg': 'white', '--button-color': 'black'};
         } else {
-            return { '--button-bg': 'black', '--button-color': 'white' };
+            return {'--button-bg': 'black', '--button-color': 'white'};
         }
     };
     const [background, setBackground] = useState(getInitialBackground(pathname));
@@ -68,8 +68,8 @@ export const Navbar = ({brands}) => {
 
         // Update background and button styles based on pathname
         if (['/brands', '/services', '/our-story', '/contact'].includes(pathname) || pathname.startsWith('/brands')) {
-            setBackground({ color: 'black', background: 'white' });
-            setButtonStyle({ '--button-bg': 'black', '--button-color': 'white' });
+            setBackground({color: 'black', background: 'white'});
+            setButtonStyle({'--button-bg': 'black', '--button-color': 'white'});
         }
     }, [router, pathname]);
 
@@ -90,11 +90,11 @@ export const Navbar = ({brands}) => {
             if (!isOpen && ['/', '/products'].includes(pathname)) {
                 const scrollPosition = window.scrollY;
                 if (scrollPosition > 0) {
-                    setBackground({ color: 'black', background: 'white' });
-                    setButtonStyle({ '--button-bg': 'black', '--button-color': 'white' });
+                    setBackground({color: 'black', background: 'white'});
+                    setButtonStyle({'--button-bg': 'black', '--button-color': 'white'});
                 } else {
-                    setBackground({ color: 'white', background: 'transparent' });
-                    setButtonStyle({ '--button-bg': 'white', '--button-color': 'black' });
+                    setBackground({color: 'white', background: 'transparent'});
+                    setButtonStyle({'--button-bg': 'white', '--button-color': 'black'});
                 }
             }
         };
@@ -240,12 +240,32 @@ const MenuItem = ({children, isLast, to = "/", isActive, background, ...rest}) =
                 _after={{
                     content: '""',
                     position: 'absolute',
-                    width: isActive ? '33%' : '0',
-                    height: '1px',
-                    bottom: 0,
-                    left: 0,
-                    backgroundColor: pathname == '/products' ? 'white' : '#224452',
-                    transition: 'width 0.3s ease-in-out'
+                    width: isActive ? '40%' : '0', // Full width for active, hidden otherwise
+                    height: '1px', // Line height
+                    bottom: '-6px', // Adjust spacing below the text
+                    left: '0', // Align the line to the start
+                    backgroundColor: isActive
+                        ? pathname === '/' || pathname === '/products'
+                            ? '#D2CDBF'
+                            : '#224452'
+                        : 'transparent',
+                }}
+                _hover={{
+                    ...(isLast ? {} : {
+                        _after: {
+                            content: '""',
+                            position: 'absolute',
+                            width: '4px', // Dot width
+                            height: '4px', // Dot height
+                            borderRadius: '50%', // Make it a circle
+                            bottom: '-6px', // Adjust spacing below the text
+                            left: '50%', // Center horizontally
+                            transform: 'translateX(-50%)', // Center alignment
+                            backgroundColor: pathname === '/' || pathname === '/products'
+                                ? '#D2CDBF'
+                                : '#224452',
+                        },
+                    }),
                 }}
                 {...rest}
             >

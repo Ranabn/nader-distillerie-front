@@ -21,12 +21,12 @@ const OurServicePage = async () => {
     return (
         <Flex flexDir='column'>
             <Navbar/>
-            <SmoothScroll>
+            {/*<SmoothScroll>*/}
                 <Box mt={16}>
                     <ServicesSection/>
                 </Box>
                 <Footer brands={brands}/>
-            </SmoothScroll>
+            {/*</SmoothScroll>*/}
         </Flex>
     )
 }

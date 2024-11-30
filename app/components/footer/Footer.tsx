@@ -1,12 +1,12 @@
 // @ts-nocheck
 
 'use client';
-import {Box, Flex, Text, VStack, HStack, Link, SimpleGrid} from "@chakra-ui/react";
+import {Box, Flex, Text, VStack, HStack, Link, SimpleGrid, Icon} from "@chakra-ui/react";
 import {FaInstagram, FaFacebook} from "react-icons/fa";
 import {Btn} from "@/app/components/ui/Btn";
 import React from "react";
 import {LogoHorizontal} from "@/app/components/ui/LogoHorizontal";
-import {FiChevronUp} from "react-icons/fi"; // Import the arrow up icon
+import {FiChevronDown, FiChevronUp} from "react-icons/fi"; // Import the arrow up icon
 // @ts-ignore
 import {animateScroll as scroll} from 'react-scroll';
 
@@ -45,7 +45,12 @@ export const Footer = ({brands}: any) => {
                 <Flex width={"33%"} display={['none', 'flex', 'flex']} _hover={{cursor: 'pointer'}} flexDir='column'
                       alignItems='center'
                       aria-label="Scroll to top" onClick={scrollToTop} pt={1}>
-                    <FiChevronUp size={22}/>
+                    <Icon
+                        as={FiChevronUp as any}
+                        w={6}
+                        h={6}
+                        animation="upDownFade 2s infinite"
+                    />
                     <Text fontSize={['md', '18px']}>Back to top</Text>
 
                 </Flex>
@@ -75,7 +80,7 @@ export const Footer = ({brands}: any) => {
                     </Link>
                 </Flex>
                 <Flex gap={[20, 10]}>
-                    <Flex flexDirection={'column'}  fontSize={"18px"} gap={4}>
+                    <Flex flexDirection={'column'} fontSize={"18px"} gap={4}>
                         <Text fontWeight="bold" fontSize={"20px"} mb={2}>Brands</Text>
                         {/*@ts-ignore*/}
                         {brands.map((brand) => (
@@ -86,19 +91,19 @@ export const Footer = ({brands}: any) => {
                     </Flex>
 
                     <Flex align="flex-start" flexDirection={'column'}>
-                        <Text fontWeight="bold" fontSize={"20px"}  mb={2}>Products</Text>
+                        <Text fontWeight="bold" fontSize={"20px"} mb={2}>Products</Text>
                     </Flex>
                 </Flex>
                 <Flex gap={[20, 10]}>
                     <Flex align="flex-start" flexDirection={'column'} fontSize={"18px"} gap={4}>
-                        <Text fontWeight="bold" fontSize={"20px"}  mb={2}>Services</Text>
+                        <Text fontWeight="bold" fontSize={"20px"} mb={2}>Services</Text>
                         <Link>Private Label</Link>
                         <Link>Raw Material</Link>
                         <Link>Events</Link>
                     </Flex>
 
                     <Flex align="flex-start" flexDirection={'column'}>
-                        <Text fontWeight="bold" fontSize={"20px"}  mb={2}>Our story</Text>
+                        <Text fontWeight="bold" fontSize={"20px"} mb={2}>Our story</Text>
                     </Flex>
                 </Flex>
             </SimpleGrid>
@@ -111,6 +116,22 @@ export const Footer = ({brands}: any) => {
                     <Link href="#" fontSize="xs">Terms & Conditions</Link>
                 </HStack>
             </Flex>
+            <style jsx global>{`
+                @keyframes upDownFade {
+                    0% {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                    50% {
+                        transform: translateY(-10px);
+                        opacity: 0.5;
+                    }
+                    100% {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+            `}</style>
         </Box>
     );
 };

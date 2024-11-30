@@ -63,12 +63,12 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
             observer.observe(scrollContainerRef.current.lastChild);
         }
 
-        return () => {
-            if (filteredBrandData.length > 0) {
-                observer.unobserve(scrollContainerRef.current.firstChild);
-                observer.unobserve(scrollContainerRef.current.lastChild);
-            }
-        };
+        // return () => {
+        //     if (filteredBrandData.length > 0) {
+        //         observer.unobserve(scrollContainerRef.current.firstChild);
+        //         observer.unobserve(scrollContainerRef.current.lastChild);
+        //     }
+        // };
     }, [filteredBrandData]);
 
     return (

@@ -1,128 +1,197 @@
-// @ts-nocheck
-'use client'
+"use client";
+import React, {useState, useRef, useCallback} from "react";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {EffectFade, Mousewheel} from "swiper/modules";
+import {Text, Box, Icon} from "@chakra-ui/react";
+import "swiper/css";
+import "swiper/css/effect-fade";
+import {FiChevronDown} from "react-icons/fi";
 
+export const Product3DSection = ({sections, children}: any) => {
+    const swiperRef = useRef<any>(null);
+    const containerRef = useRef<HTMLDivElement | null>(null);
 
-import {useEffect, useRef, useState} from 'react';
-import {Box, Text} from "@chakra-ui/react";
-import {motion, useViewportScroll} from "framer-motion";
-import Image from "next/image";
-import {ArrowDownIcon} from "@chakra-ui/icons";
+    const handleSlideChange = useCallback(() => {
+        if (!swiperRef.current) return;
 
-// Custom hook to calculate font size
-// @ts-ignore
-const useFitText = (text) => {
-    const [fontSize, setFontSize] = useState(100);
-    const spanRef = useRef(null);
+        const swiper = swiperRef.current;
+        const isLastSlide = swiper.activeIndex === sections.length - 1;
+        const isFirstSlide = swiper.activeIndex === 0;
 
-    useEffect(() => {
-        const resizeText = () => {
-            if (!spanRef.current) return;
-// @ts-ignore
-            const containerWidth = spanRef.current.offsetWidth;
-            let low = 1;
-            let high = 500;
-            let mid;
-
-            while (low <= high) {
-                mid = Math.floor((low + high) / 2);
-                spanRef.current.style.fontSize = `${mid}px`;
-                if (spanRef.current.scrollWidth <= containerWidth) {
-                    low = mid + 1;
-                } else {
-                    high = mid - 1;
-                }
-            }
-
-            setFontSize(high);
-        };
-
-        resizeText();
-        window.addEventListener('resize', resizeText);
-        return () => window.removeEventListener('resize', resizeText);
-    }, [text]);
-
-    return {fontSize, spanRef};
-};
-
-export const Product3DSection = ({sections}: any) => {
-    const {scrollY} = useViewportScroll();
-    const [scrollYValue, setScrollYValue] = useState(0);
-    const scrollRef = useRef();
-
-    useEffect(() => {
-        return scrollY.onChange((latest) => {
-            setScrollYValue(latest);
-        });
-    }, [scrollY]);
+        // Enable/disable mousewheel based on slide position
+        if (swiper.params) {
+            swiper.params.mousewheel.releaseOnEdges = true;
+        }
+    }, [sections.length]);
 
     return (
-        <Box ref={scrollRef as any} data-scroll-container>
-            {sections.map((sec, index) => {
-                const offset = index * window.innerHeight;
-                const translateY = (scrollYValue - offset) * 0.2;
-                // eslint-disable-next-line react-hooks/rules-of-hooks
-                const {fontSize, spanRef} = useFitText(sec.text);
-
-                return (
-                    <Box
+        <div
+            ref={containerRef}
+            style={{
+                width: "100%",
+                height: "100vh",
+                overflow: "hidden",
+            }}
+        >
+            <Swiper
+                ref={swiperRef}
+                modules={[EffectFade, Mousewheel]}
+                mousewheel={{
+                    sensitivity: 1,
+                    releaseOnEdges: true,
+                }}
+                effect="fade"
+                direction="vertical"
+                slidesPerView={1}
+                speed={1000}
+                onSlideChange={handleSlideChange}
+                style={{
+                    width: "100%",
+                    height: "100vh",
+                }}
+            >
+                {sections.map((sec: any) => (
+                    <SwiperSlide
                         key={sec.id}
-                        data-scroll-section
-                        position="relative"
-                        height="100vh"
-                        width="100%"
-                        overflow="hidden"
+                        style={{
+                            position: "relative",
+                            width: "100%",
+                            height: "100%",
+                        }}
                     >
                         <Box
-                            position="relative"
-                            width="100%"
-                            height="100%"
+                            style={{
+                                backgroundImage: `url(${sec.imageUrl})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                width: "100%",
+                                height: "100%",
+                            }}
                         >
-                            <Image
-                                src={sec.imageUrl}
-                                layout="fill"
-                                objectFit="cover"
-                                alt={sec.text}
-                                priority
-                            />
+                            {/* Content Section */}
                             <Box
-                                position="absolute"
-                                top="0"
-                                left="0"
-                                right="0"
-                                bottom="0"
-                                display="flex"
-                                flexDirection="column"
-                                justifyContent="flex-end"
-                                alignItems="center"
-                                padding="2rem"
+                                style={{
+                                    position: "absolute",
+                                    top: "25%",
+                                    left: "2.5%",
+                                    color: "white",
+                                    width: "800px",
+                                    zIndex: 9999,
+                                }}
                             >
-
+                                <Text style={{fontSize: "18px", fontWeight: 800}}>{sec.description}</Text>
+                                {sec.description2 && (
+                                    <Text style={{fontSize: "18px", fontWeight: 800, marginTop: "15px"}}>
+                                        {sec.description2}
+                                    </Text>
+                                )}
                                 <Text
-                                    fontFamily="EB Garamond"
-                                    ref={spanRef}
-                                    fontSize={`${fontSize}px`}
-                                    fontWeight="800"
-                                    textAlign="center"
-                                    width="100%"
-                                    color="white"
-                                    letterSpacing="wide"
-                                    lineHeight="0.8"
-                                    position="absolute"
-                                    bottom="10%"
-                                    left="0"
-                                    right="0"
-                                    whiteSpace="nowrap"
+                                    style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        fontSize: "18px",
+                                        fontWeight: 800,
+                                        marginTop: "30px",
+                                    }}
                                 >
-                                    {sec.text}
+                                    {sec.discover}
+                                    <svg
+                                        style={{marginLeft: "8px"}}
+                                        width="12"
+                                        height="12"
+                                        viewBox="0 0 12 12"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M6 0L4.9425 1.0575L9.1275 5.25H0V6.75H9.1275L4.9425 10.9425L6 12L12 6L6 0Z"
+                                            fill="white"
+                                        />
+                                    </svg>
                                 </Text>
+                                {sec.discover2 && (
+                                    <Text
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            fontSize: "18px",
+                                            fontWeight: 800,
+                                            marginTop: "10px",
+                                        }}
+                                    >
+                                        {sec.discover2}
+                                        <svg
+                                            style={{marginLeft: "8px"}}
+                                            width="12"
+                                            height="12"
+                                            viewBox="0 0 12 12"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M6 0L4.9425 1.0575L9.1275 5.25H0V6.75H9.1275L4.9425 10.9425L6 12L12 6L6 0Z"
+                                                fill="white"
+                                            />
+                                        </svg>
+                                    </Text>
+                                )}
                             </Box>
+                            <Text
+                                style={{
+                                    position: "absolute",
+                                    bottom: "0%",
+                                    left: "50%",
+                                    transform: "translateX(-50%)",
+                                    color: "white",
+                                    textAlign: "center",
+                                    fontFamily: "EB Garamond",
+                                    fontSize: sec.fontSize,
+                                    fontWeight: 800,
+                                }}
+                            >
+                                {sec.text}
+                            </Text>
                         </Box>
-                    </Box>
-                );
-            })}
-            <Box position="fixed" bottom="10px" width="100%" textAlign="center">
-                <ArrowDownIcon boxSize={{base: 4, md: 6}} color="white"/>
-            </Box>
-        </Box>
+                        <Box
+                            position="absolute"
+                            bottom="20px"
+                            color="white"
+                            zIndex={1}
+                            width="100%"
+                            textAlign="center"
+                        >
+                            <Text fontSize={["sm", "18px"]}>Scroll down</Text>
+                            <Icon
+                                as={FiChevronDown as any}
+                                w={6}
+                                h={6}
+                                animation="upDownFade 2s infinite"
+                            />
+                        </Box>
+
+                    </SwiperSlide>
+
+                ))}
+                <SwiperSlide>
+                    <Box height={'100vh'}></Box>
+                </SwiperSlide>
+            </Swiper>
+            <style jsx global>{`
+                @keyframes upDownFade {
+                    0% {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                    50% {
+                        transform: translateY(-10px);
+                        opacity: 0.5;
+                    }
+                    100% {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+            `}</style>
+        </div>
     );
-}
+};

@@ -33,7 +33,7 @@ export default async function Home() {
         <>
             <Flex direction="column" overflow={'hidden'}>
                 <Navbar brands={brands}/>
-                <SmoothScroll>
+                {/*<SmoothScroll>*/}
                     <HeroBanner/>
                     <BrandsSection isLanding={true} brands={brands} imageUrls={imageUrls}/>
                     <OurStorySection/>
@@ -43,7 +43,7 @@ export default async function Home() {
                             <Footer brands={brands}/>
                         {/*</Box>*/}
                     </Box>
-                </SmoothScroll>
+                {/*</SmoothScroll>*/}
             </Flex>
 
         </>

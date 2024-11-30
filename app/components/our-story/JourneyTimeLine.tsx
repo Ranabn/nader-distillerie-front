@@ -103,6 +103,7 @@ export const JourneyTimeline = ({timeline}: any) => {
                             </Flex>
                         </Flex>
                     ))}
+                    <Box width={'400px'}></Box>
                 </Flex>
             </Box>
         </Box>

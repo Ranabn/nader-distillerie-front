@@ -87,21 +87,21 @@ const BrandPage = async ({params}: { params: { slug: string } }) => {
     return (
         <>
             <Navbar brands={brands}/>
-            <SmoothScroll>
-                <Flex mt={32} flexDirection="column" position="relative">
-                    <HeaderBrands brand={brand}/>
-                    <StickyImage imageUrls={imageUrls} brandName={brand?.brand_name}/>
-                    <SocialBrands
-                        quote={brand?.brand_quote_social_section}
-                        description={brand?.brand_description_first_p_technical}
-                        technicalSheetUrl={brand?.link_to_technical_sheet || ""}
-                        brandWebsiteUrl={brand?.link_to_brand}
-                    />
-                     <ExploreMore brands={brands} />
-                    <OurStorySection storyImg={storyImg}/>
-                </Flex>
-                <Footer brands={brands}/>
-            </SmoothScroll>
+            {/*<SmoothScroll>*/}
+            <Flex mt={32} flexDirection="column" position="relative">
+                <HeaderBrands brand={brand}/>
+                <StickyImage imageUrls={imageUrls} brandName={brand?.brand_name}/>
+                <SocialBrands
+                    quote={brand?.brand_quote_social_section}
+                    description={brand?.brand_description_first_p_technical}
+                    technicalSheetUrl={brand?.link_to_technical_sheet || ""}
+                    brandWebsiteUrl={brand?.link_to_brand}
+                />
+                <ExploreMore brands={brands}/>
+                <OurStorySection storyImg={storyImg}/>
+            </Flex>
+            <Footer brands={brands}/>
+            {/*</SmoothScroll>*/}
         </>
     );
 };
