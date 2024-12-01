@@ -24,10 +24,10 @@ export const HeaderBrands = ({brand}: { brand: Brand }) => {
             <Text mb={4} fontSize={["3xl", "32px"]} fontWeight="300" textTransform='uppercase'>
                 {brand.brand_quote}
             </Text>
-            <Box mb={4}>
-                <PortableText  value={brand.brand_description_first_p}/>
+            <Box mb={4} fontSize={"18px"}>
+                <PortableText value={brand.brand_description_first_p}/>
             </Box>
-            <Box>
+            <Box fontSize={"18px"}>
                 <PortableText value={brand.brand_description_sec_p}/>
             </Box>
         </Flex>

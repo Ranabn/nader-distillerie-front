@@ -86,9 +86,10 @@ export const LabelDrinks = () => {
                     <Text fontSize={["lg", "24px"]}>
                         Ready to build your brand with us?
                     </Text>
-                    <Btn variant='primaryBlack' size={"md"} text='Request a consultation'/>
+                    <Link href={"/contact"} _hover={{textDecoration: "none"}}>
+                        <Btn variant='primaryBlack' size={"md"} text='Request a consultation'/>
 
-
+                    </Link>
                 </Flex>
             </Box>
             <Flex mb={12}>
@@ -144,7 +145,7 @@ export const LabelDrinks = () => {
                           _hover={{cursor: 'pointer'}}
 
                     >
-                        <Link href={'/services/gifts'} _hover={{textDecoration: 'none'}}>
+                        <Link href={'/services/gift'} _hover={{textDecoration: 'none'}}>
                             <Flex alignItems={'center'} justifyContent={'space-between'} mb={4}
                                   fontSize={["xl", "28px"]}>
                                 <Text fontWeight="800" fontFamily={"EB Garamond"} color={"#333333"}>

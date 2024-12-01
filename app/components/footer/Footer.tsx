@@ -97,9 +97,9 @@ export const Footer = ({brands}: any) => {
                 <Flex gap={[20, 10]}>
                     <Flex align="flex-start" flexDirection={'column'} fontSize={"18px"} gap={4}>
                         <Text fontWeight="bold" fontSize={"20px"} mb={2}>Services</Text>
-                        <Link>Private Label</Link>
-                        <Link>Raw Material</Link>
-                        <Link>Events</Link>
+                        <Link href={"/services/label-drinks"}>Private Label</Link>
+                        <Link href={"/services/ethanol"}>Raw Material</Link>
+                        <Link  href={"/services/gift"}>Events</Link>
                     </Flex>
 
                     <Flex align="flex-start" flexDirection={'column'}>

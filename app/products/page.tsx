@@ -35,7 +35,7 @@ export default async function HomeProduct() {
         },
         {
             id: 2,
-            text: "Wine",
+            text: "Wines",
             imageUrl: Grape.src,
             description: "Our red, rosé, and white wines each weave a story that encapsulates the essence of the region's climate and soil. Our expertise lies in skillfully unveiling the unique expression of these terroirs in every wine we produce.",
             fontSize: "536.28px",

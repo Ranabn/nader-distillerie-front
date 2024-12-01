@@ -233,14 +233,14 @@ const MenuItem = ({children, isLast, to = "/", isActive, background, ...rest}) =
 
     const pathname = usePathname()
     return (
-        <Link href={to}>
+        <Link href={to} _hover={{ textDecoration: "none" }}>
             <Text
                 display="inline-block"
                 position="relative"
                 _after={{
                     content: '""',
                     position: 'absolute',
-                    width: isActive ? '40%' : '0', // Full width for active, hidden otherwise
+                    width: isActive && !isLast ? '40%' : '0', // No width for active last item
                     height: '1px', // Line height
                     bottom: '-6px', // Adjust spacing below the text
                     left: '0', // Align the line to the start

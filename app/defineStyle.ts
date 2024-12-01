@@ -28,6 +28,8 @@ const Button = defineStyleConfig({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center', // Ensure text is horizontally and vertically centered
+        textDecoration: 'none'
+
     },
     sizes: {
         xs: {
@@ -65,6 +67,7 @@ const Button = defineStyleConfig({
             animation: `${fillAnimationOut} 0.3s forwards`,
             _hover: {
                 color: 'white',
+                textDecoration:"none",
                 animation: `${fillAnimationIn} 0.3s forwards`,
             },
         },
@@ -104,6 +107,7 @@ const Button = defineStyleConfig({
             _hover: {
                 color: 'white',
                 animation: `${fillAnimationIn} 0.3s forwards`,
+                textDecoration:"none"
             },
             _disabled: {
                 animation: 'none',        // Disable animation
@@ -112,7 +116,9 @@ const Button = defineStyleConfig({
                 cursor: 'not-allowed',    // Optional: Show "not-allowed" cursor
                 _hover: {
                     bg: 'gray.300',      // Ensure hover doesn't change the color
-                    color: 'gray.500',   // Prevent hover text color changes
+                    color: 'gray.500',
+                    textDecoration:"none"
+// Prevent hover text color changes
                 },
             },
         },
@@ -130,6 +136,8 @@ const Button = defineStyleConfig({
                 color: 'black',
                 bg: '#D2CDBF',
                 border: '1px solid transparent',
+                textDecoration:"none"
+
             },
             _disabled: {
                 animation: 'none', // Disable animation

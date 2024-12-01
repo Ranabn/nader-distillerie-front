@@ -1,68 +1,52 @@
 'use client'
 import {Box, Text, Flex, IconButton} from "@chakra-ui/react";
-import {motion, useScroll, useTransform, AnimatePresence} from "framer-motion";
 import {useEffect, useState, useRef} from "react";
 import {FiChevronLeft, FiChevronRight} from "react-icons/fi";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 // @ts-ignore
 export const StickyImage = ({imageUrls, brandName}) => {
-    const {scrollY} = useScroll();
     const ref = useRef(null);
-    const [elementTop, setElementTop] = useState(0);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [direction, setDirection] = useState(0);
-
-    const updateElementTop = () => {
-        const element = document.getElementById("social-brands-section");
-        if (element) {
-            setElementTop(element.offsetTop);
-        }
-    };
-
-    useEffect(() => {
-        updateElementTop();
-        window.addEventListener("resize", updateElementTop);
-        return () => window.removeEventListener("resize", updateElementTop);
-    }, []);
-
-    const y = useTransform(scrollY,
-        [0, elementTop - window.innerHeight, elementTop],
-        [0, 0, 100]
-    );
 
     const handlePrevImage = () => {
-        setDirection(-1);
         setCurrentImageIndex((prevIndex) =>
             prevIndex === 0 ? imageUrls.length - 1 : prevIndex - 1
         );
     };
 
     const handleNextImage = () => {
-        setDirection(1);
         setCurrentImageIndex((prevIndex) =>
             (prevIndex + 1) % imageUrls.length
         );
     };
-// @ts-ignore
-    const slideVariants = {
-        // @ts-ignore
-        enter: (direction) => ({
-            x: direction > 0 ? 1000 : -1000,
-            opacity: 0,
-        }),
-        center: {
-            zIndex: 1,
-            x: 0,
-            opacity: 1,
-        },
-        // @ts-ignore
-        exit: (direction) => ({
-            zIndex: 0,
-            x: direction < 0 ? 1000 : -1000,
-            opacity: 0,
 
-        }),
-    };
+    useEffect(() => {
+        const element = ref.current;
+        const socialBrandsSection = document.getElementById("social-brands-section");
+
+        if (!element || !socialBrandsSection) return;
+
+        // Set up GSAP ScrollTrigger
+        gsap.to(element, {
+            y: 0,
+            scrollTrigger: {
+                trigger: element,
+                start: "100px 100px", // Element sticks at the top of the viewport
+                endTrigger: socialBrandsSection,
+                end: "bottom bottom", // Element un-sticks when `socialBrandsSection` reaches top
+                pin: true, // Make element sticky
+                scrub: true, // Smooth scrolling effect
+                // markers: true
+            },
+        });
+
+        // Clean up on unmount
+        return () => ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    }, []);
 
     return (
         <Box
@@ -74,53 +58,37 @@ export const StickyImage = ({imageUrls, brandName}) => {
             w="50%"
             zIndex={2}
         >
-            {/*@ts-ignore*/}
             <Flex
                 color={'white'}
                 flexDirection='column'
                 alignItems={'center'}
-                as={motion.div as any}
                 position="sticky"
-                style={{y} as any}
             >
-                <Box position="relative" width="500px" height="600px" overflow="hidden">
-                    <AnimatePresence initial={false} custom={direction}>
-                        <motion.img
-                            key={currentImageIndex}
-                            src={imageUrls[currentImageIndex]}
-                            alt={brandName}
-                            custom={direction}
-                            variants={slideVariants}
-                            initial="enter"
-                            animate="center"
-                            exit="exit"
-                            transition={{
-                                x: {type: "spring", stiffness: 300, damping: 30},
-                                opacity: {duration: 0.2},
-                            }}
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                position: 'absolute',
-                                objectFit: 'cover',
-                            }}
-                        />
-                    </AnimatePresence>
+                <Box position="relative" mt={40} width="500px" height="600px" overflow="hidden">
+                    <img
+                        src={imageUrls[currentImageIndex]}
+                        alt={brandName}
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'contain',
+                        }}
+                    />
                 </Box>
-                <Flex alignItems={'center'} justifyContent={'center'} mt={4} width={"100%"}>
+                <Flex alignItems={'center'} justifyContent={'center'} width={"100%"}>
+
                     <IconButton
                         aria-label="Previous image"
                         icon={<FiChevronLeft/>}
                         onClick={handlePrevImage}
                         variant="ghost"
+                        width={"20%"}
                         color="white"
-                        width={"30%"}
-                        _hover={{"background":"none"}}
+                        _hover={{"background": "none"}}
                     />
                     <Box>
                         <Text width={"100%"} fontSize={["4xl", "48px"]} fontFamily="EB Garamond"
                               fontWeight="800">{brandName}</Text>
-                        {/*<Text textAlign='center'>{`Image ${currentImageIndex + 1} of ${imageUrls.length}`}</Text>*/}
                     </Box>
                     <IconButton
                         aria-label="Next image"
@@ -128,9 +96,8 @@ export const StickyImage = ({imageUrls, brandName}) => {
                         onClick={handleNextImage}
                         variant="ghost"
                         color="white"
-                        width={"30%"}
-                        _hover={{"background":"none"}}
-
+                        width={"20%"}
+                        _hover={{"background": "none"}}
                     />
                 </Flex>
             </Flex>

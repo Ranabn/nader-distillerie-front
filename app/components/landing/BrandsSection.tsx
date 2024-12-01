@@ -131,7 +131,7 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                         </Text>
                         <Text fontSize={["2xl", "32px"]} fontWeight="bold" fontFamily={"EB Garamond"}
                               mb={10}>{brand.brand_name}</Text>
-                        <Link href={`/brands/${brand.slug}`}>
+                        <Link _hover={{ textDecoration: "none" }} href={`/brands/${brand.slug}`}>
 
                             <Btn size={'xs'} variant="secondary" text={`Discover ${brand.brand_name}`}/>
                         </Link>
@@ -162,7 +162,7 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
             </Flex>
             {isLanding && (
                 <Flex w={['100%', '40%', '18%']} mt={6}>
-                    <Link href={`/brands`}>
+                    <Link _hover={{ textDecoration: "none" }} href={`/brands`}>
                         <Box width={["88vw", "100%"]} p={2} pr={3}>
                             <Btn size={'smmd'} variant={'primaryBlack'} text={'Discover our brands'}/>
                         </Box>

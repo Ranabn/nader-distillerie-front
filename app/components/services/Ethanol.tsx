@@ -75,8 +75,9 @@ export const Ethanol = () => {
                     <Text fontSize={["lg", "24px"]}>
                         Need ethanol? Contact us for the best solution.
                     </Text>
+                    <Link href={"/contact"}  _hover={{  textDecoration: "none"}}>
                     <Btn variant='primaryBlack' size={"md"} text='Request a quote'/>
-
+                    </Link>
 
                 </Flex>
             </Box>

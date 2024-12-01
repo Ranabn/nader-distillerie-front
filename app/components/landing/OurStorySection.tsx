@@ -1,7 +1,9 @@
 'use client'
 import React, {useEffect, useRef} from "react";
-import {Box, Flex, Text, Image, Heading} from "@chakra-ui/react";
+import {Box, Flex, Text, Image, Heading, Link} from "@chakra-ui/react";
 import OurStory from "@/app/assets/images/our-story-landing.png";
+import OurStory2 from "@/app/assets/images/our-story-landing-2.png";
+import OurStory3 from "@/app/assets/images/our-story-landing-3.png";
 import {Btn} from "@/app/components/ui/Btn";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
@@ -69,7 +71,9 @@ export const OurStorySection = ({storyImg}: any) => {
                         wines, and more.
                     </Text>
                     <Flex w={["100%", "40%", "100%"]} mt={4}>
-                        <Btn size="md" variant="secondary" text="Discover our legacy"/>
+                        <Link _hover={{ textDecoration: "none" }} href={'/our-story'}>
+                            <Btn size="md" variant="secondary" text="Discover our legacy"/>
+                        </Link>
                     </Flex>
                 </Flex>
                 <Image
@@ -84,14 +88,14 @@ export const OurStorySection = ({storyImg}: any) => {
                 <Text></Text>
                 <Flex flexDirection={"column"} gap={8} mt={8}>
                     <Image
-                        src={storyImg || OurStory.src}
+                        src={storyImg || OurStory2.src}
                         alt="Our Story"
                         objectFit="cover"
                         width="800px"
                         height="800px"
                     />
                     <Image
-                        src={storyImg || OurStory.src}
+                        src={storyImg || OurStory3.src}
                         alt="Our Story"
                         objectFit="cover"
                         width="800px"

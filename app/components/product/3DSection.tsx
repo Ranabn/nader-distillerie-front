@@ -2,7 +2,7 @@
 import React, {useState, useRef, useCallback} from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {EffectFade, Mousewheel} from "swiper/modules";
-import {Text, Box, Icon} from "@chakra-ui/react";
+import {Text, Box, Icon, Link} from "@chakra-ui/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import {FiChevronDown} from "react-icons/fi";
@@ -50,7 +50,7 @@ export const Product3DSection = ({sections, children}: any) => {
                     height: "100vh",
                 }}
             >
-                {sections.map((sec: any) => (
+                {sections.map((sec: any, index: number) => (
                     <SwiperSlide
                         key={sec.id}
                         style={{
@@ -61,22 +61,37 @@ export const Product3DSection = ({sections, children}: any) => {
                     >
                         <Box
                             style={{
-                                backgroundImage: `url(${sec.imageUrl})`,
-                                backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 width: "100%",
                                 height: "100%",
                             }}
                         >
+                            <Box
+                                style={{
+                                    backgroundImage: `url(${sec.imageUrl})`,
+                                    backgroundSize:
+                                        index === 1
+                                            ? "100%"
+                                            : index === 3
+                                                ? "110%"
+                                                : "cover",
+                                    backgroundPosition: index === 1 ? "bottom -800px right" : index === 3 ? "top" : "center",
+                                    width: "100%",
+                                    height: "100%",
+                                    backgroundColor: "rgba(0, 0, 0, 0.4)", // Dark overlay
+                                    backgroundBlendMode: "overlay",
+                                    transform: index === 1 ? "scaleX(-1)" : "none", // Flip only the second image
+                                }}
+                            />
                             {/* Content Section */}
                             <Box
                                 style={{
                                     position: "absolute",
-                                    top: "25%",
                                     left: "2.5%",
                                     color: "white",
                                     width: "800px",
                                     zIndex: 9999,
+                                    top: index === 2 ? "30%" : index === 3 ? "20%" : "25%",
                                 }}
                             >
                                 <Text style={{fontSize: "18px", fontWeight: 800}}>{sec.description}</Text>
@@ -85,30 +100,32 @@ export const Product3DSection = ({sections, children}: any) => {
                                         {sec.description2}
                                     </Text>
                                 )}
-                                <Text
-                                    style={{
-                                        display: "flex",
-                                        alignItems: "center",
-                                        fontSize: "18px",
-                                        fontWeight: 800,
-                                        marginTop: "30px",
-                                    }}
-                                >
-                                    {sec.discover}
-                                    <svg
-                                        style={{marginLeft: "8px"}}
-                                        width="12"
-                                        height="12"
-                                        viewBox="0 0 12 12"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                <Link href={"/brands"} _hover={{ textDecoration: "none" }}>
+                                    <Text
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            fontSize: "18px",
+                                            fontWeight: 800,
+                                            marginTop: "30px",
+                                        }}
                                     >
-                                        <path
-                                            d="M6 0L4.9425 1.0575L9.1275 5.25H0V6.75H9.1275L4.9425 10.9425L6 12L12 6L6 0Z"
-                                            fill="white"
-                                        />
-                                    </svg>
-                                </Text>
+                                        {sec.discover}
+                                        <svg
+                                            style={{marginLeft: "8px"}}
+                                            width="12"
+                                            height="12"
+                                            viewBox="0 0 12 12"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M6 0L4.9425 1.0575L9.1275 5.25H0V6.75H9.1275L4.9425 10.9425L6 12L12 6L6 0Z"
+                                                fill="white"
+                                            />
+                                        </svg>
+                                    </Text>
+                                </Link>
                                 {sec.discover2 && (
                                     <Text
                                         style={{
@@ -139,7 +156,7 @@ export const Product3DSection = ({sections, children}: any) => {
                             <Text
                                 style={{
                                     position: "absolute",
-                                    bottom: "0%",
+                                    bottom: index === 2 ? "5%" : "0%",
                                     left: "50%",
                                     transform: "translateX(-50%)",
                                     color: "white",
@@ -168,10 +185,9 @@ export const Product3DSection = ({sections, children}: any) => {
                                 animation="upDownFade 2s infinite"
                             />
                         </Box>
-
                     </SwiperSlide>
-
                 ))}
+
                 <SwiperSlide>
                     <Box height={'100vh'}></Box>
                 </SwiperSlide>

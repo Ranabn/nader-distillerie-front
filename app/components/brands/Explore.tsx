@@ -1,7 +1,7 @@
 // components/ExploreMore.jsx
 'use client'
 
-import {Card, Flex, Text, CardBody, Image, Box} from "@chakra-ui/react";
+import {Card, Flex, Text, CardBody, Image, Box, Link} from "@chakra-ui/react";
 import {FiArrowRight} from "react-icons/fi";
 import React from "react";
 
@@ -25,25 +25,29 @@ export const ExploreMore = ({brands}: any) => {
                 <Text fontSize="4xl" fontFamily="EB Garamond" fontWeight="800">
                     Explore more brands
                 </Text>
-                <Flex
-                    alignItems={'center'} alignContent={'center'}
-                    gap={2}
-                    position="relative"
-                    _hover={{
-                        "&::after": {
-                            content: '""',
-                            // position: "absolute",
-                            // bottom: "-2px",
-                            left: 0,
-                            height: "0.8px",
-                            backgroundColor: "currentColor",
-                            // animation: `${lineAnimation} 0.3s forwards`
-                        }
-                    }}
-                >
-                    <Text fontSize={["sm", "18px"]} _hover={{cursor: 'pointer'}}>See all brands</Text>
-                    <FiArrowRight/>
-                </Flex>
+                <Link href={"/brands"}>
+
+                    <Flex
+                        alignItems={'center'} alignContent={'center'}
+                        gap={2}
+                        position="relative"
+                        _hover={{
+                            "&::after": {
+                                content: '""',
+                                // position: "absolute",
+                                // bottom: "-2px",
+                                left: 0,
+                                height: "0.8px",
+                                backgroundColor: "currentColor",
+                                // animation: `${lineAnimation} 0.3s forwards`
+                            }
+                        }}
+                    >
+                        <Text fontSize={["sm", "18px"]} _hover={{cursor: 'pointer'}}>See all brands</Text>
+                        <FiArrowRight/>
+                    </Flex>
+                </Link>
+
             </Flex>
             <Box
                 backgroundColor="black"

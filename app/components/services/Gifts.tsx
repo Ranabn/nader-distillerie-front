@@ -1,15 +1,19 @@
 // @ts-nocheck
 'use client'
 import {useRef, useEffect, useState} from "react";
-import {Box, Button, Divider, Flex, Image, Link, Text, List, UnorderedList, ListItem} from "@chakra-ui/react";
+import {Box, Divider, Flex, Image, Link, Text} from "@chakra-ui/react";
 import React from "react";
 import {Btn} from "@/app/components/ui/Btn";
-import {ExternalBox} from "@/app/components/ui/ExternalBoxe";
-import LabelDrinks from "@/app/assets/images/label-drinks.png"
 import {FiChevronRight} from "react-icons/fi";
 import gifts from "@/app/assets/images/gifts.png"
-import testimony1 from "@/app/assets/images/testimony1.png";
-import testimony2 from "@/app/assets/images/testimony2.png";
+import testimony1 from "../../assets/images/gift-sliders/pres-1.png";
+import pres2 from "../../assets/images/gift-sliders/pres-2.png";
+import pres3 from "../../assets/images/gift-sliders/pres-3.png";
+import pres4 from "../../assets/images/gift-sliders/pres-4.png";
+import testimony2 from "../../assets/images/gift-sliders/bottle-1.png";
+import bottle2 from "../../assets/images/gift-sliders/bottle-2.png";
+import bottle3 from "../../assets/images/gift-sliders/bottle-3.png";
+import bottle4 from "../../assets/images/gift-sliders/bottle-4.png";
 import quotes from "@/app/assets/images/quotes.png";
 import arrowright from "@/app/assets/images/arrowright.png";
 import arrowleft from "@/app/assets/images/arrowleft.png";
@@ -104,7 +108,9 @@ export const Gifts = () => {
                     <Text fontSize={["lg", "24px"]}>
                         Planning an upcoming event? Don’t wait until the last moment.
                     </Text>
-                    <Btn variant='primaryBlack' size={"md"} text='Request a consultation'/>
+                    <Link href={"/contact"} _hover={{textDecoration: "none"}}>
+                        <Btn variant='primaryBlack' size={"md"} text='Request a consultation'/>
+                    </Link>
                 </Flex>
             </Box>
             <Flex flexDirection={"column"} p={10} gap={20} mb={20}>
@@ -154,7 +160,16 @@ export const Gifts = () => {
                         >
                             <SwiperSlide>
                                 <Image
-                                    src={testimony1.src}
+                                    src={pres3.src}
+                                    alt="Our Story"
+                                    objectFit="cover"
+                                    width="100%"
+                                    height="100%"
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <Image
+                                    src={pres2.src}
                                     alt="Our Story"
                                     objectFit="cover"
                                     width="100%"
@@ -172,16 +187,7 @@ export const Gifts = () => {
                             </SwiperSlide>
                             <SwiperSlide>
                                 <Image
-                                    src={testimony1.src}
-                                    alt="Our Story"
-                                    objectFit="cover"
-                                    width="100%"
-                                    height="100%"
-                                />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <Image
-                                    src={testimony1.src}
+                                    src={pres4.src}
                                     alt="Our Story"
                                     objectFit="cover"
                                     width="100%"
@@ -262,7 +268,16 @@ export const Gifts = () => {
                         >
                             <SwiperSlide>
                                 <Image
-                                    src={testimony2.src}
+                                    src={bottle3.src}
+                                    alt="Testimonial 2 Slide 1"
+                                    objectFit="cover"
+                                    width="100%"
+                                    height="100%"
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <Image
+                                    src={bottle4.src}
                                     alt="Testimonial 2 Slide 1"
                                     objectFit="cover"
                                     width="100%"
@@ -280,16 +295,7 @@ export const Gifts = () => {
                             </SwiperSlide>
                             <SwiperSlide>
                                 <Image
-                                    src={testimony2.src}
-                                    alt="Testimonial 2 Slide 1"
-                                    objectFit="cover"
-                                    width="100%"
-                                    height="100%"
-                                />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <Image
-                                    src={testimony2.src}
+                                    src={bottle2.src}
                                     alt="Testimonial 2 Slide 1"
                                     objectFit="cover"
                                     width="100%"

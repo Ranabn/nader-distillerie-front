@@ -1,16 +1,15 @@
-// @ts-nocheck
-
-'use client'
-import React from "react";
-import {Box, Flex, Heading, Text} from "@chakra-ui/react";
+'use client';
+import React, {useRef, useEffect} from "react";
+import {Box, Flex, Heading, Link, Text} from "@chakra-ui/react";
 import Image from "next/image";
-import {FiArrowRight} from "react-icons/fi"; // Import the arrow right icon
+import {FiArrowRight} from "react-icons/fi";
+import {keyframes} from "@emotion/react";
+import {gsap} from "gsap";
 
 import Spirits from "@/app/assets/images/products/spirits.png";
 import Wines from "@/app/assets/images/wines.png";
 import Vinegars from "@/app/assets/images/vinegars.png";
 import Ethanol from "@/app/assets/images/products/ethanol.png";
-import {keyframes} from "@emotion/react";
 
 const products = [
     {
@@ -33,8 +32,8 @@ const products = [
         description: "Specially produced to grade to enhance compatibility and character in every drop.",
         imgSrc: Ethanol,
     },
-    // Add more products as needed
 ];
+
 const lineAnimation = keyframes`
     0% {
         width: 0;
@@ -44,76 +43,126 @@ const lineAnimation = keyframes`
     }
 `;
 
-export const ProductsSection = () => (
-    <Box p={[4, 8, 8]} bg={'white'}>
-        <Flex alignItems="center" justifyContent="space-between" mb={4} alignContent={'center'}>
-            <Heading fontSize={["4xl", "48px"]} fontWeight="800" fontFamily="EB Garamond">
-                Our Products
-            </Heading>
-            <Flex
-                alignItems="center"
-                gap={2}
-                position="relative"
-                _hover={{
-                    "&::after": {
-                        content: '""',
-                        // position: "absolute",
-                        // bottom: "-2px",
-                        left: 0,
-                        height: "0.8px",
-                        backgroundColor: "currentColor",
-                        // animation: `${lineAnimation} 0.3s forwards`
-                    }
-                }}
-            >
-                <Text fontSize={["sm","18px"]} _hover={{cursor: 'pointer'}}>See all products</Text>
-                <FiArrowRight/>
-            </Flex>
-        </Flex>
+export const ProductsSection = () => {
+    const arrowRef = useRef(null);
 
-        <Flex
-            wrap="wrap"
-            gap={[4, 5, 6]}
-            justify="space-between"
-        >
-            {products.map((product, index) => (
+    const handleMouseEnter = () => {
+        console.log(arrowRef.current); // Check if this logs the arrow element properly
+        if (arrowRef.current) {
+            // First animation: move to the right and fade out
+            gsap.to(arrowRef.current, {
+                x: 10, // Moves the arrow to the right
+                opacity: 0,
+                ease: "power1.inOut",
+                onComplete: () => {
+                    // Second animation: reset position and fade in from the left
+                    gsap.fromTo(
+                        arrowRef.current,
+                        {
+                            x: -10, // Start position (from the left)
+                            opacity: 0,
+                        },
+                        {
+                            x: 0, // Move to the initial position
+                            opacity: 1,
+                            duration: 0.6,
+                            ease: "power1.inOut",
+                        }
+                    );
+                },
+            });
+        }
+    };
+
+
+    return (
+        <Box p={[4, 8, 8]} bg={'white'}>
+            <Flex alignItems="center" justifyContent="space-between" mb={4} alignContent={'center'}>
+                <Heading fontSize={["4xl", "48px"]} fontWeight="800" fontFamily="EB Garamond">
+                    Our Products
+                </Heading>
                 <Flex
-                    key={index}
-                    flexDir="column"
-                    flexBasis={{base: "100%", md: "45%", lg: "23%"}}
-                    mb={6}
+                    alignItems="center"
+                    alignContent={'center'}
+                    gap={2}
+                    position="relative"
                 >
-                    <Box
-                        width="100%"
-                        height={"242.44px"}
-                        mb={2}
-                        overflow="hidden"
-                        position="relative"
+                    <Link
+                        href={'/brands'}
+                        onMouseEnter={handleMouseEnter}
+                        _hover={{
+                            textDecoration: "none",
+                            _after: {
+                                content: '""',
+                                display: 'block',
+                                width: '0',
+                                height: '0.8px',
+                                backgroundColor: 'currentColor',
+                                animation: `${lineAnimation} 0.3s forwards`,
+                            },
+                            position: 'relative',
+                            _before: {
+                                content: '""',
+                                position: 'absolute',
+                                bottom: '-2px',
+                                left: 0,
+                                width: '100%',
+                                height: '0.8px',
+                                backgroundColor: 'transparent',
+                            }
+                        }}
+                    >
+                        <Text fontSize={["sm", "18px"]} _hover={{cursor: 'pointer'}}>See all products</Text>
+                    </Link>
+                    <Box ref={arrowRef}>
+                        <FiArrowRight/>
+                    </Box>
+                </Flex>
+            </Flex>
+
+            <Flex
+                wrap="wrap"
+                gap={[4, 5, 6]}
+                justify="space-between"
+            >
+                {products.map((product, index) => (
+                    <Flex
+                        key={index}
+                        flexDir="column"
+                        flexBasis={{base: "100%", md: "45%", lg: "23%"}}
+                        mb={6}
                     >
                         <Box
                             width="100%"
-                            height="100%"
-                            transition="transform 0.3s ease-in-out"
-                            _hover={{
-                                transform: "scale(1.1)",
-                                cursor: 'pointer',
-
-                            }}
+                            height={"242.44px"}
+                            mb={2}
+                            overflow="hidden"
+                            position="relative"
                         >
-                            <Image
-                                src={product.imgSrc}
-                                alt={product.name}
-                                layout="fill"
-                                objectFit="cover"
-                            />
+                            <Box
+                                width="100%"
+                                height="100%"
+                                transition="transform 0.3s ease-in-out"
+                                _hover={{
+                                    transform: "scale(1.1)",
+                                    cursor: 'pointer',
+                                }}
+                            >
+                                <Image
+                                    src={product.imgSrc}
+                                    alt={product.name}
+                                    layout="fill"
+                                    objectFit="cover"
+                                />
+                            </Box>
                         </Box>
-                    </Box>
-                    <Text fontWeight="semi-bold" fontSize={["xl", "24px"]}>{product.name}</Text>
-                    <Text fontSize={["sm", "18px"]} color="gray.600">
-                        {product.description}
-                    </Text>
-                </Flex>
-            ))}
-        </Flex>
-    </Box>
-);
+                        <Text fontWeight="semi-bold" fontSize={["xl", "24px"]}>{product.name}</Text>
+                        <Text fontSize={["sm", "18px"]} color="gray.600">
+                            {product.description}
+                        </Text>
+                    </Flex>
+                ))}
+            </Flex>
+        </Box>
+    );
+};
