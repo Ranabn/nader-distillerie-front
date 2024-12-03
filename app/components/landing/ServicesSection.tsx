@@ -1,30 +1,37 @@
 // @ts-nocheck
-
-import {Box, Flex, Heading, Text, Button, Image, VStack, Link} from "@chakra-ui/react";
+'use client'
+import {Box, Flex, Heading, Text, Button, Image, VStack, Link, useQuery} from "@chakra-ui/react";
 import React from "react";
 import Craft from "@/app/assets/images/services/usine01.png"
-import Noel from "@/app/assets/images/services/usine02.png"
-import {Btn} from "@/app/components/ui/Btn";
+import craft2 from "@/app/assets/images/services/usine02.png"
+import Noel from "@/app/assets/images/noel.png"
 
-const SectionItem = ({subtitle, title, description, buttonText, imageSrc, link}) => (
-    <Flex flexDirection={['column', 'column', 'row']} mt={8} mb={[6, 20]} gap={[12, 32]} alignItems="center">
-        <Image src={imageSrc} alt={title} width={650} minWidth={"815px"} objectFit="cover" height={"459px"}/>
-        <Flex flexDirection={'column'}>
-            <Text fontSize={["24px"]} color={'#12191F'}>{subtitle}</Text>
+import {Btn} from "@/app/components/ui/Btn";
+import {usePathname} from "next/navigation";
+
+export const SectionItem = ({subtitle, title, description, buttonText, imageSrc, link}) => (
+    <Flex width={'100%'} flexDirection={['column', 'column', 'row']} mt={8} mb={[0, 6, 20]} gap={[4, 12, 32]}
+          alignItems="center">
+        <Image src={imageSrc} alt={title} width={650} minWidth={"815px"} objectFit="cover"
+               height={["200px", "459px", "459px"]}/>
+        <Flex flexDirection={'column'} width={'100%'}>
+            <Text fontSize={["20px", "24px", "24px"]} color={'#12191F'}>{subtitle}</Text>
             <Flex flexDirection="column" gap={2}>
-                <Heading fontSize={["4xl", "48px"]} fontWeight="bold" mb={0}
+                <Heading fontSize={["28px", "4xl", "48px"]} fontWeight="bold" mb={0}
                          fontFamily={"EB Garamond"}>{title}</Heading>
-                <Text fontSize={"18px"}>{description}</Text>
-                <Flex w={['100%', '40%', '40%']} display={['none', 'flex']} mt={2}>
+                <Text lineHeight={["24px", "28px"]} fontSize={["16px", "18px", "18px"]}>{description}</Text>
+                <Box w={['100%', '40%', '40%']} display={['none', 'flex']} mt={2}>
                     <Link _hover={{textDecoration: "none"}} href={`/services/${link}`}>
                         <Btn size={'md'} variant="secondary" text={buttonText}/>
                     </Link>
-                </Flex>
-                <Flex w={['100%', '40%', '40%']} display={['flex', 'none']} mt={2}>
-                    <Link _hover={{textDecoration: "none"}} href={`/services/${link}`}>
-                        <Btn size={'sm'} variant="secondary" text={buttonText}/>
-                    </Link>
-                </Flex>
+                </Box>
+                <Link _hover={{textDecoration: "none"}} href={`/services/${link}`}>
+                    <Box w={['100%', '40%', '40%']} display={['flex', 'none']} mt={2}>
+
+                        <Btn size={'md'} variant="secondary" text={buttonText}/>
+                    </Box>
+
+                </Link>
             </Flex>
 
         </Flex>
@@ -32,11 +39,14 @@ const SectionItem = ({subtitle, title, description, buttonText, imageSrc, link})
     </Flex>
 );
 
-const serviceSection = () => {
+const ServiceSection = () => {
+
+    const pathname = usePathname()
     return (
-        <Box as="section" py={[6, 8, 12]} p={[4, 8, 8]} bg={'white'}>
-            <Heading display={['flex', 'none']}
-                     fontSize="4xl"
+        <Box as="section" mb={pathname === '/services' ? 10 : 0 } py={[6, 8, 12]} p={[4, 8, 8]} bg={'white'}>
+            <Heading display={[pathname === '/services' ? "none" : "flex", 'none']}
+                     fontSize="28px"
+                     mb={[4, 14,14]}
                      fontWeight="bold"
                      fontFamily='EB Garamond, serif'
             >
@@ -57,7 +67,7 @@ const serviceSection = () => {
                 description="Supply your industry with our versatile ethanol. Catering to pharmaceuticals, perfumery, home care, and beverages, we provide the perfect ethanol solution for your specific needs."
                 buttonText="Purchase ethanol"
                 link={"ethanol"}
-                imageSrc={Noel.src}
+                imageSrc={craft2.src}
             />
 
             <SectionItem
@@ -66,10 +76,10 @@ const serviceSection = () => {
                 description="Make your events memorable with our customized gifts. Be it company gifts, wedding giveaways, or any special occasion, we design gifts that leave a lasting impression. Your vision is our inspiration."
                 buttonText="Order your gifts"
                 link={"gift"}
-                imageSrc={Craft.src}
+                imageSrc={Noel.src}
             />
         </Box>
     );
 };
 
-export default serviceSection;
+export default ServiceSection;

@@ -28,18 +28,17 @@ export const Footer = ({brands}: any) => {
     };
 
     return (
-        <Box bg="#12191F" color="white" px={[4, 8, 8]}>
+        <Box bg="#12191F" color="white" px={[4, 8, 8]} pb={4}>
             <Flex display={['flex', 'none', 'none']} _hover={{cursor: 'pointer'}} gap={2} flexDir='column' mb={4}
                   alignItems='center'
                   aria-label="Scroll to top" onClick={scrollToTop}>
                 <FiChevronUp size={32}/>
-                <Text>Back to top</Text>
+                <Text fontSize={'18px'}>Back to top</Text>
             </Flex>
             <Flex pt={1} gap={10} flexDirection={["flex", "column", "row"]} justifyContent="space-between"
-                  alignItems={["center", "center", "start"]} mb={[8, 10]}>
-                <Flex width={"33%"}>
+                  alignItems={["center", "center", "start"]} mb={[4, 8, 10]}>
+                <Flex width={["33%", "33%", "33%"]}>
                     <LogoHorizontal/>
-
                 </Flex>
 
                 <Flex width={"33%"} display={['none', 'flex', 'flex']} _hover={{cursor: 'pointer'}} flexDir='column'
@@ -73,7 +72,7 @@ export const Footer = ({brands}: any) => {
                 <Flex w={['100%', '80%']}>
                     <Link href={'/contact'} _hover={{textDecoration: 'none'}} width={["100%", "30%"]} mb={4}
                           display={['flex', 'none']}>
-                        <Btn size={'sm'} variant="primaryWhite" text="WORK TOGETHER"/>
+                        <Btn size={'md'} variant="primaryWhite" text="WORK TOGETHER"/>
                     </Link>
                     <Link href={'/contact'} _hover={{textDecoration: 'none'}} display={['none', 'flex']}>
                         <Btn size={'xs'} variant="primaryWhite" text="WORK TOGETHER"/>
@@ -99,7 +98,7 @@ export const Footer = ({brands}: any) => {
                         <Text fontWeight="bold" fontSize={"20px"} mb={2}>Services</Text>
                         <Link href={"/services/label-drinks"}>Private Label</Link>
                         <Link href={"/services/ethanol"}>Raw Material</Link>
-                        <Link  href={"/services/gift"}>Events</Link>
+                        <Link href={"/services/gift"}>Events</Link>
                     </Flex>
 
                     <Flex align="flex-start" flexDirection={'column'}>
@@ -107,14 +106,15 @@ export const Footer = ({brands}: any) => {
                     </Flex>
                 </Flex>
             </SimpleGrid>
-            <Flex color={'gray.600'} flexDirection={["column", "row"]} justifyContent="space-between"
-                  alignItems="center" mt={8}>
-                <Text fontSize="xs" mb={[4, 0]} textAlign={["center", "left"]}>© Nader Distilleries 2024. All rights
-                    reserved.</Text>
-                <HStack spacing={4}>
+            <Flex color={'gray.600'} flexDirection={["column", "row"]} justifyContent={["space-between"]}
+                  alignItems={["start", "center"]} mt={8}>
+
+                <HStack spacing={4} mb={[4, 0]}>
                     <Link href="#" fontSize="xs">Privacy Policy</Link>
                     <Link href="#" fontSize="xs">Terms & Conditions</Link>
                 </HStack>
+                <Text fontSize="xs"  textAlign={["center", "left"]}>© Nader Distilleries 2024. All rights
+                    reserved.</Text>
             </Flex>
             <style jsx global>{`
                 @keyframes upDownFade {

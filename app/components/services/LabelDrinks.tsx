@@ -11,16 +11,16 @@ export const LabelDrinks = () => {
 
     return (
         <Box>
-            <Box p={10} maxWidth="1200px" mx="auto">
+            <Box p={[4, 8, 10]} maxWidth="1200px" mx="auto">
                 {/* Header Section */}
-                <Flex flexDirection={"column"} align="stretch" fontSize={["18px"]}>
-                    <Text fontSize={["5xl", "48px"]} mb={4} fontWeight="bold" fontFamily={"EB Garamond"}>
+                <Flex flexDirection={"column"} align="stretch" fontSize={["16px", "18px"]}>
+                    <Text fontSize={["28px", "5xl", "48px"]} mb={4} fontWeight="bold" fontFamily={"EB Garamond"}>
                         Craft your unique private label drinks
                     </Text>
-                    <Text fontSize="md" mb={4}>
+                    <Text mb={4}>
                         Creating your own beverage can be a complex task, but we are here to simplify it.
                     </Text>
-                    <Text fontSize="md" mb={4}>
+                    <Text mb={4}>
                         With our extensive industry experience, we are equipped to bring your brand vision to life.
                         Whether you are seeking premium or entry-level <br/> products, we specialize in customizing
                         offerings
@@ -29,18 +29,19 @@ export const LabelDrinks = () => {
                     <Image mt={4}
                            src={LabelDrink.src}
                            alt="Bottles"
-                           width={'1100px'}
-                           height={'618px'}
+                           width={["335px", '1100px']}
+                           height={["200px", '618px']}
                     />
                 </Flex>
 
                 <Divider my={10}/>
 
                 {/* Why Us and Our Process Section */}
-                <Flex justify="space-between" flexDirection={["column", "column", "row"]} gap={12}>
+                <Flex fontSize={["16px", "18px"]} justify="space-between" flexDirection={["column", "column", "row"]}
+                      gap={12}>
                     {/* Why Us */}
-                    <Flex w={'70%'} flexDir='column' align="flex-start" gap={2} fontSize={["18px"]}>
-                        <Text fontSize={["4xl", "48px"]} fontWeight="bold" fontFamily={"EB Garamond"} mb={4}>
+                    <Flex w={['100%', '70%', '70%']} flexDir='column' align="flex-start" gap={2}>
+                        <Text fontSize={["28px", "4xl", "48px"]} fontWeight="bold" fontFamily={"EB Garamond"} mb={4}>
                             Why us?
                         </Text>
                         <Text>
@@ -55,8 +56,8 @@ export const LabelDrinks = () => {
                     </Flex>
 
                     {/* Our Process */}
-                    <Flex flexDir='column' align="flex-start" gap={2} fontSize={["18px"]}>
-                        <Text fontSize={["4xl", "48px"]} fontWeight="bold" fontFamily={"EB Garamond"} mb={4}>
+                    <Flex flexDir='column' align="flex-start" gap={2} fontSize={["16px", "18px"]}>
+                        <Text fontSize={["28px", "4xl", "48px"]} fontWeight="bold" fontFamily={"EB Garamond"} mb={4}>
                             Our process
                         </Text>
                         <Text>
@@ -81,28 +82,51 @@ export const LabelDrinks = () => {
                     </Flex>
                 </Flex>
 
-                {/* Call to Action */}
-                <Flex flexDir='column' align="center" mt={24} gap={4} mb={10}>
-                    <Text fontSize={["lg", "24px"]}>
+                <Flex
+                    flexDir="column"
+                    align="center"
+                    width="100%"
+                    justifyContent="center"
+                    mt={24}
+                    gap={4}
+                    mb={10}
+                >
+                    <Text fontSize={["20px", "lg", "24px"]} textAlign="center">
                         Ready to build your brand with us?
                     </Text>
-                    <Link href={"/contact"} _hover={{textDecoration: "none"}}>
-                        <Btn variant='primaryBlack' size={"md"} text='Request a consultation'/>
-
-                    </Link>
+                    <Box
+                        width="100%"
+                        display="flex"
+                        justifyContent="center"
+                    >
+                        <Box w={["100%", "50%", "20%"]} mr={[0, 10]}>
+                            <Link href="/contact" _hover={{textDecoration: "none"}}>
+                                <Btn
+                                    variant="primaryBlack"
+                                    size="md"
+                                    text="Request a consultation"
+                                    width="100%" // Button spans the entire width of its container
+                                />
+                            </Link>
+                        </Box>
+                    </Box>
                 </Flex>
+
+
             </Box>
-            <Flex mb={12}>
+            <Flex mb={12} flexDirection={['column', 'row']}>
                 <Flex
-                    m={10}
+                    m={[4, 10]}
                     justifyContent={'center'}
+                    height={["335px", "320px"]}
+
                 >
                     <Flex borderWidth="1px"
                           borderColor={'black'}
                           direction="column"
-                          p={12}
-                          pt={14}
-                          pb={14}
+                          p={[8, 12]}
+                          pt={[0, 14]}
+                          pb={[0, 14]}
                           alignContent={'center'}
                           justifyContent={'center'}
                           _hover={{cursor: 'pointer'}}
@@ -110,14 +134,14 @@ export const LabelDrinks = () => {
                     >
                         <Link href={'/services/ethanol'} _hover={{textDecoration: 'none'}}>
                             <Flex alignItems={'center'} justifyContent={'space-between'} mb={4}
-                                  fontSize={["xl", "28px"]}>
+                                  fontSize={["24px", "xl", "28px"]}>
                                 <Text fontWeight="800" fontFamily={"EB Garamond"} color={"#333333"}>
                                     Ethanol for every industry
                                 </Text>
                                 <FiChevronRight/>
                             </Flex>
 
-                            <Text mb={2} fontSize={["md", "18px"]} color={"#333333"}>
+                            <Text mb={2} fontSize={["16px", "md", "18px"]} color={"#333333"}>
                                 Our ethanol caters to various industries, including pharmaceuticals, perfumery, home
                                 care,
                                 and beverages. Discover the perfect ethanol solution for your industry with us.
@@ -128,26 +152,25 @@ export const LabelDrinks = () => {
                 </Flex>
                 <Flex
                     justifyContent={'center'}
-                    m={10}
-                    height={"320px"}
-
+                    m={[4, 10]}
+                    height={["335px", "320px"]}
                 >
                     <Flex borderWidth="1px"
                           borderColor={'black'}
                           direction="column"
-                          p={12}
-                          pt={14}
+                          pl={[8, 12]}
+                          pr={[8, 12]}
+                          pt={[0, 14]}
+                          pb={[0, 14]}
                           alignContent={'center'}
                           justifyContent={'center'}
                           height={"100%"}
-
-                          pb={14}
                           _hover={{cursor: 'pointer'}}
 
                     >
                         <Link href={'/services/gift'} _hover={{textDecoration: 'none'}}>
                             <Flex alignItems={'center'} justifyContent={'space-between'} mb={4}
-                                  fontSize={["xl", "28px"]}>
+                                  fontSize={["24px", "xl", "28px"]}>
                                 <Text fontWeight="800" fontFamily={"EB Garamond"} color={"#333333"}>
                                     Customize your gifts
                                 </Text>

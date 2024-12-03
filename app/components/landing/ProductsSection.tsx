@@ -78,7 +78,7 @@ export const ProductsSection = () => {
     return (
         <Box p={[4, 8, 8]} bg={'white'}>
             <Flex alignItems="center" justifyContent="space-between" mb={4} alignContent={'center'}>
-                <Heading fontSize={["4xl", "48px"]} fontWeight="800" fontFamily="EB Garamond">
+                <Heading fontSize={["28px", "48px", "48px"]} fontWeight="800" fontFamily="EB Garamond">
                     Our Products
                 </Heading>
                 <Flex
@@ -86,6 +86,8 @@ export const ProductsSection = () => {
                     alignContent={'center'}
                     gap={2}
                     position="relative"
+                    mt={[2, 0]} // Add spacing for smaller screens
+
                 >
                     <Link
                         href={'/brands'}
@@ -112,7 +114,7 @@ export const ProductsSection = () => {
                             }
                         }}
                     >
-                        <Text fontSize={["sm", "18px"]} _hover={{cursor: 'pointer'}}>See all products</Text>
+                        <Text fontSize={["16px", "sm", "18px"]} _hover={{cursor: 'pointer'}}>See all products</Text>
                     </Link>
                     <Box ref={arrowRef}>
                         <FiArrowRight/>
@@ -156,8 +158,8 @@ export const ProductsSection = () => {
                                 />
                             </Box>
                         </Box>
-                        <Text fontWeight="semi-bold" fontSize={["xl", "24px"]}>{product.name}</Text>
-                        <Text fontSize={["sm", "18px"]} color="gray.600">
+                        <Text fontWeight="semi-bold" fontSize={["24px", "24px", "24px"]}>{product.name}</Text>
+                        <Text fontSize={["16px", "sm", "18px"]} color="gray.600">
                             {product.description}
                         </Text>
                     </Flex>

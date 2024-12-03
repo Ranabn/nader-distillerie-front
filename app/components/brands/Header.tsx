@@ -17,17 +17,17 @@ export const HeaderBrands = ({brand}: { brand: Brand }) => {
 
     return (
         <Flex minHeight={'350px'}
-              flexDirection="column" p={8} w={'45%'} mb={16}>
-            <Text fontSize={["5xl", "60px"]} fontFamily="EB Garamond" fontWeight="800">
+              flexDirection="column" mt={[4, 0, 0]} p={[4, 8, 8]} w={['100%', '45%', '45%']} mb={[0, 16, 16]}>
+            <Text fontSize={["48px", "5xl", "60px"]} fontFamily="EB Garamond" fontWeight="800">
                 {brand.brand_name}
             </Text>
-            <Text mb={4} fontSize={["3xl", "32px"]} fontWeight="300" textTransform='uppercase'>
+            <Text mb={4} fontSize={["24px", "3xl", "32px"]} fontWeight="300" textTransform='uppercase'>
                 {brand.brand_quote}
             </Text>
-            <Box mb={4} fontSize={"18px"}>
+            <Box mb={4} fontSize={["16px", "18px"]}>
                 <PortableText value={brand.brand_description_first_p}/>
             </Box>
-            <Box fontSize={"18px"}>
+            <Box fontSize={["16px", "18px"]}>
                 <PortableText value={brand.brand_description_sec_p}/>
             </Box>
         </Flex>

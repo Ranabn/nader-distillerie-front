@@ -7,10 +7,9 @@ import Vinegars from "@/app/assets/images/vinegars.png";
 import Eth from "../assets/images/ethanol.png";
 
 import {Footer} from "@/app/components/footer/Footer";
-import {OurStorySection} from "@/app/components/landing/OurStorySection";
 import {sanityFetch} from "@/app/sanity/client";
 import {Product3DSection} from "@/app/components/product/3DSection";
-import SmoothScroll from "@/app/SmoothScroll";
+import {CraftIdentity} from "@/app/components/product/CraftIdentity";
 
 const BRANDS_QUERY = `*[_type == "brands"] {
   brand_name,
@@ -65,16 +64,16 @@ export default async function HomeProduct() {
         <Box>
             <Navbar brands={brands}/>
             {/*<SmoothScroll>*/}
-                <Product3DSection sections={sections}/>
-                {/*<Box*/}
-                {/*    position="relative"*/}
-                {/*    zIndex={10}*/}
-                {/*    bg="white"*/}
-                {/*    top="100vh"*/}
-                {/*>*/}
-                <OurStorySection/>
-                <Footer brands={brands}/>
-                {/*</Box>*/}
+            <Product3DSection sections={sections}/>
+            {/*<Box*/}
+            {/*    position="relative"*/}
+            {/*    zIndex={10}*/}
+            {/*    bg="white"*/}
+            {/*    top="100vh"*/}
+            {/*>*/}
+            <CraftIdentity/>
+            <Footer brands={brands}/>
+            {/*</Box>*/}
             {/*</SmoothScroll>*/}
         </Box>
     );

@@ -28,7 +28,7 @@ const Button = defineStyleConfig({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center', // Ensure text is horizontally and vertically centered
-        textDecoration: 'none'
+        textDecoration: 'none',
 
     },
     sizes: {
@@ -44,7 +44,7 @@ const Button = defineStyleConfig({
         },
         md: {
             padding: '20px',
-            width: '208px',
+            width: '100%',
             height: '61px',
             fontSize: '20px',
         },
@@ -67,7 +67,7 @@ const Button = defineStyleConfig({
             animation: `${fillAnimationOut} 0.3s forwards`,
             _hover: {
                 color: 'white',
-                textDecoration:"none",
+                textDecoration: "none",
                 animation: `${fillAnimationIn} 0.3s forwards`,
             },
         },
@@ -107,7 +107,7 @@ const Button = defineStyleConfig({
             _hover: {
                 color: 'white',
                 animation: `${fillAnimationIn} 0.3s forwards`,
-                textDecoration:"none"
+                textDecoration: "none"
             },
             _disabled: {
                 animation: 'none',        // Disable animation
@@ -117,7 +117,7 @@ const Button = defineStyleConfig({
                 _hover: {
                     bg: 'gray.300',      // Ensure hover doesn't change the color
                     color: 'gray.500',
-                    textDecoration:"none"
+                    textDecoration: "none"
 // Prevent hover text color changes
                 },
             },
@@ -136,7 +136,7 @@ const Button = defineStyleConfig({
                 color: 'black',
                 bg: '#D2CDBF',
                 border: '1px solid transparent',
-                textDecoration:"none"
+                textDecoration: "none"
 
             },
             _disabled: {

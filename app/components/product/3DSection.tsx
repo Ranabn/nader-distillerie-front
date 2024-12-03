@@ -2,7 +2,7 @@
 import React, {useState, useRef, useCallback} from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {EffectFade, Mousewheel} from "swiper/modules";
-import {Text, Box, Icon, Link} from "@chakra-ui/react";
+import {Text, Box, Icon, Link, Flex} from "@chakra-ui/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import {FiChevronDown} from "react-icons/fi";
@@ -66,15 +66,12 @@ export const Product3DSection = ({sections, children}: any) => {
                                 height: "100%",
                             }}
                         >
+
                             <Box
+                                className="responsive-image"
                                 style={{
                                     backgroundImage: `url(${sec.imageUrl})`,
-                                    backgroundSize:
-                                        index === 1
-                                            ? "100%"
-                                            : index === 3
-                                                ? "110%"
-                                                : "cover",
+                                    backgroundSize: index === 1 ? "100%" : index === 3 ? "110%" : "cover",
                                     backgroundPosition: index === 1 ? "bottom -800px right" : index === 3 ? "top" : "center",
                                     width: "100%",
                                     height: "100%",
@@ -84,29 +81,31 @@ export const Product3DSection = ({sections, children}: any) => {
                                 }}
                             />
                             {/* Content Section */}
-                            <Box
+                            <Flex
+                                flexDir={"column"}
+                                gap={4}
+                                pl={[4, 8, 8]}
+                                width={["100%", "800px", "800px"]}
                                 style={{
                                     position: "absolute",
-                                    left: "2.5%",
                                     color: "white",
-                                    width: "800px",
                                     zIndex: 9999,
-                                    top: index === 2 ? "30%" : index === 3 ? "20%" : "25%",
                                 }}
+                                top={["18%", index === 2 ? "30%" : index === 3 ? "20%" : "25%"]}
                             >
-                                <Text style={{fontSize: "18px", fontWeight: 800}}>{sec.description}</Text>
+                                <Text fontSize={["16px", "18px"]}>{sec.description}</Text>
                                 {sec.description2 && (
-                                    <Text style={{fontSize: "18px", fontWeight: 800, marginTop: "15px"}}>
+                                    <Text fontSize={["16px", "18px"]} mt={"15px"}>
                                         {sec.description2}
                                     </Text>
                                 )}
-                                <Link href={"/brands"} _hover={{ textDecoration: "none" }}>
+                                <Link href={"/brands"} _hover={{textDecoration: "none"}}>
                                     <Text
+                                        fontSize={["20px", "18px"]}
                                         style={{
                                             display: "flex",
                                             alignItems: "center",
-                                            fontSize: "18px",
-                                            fontWeight: 800,
+                                            fontWeight: 400,
                                             marginTop: "30px",
                                         }}
                                     >
@@ -131,10 +130,11 @@ export const Product3DSection = ({sections, children}: any) => {
                                         style={{
                                             display: "flex",
                                             alignItems: "center",
-                                            fontSize: "18px",
-                                            fontWeight: 800,
+
+                                            fontWeight: 400,
                                             marginTop: "10px",
                                         }}
+                                        fontSize={["20px", "18px"]}
                                     >
                                         {sec.discover2}
                                         <svg
@@ -152,19 +152,19 @@ export const Product3DSection = ({sections, children}: any) => {
                                         </svg>
                                     </Text>
                                 )}
-                            </Box>
+                            </Flex>
                             <Text
                                 style={{
                                     position: "absolute",
-                                    bottom: index === 2 ? "5%" : "0%",
                                     left: "50%",
                                     transform: "translateX(-50%)",
                                     color: "white",
                                     textAlign: "center",
                                     fontFamily: "EB Garamond",
-                                    fontSize: sec.fontSize,
                                     fontWeight: 800,
                                 }}
+                                bottom={[index === 2 ? "10%" : "8%", index === 2 ? "5%" : index === 1 ? "-5%" : index === 3 ? "-5%" : "0%"]}
+                                fontSize={[index === 2 ? "90px" : index === 3 ? "100px" : "120px", "md", sec.fontSize]}
                             >
                                 {sec.text}
                             </Text>
@@ -205,6 +205,15 @@ export const Product3DSection = ({sections, children}: any) => {
                     100% {
                         transform: translateY(0);
                         opacity: 1;
+                    }
+                }
+            `}</style>
+            <style jsx global>{`
+                @media (max-width: 768px) {
+                    .responsive-image {
+                        background-size: cover !important;
+                        background-position: center !important;
+                        transform: none !important;
                     }
                 }
             `}</style>

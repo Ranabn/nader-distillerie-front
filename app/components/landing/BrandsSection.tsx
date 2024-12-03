@@ -72,8 +72,8 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
     }, [filteredBrandData]);
 
     return (
-        <Box p={8} position="relative" overflow={'hidden'}>
-            <Flex gap={8} alignContent={'center'} alignItems={'center'}>
+        <Box p={[4, 0, 8]} position="relative" overflow={'hidden'}>
+            <Flex gap={[4, 8]} alignContent={'center'} alignItems={'center'}>
                 {allCategories.map((category) => (
                     <Radio
                         border={'1px solid black'}
@@ -82,7 +82,9 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                         onChange={() => handleRadioClick(category)}
                         isChecked={selectedCategory === category}
                     >
-                        <Text fontWeight={selectedCategory === category ? '800' : ''} fontSize={['sm', '18px']}>
+                        <Text minWidth={["67px", "100%", "100%"]}
+                              fontWeight={selectedCategory === category ? '800' : ''}
+                              fontSize={['16px', '18px', '18px']}>
                             {category}
                         </Text>
                     </Radio>
@@ -109,10 +111,10 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                         justifyContent="center"
                         alignItems="center"
                         textAlign="center"
-                        m={4}
+                        m={[0, 4, 4]}
                         scrollSnapAlign="start"
                         flexShrink={0}
-                        width="280px"
+                        width={["260px", "280px", "280px"]}
                     >
                         <Box
                             width="200px"
@@ -131,7 +133,7 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                         </Text>
                         <Text fontSize={["2xl", "32px"]} fontWeight="bold" fontFamily={"EB Garamond"}
                               mb={10}>{brand.brand_name}</Text>
-                        <Link _hover={{ textDecoration: "none" }} href={`/brands/${brand.slug}`}>
+                        <Link _hover={{textDecoration: "none"}} href={`/brands/${brand.slug}`}>
 
                             <Btn size={'xs'} variant="secondary" text={`Discover ${brand.brand_name}`}/>
                         </Link>
@@ -161,13 +163,11 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                 )}
             </Flex>
             {isLanding && (
-                <Flex w={['100%', '40%', '18%']} mt={6}>
-                    <Link _hover={{ textDecoration: "none" }} href={`/brands`}>
-                        <Box width={["88vw", "100%"]} p={2} pr={3}>
-                            <Btn size={'smmd'} variant={'primaryBlack'} text={'Discover our brands'}/>
-                        </Box>
-                    </Link>
-                </Flex>
+                <Link _hover={{textDecoration: "none"}} href={`/brands`}>
+                    <Box width={["100%", "100%", "18%"]} mt={[8, 0, 6]}>
+                        <Btn size={'md'} variant={'primaryBlack'} text={'Discover our brands'}/>
+                    </Box>
+                </Link>
             )}
         </Box>
     );

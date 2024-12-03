@@ -2,12 +2,14 @@
 
 'use client'
 import Background from "@/app/assets/images/landing.png";
-import {Box, Flex, Text, Button, Heading, Icon, Image} from "@chakra-ui/react";
+import {Box, Flex, Text, Button, Heading, Icon, Image, useBreakpointValue} from "@chakra-ui/react";
 import {Btn} from "@/app/components/ui/Btn";
 import React from "react";
 import {FiChevronDown} from "react-icons/fi"; // Import the arrow down icon
 
 export const HeroBanner = () => {
+    const isSmallScreen = useBreakpointValue({base: true, md: false});
+
     return (
         <Flex
             justify="center"
@@ -53,29 +55,32 @@ export const HeroBanner = () => {
                 width="100%"
                 height="100%"
                 bg="blackAlpha.100"
+
             />
             <Flex
-                position="absolute"
+                position={["relative", "absolute"]}
                 color="white"
                 textAlign="left"
                 zIndex={1}
                 maxWidth="800px"
-                left="2.3%"
+                left={["0", "2.3%", "2.3%"]}
                 flexDirection='column'
+                p={[4, 0, 0]}
+                gap={[6, 0, 0]}
             >
-                <Heading fontFamily={"EB Garamond"} fontSize={["4xl", "5xl", "48px"]} fontWeight="bold" mb={[4, 6, 8]}
-                         lineHeight={'1.3em'}
-                         as={"h2"} p={[2, 0]}>
+                <Heading fontFamily={"EB Garamond"} fontSize={["28px", "5xl", "48px"]} fontWeight="bold" mb={[4, 6, 8]}
+                         lineHeight={["44.8px", "1.3em", '1.3em']}
+                         as={"h2"}>
                     Master distillers and <br/> fermenters
                     for four generations.
                 </Heading>
-                <Text p={[2, 0]} fontSize={["2xl", "md", "24px"]} mb={[4, 6, 10]} lineHeight={['40.4px', '38.4px']}>
-                    We harvest the finest gifts of nature in a bottle, offering you<br/> the perfect glass to celebrate
+                <Text fontSize={["20px", "md", "24px"]} mb={[4, 6, 10]} lineHeight={['32px', '38.4px']}>
+                    We harvest the finest gifts of nature in a bottle, offering you{isSmallScreen ? ' ' : <br/>} the
+                    perfect glass to celebrate
                     life&apos;s special moments.
                 </Text>
-                <Box width={["100%", "30%"]} pr={3}>
+                <Box width={["100%", "30%", "30%"]}>
                     <Btn size={'md'} text="WORK TOGETHER" variant="primaryWhite"/>
-
                 </Box>
             </Flex>
             <Box
@@ -86,7 +91,7 @@ export const HeroBanner = () => {
                 width="100%"
                 textAlign="center"
             >
-                <Text fontSize={["sm", "18px"]}> Scroll down
+                <Text fontSize={["18px", "18px"]}> Scroll down
                 </Text>
                 <Icon
                     as={FiChevronDown as any}

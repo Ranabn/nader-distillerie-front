@@ -1,5 +1,5 @@
 'use client'
-import {Box, Text, Flex, IconButton} from "@chakra-ui/react";
+import {Box, Text, Flex, IconButton, Image} from "@chakra-ui/react";
 import {useEffect, useState, useRef} from "react";
 import {FiChevronLeft, FiChevronRight} from "react-icons/fi";
 import gsap from "gsap";
@@ -51,11 +51,11 @@ export const StickyImage = ({imageUrls, brandName}) => {
     return (
         <Box
             ref={ref}
-            position="absolute"
+            position={["relative", "absolute"]}
             top="-3%"
             right="0"
             h="calc(100vh - 100px)"
-            w="50%"
+            w={["100%", "50%", "50%"]}
             zIndex={2}
         >
             <Flex
@@ -64,8 +64,8 @@ export const StickyImage = ({imageUrls, brandName}) => {
                 alignItems={'center'}
                 position="sticky"
             >
-                <Box position="relative" mt={40} width="500px" height="600px" overflow="hidden">
-                    <img
+                <Box position="relative" mt={[0, 40, 40]} width="500px" height="600px" overflow="hidden">
+                    <Image
                         src={imageUrls[currentImageIndex]}
                         alt={brandName}
                         style={{
@@ -83,11 +83,12 @@ export const StickyImage = ({imageUrls, brandName}) => {
                         onClick={handlePrevImage}
                         variant="ghost"
                         width={"20%"}
-                        color="white"
+                        color={["black", "white", "white"]}
                         _hover={{"background": "none"}}
                     />
                     <Box>
-                        <Text width={"100%"} fontSize={["4xl", "48px"]} fontFamily="EB Garamond"
+                        <Text color={["black", "white", "white"]} width={"100%"} fontSize={["28px","4xl", "48px"]}
+                              fontFamily="EB Garamond"
                               fontWeight="800">{brandName}</Text>
                     </Box>
                     <IconButton
@@ -95,7 +96,7 @@ export const StickyImage = ({imageUrls, brandName}) => {
                         icon={<FiChevronRight/>}
                         onClick={handleNextImage}
                         variant="ghost"
-                        color="white"
+                        color={["black", "white", "white"]}
                         width={"20%"}
                         _hover={{"background": "none"}}
                     />

@@ -16,7 +16,7 @@ export const ExternalBox = () => {
                   p={12}
                   pt={14}
                   pb={14}
-                  width={'45%'}
+                  width={["100%","45%",'45%']}
                   _hover={{cursor: 'pointer'}}
 
             >
