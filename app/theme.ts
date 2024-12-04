@@ -7,6 +7,7 @@ const theme = extendTheme({
         fonts: {
             heading: `'EB Garamond', serif`,
             body: `'EB Garamond', serif`,
+
         },
         Button,
         Divider: {

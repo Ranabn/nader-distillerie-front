@@ -1,21 +1,22 @@
-import {Box, Button, Flex, Input, Select, Text, VStack, Link} from "@chakra-ui/react";
-import Image from "next/image";
+'use client'
+import {Box, Button, Flex, Input, Select, Text, VStack, Link, useBreakpointValue, Image} from "@chakra-ui/react";
 import Background from "@/app/assets/images/age-restriction-not-allowed.png";
 import {Logo} from "@/app/components/ui/Logo";
+import LogoSM from '@/app/assets/images/LogoSM.png';
 
 export const NotAllowed = () => {
 
+    const isSmallScreen = useBreakpointValue({base: true, md: false});
 
     return (
 
         <>
-            <Flex justify="center"  width="100%" height="100vh" position="relative" overflow="hidden">
+            <Flex justify="center" height="100vh" position="relative" overflow="hidden">
                 <Image
-                    src={Background}
+                    src={Background.src}
                     alt={'background'}
-                    layout="fill"
                     objectFit="cover"
-                    quality={100}
+                    width={'100%'}
 
                 />
                 <Box
@@ -26,22 +27,28 @@ export const NotAllowed = () => {
                     height="100%"
                     bg="blackAlpha.400" // Chakra's way of setting opacity
                 />
-                <Flex mb={20} direction="column" justifyContent={'space-around'}   position="absolute"
-                      width={["100%", "60%"]}
+                <Flex p={[4, 0]} direction="column" justifyContent={'center'} gap={10} position="absolute"
+                      width={["100%", "70%"]}
                       height="80%">
-                    <Box  textAlign="center">
-                        <Logo/>
-                    </Box>
-                    <Box textAlign="center">
-                        <Text color="white" fontSize={"48px"} as={"h1"}>
+                    <Flex justify={'center'}>
+                        {isSmallScreen ?
+                            <Flex justify={'center'} width={'150px'} height={'145px'}><Image src={LogoSM.src} alt={'logo'}/></Flex>
+                            :
+                            <Box mt={10} mb={16}>
+                                <Logo/>
+                            </Box>
+                        }
+                    </Flex>
+                    <Box textAlign="center" p={4}>
+                        <Text color="white" fontSize={["28px", "48px"]} as={"h1"}>
                             Unfortunately, due to your age or location <br/>
                             we cannot let you enter our site at this time
                         </Text>
                     </Box>
 
-                    <Text textAlign="center" color="white" fontSize={"18px"}>
+                    <Text textAlign="center" color="white" fontSize={["16px", "18px"]}>
                         This info is all part of our commitment to responsible drinking. <br/> More information on {' '}
-                        <Link href={'responsibledrinking.org'} textDecoration="underline" >responsibledrinking.org</Link>
+                        <Link href={'responsibledrinking.org'} textDecoration="underline">responsibledrinking.org</Link>
                     </Text>
 
                 </Flex>

@@ -42,7 +42,8 @@ export const OurStorySection = ({storyImg}: any) => {
     }, [isSmallScreen]);
 
     return (
-        <Box p={[4, 8, 8]} mb={[10, 10, 10]} mt={[20, 0, 0]} bg="white" ref={containerRef}>
+        <Box p={[4, 8, 8]} mb={[10, 10, 10]} mt={[20, 0, 0]} bg="white" ref={containerRef} color={'#000000'}
+        >
             <Image
                 display={[params.slug ? "flex" : "none", "none", "none"]}
                 src={storyImg || OurStory.src}
@@ -96,7 +97,7 @@ export const OurStorySection = ({storyImg}: any) => {
                     </Box>
                 </Flex>
                 <Image
-                    display={[params.slug ? "none" : "flex" , "flex", "flex"]}
+                    display={[params.slug ? "none" : "flex", "flex", "flex"]}
                     src={storyImg || OurStory.src}
                     alt="Our Story"
                     objectFit="cover"

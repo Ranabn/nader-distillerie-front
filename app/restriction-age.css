@@ -1,21 +1,8 @@
-.restriction-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    padding-top: 96px;
-}
 
 .background-image {
-    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
 }
 
 .overlay {
@@ -24,7 +11,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .content-wrapper {
@@ -34,7 +21,6 @@
     align-items: center;
     margin-top: 0;
     width: 48%;
-    height: 100%;
 }
 
 .logo-container {
@@ -65,10 +51,8 @@
 
 .year-input {
     text-align: center;
-    font-size: 6rem;
     color: white;
     background: transparent;
-    border: 0.4px solid white;
     width: 100%;
     height: 200px;
 }

@@ -222,11 +222,13 @@ export const Gifts = () => {
                                 width={["51px", "68px"]}
                                 height={["12px", "16px"]}
                                 onClick={() => swiperRef1.current?.slidePrev()}
-                                style={{ cursor: "pointer",  opacity: 0 }}
+                                style={{cursor: "pointer"}}
+                                opacity={[0, 1]}
+
                             />
                             <div
                                 className="custom-pagination"
-                                style={{ flex: 1, textAlign: "center" }} // Ensures this div takes the center space
+                                style={{flex: 1, textAlign: "center"}} // Ensures this div takes the center space
                             />
                             <Image
                                 src={arrowright.src}
@@ -234,7 +236,7 @@ export const Gifts = () => {
                                 width={["51px", "68px"]}
                                 height={["12px", "16px"]}
                                 onClick={() => swiperRef1.current?.slideNext()}
-                                style={{ cursor: "pointer" }}
+                                style={{cursor: "pointer"}}
                                 mb={4}
                             />
                         </Flex>
@@ -338,7 +340,8 @@ export const Gifts = () => {
                                 width={["51px", "68px"]}
                                 height={["12px", "16px"]}
                                 onClick={() => swiperRef2.current?.slidePrev()}
-                                style={{ cursor: "pointer",  opacity: 0 }}
+                                style={{cursor: "pointer"}}
+                                opacity={[0, 1]}
 
                             />
                             <div className={"custom-pagination-2"}/>

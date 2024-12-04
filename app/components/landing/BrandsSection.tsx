@@ -72,7 +72,7 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
     }, [filteredBrandData]);
 
     return (
-        <Box p={[4, 0, 8]} position="relative" overflow={'hidden'}>
+        <Box p={[4, 0, 8]} position="relative" overflow={'hidden'} bg={'white'} color={'#000000'}>
             <Flex gap={[4, 8]} alignContent={'center'} alignItems={'center'}>
                 {allCategories.map((category) => (
                     <Radio

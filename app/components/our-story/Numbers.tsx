@@ -10,7 +10,7 @@ export const Stats = ({stats}) => {
             wrap="wrap"
             mt={20}
             flexDirection={['column', 'column', 'row']}
-            width={'100vw'}
+            width={["100%", '100vw']}
             alignItems={['center', 'center', 'flex-start']}
             gap={[10, 10, 0]}
         >

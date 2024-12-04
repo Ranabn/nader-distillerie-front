@@ -11,12 +11,12 @@ export const OurStoryClientWrapper = ({timelineWithImages, galleryWithImages, br
 
     return (
         <>
-            <Flex direction="column" maxWidth="100%" mb={20} overflow="hidden">
+            <Flex direction="column" maxWidth="100%" mb={20} overflow="hidden" display={['none', 'flex']}>
                 <JourneyTimeline
                     timeline={timelineWithImages}
                 />
             </Flex>
-            <Flex direction="column" overflow={'hidden'} display={['flex', 'none']}>
+            <Flex display={['flex', 'none']} justifyContent={'center'} width={'100%'} p={4}>
                 <ResponsiveJourneyTimeline timeline={timelineWithImages}/>
             </Flex>
             <Box position="relative">

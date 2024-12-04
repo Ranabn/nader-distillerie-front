@@ -24,7 +24,7 @@ export const OurStoryHeader = ({header, imageUrlHeader}) => {
                 objectFit="cover"
                 quality={100}
                 width="100vw"
-                height={'100vh'}
+                height={['100vh']}
             />
 
             <Flex
@@ -34,17 +34,18 @@ export const OurStoryHeader = ({header, imageUrlHeader}) => {
                 flexDirection='column'
                 maxW={['90%', "90%", '66%']}
             >
-                <Heading color={'black'} fontFamily={"EB Garamond"} fontSize={["4xl", "48px"]} fontWeight="bold" mb={8}
+                <Heading color={'black'} fontFamily={"EB Garamond"} fontSize={["28px", "4xl", "48px"]} fontWeight="bold"
+                         mb={8}
                          as={"h2"}>
                     {header.title}
                 </Heading>
-                <Text fontSize={["md", "18px"]} mb={4} color={'black'}>
+                <Text fontSize={["16px", "md", "18px"]} mb={4} color={'black'}>
                     From the heart of our family, we invite you to share in our passion. We are not just about our
                     products; we are about being there for life&#39;`s special moments. Whether it is a heartfelt
                     conversation, a spontaneous toast, or a cherished celebration, our products are your companions in
                     these memorable experiences, bringing people together and creating lasting bonds.
                 </Text>
-                <Text fontSize={["md", "18px"]} mb={4} color={'black'}>
+                <Text fontSize={["16px", "md", "18px"]} mb={4} color={'black'}>
 
                     Life’s precious moments deserve nothing less than perfection, nature crafted in a bottle.<br/>
                     Guided by enduring values of integrity, adaptability, and an unwavering commitment to quality, we

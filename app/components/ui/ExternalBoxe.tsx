@@ -7,16 +7,18 @@ import {FiChevronRight} from "react-icons/fi";
 export const ExternalBox = () => {
     return (
         <Flex
-            m={12}
+            m={[0, 12]}
+            p={4}
             justifyContent={'center'}
         >
             <Flex borderWidth="1px"
                   borderColor={'black'}
                   direction="column"
-                  p={12}
-                  pt={14}
-                  pb={14}
-                  width={["100%","45%",'45%']}
+                  pl={[8, 12]}
+                  pr={[8, 12]}
+                  pt={[8, 14]}
+                  pb={[8, 14]}
+                  width={["100%", "45%", '678px']}
                   _hover={{cursor: 'pointer'}}
 
             >
@@ -28,7 +30,7 @@ export const ExternalBox = () => {
                         <FiChevronRight/>
                     </Flex>
 
-                    <Text mb={2} fontSize={["md", "18px"]} >
+                    <Text mb={2} fontSize={["md", "18px"]}>
                         Distributors, retailers and food professionals—partner with us today.
                     </Text>
                 </Link>

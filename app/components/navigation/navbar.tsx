@@ -67,7 +67,7 @@ export const Navbar = ({brands}) => {
         }
 
         // Update background and button styles based on pathname
-        if (['/brands', '/services', '/our-story', '/contact'].includes(pathname) || pathname.startsWith('/brands')) {
+        if (['/brands', '/services', '/our-story', '/contact', '/services/gift'].includes(pathname) || pathname.startsWith('/brands')) {
             setBackground({color: 'black', background: 'white'});
             setButtonStyle({'--button-bg': 'black', '--button-color': 'white'});
         }
@@ -153,7 +153,7 @@ export const Navbar = ({brands}) => {
                 {isOpen && (
                     <Box p={4} color="white">
                         <Flex alignItems="center" justifyContent={'space-between'} mb={12}>
-                            <Text fontSize={'6xl'} color="white" fontFamily={"EB Garamond"} mr={2}>Menu</Text>
+                            <Text fontSize={'48px'} color="white" fontFamily={"EB Garamond"} mr={2}>Menu</Text>
                             <Box onClick={closeMenu} cursor="pointer">
                                 <CloseIcon color="white"/>
                             </Box>
@@ -162,26 +162,26 @@ export const Navbar = ({brands}) => {
 
                             <Flex justifyContent={'start'} gap={28}>
                                 <Flex align="flex-start" gap={4} flexDirection={["column"]}>
-                                    <Text fontWeight="bold" fontSize={'xl'} mb={2}>Brands</Text>
+                                    <Text fontWeight="bold" fontSize={['20px']} mb={2}>Brands</Text>
                                     {brands.map((brand) => (
-                                        <Link fontSize={'xl'} key={brand.slug} href={`/brands/${brand.slug}`}>
+                                        <Link fontSize={'16px'} key={brand.slug} href={`/brands/${brand.slug}`}>
                                             {brand.brand_name}
                                         </Link>
                                     ))}
                                 </Flex>
                                 <Flex>
-                                    <Text fontWeight="bold" fontSize={'xl'} mb={2}>Products</Text>
+                                    <Text fontWeight="bold" fontSize={['20px']} mb={2}>Products</Text>
                                 </Flex>
                             </Flex>
                             <Flex justifyContent={'start'} gap={28}>
                                 <Flex align="flex-start" gap={4} flexDirection={["column"]}>
-                                    <Text fontWeight="bold" fontSize={['xl']} mb={2}>Services</Text>
-                                    <Link fontSize={'xl'}>Private Label</Link>
-                                    <Link fontSize={'xl'}>Raw Material</Link>
-                                    <Link fontSize={'xl'}>Events</Link>
+                                    <Text fontWeight="bold" fontSize={['20px']} mb={2}>Services</Text>
+                                    <Link fontSize={'16px'} href={'/services/label-drinks'}>Private Label</Link>
+                                    <Link fontSize={'16px'} href={'/services/ethanol'}>Raw Material</Link>
+                                    <Link fontSize={'16px'} href={'/services/gift'}>Events</Link>
                                 </Flex>
                                 <Flex>
-                                    <Text fontWeight="bold" fontSize={'xl'} mb={2}>Our story</Text>
+                                    <Text fontWeight="bold" fontSize={['20px']} mb={2}>Our story</Text>
                                 </Flex>
                             </Flex>
                         </SimpleGrid>
@@ -204,36 +204,51 @@ const CloseIcon = ({color = "black"}) => (
     </svg>
 );
 
-const MenuIcon = ({background}) => (
-    <Flex width={['100%', '100%', '100%']} justifyContent={'space-between'} p={[2, 0]}>
-        <LogoHorizontal background={background.color}/>
-        <svg
-            width="34px"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-            fill={background.color}
-        >
-            <title>Menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-        </svg>
+const MenuIcon = ({background, toggle}) => (
+    <Flex p={[2, 0]} w={'100%'} justify={'space-between'} alignContent={'center'} alignItems={'center'}>
+        <Link href={'/'}>
+            <LogoHorizontal background={background.color}/>
+        </Link>
+        <Box onClick={toggle}>
+            <svg
+                width="34px"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+                fill={background.color}
+            >
+                <title>Menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+            </svg>
+        </Box>
     </Flex>
 );
 
 const MenuToggle = ({toggle, isOpen, background}) => {
-    return (
-        <Box display={{base: "block", md: "none"}} zIndex={9999} onClick={toggle} width={'100%'}>
-            {!isOpen && (
-                <MenuIcon background={background}/>
-            )}
-        </Box>
-    );
-};
+        return (
+            <Box
+                display={{base: "block", md: "none"}}
+                zIndex={9999}
+                width="100%"
+                role="button"
+                aria-label={isOpen ? "Close menu" : "Open menu"}
+            >
+                {isOpen ? (
+                    <></>
+                ) : (
+                    <MenuIcon toggle={toggle} background={background}/>
+
+                )}
+            </Box>
+        )
+            ;
+    }
+;
 
 const MenuItem = ({children, isLast, to = "/", isActive, background, ...rest}) => {
 
     const pathname = usePathname()
     return (
-        <Link href={to} _hover={{ textDecoration: "none" }}>
+        <Link href={to} _hover={{textDecoration: "none"}}>
             <Text
                 display="inline-block"
                 position="relative"

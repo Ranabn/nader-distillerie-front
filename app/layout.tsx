@@ -4,6 +4,7 @@ import type {Metadata} from "next";
 import {EB_Garamond} from '@next/font/google';
 import {ChkraProvider} from './providers'
 import "./globals.css";
+import {ColorModeProvider} from "@chakra-ui/react";
 
 const ebGaramond = EB_Garamond({
     subsets: ["latin"],
@@ -23,7 +24,9 @@ export default function RootLayout({
         <html lang="en" className={ebGaramond.className}>
         <body>
         <ChkraProvider>
-            {children}
+            <ColorModeProvider forcedTheme="light">
+                {children}
+            </ColorModeProvider>
         </ChkraProvider>
         </body>
         </html>

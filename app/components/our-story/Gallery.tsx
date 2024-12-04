@@ -2,7 +2,7 @@
 
 'use client'
 import React, {useRef} from "react";
-import {Flex, Box, Image} from "@chakra-ui/react";
+import {Flex, Box, Image, useBreakpointValue} from "@chakra-ui/react";
 import {motion, useScroll, useTransform} from "framer-motion";
 
 export const Gallery = ({images}) => {
@@ -11,11 +11,12 @@ export const Gallery = ({images}) => {
         target: ref,
         offset: ["start end", "end start"]
     });
+    const isSmallScreen = useBreakpointValue({base: true, md: false});
 
-    const y = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", isSmallScreen ? "0%" : "-10%"]);
 
     return (
-        <Box ref={ref} position="relative" overflow="visible" bg="white">
+        <Box mt={["250px", 0]} ref={["", ref]} position="relative" overflow="visible" bg="white" p={[4, 0]}>
             <motion.div
                 style={{y}}
                 initial={{y: 0}}
@@ -25,7 +26,7 @@ export const Gallery = ({images}) => {
                     {images.map((image, index) => (
                         <Box
                             key={index}
-                            w="31%"
+                            w={["100%", "31%"]}
                             height="300px" // Set a fixed height for the image container
                             position="relative"
                             overflow="hidden"
