@@ -55,14 +55,14 @@ export const Gifts = () => {
 
     return (
         <Box>
-            <Box p={10} maxWidth="1200px" mx="auto">
+            <Box p={[4, 8, 10]} maxWidth="1200px" mx="auto">
                 {/* Header Section */}
-                <Flex flexDirection={"column"} align="stretch" fontSize={["18px"]}>
-                    <Text fontSize={["5xl", "48px"]} mb={4} fontWeight="bold" fontFamily={"EB Garamond"}>
+                <Flex flexDirection={"column"} align="stretch" fontSize={["16px", "18px"]}>
+                    <Text fontSize={["28px", "5xl", "48px"]} mb={4} fontWeight="bold" fontFamily={"EB Garamond"}>
                         Personalization for memorable gifts
                     </Text>
 
-                    <Text fontSize="md" mb={4}>
+                    <Text mb={4}>
                         We believe that every gift should tell a story. Whether it’s a corporate event, a wedding
                         celebration, or a special occasion, we create unique and thoughtfully crafted presents that
                         leave a lasting impression.
@@ -70,18 +70,18 @@ export const Gifts = () => {
                     <Image mt={4}
                            src={gifts.src}
                            alt="Bottles"
-                           width={'1100px'}
-                           height={'618px'}
+                           width={["335px", '1100px']}
+                           height={["200px", '618px']}
                     />
                 </Flex>
 
-                <Divider my={10}/>
 
                 {/* Why Us and Our Process Section */}
-                <Flex justify="space-between" flexDirection={["column", "column", "row"]} gap={12}>
-                    {/* Why Us */}
-                    <Flex w={'45%'} flexDir='column' align="flex-start" gap={2} fontSize={["18px"]}>
-                        <Text fontSize={["4xl", "48px"]} fontWeight="bold" fontFamily={"EB Garamond"} mb={2}>
+                <Flex mt={[10, 20]} fontSize={["16px", "18px"]} justify="space-between"
+                      flexDirection={["column", "column", "row"]}
+                      gap={12}>
+                    <Flex w={['100%', '70%', '45%']} flexDir='column' align="flex-start" gap={2}>
+                        <Text fontSize={["28px", "4xl", "48px"]} fontWeight="bold" fontFamily={"EB Garamond"} mb={4}>
                             Engaging with our customers
                         </Text>
                         <Text>The best gifts are born from collaboration. When you choose us, we partner with you to
@@ -90,11 +90,10 @@ export const Gifts = () => {
 
                     </Flex>
 
-                    )
                     {/* Our Process */}
-                    <Flex w={'45%'} flexDir='column' align="flex-start" gap={2} fontSize={["18px"]}>
-                        <Text fontSize={["4xl", "48px"]} fontWeight="bold" fontFamily={"EB Garamond"} mb={2}>
-                            Our products complemented
+                    <Flex w={['100%', '70%', '45%']} flexDir='column' align="flex-start" gap={2}>
+                        <Text fontSize={["28px", "4xl", "48px"]} fontWeight="bold" fontFamily={"EB Garamond"} mb={4}>
+                            Our products<br/> complemented
                         </Text>
                         <Text>The wine or spirit bottle, whether regular-sized or a charming miniature, is at the heart
                             of our gift packages. Our expertise in wine and spirits ensures that each bottle matches the
@@ -105,27 +104,33 @@ export const Gifts = () => {
 
                 {/* Call to Action */}
                 <Flex flexDir='column' align="center" mt={24} gap={4} mb={14}>
-                    <Text fontSize={["lg", "24px"]}>
+                    <Text fontSize={["20px", "lg", "24px"]} textAlign="center">
                         Planning an upcoming event? Don’t wait until the last moment.
                     </Text>
-                    <Link href={"/contact"} _hover={{textDecoration: "none"}}>
-                        <Btn variant='primaryBlack' size={"md"} text='Request a consultation'/>
-                    </Link>
+                    <Box w={["100%", "50%", "20%"]} mr={[0, 12]}>
+
+                        <Link href={"/contact"} _hover={{textDecoration: "none"}}>
+                            <Btn variant='primaryBlack' size={"md"} text='Request a consultation'/>
+                        </Link>
+                    </Box>
                 </Flex>
             </Box>
-            <Flex flexDirection={"column"} p={10} gap={20} mb={20}>
-                <Flex justify={'center'} mb={14}>
-                    <Text fontSize={'48px'} fontWeight="bold" fontFamily={"EB Garamond"}>Customer testimony</Text>
+            <Flex flexDirection={"column"} p={[4, 8, 10]} gap={[4, 20]} mb={[20]}>
+                <Flex justify={'center'} mb={[4, 14]}>
+                    <Text fontSize={["28px", "48px", '48px']} fontWeight="bold" fontFamily={"EB Garamond"}>Customer
+                        testimony</Text>
                 </Flex>
-                <Flex justifyContent="space-between" alignItems="center" gap={20}>
-                    <Flex flexDirection={"column"} width={"44%"} gap={10}>
+                <Flex flexDirection={["column", "row"]} justifyContent="space-between" alignItems="center"
+                      gap={[6, 20]} mb={[10, 0]}>
+                    <Flex flexDirection={"column"} width={["100%", "44%"]} gap={[2, 10]} order={[1, 0]}>
                         <Image
+                            display={["none", "inline"]}
                             src={quotes.src}
                             alt="Our Story"
                             objectFit="cover"
                             width="49px"
                         />
-                        <Text fontSize={"24px"} mb={4}>It was an absolute pleasure working with Nader
+                        <Text fontSize={["16px", "24px"]} mb={[0, 4]}>It was an absolute pleasure working with Nader
                             Distilleries on
                             these super special
                             customized
@@ -133,9 +138,9 @@ export const Gifts = () => {
                             aspect, even down to the packaging, was like no other. Guests were raving about these
                             giveaways
                             and still do to this day! I can&lsquo;t recommend them enough.</Text>
-                        <Text fontWeight={"bold"} fontSize={"20px"} textAlign={"right"}>Melissa T.</Text>
+                        <Text fontWeight={"bold"} fontSize={["18px", "20px"]} textAlign={"right"}>Melissa T.</Text>
                     </Flex>
-                    <Box width={"44%"}>
+                    <Box width={["100%", "44%"]} order={[0, 1]}>
                         <Swiper
                             onSwiper={(swiper) => {
                                 swiperRef1.current = swiper;
@@ -147,7 +152,7 @@ export const Gifts = () => {
                                 setActiveIndex(swiper.activeIndex);
                                 updatePaginationPosition(swiper);
                             }}
-                            initialSlide={2} // Ensure Swiper starts at index 2
+                            initialSlide={[0, 2]} // Ensure Swiper starts at index 2
                             pagination={{
                                 clickable: true,
                                 el: ".custom-pagination",
@@ -204,46 +209,60 @@ export const Gifts = () => {
                                 />
                             </SwiperSlide>
                         </Swiper>
-                        <Flex mt={6}>
+                        <Flex
+                            mt={6}
+                            justifyContent="center" // Ensures everything is centered
+                            alignItems="center"     // Aligns items vertically centered
+                            gap={[0, 4]}            // Provides spacing between items
+                        >
                             <Image
+                                // display={["none", "inline"]}
                                 src={arrowleft.src}
                                 alt="Previous"
-                                width="68px"
-                                height="16px"
+                                width={["51px", "68px"]}
+                                height={["12px", "16px"]}
                                 onClick={() => swiperRef1.current?.slidePrev()}
-                                style={{cursor: "pointer"}}
+                                style={{ cursor: "pointer",  opacity: 0 }}
                             />
-                            <div className={"custom-pagination"}/>
+                            <div
+                                className="custom-pagination"
+                                style={{ flex: 1, textAlign: "center" }} // Ensures this div takes the center space
+                            />
                             <Image
                                 src={arrowright.src}
                                 alt="Next"
-                                width="68px"
-                                height="16px"
+                                width={["51px", "68px"]}
+                                height={["12px", "16px"]}
                                 onClick={() => swiperRef1.current?.slideNext()}
-                                style={{cursor: "pointer"}}
+                                style={{ cursor: "pointer" }}
+                                mb={4}
                             />
                         </Flex>
+
                     </Box>
 
                 </Flex>
-                <Flex justifyContent={"space-between"} alignItems={"center"}>
-                    <Flex flexDirection={"column"} width={"44%"} gap={10}>
+                <Flex flexDirection={["column", "row"]} justifyContent={"space-between"} alignItems={"center"}
+                      gap={[6, 20]}>
+                    <Flex flexDirection={"column"} width={["100%", "44%"]} gap={[2, 10]} order={[1, 0]}>
                         <Image
+                            display={["none", "inline"]}
                             src={quotes.src}
                             alt="Our Story"
                             objectFit="cover"
                             width="49px"
                         />
-                        <Text fontSize={"24px"} mb={4}>It was an absolute pleasure working with Nader Distilleries on
+                        <Text fontSize={["16px", "24px"]} mb={[0, 4]}>It was an absolute pleasure working with Nader
+                            Distilleries on
                             We were absolutely thrilled with the wedding gifts from Nader Distilleries. The personalized
                             guidance and support in bringing our vision to life were invaluable. Nader Distilleries
                             exceeded
                             our expectations! The beautiful bottles and truly qualitative beverages left a lasting
                             impression, and our guests continued to inquire about them even after the wedding.</Text>
-                        <Text fontWeight={"bold"} fontSize={"20px"} textAlign={"right"}>Nada C.</Text>
+                        <Text fontWeight={"bold"} fontSize={["18px", "20px"]} textAlign={"right"}>Nada C.</Text>
 
                     </Flex>
-                    <Box width={"44%"}>
+                    <Box width={["100%", "44%"]} order={[0, 1]}>
                         <Swiper
                             onSwiper={(swiper) => {
                                 swiperRef2.current = swiper;
@@ -316,38 +335,41 @@ export const Gifts = () => {
                             <Image
                                 src={arrowleft.src}
                                 alt="Previous"
-                                width="68px"
-                                height="16px"
+                                width={["51px", "68px"]}
+                                height={["12px", "16px"]}
                                 onClick={() => swiperRef2.current?.slidePrev()}
-                                style={{cursor: "pointer"}}
+                                style={{ cursor: "pointer",  opacity: 0 }}
+
                             />
                             <div className={"custom-pagination-2"}/>
                             <Image
                                 src={arrowright.src}
                                 alt="Next"
-                                width="68px"
-                                height="16px"
+                                width={["51px", "68px"]}
+                                height={["12px", "16px"]}
                                 onClick={() => swiperRef2.current?.slideNext()}
                                 style={{cursor: "pointer"}}
+                                mb={4}
+
                             />
                         </Flex>
                     </Box>
                 </Flex>
             </Flex>
-            <Flex mb={12}>
+            <Flex mb={12} flexDirection={['column', 'row']}>
                 <Flex
-                    width={"50%"}
-                    m={10}
+                    m={[4, 10]}
                     justifyContent={'center'}
-                    height={"250px"}
+                    height={["335px", "250px"]}
+                    width={["auto", '50%']}
 
                 >
                     <Flex borderWidth="1px"
                           borderColor={'black'}
                           direction="column"
-                          p={12}
-                          pt={14}
-                          pb={14}
+                          p={[8, 12]}
+                          pt={[0, 14]}
+                          pb={[0, 14]}
                           alignContent={'center'}
                           justifyContent={'center'}
                           _hover={{cursor: 'pointer'}}
@@ -355,14 +377,14 @@ export const Gifts = () => {
                     >
                         <Link href={'/services/ethanol'} _hover={{textDecoration: 'none'}}>
                             <Flex alignItems={'center'} justifyContent={'space-between'} mb={4}
-                                  fontSize={["xl", "28px"]}>
+                                  fontSize={["24px", "xl", "28px"]}>
                                 <Text fontWeight="800" fontFamily={"EB Garamond"} color={"#333333"}>
                                     Ethanol for every industry
                                 </Text>
                                 <FiChevronRight/>
                             </Flex>
 
-                            <Text mb={2} fontSize={["md", "18px"]} color={"#333333"}>
+                            <Text mb={2} fontSize={["16px", "md", "18px"]} color={"#333333"}>
                                 Our ethanol caters to various industries, including pharmaceuticals, perfumery, home
                                 care, and beverages. Discover the perfect ethanol solution for your industry with us.
                             </Text>
@@ -372,33 +394,33 @@ export const Gifts = () => {
                 </Flex>
                 <Flex
                     justifyContent={'center'}
-                    m={10}
-                    height={"250px"}
-                    width={"50%"}
+                    m={[4, 10]}
+                    height={["335px", "250px"]}
+                    width={["auto", '50%']}
                 >
                     <Flex borderWidth="1px"
                           borderColor={'black'}
                           direction="column"
-                          p={12}
-                          pt={14}
+                          pl={[8, 12]}
+                          pr={[8, 12]}
+                          pt={[0, 14]}
+                          pb={[0, 14]}
                           alignContent={'center'}
                           justifyContent={'center'}
                           height={"100%"}
-
-                          pb={14}
                           _hover={{cursor: 'pointer'}}
 
                     >
                         <Link href={'/services/label-drinks'} _hover={{textDecoration: 'none'}}>
                             <Flex alignItems={'center'} justifyContent={'space-between'} mb={4}
-                                  fontSize={["xl", "28px"]}>
+                                  fontSize={["24px", "xl", "28px"]}>
                                 <Text fontWeight="800" fontFamily={"EB Garamond"} color={"#333333"}>
                                     Craft your identity
                                 </Text>
                                 <FiChevronRight/>
                             </Flex>
 
-                            <Text mb={2} fontSize={["md", "18px"]} color={"#333333"}>
+                            <Text mb={2} fontSize={["16px", "md", "18px"]} color={"#333333"}>
                                 Craft your unique identity with our private label offerings. Let us shape your brand
                                 together.
                             </Text>

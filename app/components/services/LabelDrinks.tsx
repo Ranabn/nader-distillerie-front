@@ -177,7 +177,7 @@ export const LabelDrinks = () => {
                                 <FiChevronRight/>
                             </Flex>
 
-                            <Text mb={2} fontSize={["md", "18px"]} color={"#333333"}>
+                            <Text mb={2} fontSize={["16px", "md", "18px"]} color={"#333333"}>
                                 Be it company gifts, wedding giveaways, or any special occasion, we design gifts that
                                 leave
                                 a lasting impression. Make your events memorable with our customized gifts.
