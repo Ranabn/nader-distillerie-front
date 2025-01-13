@@ -2,7 +2,7 @@
 
 'use client'
 import Background from "@/app/assets/images/landing.png";
-import {Box, Flex, Text, Button, Heading, Icon, Image, useBreakpointValue} from "@chakra-ui/react";
+import {Box, Flex, Text, Button, Heading, Icon, Image, useBreakpointValue, Link} from "@chakra-ui/react";
 import {Btn} from "@/app/components/ui/Btn";
 import React from "react";
 import {FiChevronDown} from "react-icons/fi"; // Import the arrow down icon
@@ -72,16 +72,18 @@ export const HeroBanner = () => {
                          lineHeight={["44.8px", "1.3em", '1.3em']}
                          as={"h2"}>
                     Master distillers and <br/> fermenters
-                    for four generations.
+                    for four generations
                 </Heading>
                 <Text fontSize={["20px", "md", "24px"]} mb={[4, 6, 10]} lineHeight={['32px', '38.4px']}>
                     We harvest the finest gifts of nature in a bottle, offering you{isSmallScreen ? ' ' : <br/>} the
                     perfect glass to celebrate
                     life&apos;s special moments.
                 </Text>
-                <Box width={["100%", "30%", "30%"]}>
-                    <Btn size={'md'} text="WORK TOGETHER" variant="primaryWhite"/>
-                </Box>
+                <Link href={'/contact'} _hover={{textDecoration: "none"}} >
+                    <Box width={["100%", "30%", "30%"]}>
+                        <Btn size={'md'} text="WORK TOGETHER" variant="primaryWhite"/>
+                    </Box>
+                </Link>
             </Flex>
             <Box
                 position="absolute"

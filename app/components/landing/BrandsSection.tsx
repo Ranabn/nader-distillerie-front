@@ -76,8 +76,10 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
             <Flex gap={[4, 8]} alignContent={'center'} alignItems={'center'}>
                 {allCategories.map((category) => (
                     <Radio
+                        borderColor={'black'}
                         border={'1px solid black'}
                         key={category}
+                        size="md"
                         value={category}
                         onChange={() => handleRadioClick(category)}
                         isChecked={selectedCategory === category}
@@ -114,18 +116,22 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                         m={[0, 4, 4]}
                         scrollSnapAlign="start"
                         flexShrink={0}
-                        width={["260px", "280px", "280px"]}
+                        width={["260px", "280px", "400px"]}
+                        height={['582px']}
+                        gap={'12px'}
                     >
+                        <Flex flexDir={'column'} alignItems={'center'}>
                         <Box
-                            width="200px"
-                            height="200px"
+                            width="149px"
+                            height="320px"
                             position="relative"
+                            mb={2}
                         >
                             <Image
                                 src={brand.imageUrl}
                                 alt={brand.brand_name}
                                 layout="fill"
-                                objectFit="contain"
+                                objectFit="cover"
                             />
                         </Box>
                         <Text fontSize={["xs", "18px"]} color="gray.600" mt={4}>
@@ -133,9 +139,11 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                         </Text>
                         <Text fontSize={["2xl", "32px"]} fontWeight="bold" fontFamily={"EB Garamond"}
                               mb={10}>{brand.brand_name}</Text>
+                        </Flex>
+
                         <Link _hover={{textDecoration: "none"}} href={`/brands/${brand.slug}`}>
 
-                            <Btn size={'xs'} variant="secondary" text={`Discover ${brand.brand_name}`}/>
+                            <Btn size={'sm'} variant="secondary" text={`Discover ${brand.brand_name}`}/>
                         </Link>
                     </Flex>
                 ))}

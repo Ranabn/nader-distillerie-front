@@ -3,7 +3,7 @@
 'use client'
 
 import React, {useEffect, useState} from "react";
-import {Link, Box, Flex, Text, VStack, HStack, SimpleGrid} from "@chakra-ui/react";
+import {Link, Box, Flex, Text, VStack, HStack, SimpleGrid, Menu, MenuList, MenuButton} from "@chakra-ui/react";
 import {Btn} from "@/app/components/ui/Btn";
 import {useRouter, useParams, usePathname} from "next/navigation";
 import {LogoHorizontal} from "@/app/components/ui/LogoHorizontal";
@@ -135,7 +135,7 @@ export const Navbar = ({brands}) => {
             <NavBarContainer background={background} isOpen={isOpen}>
                 <MenuToggle toggle={toggle} isOpen={isOpen} background={background}/>
                 {!isOpen && (
-                    <MenuLinks background={background} buttonStyle={buttonStyle}/>
+                    <MenuLinks brands={brands} background={background} buttonStyle={buttonStyle}/>
                 )}
             </NavBarContainer>
             <Box
@@ -163,7 +163,7 @@ export const Navbar = ({brands}) => {
                             <Flex justifyContent={'start'} gap={28}>
                                 <Flex align="flex-start" gap={4} flexDirection={["column"]}>
                                     <Text fontWeight="bold" fontSize={['20px']} mb={2}>Brands</Text>
-                                    {brands.map((brand) => (
+                                    {brands?.map((brand) => (
                                         <Link fontSize={'16px'} key={brand.slug} href={`/brands/${brand.slug}`}>
                                             {brand.brand_name}
                                         </Link>
@@ -290,9 +290,13 @@ const MenuItem = ({children, isLast, to = "/", isActive, background, ...rest}) =
     );
 };
 
-const MenuLinks = ({background, buttonStyle}) => {
+const MenuLinks = ({background, brands}) => {
+
+    const brandList = brands
     const buttonVariant = background.color === 'white' ? "primaryWhite" : "primaryBlack";
     const pathname = usePathname();
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     return (
         <Flex
             flexBasis={{base: "100%", md: "auto"}}
@@ -326,9 +330,40 @@ const MenuLinks = ({background, buttonStyle}) => {
                 flexDir={["column", "row"]}
                 fontSize={"md", "18px"}>
                 <Flex alignItems={'center'} gap={2}>
-                    <MenuItem to="/brands" isActive={pathname.startsWith('/brands')} background={background}>
-                        Brands
-                    </MenuItem>
+                    <Menu isOpen={isMenuOpen}>
+                        <Link href={'/brands'}>
+                            <MenuButton
+                                onMouseEnter={() => setIsMenuOpen(true)} // Open menu on hover
+                                onMouseLeave={() => setIsMenuOpen(false)} // Close menu when mouse leaves
+                                to="/brands"
+                                isActive={pathname.startsWith('/brands')}
+                                px={2}
+                                borderRadius="0"
+                            >
+                                Brands
+                            </MenuButton>
+                        </Link>
+                        <MenuList
+                            onMouseEnter={() => setIsMenuOpen(true)} // Keep menu open when hovering over it
+                            onMouseLeave={() => setIsMenuOpen(false)} // Close menu when mouse leaves
+                            borderRadius="0"
+
+                        >
+                            {brandList?.map((brand) => (
+                                <MenuItem
+                                    display={'flex'}
+                                    flexDirection={'column'}
+                                    p={4}
+                                    key={brand.slug}
+                                    color={'black'}
+                                >
+                                    <Link href={`/brands/${brand.slug}`} textDecoration="none">
+                                        {brand.brand_name}
+                                    </Link>
+                                </MenuItem>
+                            ))}
+                        </MenuList>
+                    </Menu>
                     <svg width="8" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 0.5L5 5.5L10 0.5H0Z"
                               fill={pathname == '/products' || '/' ? background.color : "#224452"}/>

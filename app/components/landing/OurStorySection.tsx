@@ -101,8 +101,8 @@ export const OurStorySection = ({storyImg}: any) => {
                     src={storyImg || OurStory.src}
                     alt="Our Story"
                     objectFit="cover"
-                    width={["325px", "800px", "800px"]}
-                    height={["325px", "800px", "800px"]}
+                    width={["325px", "600px", "600px"]}
+                    height={["325px", "600px", "600px"]}
                 />
             </Flex>
 
@@ -115,15 +115,15 @@ export const OurStorySection = ({storyImg}: any) => {
                             src={storyImg || OurStory2.src}
                             alt="Our Story"
                             objectFit="cover"
-                            width="800px"
-                            height="800px"
+                            width="600px"
+                            height="600px"
                         />
                         <Image
                             src={storyImg || OurStory3.src}
                             alt="Our Story"
                             objectFit="cover"
-                            width="800px"
-                            height="800px"
+                            width="600px"
+                            height="600px"
                         />
                     </Flex>
                 </Flex>
