@@ -14,7 +14,7 @@ import Ethanol from "@/app/assets/images/products/ethanol.png";
 const products = [
     {
         name: "Spirits",
-        description: "Accroche en une phrase ipsum dolor sit amet, consectetur adipiscing elit, urna sit fermentum est purus bibendum.",
+        description: "Precision-crafted spirits: vodka, gin, whisky, arak, brandy. A legacy of excellence.",
         imgSrc: Spirits,
     },
     {
@@ -24,12 +24,12 @@ const products = [
     },
     {
         name: "Vinegars",
-        description: "Specially produced to grade to enhance compatibility and character in every drop.",
+        description: "Sustainable apple cider and red wine vinegars: a tangy reflection of fresh fruits.",
         imgSrc: Vinegars,
     },
     {
         name: "Ethanol",
-        description: "Specially produced to grade to enhance compatibility and character in every drop.",
+        description: "Industrial food-grade to grape ethanol: exceptional purity and character in every drop.",
         imgSrc: Ethanol,
     },
 ];
@@ -90,7 +90,7 @@ export const ProductsSection = () => {
 
                 >
                     <Link
-                        href={'/brands'}
+                        href={'/products'}
                         onMouseEnter={handleMouseEnter}
                         _hover={{
                             textDecoration: "none",
@@ -128,42 +128,50 @@ export const ProductsSection = () => {
                 justify="space-between"
             >
                 {products.map((product, index) => (
+
                     <Flex
                         key={index}
                         flexDir="column"
                         flexBasis={{base: "100%", md: "45%", lg: "23%"}}
                         mb={6}
                     >
+                        <Link
+                            href={`/brands?${product.name}`}>
                         <Box
-                            width="100%"
+                            width="342px"
                             height={"242.44px"}
                             mb={2}
                             overflow="hidden"
                             position="relative"
                         >
-                            <Box
-                                width="100%"
-                                height="100%"
-                                transition="transform 0.3s ease-in-out"
-                                _hover={{
-                                    transform: "scale(1.1)",
-                                    cursor: 'pointer',
-                                }}
-                            >
-                                <Image
-                                    src={product.imgSrc}
-                                    alt={product.name}
-                                    layout="fill"
-                                    objectFit="cover"
-                                />
-                            </Box>
+
+                                <Box
+                                    width="100%"
+                                    height="100%"
+                                    transition="transform 0.3s ease-in-out"
+                                    _hover={{
+                                        transform: "scale(1.1)",
+                                        cursor: 'pointer',
+                                    }}
+                                >
+
+                                    <Image
+                                        src={product.imgSrc}
+                                        alt={product.name}
+                                        layout="fill"
+                                        objectFit="cover"
+                                    />
+                                </Box>
                         </Box>
-                        <Text fontWeight="semi-bold" fontSize={["24px", "24px", "24px"]}>{product.name}</Text>
+                        <Text fontWeight="semi-bold" fontSize={["24px", "24px", "24px"]}
+                              mt={2}>{product.name}</Text>
                         <Text fontSize={["16px", "sm", "18px"]} color="gray.600">
                             {product.description}
                         </Text>
+                    </Link>
+
                     </Flex>
-                ))}
+                    ))}
             </Flex>
         </Box>
     );

@@ -1,32 +1,34 @@
 // @ts-nocheck
 
 'use client'
-import React, {useRef} from "react";
-import {Flex, Box, Image, useBreakpointValue} from "@chakra-ui/react";
-import {motion, useScroll, useTransform} from "framer-motion";
+import React, { useRef } from "react";
+import { Box, Image, SimpleGrid, useBreakpointValue } from "@chakra-ui/react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-export const Gallery = ({images}) => {
+export const Gallery = ({ images }) => {
     const ref = useRef(null);
-    const {scrollYProgress} = useScroll({
+    const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["start end", "end start"]
     });
-    const isSmallScreen = useBreakpointValue({base: true, md: false});
+    const isSmallScreen = useBreakpointValue({ base: true, md: false });
 
     const y = useTransform(scrollYProgress, [0, 1], ["0%", isSmallScreen ? "0%" : "-10%"]);
 
     return (
-        <Box mt={["250px", 0]} ref={["", ref]} position="relative" overflow="visible" bg="white" p={[4, 0]}>
+        <Box mt={["250px", 0]} ref={ref} position="relative" bg="white" p={[4, 8]}>
             <motion.div
-                style={{y}}
-                initial={{y: 0}}
-                transition={{type: "spring", stiffness: 100}}
+                style={{ y }}
+                initial={{ y: 0 }}
+                transition={{ type: "spring", stiffness: 100 }}
             >
-                <Flex wrap="wrap" gap={4} justify="center" bg="white">
+                <SimpleGrid
+                    columns={{ base: 1, sm: 2, md: 3 }} // Define column count for different breakpoints
+                    spacing={4} // Spacing between grid items
+                >
                     {images.map((image, index) => (
                         <Box
                             key={index}
-                            w={["100%", "31%"]}
                             height="300px" // Set a fixed height for the image container
                             position="relative"
                             overflow="hidden"
@@ -37,11 +39,10 @@ export const Gallery = ({images}) => {
                                 objectFit="cover"
                                 width="100%"
                                 height="100%" // Ensure the image covers the entire container
-                                layout="fill" // Ensure image fits container dimensions
                             />
                         </Box>
                     ))}
-                </Flex>
+                </SimpleGrid>
             </motion.div>
         </Box>
     );

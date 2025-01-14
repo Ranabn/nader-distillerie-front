@@ -34,10 +34,9 @@ export const LabelDrinks = () => {
                     />
                 </Flex>
 
-                <Divider my={10}/>
 
                 {/* Why Us and Our Process Section */}
-                <Flex fontSize={["16px", "18px"]} justify="space-between" flexDirection={["column", "column", "row"]}
+                <Flex mt={32} fontSize={["16px", "18px"]} justify="space-between" flexDirection={["column", "column", "row"]}
                       gap={12}>
                     {/* Why Us */}
                     <Flex w={['100%', '70%', '70%']} flexDir='column' align="flex-start" gap={2}>
@@ -114,7 +113,7 @@ export const LabelDrinks = () => {
 
 
             </Box>
-            <Flex mb={12} flexDirection={['column', 'row']}>
+            <Flex mb={12} flexDirection={['column', 'row']}          >
                 <Flex
                     m={[4, 10]}
                     justifyContent={'center'}
@@ -129,7 +128,14 @@ export const LabelDrinks = () => {
                           pb={[0, 14]}
                           alignContent={'center'}
                           justifyContent={'center'}
-                          _hover={{cursor: 'pointer'}}
+                          _hover={{
+                              color: 'black',
+                              bg: '#D2CDBF',
+                              border: '1px solid transparent' ,
+                              textDecoration: "none",
+                              cursor:'pointer',
+                              transition: 'all 0.3s ease'
+                          }}
 
                     >
                         <Link href={'/services/ethanol'} _hover={{textDecoration: 'none'}}>
@@ -165,7 +171,14 @@ export const LabelDrinks = () => {
                           alignContent={'center'}
                           justifyContent={'center'}
                           height={"100%"}
-                          _hover={{cursor: 'pointer'}}
+                          _hover={{
+                              color: 'black',
+                              bg: '#D2CDBF',
+                              border: '1px solid transparent' ,
+                              textDecoration: "none",
+                              cursor:'pointer',
+                              transition: 'all 0.3s ease'
+                          }}
 
                     >
                         <Link href={'/services/gift'} _hover={{textDecoration: 'none'}}>

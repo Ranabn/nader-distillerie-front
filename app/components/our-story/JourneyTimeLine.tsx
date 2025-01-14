@@ -59,16 +59,18 @@ export const JourneyTimeline = ({timeline}: any) => {
                 right={0}
             >
                 <Flex
-                    gap={10}
+                    gap={'120px'}
                     width="max-content"
-                    px={4}
+                    px={8}
                     alignItems="center"
                 >
                     <Flex
-                        minWidth="500px"
+                        width="490px"
                         fontSize={["4xl", "48px"]}
                         fontFamily="EB Garamond"
                         fontWeight="bold"
+                        mr={'45px'}
+                        mb={40}
                     >
                         A journey of growth, <br/> skill, and unwavering dedication
                     </Flex>
@@ -76,7 +78,8 @@ export const JourneyTimeline = ({timeline}: any) => {
                         <Flex
                             key={index}
                             flexDirection="column"
-                            minWidth="420px"
+                            width="420px"
+                            height={"703px"}
                         >
                             <Box
                                 width={420}
@@ -94,16 +97,15 @@ export const JourneyTimeline = ({timeline}: any) => {
                                     _hover={{transform: "scale(1.1)"}}
                                 />
                             </Box>
-                            <Flex flexDirection="column" mt={4} width={"420px"} height={"243px"}>
-                                <Text fontSize={["24px"]}>{item.year}</Text>
-                                <Text fontSize={["4xl", "48px"]} fontFamily="EB Garamond" fontWeight="bold">
+                            <Flex flexDirection="column" >
+                                <Text lineHeight="0" mt={12}  fontSize={["24px"]}>{item.year}</Text>
+                                <Text  fontSize={["4xl", "48px"]} fontFamily="EB Garamond" fontWeight="bold">
                                     {item.title}
                                 </Text>
                                 <Text mt={2} fontSize={["18px"]}>{item.description}</Text>
                             </Flex>
                         </Flex>
                     ))}
-                    <Box width={'400px'}></Box>
                 </Flex>
             </Box>
         </Box>

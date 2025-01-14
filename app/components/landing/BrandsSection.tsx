@@ -5,7 +5,7 @@ import React, {useState, useEffect, useRef} from "react";
 import {Box, Flex, Text, Radio, Divider, Link} from "@chakra-ui/react";
 import {Btn} from "@/app/components/ui/Btn";
 import Image from "next/image";
-
+import Left from "@/app/assets/img.png"
 export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
     const scrollContainerRef = useRef(null);
     const [selectedCategory, setSelectedCategory] = useState('All brands');
@@ -148,8 +148,8 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                     </Flex>
                 ))}
             </Flex>
-            <Flex justifyContent={'end'} mt={16} gap={12}>
-                {showLeftScroll && (
+            <Flex justifyContent={'end'} mt={12} gap={12}>
+                {/*{showLeftScroll && (*/}
                     <Box _hover={{cursor: 'pointer'}}>
                         <svg onClick={scrollLeft} width="60" height="16" viewBox="0 0 69 16" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
@@ -158,8 +158,8 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                                 fill="black"/>
                         </svg>
                     </Box>
-                )}
-                {showRightScroll && (
+                {/*)}*/}
+                {/*{showRightScroll && (*/}
                     <Box _hover={{cursor: 'pointer'}}>
                         <svg onClick={scrollRight}
                              width="60" height="16" viewBox="0 0 69 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -168,7 +168,7 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                                 fill="black"/>
                         </svg>
                     </Box>
-                )}
+                {/*)}*/}
             </Flex>
             {isLanding && (
                 <Link _hover={{textDecoration: "none"}} href={`/brands`}>

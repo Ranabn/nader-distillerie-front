@@ -17,6 +17,7 @@ import {sanityFetch} from "@/app/sanity/client";
 import {Btn} from "@/app/components/ui/Btn";
 import React from "react";
 import googleimg from "@/app/assets/images/googleimg.png"
+import {usePathname} from "next/navigation";
 
 const BRANDS_QUERY = `*[_type == "brands"] {
   brand_name,
@@ -28,7 +29,7 @@ const ContactPage = async () => {
     const brands = await sanityFetch({
         query: BRANDS_QUERY,
     });
-
+    console.log(usePathname())
     return (
         <Flex direction="column">
             <Navbar brands={brands}/>
@@ -44,7 +45,7 @@ const ContactPage = async () => {
 
                         <Flex direction="column" gap={6} fontSize={"18px"}>
                             <FormControl id="reason">
-                                <Select placeholder="Become a reseller" borderRadius={'none'} border={'1px'}
+                                <Select placeholder=" " borderRadius={'none'} border={'1px'}
                                         size={'lg'}>
                                     <option value="reseller">Become a reseller</option>
                                     <option value="support">Support</option>

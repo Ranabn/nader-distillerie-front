@@ -77,7 +77,7 @@ export const Gifts = () => {
 
 
                 {/* Why Us and Our Process Section */}
-                <Flex mt={[10, 20]} fontSize={["16px", "18px"]} justify="space-between"
+                <Flex mt={[10, 32]} fontSize={["16px", "18px"]} justify="space-between"
                       flexDirection={["column", "column", "row"]}
                       gap={12}>
                     <Flex w={['100%', '70%', '45%']} flexDir='column' align="flex-start" gap={2}>
@@ -115,7 +115,7 @@ export const Gifts = () => {
                     </Box>
                 </Flex>
             </Box>
-            <Flex flexDirection={"column"} p={[4, 8, 10]} gap={[4, 20]} mb={[20]}>
+            <Flex flexDirection={"column"} p={[4, 8, 8]} gap={[4, 20]} mb={[20]}>
                 <Flex justify={'center'} mb={[4, 14]}>
                     <Text fontSize={["28px", "48px", '48px']} fontWeight="bold" fontFamily={"EB Garamond"}>Customer
                         testimony</Text>
@@ -144,7 +144,7 @@ export const Gifts = () => {
                         <Swiper
                             onSwiper={(swiper) => {
                                 swiperRef1.current = swiper;
-                                swiper.slideTo(2, 0); // Set initial slide to 2 without animation
+                                swiper.slideTo(0, 0); // Set initial slide to 2 without animation
                                 setActiveIndex(2);   // Set the activeIndex state
                                 updatePaginationPosition(swiper); // Update the pagination position
                             }}
@@ -172,15 +172,7 @@ export const Gifts = () => {
                                     height="100%"
                                 />
                             </SwiperSlide>
-                            <SwiperSlide>
-                                <Image
-                                    src={pres2.src}
-                                    alt="Our Story"
-                                    objectFit="cover"
-                                    width="100%"
-                                    height="100%"
-                                />
-                            </SwiperSlide>
+
                             <SwiperSlide>
                                 <Image
                                     src={testimony1.src}
@@ -268,7 +260,7 @@ export const Gifts = () => {
                         <Swiper
                             onSwiper={(swiper) => {
                                 swiperRef2.current = swiper;
-                                swiper.slideTo(2, 0); // Set initial slide to 2 without animation
+                                swiper.slideTo(0, 0); // Set initial slide to 2 without animation
                                 setActiveIndex(2);   // Set the activeIndex state
                                 updatePaginationPosition(swiper); // Update the pagination position
                             }}
@@ -314,15 +306,7 @@ export const Gifts = () => {
                                     height="100%"
                                 />
                             </SwiperSlide>
-                            <SwiperSlide>
-                                <Image
-                                    src={bottle2.src}
-                                    alt="Testimonial 2 Slide 1"
-                                    objectFit="cover"
-                                    width="100%"
-                                    height="100%"
-                                />
-                            </SwiperSlide>
+
                             <SwiperSlide>
                                 <Image
                                     src={testimony2.src}
@@ -375,7 +359,14 @@ export const Gifts = () => {
                           pb={[0, 14]}
                           alignContent={'center'}
                           justifyContent={'center'}
-                          _hover={{cursor: 'pointer'}}
+                          _hover={{
+                              color: 'black',
+                              bg: '#D2CDBF',
+                              border: '1px solid transparent' ,
+                              textDecoration: "none",
+                              cursor:'pointer',
+                              transition: 'all 0.3s ease'
+                          }}
 
                     >
                         <Link href={'/services/ethanol'} _hover={{textDecoration: 'none'}}>
@@ -411,7 +402,14 @@ export const Gifts = () => {
                           alignContent={'center'}
                           justifyContent={'center'}
                           height={"100%"}
-                          _hover={{cursor: 'pointer'}}
+                          _hover={{
+                              color: 'black',
+                              bg: '#D2CDBF',
+                              border: '1px solid transparent' ,
+                              textDecoration: "none",
+                              cursor:'pointer',
+                              transition: 'all 0.3s ease'
+                          }}
 
                     >
                         <Link href={'/services/label-drinks'} _hover={{textDecoration: 'none'}}>

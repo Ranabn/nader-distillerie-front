@@ -32,10 +32,10 @@ export const Ethanol = () => {
                     />
                 </Flex>
 
-                <Divider my={10}/>
+
 
                 {/* Why Us and Our Process Section */}
-                <Flex fontSize={["16px", "18px"]} justify="space-between" flexDirection={["column", "column", "row"]}
+                <Flex mt={32} fontSize={["16px", "18px"]} justify="space-between" flexDirection={["column", "column", "row"]}
                       gap={12}>
 
                     <Flex w={['100%', '70%', '45%']} flexDir='column' align="flex-start" gap={2}>
@@ -98,7 +98,14 @@ export const Ethanol = () => {
                           pb={[0, 14]}
                           alignContent={'center'}
                           justifyContent={'center'}
-                          _hover={{cursor: 'pointer'}}
+                          _hover={{
+                              color: 'black',
+                              bg: '#D2CDBF',
+                              border: '1px solid transparent' ,
+                              textDecoration: "none",
+                              cursor:'pointer',
+                              transition: 'all 0.3s ease'
+                          }}
 
                     >
                         <Link href={'/services/label-drinks'} _hover={{textDecoration: 'none'}}>
@@ -134,7 +141,14 @@ export const Ethanol = () => {
                           alignContent={'center'}
                           justifyContent={'center'}
                           height={"100%"}
-                          _hover={{cursor: 'pointer'}}
+                          _hover={{
+                              color: 'black',
+                              bg: '#D2CDBF',
+                              border: '1px solid transparent' ,
+                              textDecoration: "none",
+                              cursor:'pointer',
+                              transition: 'all 0.3s ease'
+                          }}
 
                     >
                         <Link href={'/services/gift'} _hover={{textDecoration: 'none'}}>
