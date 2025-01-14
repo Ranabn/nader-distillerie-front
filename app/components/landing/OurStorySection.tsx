@@ -10,17 +10,16 @@ import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useParams, useRouter} from "next/navigation";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 export const OurStorySection = ({storyImg}: any) => {
     const textRef = useRef(null);
+    const testRef = useRef(null);
     const containerRef = useRef(null);
-    const route = useRouter()
-    const params = useParams()
-    console.log(params.slug)
+    const imageContainerRef = useRef(null);
+    const route = useRouter();
+    const params = useParams();
 
-    // Media query to disable GSAP for small screens
     const [isSmallScreen] = useMediaQuery('(max-width: 768px)');
 
     useEffect(() => {
@@ -41,8 +40,10 @@ export const OurStorySection = ({storyImg}: any) => {
         return () => ScrollTrigger.killAll();
     }, [isSmallScreen]);
 
+
     return (
-        <Box p={[4, 8, 8]} mb={[10, 10, 10]} mt={[20, 0, 0]} bg="white" ref={containerRef} color={'#000000'}
+        <Box
+             p={[4, 8, 8]} mb={[10, 10, 10]} mt={[20, 0, 0]} bg="white" ref={containerRef} color={'#000000'}
         >
             <Image
                 display={[params.slug ? "flex" : "none", "none", "none"]}
@@ -59,9 +60,7 @@ export const OurStorySection = ({storyImg}: any) => {
                 width="100%"
                 mt={[4, 10, 10]}
                 gap={4}
-
             >
-                {/* Left Section: Pinned Text */}
                 <Flex
                     flexDirection="column"
                     gap={6}
@@ -91,10 +90,11 @@ export const OurStorySection = ({storyImg}: any) => {
                         wines, and more.
                     </Text>
                     <Box w={['100%', '40%', '40%']} mt={4}>
-                        <Link _hover={{textDecoration: 'none'}} href={'/our-story'}>
+                        <Link _hover={{textDecoratiosn: 'none'}} href={'/our-story'}>
                             <Btn size="md" variant="secondary" text="Discover our legacy"/>
                         </Link>
                     </Box>
+                    <Box width={'100vw'} height={'150px'} bg={'white'} position={'absolute'} bottom={'-420px'}></Box>
                 </Flex>
                 <Image
                     display={[params.slug ? "none" : "flex", "flex", "flex"]}
@@ -106,10 +106,10 @@ export const OurStorySection = ({storyImg}: any) => {
                 />
             </Flex>
 
-            {/* Additional Image Section */}
             {!isSmallScreen && (
-                <Flex justifyContent="space-between">
+                <Flex justifyContent="space-between" ref={imageContainerRef}>
                     <Text></Text>
+
                     <Flex flexDirection="column" gap={8} mt={8}>
                         <Image
                             src={storyImg || OurStory2.src}
@@ -126,9 +126,9 @@ export const OurStorySection = ({storyImg}: any) => {
                             height="600px"
                         />
                     </Flex>
+
                 </Flex>
             )}
-
         </Box>
     );
 };
