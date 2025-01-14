@@ -1,14 +1,13 @@
-// @ts-nocheck
-
 'use client';
 import React, {useState, useEffect, useRef} from "react";
 import {Box, Flex, Text, Radio, Divider, Link} from "@chakra-ui/react";
 import {Btn} from "@/app/components/ui/Btn";
 import Image from "next/image";
-import Left from "@/app/assets/img.png"
+import {useSearchParams} from 'next/navigation';
+
 export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
+    const searchParams = useSearchParams();
     const scrollContainerRef = useRef(null);
-    const [selectedCategory, setSelectedCategory] = useState('All brands');
     const [showLeftScroll, setShowLeftScroll] = useState(false);
     const [showRightScroll, setShowRightScroll] = useState(true);
 
@@ -22,6 +21,24 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
         allCategories.push('Ethanol');
     }
 
+    // Get the query parameter and set initial selected category
+    const getInitialCategory = () => {
+        // Get first key from searchParams
+        const firstKey = Array.from(searchParams.keys())[0];
+        if (!firstKey) return 'All brands';
+
+        // Check if the category exists in allCategories
+        return allCategories.includes(firstKey) ? firstKey : 'All brands';
+    };
+
+    const [selectedCategory, setSelectedCategory] = useState(getInitialCategory());
+
+    // Update selected category when URL changes
+    useEffect(() => {
+        const newCategory = getInitialCategory();
+        setSelectedCategory(newCategory);
+    }, [searchParams]);
+
     const brandData = brands.map((brand, index) => ({
         ...brand,
         imageUrl: imageUrls[index] || '/placeholder-image.jpg'
@@ -29,6 +46,14 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
 
     const handleRadioClick = (category) => {
         setSelectedCategory(category);
+        // Update URL when radio is clicked
+        const url = new URL(window.location.href);
+        if (category === 'All brands') {
+            url.search = '';
+        } else {
+            url.search = `${category}=${category}`;
+        }
+        window.history.pushState({}, '', url);
     };
 
     const scrollLeft = () => {
@@ -62,13 +87,6 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
             observer.observe(scrollContainerRef.current.firstChild);
             observer.observe(scrollContainerRef.current.lastChild);
         }
-
-        // return () => {
-        //     if (filteredBrandData.length > 0) {
-        //         observer.unobserve(scrollContainerRef.current.firstChild);
-        //         observer.unobserve(scrollContainerRef.current.lastChild);
-        //     }
-        // };
     }, [filteredBrandData]);
 
     return (
@@ -93,7 +111,6 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                 ))}
             </Flex>
             <Divider p={2} mb={8} color={'black'}/>
-
             <Flex
                 ref={scrollContainerRef}
                 overflowX="auto"

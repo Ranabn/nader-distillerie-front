@@ -343,26 +343,26 @@ const MenuLinks = ({background, brands}) => {
                                 Brands
                             </MenuButton>
                         </Link>
-                        <MenuList
-                            onMouseEnter={() => setIsMenuOpen(true)} // Keep menu open when hovering over it
-                            onMouseLeave={() => setIsMenuOpen(false)} // Close menu when mouse leaves
-                            borderRadius="0"
+                        {/*<MenuList*/}
+                        {/*    onMouseEnter={() => setIsMenuOpen(true)} // Keep menu open when hovering over it*/}
+                        {/*    onMouseLeave={() => setIsMenuOpen(false)} // Close menu when mouse leaves*/}
+                        {/*    borderRadius="0"*/}
 
-                        >
-                            {brandList?.map((brand) => (
-                                <MenuItem
-                                    display={'flex'}
-                                    flexDirection={'column'}
-                                    p={4}
-                                    key={brand.slug}
-                                    color={'black'}
-                                >
-                                    <Link href={`/brands/${brand.slug}`} textDecoration="none">
-                                        {brand.brand_name}
-                                    </Link>
-                                </MenuItem>
-                            ))}
-                        </MenuList>
+                        {/*>*/}
+                        {/*    {brandList?.map((brand) => (*/}
+                        {/*        <MenuItem*/}
+                        {/*            display={'flex'}*/}
+                        {/*            flexDirection={'column'}*/}
+                        {/*            p={4}*/}
+                        {/*            key={brand.slug}*/}
+                        {/*            color={'black'}*/}
+                        {/*        >*/}
+                        {/*            <Link href={`/brands/${brand.slug}`} textDecoration="none">*/}
+                        {/*                {brand.brand_name}*/}
+                        {/*            </Link>*/}
+                        {/*        </MenuItem>*/}
+                        {/*    ))}*/}
+                        {/*</MenuList>*/}
                     </Menu>
                     <svg width="8" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 0.5L5 5.5L10 0.5H0Z"
@@ -386,7 +386,14 @@ const MenuLinks = ({background, brands}) => {
                     Our Story
                 </MenuItem>
                 <MenuItem to="/contact" isLast isActive={pathname === '/contact'} background={background}>
-                    <Btn size="md" variant={buttonVariant} text="WORK TOGETHER"/>
+                    {pathname !== '/contact' && (
+                        <Btn size="md" variant={buttonVariant} text="WORK TOGETHER"/>
+
+                    )}
+                    {pathname === '/contact' && (
+                        <Btn size="md" variant={'primaryBlue'} text="WORK TOGETHER"/>
+
+                    )}
                 </MenuItem>
             </Flex>
         </Flex>

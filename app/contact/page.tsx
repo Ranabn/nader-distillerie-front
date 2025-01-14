@@ -17,7 +17,10 @@ import {sanityFetch} from "@/app/sanity/client";
 import {Btn} from "@/app/components/ui/Btn";
 import React from "react";
 import googleimg from "@/app/assets/images/googleimg.png"
-import {usePathname} from "next/navigation";
+import ContactForm from "@/app/components/contact/ContactForm";
+import GoogleMapReact from 'google-map-react';
+import GoogleMapComponent from "@/app/components/contact/GoogleMapComponent";
+
 
 const BRANDS_QUERY = `*[_type == "brands"] {
   brand_name,
@@ -25,16 +28,23 @@ const BRANDS_QUERY = `*[_type == "brands"] {
   "mainImage": mainImage.asset->url,
   "categories": categories[]->title
 }`;
+
 const ContactPage = async () => {
     const brands = await sanityFetch({
         query: BRANDS_QUERY,
     });
-    console.log(usePathname())
+
+    const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
+
+    const center = {
+        lat: 33.8767,  // Approximate coordinates for Sin El Fil
+        lng: 35.5431
+    };
     return (
         <Flex direction="column">
             <Navbar brands={brands}/>
-            <Flex mt={20} direction="column" justifyContent={'space-between'} p={8}>
-                <Flex w={'100%'} gap={24} flexDirection={["column", "row"]}>
+            <Flex mt={28} direction="column" justifyContent={'space-between'} p={8} h={'982px'}>
+                <Flex w={'100%'} gap={'137px'} flexDirection={["column", "row"]}>
                     <Flex direction="column" w={["100%", '566px']}>
                         <Text fontSize={["28px", "5xl", "48px"]} fontFamily="EB Garamond" fontWeight="800">Get in
                             touch</Text>
@@ -43,41 +53,10 @@ const ContactPage = async () => {
                             as
                             possible.</Text>
 
-                        <Flex direction="column" gap={6} fontSize={"18px"}>
-                            <FormControl id="reason">
-                                <Select placeholder=" " borderRadius={'none'} border={'1px'}
-                                        size={'lg'}>
-                                    <option value="reseller">Become a reseller</option>
-                                    <option value="support">Support</option>
-                                    <option value="other">Other</option>
-                                </Select>
-                            </FormControl>
-
-                            <Flex gap={6} fontSize={"16px"} flexDirection={["column", "row"]}>
-                                <FormControl id="name" w={["100%", "50%"]}>
-                                    <FormLabel>Name</FormLabel>
-                                    <Input size={'lg'} type="text" borderRadius={'none'} border={'1px'}/>
-                                </FormControl>
-
-                                <FormControl id="mail" w={["100%", "50%"]}>
-                                    <FormLabel>Email</FormLabel>
-                                    <Input size={'lg'} type="email" borderRadius={'none'} border={'1px'}/>
-                                </FormControl>
-                            </Flex>
-
-                            <FormControl id="message">
-                                <FormLabel>Message</FormLabel>
-                                <Textarea size={'xl'} height={'349px'} width={["100%", "566px"]} borderRadius={'none'}
-                                          border={'1px'}/>
-                            </FormControl>
-
-                            <Flex justifyContent="flex-end">
-                                <Btn size={'md'} variant="primaryBlack" text="Send message"/>
-                            </Flex>
-                        </Flex>
+                        <ContactForm/>
                     </Flex>
                     <Flex flexDirection='column' mt={[0, 8]} fontSize={["16px", "18px"]} direction="row"
-                          w={["100%", '50%']}
+                          w={["100%", '100%']}
                     >
                         <Box order={[1, 0]} mt={[8, 0]}>
                             <Text fontSize={["24px"]}>Addresses</Text>
@@ -100,14 +79,7 @@ const ContactPage = async () => {
                         </Box>
 
                         <Box width="100%" height={["auto", "300px"]} mt={[0, 6]} order={[0, 1]}>
-                            <Image src={googleimg.src}/>
-                            {/*<iframe*/}
-                            {/*    width="100%"*/}
-                            {/*    height="100%"*/}
-                            {/*    frameBorder="0"*/}
-                            {/*    src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=Sin+El+Fil,Lebanon"*/}
-                            {/*    allowFullScreen*/}
-                            {/*></iframe>*/}
+                            <GoogleMapComponent apiKey={API_KEY} center={center} zoom={12} />
                         </Box>
                     </Flex>
                 </Flex>

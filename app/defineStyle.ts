@@ -122,6 +122,33 @@ const Button = defineStyleConfig({
                 },
             },
         },
+        primaryBlue: {
+            bg: '#224452',
+            color: 'white',
+            position: 'relative',
+            backgroundSize: '100% 200%',
+            backgroundPosition: '0 0%',
+            transition: 'all 0.3s ease',
+            // bgGradient: 'linear(to-t, #224452 0%, #224452 50%, black 50%, black 100%)',
+            // animation: `${fillAnimationOut} 0.3s forwards`,
+            // _hover: {
+            //     color: 'white',
+            //     animation: `${fillAnimationIn} 0.3s forwards`,
+            //     textDecoration: "none"
+            // },
+//             _disabled: {
+//                 animation: 'none',        // Disable animation
+//                 bg: 'gray.300',           // Optional: Change the background color
+//                 color: 'gray.500',        // Optional: Change the text color
+//                 cursor: 'not-allowed',    // Optional: Show "not-allowed" cursor
+//                 _hover: {
+//                     bg: 'gray.300',      // Ensure hover doesn't change the color
+//                     color: 'gray.500',
+//                     textDecoration: "none"
+// // Prevent hover text color changes
+//                 },
+//             },
+        },
         secondary: {
             bg: 'transparent',
             textTransform: 'none',

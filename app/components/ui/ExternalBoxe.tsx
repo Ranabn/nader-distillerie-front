@@ -19,7 +19,14 @@ export const ExternalBox = () => {
                   pt={[8, 14]}
                   pb={[8, 14]}
                   width={["100%", "45%", '678px']}
-                  _hover={{cursor: 'pointer'}}
+                  _hover={{
+                      color: 'black',
+                      bg: '#D2CDBF',
+                      border: '1px solid transparent' ,
+                      textDecoration: "none",
+                      cursor:'pointer',
+                      transition: 'all 0.3s ease'
+                  }}
 
             >
                 <Link href={'/contact'} _hover={{textDecoration: 'none'}}>

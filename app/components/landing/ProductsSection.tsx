@@ -136,7 +136,7 @@ export const ProductsSection = () => {
                         mb={6}
                     >
                         <Link
-                            href={`/brands?${product.name}`}>
+                            href={`/brands?${product.name}=${product.name}`}>
                         <Box
                             width="342px"
                             height={"242.44px"}
