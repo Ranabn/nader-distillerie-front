@@ -1,7 +1,7 @@
 // @ts-nocheck
 
 'use client'
-import Background from "@/app/assets/images/landing.png";
+import Background from "@/app/assets/images/landing.jpg";
 import {Box, Flex, Text, Button, Heading, Icon, Image, useBreakpointValue, Link} from "@chakra-ui/react";
 import {Btn} from "@/app/components/ui/Btn";
 import React from "react";
@@ -35,6 +35,7 @@ export const HeroBanner = () => {
                     objectPosition={{base: 'center', md: 'bottom'}}
                     width="100%"
                     height="100%"
+                    transform="scale(1.01)"
                 />
                 <Box
                     display={["flex", "flex", "none"]}

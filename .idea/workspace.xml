@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="fixing stuff">
+    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="fixing a lot of stuff">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/contact/ContactForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/contact/GoogleMapComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/BrandsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/BrandsSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/ProductsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/ProductsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/images/landing.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/images/landing.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/landing/HeroBanner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/HeroBanner.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/navigation/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation/navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/product/3DSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/product/3DSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/ui/ExternalBoxe.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ui/ExternalBoxe.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/contact/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/contact/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/defineStyle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/defineStyle.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/product/CraftIdentity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/product/CraftIdentity.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,11 +59,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets/images" />
+      <recent name="$PROJECT_DIR$/app/assets/landing" />
+      <recent name="$PROJECT_DIR$/app/assets" />
       <recent name="$PROJECT_DIR$/app/assets/images/gift-sliders" />
       <recent name="$PROJECT_DIR$/app/components/services" />
-      <recent name="$PROJECT_DIR$/app/services" />
-      <recent name="$PROJECT_DIR$/app/assets/images" />
-      <recent name="$PROJECT_DIR$/app/assets" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -98,7 +92,7 @@
       <workItem from="1733067891692" duration="9563000" />
       <workItem from="1733083524419" duration="5000" />
       <workItem from="1733239016319" duration="30944000" />
-      <workItem from="1736788607730" duration="25384000" />
+      <workItem from="1736788607730" duration="27388000" />
     </task>
     <task id="LOCAL-00001" summary="Restriction age css">
       <option name="closed" value="true" />
@@ -212,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736852572274</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fixing a lot of stuff">
+      <option name="closed" value="true" />
+      <created>1736880799000</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1736880799000</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,7 +232,8 @@
     <MESSAGE value="v1" />
     <MESSAGE value="On ourStorySection animation" />
     <MESSAGE value="fixing stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing stuff" />
+    <MESSAGE value="fixing a lot of stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing a lot of stuff" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

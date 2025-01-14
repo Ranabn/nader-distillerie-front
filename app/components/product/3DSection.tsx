@@ -14,6 +14,7 @@ export const Product3DSection = ({sections}: any) => {
 
     const handleSlideChange = (swiper: any) => {
         const activeIndex = swiper.activeIndex;
+        const lastContentSlideIndex = sections.length - 1;
 
         // Animate the current slide's text
         if (textsRefs.current[activeIndex]) {
@@ -24,22 +25,38 @@ export const Product3DSection = ({sections}: any) => {
             );
         }
 
-        // Optionally, reset previous slide's text
+        // Reset previous slides' text, but preserve the last content slide
         textsRefs.current.forEach((el, index) => {
             if (el && index !== activeIndex) {
-                gsap.set(el, {y: 100, opacity: 0});
+                // Don't reset the last content slide's text if we're moving to the empty slide
+                if (!(index === lastContentSlideIndex && activeIndex === sections.length)) {
+                    gsap.set(el, {y: 100, opacity: 0});
+                }
             }
         });
+
+        // If moving back to the last content slide from the empty slide,
+        // ensure its text is visible
+        if (activeIndex === lastContentSlideIndex) {
+            if (textsRefs.current[lastContentSlideIndex]) {
+                gsap.to(textsRefs.current[lastContentSlideIndex], {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: "power3.out"
+                });
+            }
+        }
     };
 
     const lineAnimation = keyframes`
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 25%;
-    }
-`;
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 25%;
+        }
+    `;
 
     return (
         <div
@@ -158,7 +175,6 @@ export const Product3DSection = ({sections}: any) => {
                                             fontWeight: 400,
                                             marginTop: "30px",
                                         }}
-
                                     >
                                         {sec.discover}
                                         <svg

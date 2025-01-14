@@ -296,6 +296,7 @@ const MenuLinks = ({background, brands}) => {
     const buttonVariant = background.color === 'white' ? "primaryWhite" : "primaryBlack";
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
 
     return (
         <Flex
@@ -343,26 +344,46 @@ const MenuLinks = ({background, brands}) => {
                                 Brands
                             </MenuButton>
                         </Link>
-                        {/*<MenuList*/}
-                        {/*    onMouseEnter={() => setIsMenuOpen(true)} // Keep menu open when hovering over it*/}
-                        {/*    onMouseLeave={() => setIsMenuOpen(false)} // Close menu when mouse leaves*/}
-                        {/*    borderRadius="0"*/}
+                        <MenuList
+                            onMouseEnter={() => setIsMenuOpen(true)}
+                            onMouseLeave={() => setIsMenuOpen(false)}
+                            borderRadius="0"
+                            border={'1px solid black'}
 
-                        {/*>*/}
-                        {/*    {brandList?.map((brand) => (*/}
-                        {/*        <MenuItem*/}
-                        {/*            display={'flex'}*/}
-                        {/*            flexDirection={'column'}*/}
-                        {/*            p={4}*/}
-                        {/*            key={brand.slug}*/}
-                        {/*            color={'black'}*/}
-                        {/*        >*/}
-                        {/*            <Link href={`/brands/${brand.slug}`} textDecoration="none">*/}
-                        {/*                {brand.brand_name}*/}
-                        {/*            </Link>*/}
-                        {/*        </MenuItem>*/}
-                        {/*    ))}*/}
-                        {/*</MenuList>*/}
+                        >
+                            {brandList?.map((brand) => (
+                                <Box
+                                    key={brand.slug}
+                                    p={4}
+                                    position="relative"
+                                >
+                                    <Link
+                                        href={`/brands/${brand.slug}`}
+                                        style={{ textDecoration: "none" }}
+                                    >
+                                        <Text
+                                            color="black"
+                                            position="relative"
+                                            _hover={{
+                                                _after: {
+                                                    content: '""',
+                                                    position: 'absolute',
+                                                    width: '4px',
+                                                    height: '4px',
+                                                    borderRadius: '50%',
+                                                    top: '50%',
+                                                    marginLeft: '20px',
+                                                    transform: 'translateY(-50%)',
+                                                    backgroundColor: '#D2CDBF',
+                                                }
+                                            }}
+                                        >
+                                            {brand.brand_name}
+                                        </Text>
+                                    </Link>
+                                </Box>
+                            ))}
+                        </MenuList>
                     </Menu>
                     <svg width="8" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 0.5L5 5.5L10 0.5H0Z"
@@ -374,9 +395,96 @@ const MenuLinks = ({background, brands}) => {
                 </MenuItem>
                 <Flex alignItems={'center'} gap={2}>
 
-                    <MenuItem to="/services" isActive={pathname.startsWith('/services')} background={background}>
-                        Services
-                    </MenuItem>
+                    <Menu isOpen={isServicesMenuOpen}>
+                        <Link href={'/services'}>
+                            <MenuButton
+                                onMouseEnter={() => setIsServicesMenuOpen(true)} // Open menu on hover
+                                onMouseLeave={() => setIsServicesMenuOpen(false)} // Close menu when mouse leaves
+                                to="/services"
+                                isActive={pathname.startsWith('/services')}
+                                px={2}
+                                borderRadius="0"
+                            >
+                                Services
+                            </MenuButton>
+                        </Link>
+                        <MenuList
+                            onMouseEnter={() => setIsServicesMenuOpen(true)}
+                            onMouseLeave={() => setIsServicesMenuOpen(false)}
+                            borderRadius="0"
+                            border={'1px solid black'}
+                        >
+                            <Box p={4} position="relative">
+                                <Link href={'/services/label-drinks'} style={{textDecoration: "none"}}>
+                                    <Text
+                                        color="black"
+                                        position="relative"
+                                        _hover={{
+                                            _after: {
+                                                content: '""',
+                                                position: 'absolute',
+                                                width: '4px',
+                                                height: '4px',
+                                                borderRadius: '50%',
+                                                top: '50%',
+                                                marginLeft: '20px',
+                                                transform: 'translateY(-50%)',
+                                                backgroundColor: '#D2CDBF',
+                                            }
+                                        }}
+                                    >
+                                        Private Label
+                                    </Text>
+                                </Link>
+                            </Box>
+                            <Box p={4} position="relative">
+                                <Link href={'/services/ethanol'} style={{textDecoration: "none"}}>
+                                    <Text
+                                        color="black"
+                                        position="relative"
+                                        _hover={{
+                                            _after: {
+                                                content: '""',
+                                                position: 'absolute',
+                                                width: '4px',
+                                                height: '4px',
+                                                borderRadius: '50%',
+                                                top: '50%',
+                                                marginLeft: '20px',
+                                                transform: 'translateY(-50%)',
+                                                backgroundColor: '#D2CDBF',
+                                            }
+                                        }}
+                                    >
+                                        Raw Material
+                                    </Text>
+                                </Link>
+                            </Box>
+                            <Box p={4} position="relative">
+                                <Link href={'/services/gift'} style={{textDecoration: "none"}}>
+                                    <Text
+                                        color="black"
+                                        position="relative"
+                                        _hover={{
+                                            _after: {
+                                                content: '""',
+                                                position: 'absolute',
+                                                width: '4px',
+                                                height: '4px',
+                                                borderRadius: '50%',
+                                                top: '50%',
+                                                marginLeft: '20px',
+                                                transform: 'translateY(-50%)',
+                                                backgroundColor: '#D2CDBF',
+                                            }
+                                        }}
+                                    >
+                                        Events
+                                    </Text>
+                                </Link>
+                            </Box>
+                        </MenuList>
+                    </Menu>
                     <svg width="8" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 0.5L5 5.5L10 0.5H0Z"
                               fill={pathname == '/products' || '/' ? background.color : "#224452"}/>
@@ -386,7 +494,7 @@ const MenuLinks = ({background, brands}) => {
                     Our Story
                 </MenuItem>
                 <MenuItem to="/contact" isLast isActive={pathname === '/contact'} background={background}>
-                    {pathname !== '/contact' && (
+                {pathname !== '/contact' && (
                         <Btn size="md" variant={buttonVariant} text="WORK TOGETHER"/>
 
                     )}
