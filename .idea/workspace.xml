@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Adding dropdown menu navbar + animations">
+    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="white bar">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/icons/chevronLeft.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/OurStorySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/OurStorySection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/brands/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/brands/[slug]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/brands/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/brands/Social.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Social.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/brands/StickyImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/StickyImage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +92,7 @@
       <workItem from="1733067891692" duration="9563000" />
       <workItem from="1733083524419" duration="5000" />
       <workItem from="1733239016319" duration="30944000" />
-      <workItem from="1736788607730" duration="31785000" />
+      <workItem from="1736788607730" duration="41344000" />
     </task>
     <task id="LOCAL-00001" summary="Restriction age css">
       <option name="closed" value="true" />
@@ -218,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736882822703</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="white bar">
+      <option name="closed" value="true" />
+      <created>1736887215857</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1736887215857</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,7 +250,8 @@
     <MESSAGE value="fixing stuff" />
     <MESSAGE value="fixing a lot of stuff" />
     <MESSAGE value="Adding dropdown menu navbar + animations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding dropdown menu navbar + animations" />
+    <MESSAGE value="white bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="white bar" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

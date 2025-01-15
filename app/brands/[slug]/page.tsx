@@ -1,4 +1,5 @@
-import {Flex, Box, Text} from "@chakra-ui/react";
+import {Flex, Box, Text, Link, Icon} from "@chakra-ui/react";
+import {FaFacebook, FaInstagram} from "react-icons/fa";
 import {Navbar} from "@/app/components/navigation/navbar";
 import {SocialBrands} from "@/app/components/brands/Social";
 import {ExploreMore} from "@/app/components/brands/Explore";
@@ -8,7 +9,6 @@ import {StickyImage} from "@/app/components/brands/StickyImage";
 import {sanityFetch} from '@/app/sanity/client';
 import {HeaderBrands} from "@/app/components/brands/Header";
 import {urlFor} from '@/app/sanity/urlFor';
-import SmoothScroll from "@/app/SmoothScroll"; // Import your helper function
 import OurStory from "@/app/assets/images/our_story_brands.png";
 
 type Brand = {
@@ -47,9 +47,9 @@ const BRAND_QUERY = `*[_type == "brands" && slug.current == $slug][0]{
   brand_description_first_p_technical,
   link_to_technical_sheet,
   link_to_brand,
-  mainImage,
-  secondaryImage,
-  tertiaryImage,
+  mainImage{asset->, alt},
+  secondaryImage{asset->, alt},
+  tertiaryImage{asset->, alt},
   brand_short_desc,
   categories[]->{title},
 }`;
@@ -71,37 +71,49 @@ const BrandPage = async ({params}: { params: { slug: string } }) => {
         query: BRANDS_FOOTER,
     });
 
-    // @ts-ignore
     const imageUrls = [
         brand.mainImage ? urlFor(brand.mainImage).url() : null,
         brand.secondaryImage ? urlFor(brand.secondaryImage).url() : null,
         brand.tertiaryImage ? urlFor(brand.tertiaryImage).url() : null,
     ].filter(Boolean);
 
+    const imageAlts = [
+        brand.mainImage ? brand.mainImage.alt : null,
+        brand.secondaryImage ? brand.secondaryImage.alt : null,
+        brand.tertiaryImage ? brand.tertiaryImage.alt : null,
+    ];
+
     if (!brand) {
         return <div>Brand not found</div>;
     }
 
-    const storyImg = OurStory.src
+    const storyImg = OurStory.src;
 
     return (
         <>
             <Navbar brands={brands}/>
-            {/*<SmoothScroll>*/}
-            <Flex mt={[16, 32,32]} flexDirection="column" position="relative" overflowX={'hidden'}>
-                    <HeaderBrands brand={brand}/>
-                    <StickyImage imageUrls={imageUrls} brandName={brand?.brand_name}/>
+
+            <Flex mt={[16, 32, 32]} flexDirection="column" position="relative" overflowX={'hidden'}>
+                <HeaderBrands brand={brand}/>
+                <StickyImage
+                    imageAlts={imageAlts}
+                    imageUrls={imageUrls}
+                    brandName={brand?.brand_name}
+                />
+                {/* Pass social media links as props to SocialBrands */}
                 <SocialBrands
                     quote={brand?.brand_quote_social_section}
                     description={brand?.brand_description_first_p_technical}
                     technicalSheetUrl={brand?.link_to_technical_sheet || ""}
                     brandWebsiteUrl={brand?.link_to_brand}
+                    facebookUrl={brand.link_to_brand_facebook || ""}
+                    instagramUrl={brand.link_to_brand_instagram || ""}
+                    brandName={brand?.brand_name}
                 />
                 <ExploreMore brands={brands}/>
                 <OurStorySection storyImg={storyImg}/>
             </Flex>
             <Footer brands={brands}/>
-            {/*</SmoothScroll>*/}
         </>
     );
 };

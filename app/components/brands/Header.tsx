@@ -21,10 +21,10 @@ export const HeaderBrands = ({brand}: { brand: Brand }) => {
             <Text fontSize={["48px", "5xl", "60px"]} fontFamily="EB Garamond" fontWeight="800">
                 {brand.brand_name}
             </Text>
-            <Text mb={4} fontSize={["24px", "3xl", "32px"]} fontWeight="300" textTransform='uppercase'>
+            <Text mb={6} mt={4} fontSize={["24px", "3xl", "32px"]} fontWeight="300" textTransform='uppercase'>
                 {brand.brand_quote}
             </Text>
-            <Box mb={4} fontSize={["16px", "18px"]}>
+            <Box mb={2} fontSize={["16px", "18px"]}>
                 <PortableText value={brand.brand_description_first_p}/>
             </Box>
             <Box fontSize={["16px", "18px"]}>
