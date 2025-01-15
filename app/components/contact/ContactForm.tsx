@@ -9,8 +9,12 @@ import {
     FormLabel,
     Input,
     Textarea,
-    Select,
-    Box
+    Box,
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    Icon
 } from '@chakra-ui/react';
 import {Btn} from '@/app/components/ui/Btn';
 import {usePathname, useSearchParams} from "next/navigation";
@@ -18,15 +22,15 @@ import {usePathname, useSearchParams} from "next/navigation";
 const ContactForm = () => {
     const searchParams = useSearchParams();
     const [isCTA, setIsCTA] = useState(searchParams.get('CTA') ? true : false);
-    const [selectedReason, setSelectedReason] = useState(isCTA ? "reseller" : "");
+    const [selectedReason, setSelectedReason] = useState(isCTA ? "Become a reseller" : "");
     const inputStyles = {
         _focus: {
             borderColor: 'black',
             boxShadow: 'none'
         }
     };
-    const handleReasonChange = (event) => {
-        setSelectedReason(event.target.value);
+    const handleReasonSelect = (reason : string) => {
+        setSelectedReason(reason);
     };
     useEffect(() => {
         // Load Google Maps API script
@@ -44,19 +48,63 @@ const ContactForm = () => {
     return (
         <Flex direction="column" gap={6} fontSize="18px">
             <FormControl id="reason">
-                <Select
-                    placeholder=" "
-                    value={selectedReason}
-                    onChange={handleReasonChange}
-                    borderRadius="none"
-                    border="1px"
-                    size="lg"
-                    {...inputStyles}
-                >
-                    <option value="reseller">Become a reseller</option>
-                    <option value="support">Support</option>
-                    <option value="other">Other</option>
-                </Select>
+                <Flex className='reason-label' position={'relative'} alignItems={'center'} style={{cursor: 'pointer'}}>
+
+                    <Menu>
+                        <MenuButton
+                            as={Flex}
+                            borderRadius="none"
+                            border="1px solid black"
+                            height="50px"
+                            width="100%"
+                            textAlign="left"
+                            bg="white"
+                            {...inputStyles}
+                        >
+                        </MenuButton>
+
+                        <MenuList border="1px solid black" borderRadius="none" bg={'black'}>
+                            <MenuItem
+                                onClick={() => handleReasonSelect("Become a reseller")}
+                                bg={'black'}
+                                color={'white'}
+                                _hover={{ bg: 'white', color: 'black' }}
+                                _focus={{ bg: 'white', color: 'black' }}
+                            >
+                                Become a reseller
+                            </MenuItem>
+                            <MenuItem
+                                onClick={() => handleReasonSelect("Support")}
+                                bg={'black'}
+                                color={'white'}
+                                _hover={{ bg: 'white', color: 'black' }}
+                                _focus={{ bg: 'white', color: 'black' }}
+                            >
+                                Support
+                            </MenuItem>
+                            <MenuItem
+                                onClick={() => handleReasonSelect("Other")}
+                                bg={'black'}
+                                color={'white'}
+                                _hover={{ bg: 'white', color: 'black' }}
+                                _focus={{ bg: 'white', color: 'black' }}
+                            >
+                                Other
+                            </MenuItem>
+                        </MenuList>
+                    </Menu>
+                    <Flex className='reason-label' position={'absolute'} left={4}>
+                        {selectedReason ? selectedReason : "Select a reason"}
+                    </Flex>
+                    <Flex className='reason-label' position={'absolute'} right={4}>
+                        <Icon viewBox="0 0 24 24" w="24px" h="auto" color="white" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" className='country-select-icon'>
+                            <svg width="10" height="auto" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0L5 5L10 0H0Z" fill="black"/>
+                            </svg>
+                        </Icon>
+                    </Flex>
+                </Flex>
+
             </FormControl>
 
             <Flex gap={6} fontSize="16px" flexDirection={["column", "row"]}>
@@ -83,6 +131,7 @@ const ContactForm = () => {
                     borderRadius="none"
                     border="1px"
                     {...inputStyles}
+                    px={4}
                 />
             </FormControl>
 
