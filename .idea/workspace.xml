@@ -7,11 +7,14 @@
     <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="corrections">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/brands/Explore.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Explore.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/BrandsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/BrandsSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/OurStorySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/OurStorySection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/ProductsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/ProductsSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/brands/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/brands/[slug]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/brands/Social.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Social.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/brands/StickyImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/StickyImage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/contact/ContactForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/contact/ContactForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/contact/GoogleMapComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/contact/GoogleMapComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/product/3DSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/product/3DSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/restriction-age/NotAllowed.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/restriction-age/NotAllowed.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/restriction-age/RestrictionAge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/restriction-age/RestrictionAge.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +94,7 @@
       <workItem from="1733067891692" duration="9563000" />
       <workItem from="1733083524419" duration="5000" />
       <workItem from="1733239016319" duration="30944000" />
-      <workItem from="1736788607730" duration="47166000" />
+      <workItem from="1736788607730" duration="47479000" />
     </task>
     <task id="LOCAL-00001" summary="Restriction age css">
       <option name="closed" value="true" />
@@ -245,7 +248,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736972942690</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="corrections">
+      <option name="closed" value="true" />
+      <created>1736974708456</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1736974708456</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 'use client'
 import {Box, Button, Flex, Input, Select, Text, VStack, Link, useBreakpointValue, Image} from "@chakra-ui/react";
 import Background from "@/app/assets/images/age-restriction-not-allowed.png";

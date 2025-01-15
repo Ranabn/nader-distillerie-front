@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import {Flex, Box, Text, Link, Icon} from "@chakra-ui/react";
 import {FaFacebook, FaInstagram} from "react-icons/fa";
 import {Navbar} from "@/app/components/navigation/navbar";

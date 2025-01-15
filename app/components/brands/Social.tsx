@@ -12,6 +12,7 @@ interface SocialBrandsProps {
     brandWebsiteUrl?: string;
     facebookUrl?: string;
     instagramUrl?: string;
+    brandName?:string;
 }
 
 export const SocialBrands = ({
