@@ -17,7 +17,6 @@ export const NotAllowed = () => {
                     alt={'background'}
                     objectFit="cover"
                     width={'100%'}
-
                 />
                 <Box
                     position="absolute"
@@ -27,14 +26,14 @@ export const NotAllowed = () => {
                     height="100%"
                     bg="blackAlpha.400" // Chakra's way of setting opacity
                 />
-                <Flex p={[4, 0]} direction="column" justifyContent={'center'} gap={10} position="absolute"
+                <Flex p={[4, 0]} direction="column" justifyContent={'top'} gap={10} position="absolute"
                       width={["100%", "70%"]}
                       height="80%">
                     <Flex justify={'center'}>
                         {isSmallScreen ?
                             <Flex justify={'center'} width={'150px'} height={'145px'}><Image src={LogoSM.src} alt={'logo'}/></Flex>
                             :
-                            <Box mt={10} mb={16}>
+                            <Box mt={20} mb={16}>
                                 <Logo/>
                             </Box>
                         }
@@ -46,9 +45,9 @@ export const NotAllowed = () => {
                         </Text>
                     </Box>
 
-                    <Text textAlign="center" color="white" fontSize={["16px", "18px"]}>
+                    <Text textAlign="center" color="white" fontSize={["16px", "18px"]} style={{marginTop: '20px'}}>
                         This info is all part of our commitment to responsible drinking. <br/> More information on {' '}
-                        <Link href={'responsibledrinking.org'} textDecoration="underline">responsibledrinking.org</Link>
+                        <Link href={'http://www.responsibledrinking.org/'} textDecoration="underline">responsibledrinking.org</Link>
                     </Text>
 
                 </Flex>
