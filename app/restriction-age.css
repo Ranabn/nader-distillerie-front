@@ -76,7 +76,26 @@
     position: relative;
 
 }
+.country-select-container div:nth-child(2){
+    transform: translate3d(0px, 64px, 0px) !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+}
+.country-select-btn{
+    display: flex;
+    position: relative;
+    align-items: center;
+}
 
+.country-select-icon {
+    position: absolute;
+    right: 30px;
+    color: white;
+    display: flex;
+    pointer-events: none;
+    top: 3vh;
+    height: 100%;
+}
 .country-label {
     position: absolute;
     left: 20px;
@@ -84,43 +103,8 @@
     display: flex;
     gap: 24px;
     pointer-events: none;
+    top: 30%;
 }
-
-.country-select {
-    height: 64px;
-    color: white;
-    border: 1px solid white;
-    background: transparent;
-    width: 100%;
-
-}
-
-.country-select {
-    height: 64px;
-    color: white;
-    border: 1px solid white;
-    background: transparent url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"%3E%3Cpath d="M7 10l5 5 5-5H7z"/%3E%3C/svg%3E') no-repeat right 16px center;
-    background-size: 40px;
-    padding-right: 40px;
-    width: 100%;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-.country-select:hover,
-.country-select:focus {
-    border-color: white;
-    outline: none;
-    box-shadow: none;
-}
-
-.country-select option {
-    background-color: black;
-    color: white;
-}
-
-
 .terms-text {
     padding: 0px;
     margin: 0px;
