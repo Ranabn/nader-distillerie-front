@@ -45,7 +45,6 @@ const BrandsPage = async () => {
                 <ExternalBox/>
                 <Footer brands={brands}/>
             {/*</SmoothScroll>*/}
-
         </Flex>
     )
 }

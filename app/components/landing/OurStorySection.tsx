@@ -24,6 +24,7 @@ export const OurStorySection = ({storyImg}: any) => {
 
     useEffect(() => {
         if (isSmallScreen) return; // Skip GSAP animations on small screens
+        if (storyImg) return;
 
         const text = textRef.current;
         const container = containerRef.current;
@@ -43,7 +44,7 @@ export const OurStorySection = ({storyImg}: any) => {
 
     return (
         <Box
-             p={[4, 8, 8]} mb={[10, 10, 10]} mt={[20, 0, 0]} bg="white" ref={containerRef} color={'#000000'}
+            p={[4, 8, 8]} mb={[10, 10, 10]} mt={[20, 0, 0]} bg="white" ref={containerRef} color={'#000000'}
         >
             <Image
                 display={[params.slug ? "flex" : "none", "none", "none"]}
@@ -94,7 +95,11 @@ export const OurStorySection = ({storyImg}: any) => {
                             <Btn size="md" variant="secondary" text="Discover our legacy"/>
                         </Link>
                     </Box>
-                    <Box width={'100vw'} height={'150px'} bg={'white'} position={'absolute'} bottom={'-420px'}></Box>
+                    {!storyImg && (
+
+                        <Box width={'100vw'} height={'150px'} bg={'white'} position={'absolute'}
+                             bottom={'-420px'}></Box>)}
+
                 </Flex>
                 <Image
                     display={[params.slug ? "none" : "flex", "flex", "flex"]}
@@ -105,30 +110,34 @@ export const OurStorySection = ({storyImg}: any) => {
                     height={["325px", "600px", "600px"]}
                 />
             </Flex>
+            {!storyImg && (
 
-            {!isSmallScreen && (
-                <Flex justifyContent="space-between" ref={imageContainerRef}>
-                    <Text></Text>
+                !isSmallScreen && (
+                    <Flex justifyContent="space-between" ref={imageContainerRef}>
+                        <Text></Text>
 
-                    <Flex flexDirection="column" gap={8} mt={8}>
-                        <Image
-                            src={storyImg || OurStory2.src}
-                            alt="Our Story"
-                            objectFit="cover"
-                            width="600px"
-                            height="600px"
-                        />
-                        <Image
-                            src={storyImg || OurStory3.src}
-                            alt="Our Story"
-                            objectFit="cover"
-                            width="600px"
-                            height="600px"
-                        />
+                        <Flex flexDirection="column" gap={8} mt={8}>
+                            <Image
+                                src={storyImg || OurStory2.src}
+                                alt="Our Story"
+                                objectFit="cover"
+                                width="600px"
+                                height="600px"
+                            />
+                            <Image
+                                src={storyImg || OurStory3.src}
+                                alt="Our Story"
+                                objectFit="cover"
+                                width="600px"
+                                height="600px"
+                            />
+                        </Flex>
                     </Flex>
+                )
 
-                </Flex>
             )}
+
         </Box>
-    );
+    )
+        ;
 };

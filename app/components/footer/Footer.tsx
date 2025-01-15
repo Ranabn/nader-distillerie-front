@@ -1,7 +1,7 @@
 // @ts-nocheck
 
 'use client';
-import {Box, Flex, Text, VStack, HStack, Link, SimpleGrid, Icon} from "@chakra-ui/react";
+import {Box, Flex, Text, VStack, HStack, Link, SimpleGrid, Icon, Image} from "@chakra-ui/react";
 import {FaInstagram, FaFacebook} from "react-icons/fa";
 import {Btn} from "@/app/components/ui/Btn";
 import React from "react";
@@ -9,6 +9,7 @@ import {LogoHorizontal} from "@/app/components/ui/LogoHorizontal";
 import {FiChevronDown, FiChevronUp} from "react-icons/fi"; // Import the arrow up icon
 // @ts-ignore
 import {animateScroll as scroll} from 'react-scroll';
+import logoFooter from "@/app/assets/icons/logoFooter.png"
 
 interface Brand {
     slug: string;
@@ -28,20 +29,21 @@ export const Footer = ({brands}: any) => {
     };
 
     return (
-        <Box bg="#12191F" color="white" px={[4, 8, 8]} pb={4}>
+        <Box bg="#12191F" color="white" px={[4, 8, 8]} pt={4} pb={4}>
             <Flex display={['flex', 'none', 'none']} _hover={{cursor: 'pointer'}} gap={2} flexDir='column' mb={4}
                   alignItems='center'
                   aria-label="Scroll to top" onClick={scrollToTop}>
                 <FiChevronUp size={32}/>
                 <Text fontSize={'18px'}>Back to top</Text>
             </Flex>
-            <Flex pt={1} gap={10} flexDirection={["flex", "column", "row"]} justifyContent="space-between"
+            <Flex width={'100%'} pt={1} gap={10} flexDirection={["flex", "column", "row"]}
+                  justifyContent="space-between"
                   alignItems={["center", "center", "start"]} mb={[4, 8, 10]}>
-                <Flex width={["33%", "33%", "33%"]}>
-                    <LogoHorizontal/>
+                <Flex width={["33%", "33%", "231px"]}>
+                    <Image src={logoFooter.src}/>
                 </Flex>
 
-                <Flex width={"33%"} display={['none', 'flex', 'flex']} _hover={{cursor: 'pointer'}} flexDir='column'
+                <Flex width={'33%'} display={['none', 'flex', 'flex']} _hover={{cursor: 'pointer'}} flexDir='column'
                       alignItems='center'
                       aria-label="Scroll to top" onClick={scrollToTop} pt={1}>
                     <Icon
@@ -51,9 +53,8 @@ export const Footer = ({brands}: any) => {
                         animation="upDownFade 2s infinite"
                     />
                     <Text fontSize={['md', '18px']}>Back to top</Text>
-
                 </Flex>
-                <Flex width={"33%"}> </Flex>
+                <Flex width={'5%'}></Flex>
 
                 {/*<Flex flexDirection={["column", "row"]} alignItems="center" gap={[2, 4]} mt={4}>*/}
                 {/*    <Text fontSize={'xs'} mb={[2, 0]} display={['none', 'flex']}>Follow us on social Media</Text>*/}
@@ -80,7 +81,8 @@ export const Footer = ({brands}: any) => {
                 </Flex>
                 <Flex gap={[20, 10]}>
                     <Flex flexDirection={'column'} fontSize={"18px"} gap={4}>
-                        <Text fontWeight="bold" fontSize={"20px"} mb={2}>Brands</Text>
+                        <Link href={"/brands"}> <Text fontWeight="bold" fontSize={"20px"} mb={2}>Brands</Text>
+                        </Link>
                         {/*@ts-ignore*/}
                         {brands.map((brand) => (
                             <Link key={brand.slug} href={`/brands/${brand.slug}`}>
@@ -90,7 +92,9 @@ export const Footer = ({brands}: any) => {
                     </Flex>
 
                     <Flex align="flex-start" flexDirection={'column'}>
-                        <Text fontWeight="bold" fontSize={"20px"} mb={2}>Products</Text>
+                        <Link href={"/products"}>
+                            <Text fontWeight="bold" fontSize={"20px"} mb={2}>Products</Text>
+                        </Link>
                     </Flex>
                 </Flex>
                 <Flex gap={[20, 10]}>
@@ -102,19 +106,22 @@ export const Footer = ({brands}: any) => {
                     </Flex>
 
                     <Flex align="flex-start" flexDirection={'column'}>
-                        <Text fontWeight="bold" fontSize={"20px"} mb={2}>Our story</Text>
+                        <Link href={"/our-story"}>
+                            <Text fontWeight="bold" fontSize={"20px"} mb={2}>Our story</Text>
+                        </Link>
                     </Flex>
                 </Flex>
             </SimpleGrid>
             <Flex color={'gray.600'} flexDirection={["column", "row"]} justifyContent={["space-between"]}
                   alignItems={["start", "center"]} mt={8}>
 
+
+                <Text fontSize="xs" textAlign={["center", "left"]}>© Nader Distilleries 2024. All rights
+                    reserved.</Text>
                 <HStack spacing={4} mb={[4, 0]}>
                     <Link href="#" fontSize="xs">Privacy Policy</Link>
                     <Link href="#" fontSize="xs">Terms & Conditions</Link>
                 </HStack>
-                <Text fontSize="xs"  textAlign={["center", "left"]}>© Nader Distilleries 2024. All rights
-                    reserved.</Text>
             </Flex>
             <style jsx global>{`
                 @keyframes upDownFade {

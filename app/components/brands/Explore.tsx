@@ -18,6 +18,7 @@ interface ExploreMoreProps {
     brands: Brand[];
 }
 
+
 const lineAnimation = keyframes`
     0% {
         width: 0;
@@ -57,9 +58,8 @@ export const ExploreMore = ({brands}: any) => {
             });
         }
     };
-
     return (
-        <Flex flexDirection="column" p={[4, 12, 12]} backgroundColor="#F6F4ED">
+        <Flex flexDirection="column" p={[4, 12, 8]} pt={4} backgroundColor="#F6F4ED">
             <Flex alignItems={'center'} alignContent={'center'} justifyContent={'space-between'} width={'100%'}>
                 <Text mt={[4, 0, 0]} fontSize={["28px", "48px"]} fontFamily="EB Garamond" fontWeight="800">
                     Explore more brands
@@ -113,7 +113,7 @@ export const ExploreMore = ({brands}: any) => {
                 mt={2}
             />
             <Flex
-                gap={8} flexDirection={["column", "row", "row"]} display={["none", "flex", "flex"]}>
+                flexDirection={["column", "row", "row"]} display={["none", "flex", "flex"]} justifyContent={'space-between'}>
                 {/*@ts-ignore*/}
                 {brands.slice(0, 3).map((brand, index) => ( // Limit to 3 items
                     <Card border={["2px", "0px", "0px"]} borderColor={["#224452"]} key={index} boxShadow="none"
@@ -132,9 +132,9 @@ export const ExploreMore = ({brands}: any) => {
                                 <Image
                                     src={brand.mainImage}
                                     alt={brand.name}
-                                    objectFit="contain"
-                                    width="100%"
-                                    maxHeight={["400px"]}
+                                    width="453px"
+                                    height="453px"
+                                    objectFit={'contain'}
                                     aspectRatio={1}
                                 />
                                 <Flex></Flex>
@@ -212,9 +212,9 @@ export const ExploreMore = ({brands}: any) => {
                 >
                     <Text fontSize={["16px", "sm", "18px"]} _hover={{cursor: 'pointer'}}>See all brands</Text>
                 </Link>
-                <Box ref={arrowRef}>
-                    <FiArrowRight/>
-                </Box>
+                {/*<Box ref={arrowRef}>*/}
+                {/*    <FiArrowRight/>*/}
+                {/*</Box>*/}
             </Flex>
         </Flex>
     );

@@ -44,9 +44,9 @@ export const SocialBrands = ({
                 opacity: 0.04,
             }}
         >
-            <Flex flexDirection="column" w="100%" p={[4, 8, 12]} gap={8}>
+            <Flex flexDirection="column" w="100%" p={[4, 8, 8]} gap={8}>
                 {(facebookUrl || instagramUrl) && (
-                    <Flex gap={4} alignItems="center" mb={4} zIndex={9999}>
+                    <Flex gap={4} alignItems="center" mb={4} mt={4} zIndex={9999}>
                         {instagramUrl && (
                             <Link href={instagramUrl} isExternal>
                                 <FaInstagram size="35px"/>
@@ -110,7 +110,7 @@ export const SocialBrands = ({
 
                     <Flex flexDirection={'column'} mt={[4, 0]} zIndex={9999} id="social-brands-section">
                         <Box w="25%">
-                            <Btn variant="primaryWhite" size="md" text="BECOME A RESELLER"/>
+                            <Btn variant="tertWhite" size="md" text="BECOME A RESELLER"/>
                         </Box>
                         {brandWebsiteUrl && (
                             <Link href={brandWebsiteUrl}>
