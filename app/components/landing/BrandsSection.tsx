@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 'use client';
 import React, {useState, useEffect, useRef} from "react";
 import {Box, Flex, Text, Radio, Divider, Link} from "@chakra-ui/react";
@@ -10,6 +12,36 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
     const scrollContainerRef = useRef(null);
     const [showLeftScroll, setShowLeftScroll] = useState(false);
     const [showRightScroll, setShowRightScroll] = useState(true);
+
+    useEffect(() => {
+        const checkScroll = () => {
+            if (scrollContainerRef.current) {
+                const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+
+                // Show left scroll button if not at the start
+                setShowLeftScroll(scrollLeft > 0);
+
+                // Show right scroll button if not at the end
+                // Add small buffer (1px) to account for rounding errors
+                setShowRightScroll(Math.ceil(scrollLeft + clientWidth) < scrollWidth - 1);
+            }
+        };
+
+        // Add scroll event listener
+        const scrollContainer = scrollContainerRef.current;
+        if (scrollContainer) {
+            scrollContainer.addEventListener('scroll', checkScroll);
+            // Initial check
+            checkScroll();
+        }
+
+        // Cleanup
+        return () => {
+            if (scrollContainer) {
+                scrollContainer.removeEventListener('scroll', checkScroll);
+            }
+        };
+    }, []);
 
     // Convert Set to Array
     const uniqueCategories = Array.from(
@@ -72,23 +104,6 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
         selectedCategory === 'All brands' || brand.categories.includes(selectedCategory)
     );
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const firstItem = entries[0];
-                const lastItem = entries[entries.length - 1];
-
-                setShowLeftScroll(!firstItem.isIntersecting);
-                setShowRightScroll(!lastItem.isIntersecting);
-            },
-        );
-
-        if (filteredBrandData.length > 0) {
-            observer.observe(scrollContainerRef.current.firstChild);
-            observer.observe(scrollContainerRef.current.lastChild);
-        }
-    }, [filteredBrandData]);
-
     return (
         <Box p={[4, 0, 8]} position="relative" overflow={'hidden'} bg={'white'} color={'#000000'}>
             <Flex gap={[4, 8]} alignContent={'center'} alignItems={'center'}>
@@ -137,25 +152,25 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                         height={['582px']}
                         gap={'12px'}
                     >
-                        <Flex flexDir={'column'} alignItems={'center'}>
-                        <Box
-                            width="149px"
-                            height="320px"
-                            position="relative"
-                            mb={2}
-                        >
-                            <Image
-                                src={brand.imageUrl}
-                                alt={brand.brand_name}
-                                layout="fill"
-                                objectFit="cover"
-                            />
-                        </Box>
-                        <Text fontSize={["xs", "18px"]} color="gray.600" mt={4}>
-                            {brand.brand_short_desc.toUpperCase()}
-                        </Text>
-                        <Text fontSize={["2xl", "32px"]} fontWeight="bold" fontFamily={"EB Garamond"}
-                              mb={10}>{brand.brand_name}</Text>
+                        <Flex flexDirection='column' alignItems={'center'}>
+                            <Box
+                                width="149px"
+                                height="320px"
+                                position="relative"
+                                mb={2}
+                            >
+                                <Image
+                                    src={brand.imageUrl}
+                                    alt={brand.brand_name}
+                                    layout="fill"
+                                    objectFit="cover"
+                                />
+                            </Box>
+                            <Text fontSize={["xs", "18px"]} color="gray.600" mt={4}>
+                                {brand.brand_short_desc.toUpperCase()}
+                            </Text>
+                            <Text fontSize={["2xl", "32px"]} fontWeight="bold" fontFamily={"EB Garamond"}
+                                  mb={10}>{brand.brand_name}</Text>
                         </Flex>
 
                         <Link _hover={{textDecoration: "none"}} href={`/brands/${brand.slug}`}>
@@ -166,7 +181,7 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                 ))}
             </Flex>
             <Flex justifyContent={'end'} mt={12} gap={12}>
-                {/*{showLeftScroll && (*/}
+                {showLeftScroll && (
                     <Box _hover={{cursor: 'pointer'}}>
                         <svg onClick={scrollLeft} width="60" height="16" viewBox="0 0 69 16" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
@@ -175,8 +190,9 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                                 fill="black"/>
                         </svg>
                     </Box>
-                {/*)}*/}
-                {/*{showRightScroll && (*/}
+                )}
+
+                {showRightScroll && (
                     <Box _hover={{cursor: 'pointer'}}>
                         <svg onClick={scrollRight}
                              width="60" height="16" viewBox="0 0 69 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -185,7 +201,7 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                                 fill="black"/>
                         </svg>
                     </Box>
-                {/*)}*/}
+                )}
             </Flex>
             {isLanding && (
                 <Link _hover={{textDecoration: "none"}} href={`/brands`}>

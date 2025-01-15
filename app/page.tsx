@@ -24,7 +24,7 @@ const BRANDS_QUERY = `*[_type == "brands"] {
 export default async function Home() {
     const brands = await sanityFetch({
         query: BRANDS_QUERY,
-    });
+    })
     const imageUrls = brands.map(brand =>
         brand.mainImage ? urlFor(brand.mainImage).url() : null
     ).filter(Boolean);

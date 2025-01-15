@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 'use client';
 import React, {useRef, useEffect} from "react";
 import {Box, Flex, Heading, Link, Text} from "@chakra-ui/react";

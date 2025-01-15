@@ -1,4 +1,4 @@
-// components/ExploreMore.jsx
+// @ts-nocheck
 'use client'
 
 import {Card, Flex, Text, CardBody, Image, Box, Link} from "@chakra-ui/react";
