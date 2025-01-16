@@ -55,7 +55,7 @@ export const Gifts = () => {
 
     return (
         <Box>
-            <Box p={[4, 8, 10]} maxWidth="1200px" mx="auto">
+            <Box p={[4, 8, 10]}  maxWidth="1200px" mx="auto">
                 {/* Header Section */}
                 <Flex flexDirection={"column"} align="stretch" fontSize={["16px", "18px"]}>
                     <Text fontSize={["28px", "5xl", "48px"]} mb={4} fontWeight="bold" fontFamily={"EB Garamond"}>
@@ -91,7 +91,7 @@ export const Gifts = () => {
                     </Flex>
 
                     {/* Our Process */}
-                    <Flex w={['100%', '70%', '45%']} flexDir='column' align="flex-start" gap={2}>
+                    <Flex w={['100%', '70%', '45%']} flexDir='column' align="flex-start" gap={[0,0,2]}>
                         <Text fontSize={["28px", "4xl", "48px"]} fontWeight="bold" fontFamily={"EB Garamond"} mb={4}>
                             Our products<br/> complemented
                         </Text>

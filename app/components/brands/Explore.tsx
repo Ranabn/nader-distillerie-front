@@ -59,7 +59,7 @@ export const ExploreMore = ({brands}: any) => {
         }
     };
     return (
-        <Flex flexDirection="column" p={[4, 12, 8]} pt={4} backgroundColor="#F6F4ED">
+        <Flex flexDirection="column" p={[4, 12, 8]} pt={4} pb={[6, 8, 16]} backgroundColor="#F6F4ED">
             <Flex alignItems={'center'} alignContent={'center'} justifyContent={'space-between'} width={'100%'}>
                 <Text mt={[4, 0, 0]} fontSize={["28px", "48px"]} fontFamily="EB Garamond" fontWeight="800">
                     Explore more brands
@@ -70,7 +70,7 @@ export const ExploreMore = ({brands}: any) => {
                     display={["none", "flex", "flex"]}
                     gap={2}
                     position="relative"
-                    mt={[2, 0]} // Add spacing for smaller screens
+                    mt={[2, 0]}
 
                 >
                     <Link
@@ -113,7 +113,8 @@ export const ExploreMore = ({brands}: any) => {
                 mt={2}
             />
             <Flex
-                flexDirection={["column", "row", "row"]} display={["none", "flex", "flex"]} justifyContent={'space-between'}>
+                flexDirection={["column", "row", "row"]} display={["none", "flex", "flex"]}
+                justifyContent={'space-between'}>
                 {/*@ts-ignore*/}
                 {brands.slice(0, 3).map((brand, index) => ( // Limit to 3 items
                     <Card border={["2px", "0px", "0px"]} borderColor={["#224452"]} key={index} boxShadow="none"
@@ -132,9 +133,9 @@ export const ExploreMore = ({brands}: any) => {
                                 <Image
                                     src={brand.mainImage}
                                     alt={brand.name}
-                                    width="453px"
-                                    height="453px"
-                                    objectFit={'contain'}
+                                    width={["303px","453px"]}
+                                    height={["303px","453px"]}
+                                    objectFit={['cover', 'contain']}
                                     aspectRatio={1}
                                 />
                                 <Flex></Flex>
@@ -212,9 +213,9 @@ export const ExploreMore = ({brands}: any) => {
                 >
                     <Text fontSize={["16px", "sm", "18px"]} _hover={{cursor: 'pointer'}}>See all brands</Text>
                 </Link>
-                {/*<Box ref={arrowRef}>*/}
-                {/*    <FiArrowRight/>*/}
-                {/*</Box>*/}
+                <Box display={['flex', 'none', 'none']} pb={1} ref={arrowRef}>
+                    <FiArrowRight/>
+                </Box>
             </Flex>
         </Flex>
     );

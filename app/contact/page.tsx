@@ -31,9 +31,10 @@ const ContactPage = async () => {
 
     return (
         <Suspense fallback={<div>Loading...</div>}>
+            <Navbar brands={brands}/>
+
             <Flex direction="column">
-                <Navbar brands={brands}/>
-                <Flex mt={28} direction="column" justifyContent={'space-between'} p={8} h={'982px'}>
+                <Flex mt={[12, 12, 28]} direction="column" justifyContent={'space-between'} p={8}>
                     <Flex w={'100%'} gap={'137px'} flexDirection={["column", "row"]}>
                         <Flex direction="column" w={["100%", '566px']}>
                             <Text fontSize={["28px", "5xl", "48px"]} fontFamily="EB Garamond" fontWeight="800">Get in
@@ -64,7 +65,7 @@ const ContactPage = async () => {
                                 </Flex>
                             </Box>
 
-                            <Box width="100%" height={["auto", "300px"]} mt={[0, 6]} order={[0, 1]}>
+                            <Box  width={'100%'} mt={[0, 6]} order={[0, 1]}>
                                 <GoogleMapComponent apiKey={API_KEY} center={center} zoom={12}/>
                             </Box>
                         </Flex>

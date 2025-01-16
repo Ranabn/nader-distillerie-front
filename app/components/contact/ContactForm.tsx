@@ -128,14 +128,14 @@ const ContactForm = () => {
 
             </FormControl>
 
-            <Flex gap={6} fontSize="16px" flexDirection={["column", "row"]}>
+            <Flex mt={[4, 0, 0]} gap={[4, 4, 6]} fontSize="16px" flexDirection={["column", "row"]}>
                 <FormControl id="name" w={["100%", "50%"]}>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel p={0} m={0}>Name</FormLabel>
                     <Input size="lg" type="text" borderRadius="none" border="1px"   {...inputStyles}/>
                 </FormControl>
 
                 <FormControl id="mail" w={["100%", "50%"]}>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel p={0} m={0}>Email</FormLabel>
                     <Input size="lg" type="email" borderRadius="none"
                            border="1px"
                            {...inputStyles}
@@ -143,8 +143,8 @@ const ContactForm = () => {
                 </FormControl>
             </Flex>
 
-            <FormControl id="message">
-                <FormLabel>Message</FormLabel>
+            <FormControl mt={[4, 0, 0]} id="message">
+                <FormLabel p={0} m={0}>Message</FormLabel>
                 <Textarea
                     size="xl"
                     height="349px"

@@ -45,7 +45,7 @@ export const SocialBrands = ({
                 opacity: 0.04,
             }}
         >
-            <Flex flexDirection="column" w="100%" p={[4, 8, 8]} gap={8}>
+            <Flex flexDirection="column" w="100%" p={[4, 8, 8]} mt={[6,0,0]} gap={[2,0,8]}>
                 {(facebookUrl || instagramUrl) && (
                     <Flex gap={4} alignItems="center" mb={4} mt={4} zIndex={9999}>
                         {instagramUrl && (
@@ -66,9 +66,10 @@ export const SocialBrands = ({
                 {/* Main Content Section */}
                 <Flex
                     flexDirection="column"
-                    mt={[12, 0, 0]}
+                    mt={[6, 0, 0]}
                     w={["100%", "50%", "50%"]}
                     gap={8}
+                    pb={[8,0,0]}
                     justifyContent="center"
                 >
                     <Box>
@@ -76,6 +77,7 @@ export const SocialBrands = ({
                             fontSize={["24px", "3xl", "32px"]}
                             fontWeight="300"
                             textTransform="uppercase"
+                            mb={[2,0,0]}
                         >
                             {quote}
                         </Text>

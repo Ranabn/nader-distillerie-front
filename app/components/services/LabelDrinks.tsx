@@ -36,7 +36,7 @@ export const LabelDrinks = () => {
 
 
                 {/* Why Us and Our Process Section */}
-                <Flex mt={32} fontSize={["16px", "18px"]} justify="space-between" flexDirection={["column", "column", "row"]}
+                <Flex mt={[16,16,32]} fontSize={["16px", "18px"]} justify="space-between" flexDirection={["column", "column", "row"]}
                       gap={12}>
                     {/* Why Us */}
                     <Flex w={['100%', '70%', '70%']} flexDir='column' align="flex-start" gap={2}>
@@ -55,7 +55,7 @@ export const LabelDrinks = () => {
                     </Flex>
 
                     {/* Our Process */}
-                    <Flex flexDir='column' align="flex-start" gap={2} fontSize={["16px", "18px"]}>
+                    <Flex flexDir='column' align="flex-start" gap={[0,0,2]}  fontSize={["16px", "18px"]}>
                         <Text fontSize={["28px", "4xl", "48px"]} fontWeight="bold" fontFamily={"EB Garamond"} mb={4}>
                             Our process
                         </Text>

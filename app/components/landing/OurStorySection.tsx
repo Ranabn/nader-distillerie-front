@@ -61,12 +61,13 @@ export const OurStorySection = ({storyImg}: any) => {
                 justifyContent="space-between"
                 alignItems="center"
                 width="100%"
-                mt={[4, 10, 10]}
+                mt={[2, 10, 10]}
                 gap={4}
+                pb={4}
             >
                 <Flex
                     flexDirection="column"
-                    gap={6}
+                    gap={[2,2,6]}
                     pr={{base: 0, md: 8}}
                     mb={{base: 4, md: 0}}
                     fontSize="18px"
@@ -82,7 +83,7 @@ export const OurStorySection = ({storyImg}: any) => {
                         Our Story
                     </Heading>
                     <Text width={["100%", "460px", "460px"]}
-                          mb={[-6, 2, 2]} fontSize={['16px', '18px', '18px']} lineHeight={['25px', '28px']}>
+                          mb={[4, 2, 2]} fontSize={['16px', '18px', '18px']} lineHeight={['25px', '28px']}>
                         Established in 1950 in the picturesque mountain village of Mtein, Lebanon, our family-owned
                         company has woven a narrative deeply rooted in the distillation of Arak, our national aniseed
                         spirit.

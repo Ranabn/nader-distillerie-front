@@ -4,19 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="anime">
-      <change afterPath="$PROJECT_DIR$/app/assets/icons/LogoNav.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/services/craft-your-identity.jpg" afterDir="false" />
+    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="push img">
+      <change afterPath="$PROJECT_DIR$/app/assets/icons/chevronLeftBlack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/brands/StickyImageMobile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/products/ethanol.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/images/products/ethanol.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/products/spirits.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/images/products/spirits.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/brands/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/brands/[slug]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/brands/Explore.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Explore.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/brands/Social.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Social.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/contact/ContactForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/contact/ContactForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/ProductsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/ProductsSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/ServicesSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/ServicesSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/navigation/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation/navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/product/3DSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/product/3DSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/contact/GoogleMapComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/contact/GoogleMapComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/landing/OurStorySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/OurStorySection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/our-story/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/services/Ethanol.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/services/Ethanol.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/services/Gifts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/services/Gifts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/services/LabelDrinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/services/LabelDrinks.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/contact/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/contact/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/ethanol/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/ethanol/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/gift/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/gift/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/label-drinks/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/label-drinks/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +282,23 @@
       <option name="project" value="LOCAL" />
       <updated>1737034058921</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="responsive">
+      <option name="closed" value="true" />
+      <created>1737044546171</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1737044546171</updated>
+    </task>
+    <task id="LOCAL-00024" summary="push img">
+      <option name="closed" value="true" />
+      <created>1737044718506</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1737044718506</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +323,9 @@
     <MESSAGE value="corrections" />
     <MESSAGE value="// @ts-nocheck" />
     <MESSAGE value="anime" />
-    <option name="LAST_COMMIT_MESSAGE" value="anime" />
+    <MESSAGE value="responsive" />
+    <MESSAGE value="push img" />
+    <option name="LAST_COMMIT_MESSAGE" value="push img" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

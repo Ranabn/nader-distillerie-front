@@ -12,6 +12,7 @@ import {sanityFetch} from '@/app/sanity/client';
 import {HeaderBrands} from "@/app/components/brands/Header";
 import {urlFor} from '@/app/sanity/urlFor';
 import OurStory from "@/app/assets/images/our_story_brands.png";
+import {StickyImageMobile} from "@/app/components/brands/StickyImageMobile";
 
 type Brand = {
     brand_name: string;
@@ -97,11 +98,19 @@ const BrandPage = async ({params}: { params: { slug: string } }) => {
 
             <Flex mt={[16, 32, 32]} flexDirection="column" position="relative" overflowX={'hidden'}>
                 <HeaderBrands brand={brand}/>
-                <StickyImage
-                    imageAlts={imageAlts}
-                    imageUrls={imageUrls}
-                    brandName={brand?.brand_name}
-                />
+                <Box display={['none', 'none','none', 'flex']}>
+                    <StickyImage
+                        imageAlts={imageAlts}
+                        imageUrls={imageUrls}
+                        brandName={brand?.brand_name}
+                    />
+                </Box>
+                <Box display={['flex', 'flex', 'flex', 'none']}>
+                    <StickyImageMobile imageAlts={imageAlts}
+                                       imageUrls={imageUrls}
+                                       brandName={brand?.brand_name}/>
+                </Box>
+
                 {/* Pass social media links as props to SocialBrands */}
                 <SocialBrands
                     quote={brand?.brand_quote_social_section}

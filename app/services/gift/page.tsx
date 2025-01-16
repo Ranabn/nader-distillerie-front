@@ -9,6 +9,7 @@ import {Navbar} from "@/app/components/navigation/navbar";
 import {Footer} from "@/app/components/footer/Footer";
 import {sanityFetch} from "@/app/sanity/client";
 import {Gifts} from "@/app/components/services/Gifts";
+
 const BRANDS_QUERY = `*[_type == "brands"] {
   brand_name,
   "slug": slug.current,
@@ -22,7 +23,7 @@ const ServiceTemplatePage = async () => {
     return (
         <Flex flexDir='column'>
             <Navbar brands={brands}/>
-            <Box mt={28}>
+            <Box mt={[20, 0, 28]}>
                 <Gifts/>
             </Box>
             <Footer brands={brands}/>

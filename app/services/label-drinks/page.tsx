@@ -23,7 +23,7 @@ const ServiceTemplatePage = async () => {
     return (
         <Flex flexDir='column'>
             <Navbar brands={brands}/>
-            <Box mt={28}>
+            <Box mt={[20, 0, 28]}>
                 <LabelDrinks/>
             </Box>
             <Footer brands={brands}/>

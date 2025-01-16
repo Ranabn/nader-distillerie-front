@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
-import { Text } from '@chakra-ui/react';
+import { Text, useBreakpointValue } from '@chakra-ui/react';
 
 const darkMapStyle = [
     {
@@ -92,16 +92,19 @@ const GoogleMapComponent = ({ apiKey, center, zoom }) => {
         libraries: ['places'],
     });
 
+    const mapHeight = useBreakpointValue({ base: '195px', md: '445px' });
+
     if (!isLoaded) {
         return <Text>Loading Map...</Text>;
     }
+
     const sinElFilLocation = {
         lat: 33.8767,  // Approximate coordinates for Sin El Fil
         lng: 35.5431
     };
 
     const mapContainerStyle = {
-        height: '445px',
+        height: mapHeight,
         width: '100%',
     };
 
@@ -121,13 +124,15 @@ const GoogleMapComponent = ({ apiKey, center, zoom }) => {
             zoom={zoom}
             options={options}
         >
-            <Marker  position={sinElFilLocation}
-                     title="Office Location"
-                     label={{
-                         text: "Sin El Fil Office",
-                         color: "white",
-                         fontSize: "14px"
-                     }} />
+            <Marker
+                position={sinElFilLocation}
+                title="Office Location"
+                label={{
+                    text: "Sin El Fil Office",
+                    color: "white",
+                    fontSize: "14px"
+                }}
+            />
         </GoogleMap>
     );
 };

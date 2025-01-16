@@ -35,7 +35,7 @@ export const Ethanol = () => {
 
 
                 {/* Why Us and Our Process Section */}
-                <Flex mt={32} fontSize={["16px", "18px"]} justify="space-between" flexDirection={["column", "column", "row"]}
+                <Flex mt={[16,16,32]} fontSize={["16px", "18px"]} justify="space-between" flexDirection={["column", "column", "row"]}
                       gap={12}>
 
                     <Flex w={['100%', '70%', '45%']} flexDir='column' align="flex-start" gap={2}>
@@ -62,11 +62,11 @@ export const Ethanol = () => {
                         </UnorderedList>
                     </Flex>
                     {/* Our Process */}
-                    <Flex flexDir='column' align="flex-start" gap={2} fontSize={["16px", "18px"]}>
+                    <Flex width={['100%','50%']} flexDir='column' align="flex-start" gap={[0,0,2]} fontSize={["16px", "16px","18px"]}>
                         <Text fontSize={["28px", "4xl", "48px"]} fontWeight="bold" fontFamily={"EB Garamond"} mb={4}>
                             Supply solutions
                         </Text>
-                        <Text>We offer flexible packaging options, ranging from 10 to 30L jerricans,<br/> to 250L drums,
+                        <Text>We offer flexible packaging options, ranging from 10 to 30L jerricans, to 250L drums,
                             and
                             bulk supply in tankers.</Text>
                     </Flex>
