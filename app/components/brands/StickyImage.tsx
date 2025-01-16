@@ -34,10 +34,10 @@ export const StickyImage = ({ imageUrls, imageAlts, brandName }) => {
 
         // Set up GSAP ScrollTrigger
         gsap.to(element, {
-            y: 110,
+            y: 100,
             scrollTrigger: {
                 trigger: element,
-                start: "50px 50px", // Element sticks at the top of the viewport
+                start: "top top", // Element sticks at the top of the viewport
                 endTrigger: socialBrandsSection,
                 end: "bottom bottom", // Element un-sticks when socialBrandsSection reaches top
                 pin: true, // Make element sticky
@@ -54,7 +54,7 @@ export const StickyImage = ({ imageUrls, imageAlts, brandName }) => {
             mt={6}
             ref={ref}
             position={["relative", "absolute"]}
-            top="-3%"
+            top="-4%"
             right="30px"
             h="calc(100vh - 100px)"
             w={["100%", "50%", "50%"]}

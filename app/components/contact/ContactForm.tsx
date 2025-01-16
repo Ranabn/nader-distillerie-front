@@ -29,7 +29,7 @@ const ContactForm = () => {
             boxShadow: 'none'
         }
     };
-    const handleReasonSelect = (reason : string) => {
+    const handleReasonSelect = (reason: string) => {
         setSelectedReason(reason);
     };
     useEffect(() => {
@@ -68,37 +68,58 @@ const ContactForm = () => {
                                 onClick={() => handleReasonSelect("Become a reseller")}
                                 bg={'black'}
                                 color={'white'}
-                                _hover={{ bg: 'white', color: 'black' }}
-                                _focus={{ bg: 'white', color: 'black' }}
+                                _hover={{bg: 'white', color: 'black'}}
+                                _focus={{bg: 'white', color: 'black'}}
                             >
                                 Become a reseller
                             </MenuItem>
                             <MenuItem
-                                onClick={() => handleReasonSelect("Support")}
+                                onClick={() => handleReasonSelect("Purchase ethanol")}
                                 bg={'black'}
                                 color={'white'}
-                                _hover={{ bg: 'white', color: 'black' }}
-                                _focus={{ bg: 'white', color: 'black' }}
+                                _hover={{bg: 'white', color: 'black'}}
+                                _focus={{bg: 'white', color: 'black'}}
                             >
-                                Support
+                                Purchase ethanol
+                            </MenuItem>
+                            <MenuItem
+                                onClick={() => handleReasonSelect("Build my brand")}
+                                bg={'black'}
+                                color={'white'}
+                                _hover={{bg: 'white', color: 'black'}}
+                                _focus={{bg: 'white', color: 'black'}}
+                            >
+                                Build my brand
+                            </MenuItem>
+                            <MenuItem
+                                onClick={() => handleReasonSelect("Order gifts")}
+                                bg={'black'}
+                                color={'white'}
+                                _hover={{bg: 'white', color: 'black'}}
+                                _focus={{bg: 'white', color: 'black'}}
+                            >
+                                Order gifts
                             </MenuItem>
                             <MenuItem
                                 onClick={() => handleReasonSelect("Other")}
                                 bg={'black'}
                                 color={'white'}
-                                _hover={{ bg: 'white', color: 'black' }}
-                                _focus={{ bg: 'white', color: 'black' }}
+                                _hover={{bg: 'white', color: 'black'}}
+                                _focus={{bg: 'white', color: 'black'}}
                             >
                                 Other
                             </MenuItem>
+
                         </MenuList>
                     </Menu>
                     <Flex className='reason-label' position={'absolute'} left={4}>
                         {selectedReason ? selectedReason : "Select a reason"}
                     </Flex>
                     <Flex className='reason-label' position={'absolute'} right={4}>
-                        <Icon viewBox="0 0 24 24" w="24px" h="auto" color="white" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" className='country-select-icon'>
-                            <svg width="10" height="auto" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <Icon viewBox="0 0 24 24" w="24px" h="auto" color="white" fill="none" stroke="currentColor"
+                              xmlns="http://www.w3.org/2000/svg" className='country-select-icon'>
+                            <svg width="10" height="auto" viewBox="0 0 10 5" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0 0L5 5L10 0H0Z" fill="black"/>
                             </svg>
                         </Icon>

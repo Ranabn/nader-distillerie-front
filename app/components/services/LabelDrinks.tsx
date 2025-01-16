@@ -99,7 +99,7 @@ export const LabelDrinks = () => {
                         justifyContent="center"
                     >
                         <Box w={["100%", "50%", "20%"]} mr={[0, 10]}>
-                            <Link href="/contact" _hover={{textDecoration: "none"}}>
+                            <Link href="/contact?CTA=brand" _hover={{textDecoration: "none"}}>
                                 <Btn
                                     variant="primaryBlack"
                                     size="md"

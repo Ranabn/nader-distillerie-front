@@ -109,7 +109,7 @@ export const Gifts = () => {
                     </Text>
                     <Box w={["100%", "50%", "20%"]} mr={[0, 12]}>
 
-                        <Link href={"/contact"} _hover={{textDecoration: "none"}}>
+                        <Link href={"/contact?CTA=gift"} _hover={{textDecoration: "none"}}>
                             <Btn variant='primaryBlack' size={"md"} text='Request a consultation'/>
                         </Link>
                     </Box>

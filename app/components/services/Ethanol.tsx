@@ -78,7 +78,7 @@ export const Ethanol = () => {
                         Need ethanol? Contact us for the best solution.
                     </Text>
                     <Box w={["100%", "50%", "20%"]} mr={[0]}>
-                        <Link href={"/contact"} _hover={{textDecoration: "none"}}>
+                        <Link href={"/contact?CTA=ethanol"} _hover={{textDecoration: "none"}}>
                             <Btn variant='primaryBlack' size={"md"} text='Request a quote'/>
                         </Link>
                     </Box>

@@ -21,7 +21,7 @@ const products = [
     },
     {
         name: "Wines",
-        description: "Aged vinegars, red wine, white wine. A unique synthesis of foreign.",
+        description: "Red, rosé, white wines: each a unique expression of its origin.\n",
         imgSrc: Wines,
     },
     {

@@ -38,8 +38,7 @@ const ContactPage = async () => {
                         <Flex direction="column" w={["100%", '566px']}>
                             <Text fontSize={["28px", "5xl", "48px"]} fontFamily="EB Garamond" fontWeight="800">Get in
                                 touch</Text>
-                            <Text mb={[4, 8]} fontSize={["16px", "18px"]}>Explain your project, we will get back to you as
-                                soon as possible.</Text>
+                            <Text mb={[4, 8]} fontSize={["16px", "18px"]}>Tell us about your project, and we will respond promptly.</Text>
 
                             <ContactForm/>
                         </Flex>
