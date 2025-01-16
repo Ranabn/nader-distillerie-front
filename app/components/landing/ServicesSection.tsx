@@ -9,9 +9,15 @@ import Noel from "@/app/assets/images/noel.png"
 import {Btn} from "@/app/components/ui/Btn";
 import {usePathname} from "next/navigation";
 
-export const SectionItem = ({subtitle, title, description, buttonText, imageSrc, link}) => (
-    <Flex width={'100%'} flexDirection={['column', 'column', 'row']} mt={8} mb={[0, 6, 20]} gap={[4, 12, 32]}
-          alignItems="center">
+export const SectionItem = ({subtitle, title, description, buttonText, imageSrc, link, isLast}) => (
+    <Flex
+        width={'100%'}
+        flexDirection={['column', 'column', 'row']}
+        mt={8}
+        mb={isLast ? [20, 6, 20] : [0, 6, 20]}
+        gap={[4, 12, 32]}
+        alignItems="center"
+    >
         <Image src={imageSrc} alt={title} width={650} minWidth={"815px"} objectFit="cover"
                height={["200px", "459px", "459px"]}/>
         <Flex flexDirection={'column'} width={'100%'}>
@@ -27,26 +33,21 @@ export const SectionItem = ({subtitle, title, description, buttonText, imageSrc,
                 </Box>
                 <Link _hover={{textDecoration: "none"}} href={`/services/${link}`}>
                     <Box w={['100%', '40%', '40%']} display={['flex', 'none']} mt={2}>
-
                         <Btn size={'md'} variant="secondary" text={buttonText}/>
                     </Box>
-
                 </Link>
             </Flex>
-
         </Flex>
-
     </Flex>
 );
 
 const ServiceSection = () => {
-
     const pathname = usePathname()
     return (
-        <Box as="section" mb={pathname === '/services' ? 10 : 0 } py={[6, 8, 12]} p={[4, 8, 8]} bg={'white'}>
+        <Box as="section" mb={pathname === '/services' ? 10 : 0} py={[6, 8, 12]} p={[4, 8, 8]} bg={'white'}>
             <Heading display={[pathname === '/services' ? "none" : "flex", 'none']}
                      fontSize="28px"
-                     mb={[4, 14,14]}
+                     mb={[4, 14, 14]}
                      fontWeight="bold"
                      fontFamily='EB Garamond, serif'
             >
@@ -77,6 +78,7 @@ const ServiceSection = () => {
                 buttonText="Order your gifts"
                 link={"gift"}
                 imageSrc={Noel.src}
+                isLast={true}
             />
         </Box>
     );
