@@ -46,7 +46,7 @@ export const OurStorySection = ({storyImg}: any) => {
 
     return (
         <Box
-            p={[4, 8, 8]} mb={[10, 10, 10]} mt={[20, 0, 0]} bg="white" ref={containerRef} color={'#000000'}
+            p={[4, 8, 8]} mb={[10, 10, 10]} mt={[16, 0, 0]} bg="white" ref={containerRef} color={'#000000'}
         >
             <Image
                 display={[params.slug ? "flex" : "none", "none", "none"]}
@@ -100,7 +100,7 @@ export const OurStorySection = ({storyImg}: any) => {
                     </Box>
                     {!storyImg && (
 
-                        <Box width={'100vw'} height={'150px'} bg={'white'} position={'absolute'}
+                        <Box display={['none','none', 'inline']} width={'100vw'} height={'150px'} bg={'white'} position={'absolute'}
                              bottom={'-420px'}></Box>)}
 
                 </Flex>

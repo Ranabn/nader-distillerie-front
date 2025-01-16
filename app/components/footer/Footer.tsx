@@ -39,7 +39,7 @@ export const Footer = ({brands}: any) => {
             <Flex width={'100%'} pt={1} gap={10} flexDirection={["flex", "column", "row"]}
                   justifyContent="space-between"
                   alignItems={["center", "center", "start"]} mb={[4, 8, 10]}>
-                <Flex width={["33%", "33%", "231px"]}>
+                <Flex width={["33%", "33%", "231px"]} mb={[4,0,0]}>
                     <Image src={logoFooter.src}/>
                 </Flex>
 
@@ -99,7 +99,9 @@ export const Footer = ({brands}: any) => {
                 </Flex>
                 <Flex gap={[20, 10]}>
                     <Flex align="flex-start" flexDirection={'column'} fontSize={"18px"} gap={4}>
-                        <Text fontWeight="bold" fontSize={"20px"} mb={2}>Services</Text>
+                        <Link href={"/services"}>
+                            <Text fontWeight="bold" fontSize={"20px"} mb={2}>Services</Text>
+                        </Link>
                         <Link href={"/services/label-drinks"}>Private Label</Link>
                         <Link href={"/services/ethanol"}>Raw Material</Link>
                         <Link href={"/services/gift"}>Events</Link>
@@ -112,13 +114,13 @@ export const Footer = ({brands}: any) => {
                     </Flex>
                 </Flex>
             </SimpleGrid>
-            <Flex color={'gray.600'} flexDirection={["column", "row"]} justifyContent={["space-between"]}
-                  alignItems={["start", "center"]} mt={8}>
+            <Flex mb={4}  color={'gray.600'} flexDirection={["column-reverse","column", "row"]} justifyContent={["space-between"]}
+                  alignItems={["start", "center"]} mt={8} gap={[4,0]}>
 
 
                 <Text fontSize="xs" textAlign={["center", "left"]}>© Nader Distilleries 2024. All rights
                     reserved.</Text>
-                <HStack spacing={4} mb={[4, 0]}>
+                <HStack spacing={4} >
                     <Link href="#" fontSize="xs">Privacy Policy</Link>
                     <Link href="#" fontSize="xs">Terms & Conditions</Link>
                 </HStack>

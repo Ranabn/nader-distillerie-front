@@ -10,21 +10,26 @@ export const ExternalBox = () => {
             m={[0, 12]}
             p={4}
             justifyContent={'center'}
+            alignContent={'center'}
+            alignItems={'center'}
+
         >
             <Flex borderWidth="1px"
                   borderColor={'black'}
                   direction="column"
                   pl={[8, 12]}
                   pr={[8, 12]}
-                  pt={[8, 14]}
-                  pb={[8, 14]}
+                  pt={[12, 14]}
+                  pb={[12, 14]}
+                  mb={[14, 0]}
+                  mt={[10, 0]}
                   width={["100%", "45%", '678px']}
                   _hover={{
                       color: 'black',
                       bg: '#D2CDBF',
-                      border: '1px solid transparent' ,
+                      border: '1px solid transparent',
                       textDecoration: "none",
-                      cursor:'pointer',
+                      cursor: 'pointer',
                       transition: 'all 0.3s ease'
                   }}
 
