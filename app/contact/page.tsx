@@ -3,10 +3,10 @@ import {
     Box,
     Text
 } from '@chakra-ui/react';
-import { Navbar } from "@/app/components/navigation/navbar";
-import { Footer } from "@/app/components/footer/Footer";
-import { sanityFetch } from "@/app/sanity/client";
-import React, { Suspense } from "react";
+import {Navbar} from "@/app/components/navigation/navbar";
+import {Footer} from "@/app/components/footer/Footer";
+import {sanityFetch} from "@/app/sanity/client";
+import React, {Suspense} from "react";
 import ContactForm from "@/app/components/contact/ContactForm";
 import GoogleMapComponent from "@/app/components/contact/GoogleMapComponent";
 
@@ -38,11 +38,12 @@ const ContactPage = async () => {
                         <Flex direction="column" w={["100%", '566px']}>
                             <Text fontSize={["28px", "5xl", "48px"]} fontFamily="EB Garamond" fontWeight="800">Get in
                                 touch</Text>
-                            <Text mb={[4, 8]} fontSize={["16px", "18px"]}>Tell us about your project, and we will respond promptly.</Text>
-
+                            <Text mb={[4, 8]} fontSize={["16px", "18px"]}>Tell us about your project, and we will
+                                respond promptly.</Text>
                             <ContactForm/>
                         </Flex>
-                        <Flex flexDirection='column' mt={[0, 8]} fontSize={["16px", "18px"]} direction="row" w={["100%", '100%']}>
+                        <Flex flexDirection='column' mt={[0, 8]} fontSize={["16px", "18px"]} direction="row"
+                              w={["100%", '100%']}>
                             <Box order={[1, 0]} mt={[8, 0]}>
                                 <Text fontSize={["24px"]}>Addresses</Text>
                                 <Text>Distillery: Mtein, Lebanon</Text>
@@ -64,13 +65,13 @@ const ContactPage = async () => {
                             </Box>
 
                             <Box width="100%" height={["auto", "300px"]} mt={[0, 6]} order={[0, 1]}>
-                                <GoogleMapComponent apiKey={API_KEY} center={center} zoom={12} />
+                                <GoogleMapComponent apiKey={API_KEY} center={center} zoom={12}/>
                             </Box>
                         </Flex>
                     </Flex>
                 </Flex>
-                <Footer brands={brands}/>
             </Flex>
+            <Footer brands={brands}/>
         </Suspense>
     );
 }

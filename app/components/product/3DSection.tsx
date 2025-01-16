@@ -88,14 +88,14 @@ export const Product3DSection = ({sections}: any) => {
                 {sections.map((sec: any, index: number) => {
                     // Calculate font size
                     const fontSize = index === 0
-                        ? "503px"
+                        ? "503"
                         : index === 1
-                            ? "536.28px"
+                            ? "536.28"
                             : index === 2
-                                ? "384.07px"
+                                ? "384.07"
                                 : index === 3
-                                    ? "433px"
-                                    : "120px";
+                                    ? "433"
+                                    : "120";
 
                     return (
                         <SwiperSlide
@@ -226,6 +226,7 @@ export const Product3DSection = ({sections}: any) => {
 
                             </Flex>
                             <Text
+                                display={['none', 'flex', 'flex']}
                                 className="animated-text"
                                 style={{
                                     position: "absolute",
@@ -238,7 +239,26 @@ export const Product3DSection = ({sections}: any) => {
                                     fontWeight: 800,
                                     lineHeight: "0.8",
                                 }}
-                                fontSize={fontSize}
+                                fontSize={fontSize + 'px'}
+                                ref={(el) => (textsRefs.current[index] = el)}
+                            >
+                                {sec.text}
+                            </Text>
+                            <Text
+                                display={['flex', 'none', 'none']}
+                                className="animated-text"
+                                style={{
+                                    position: "absolute",
+                                    bottom: "15vh",
+                                    left: "50%",
+                                    transform: "translateX(-50%)",
+                                    color: "white",
+                                    textAlign: "center",
+                                    fontFamily: "EB Garamond",
+                                    fontWeight: 800,
+                                    lineHeight: "0.8",
+                                }}
+                                fontSize={fontSize - 320 + 'px'}
                                 ref={(el) => (textsRefs.current[index] = el)}
                             >
                                 {sec.text}

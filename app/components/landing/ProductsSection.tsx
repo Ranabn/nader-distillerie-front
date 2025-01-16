@@ -89,7 +89,6 @@ export const ProductsSection = () => {
                     gap={2}
                     position="relative"
                     mt={[2, 0]} // Add spacing for smaller screens
-
                 >
                     <Link
                         href={'/products'}
@@ -130,7 +129,6 @@ export const ProductsSection = () => {
                 justify="space-between"
             >
                 {products.map((product, index) => (
-
                     <Flex
                         key={index}
                         flexDir="column"
@@ -138,15 +136,14 @@ export const ProductsSection = () => {
                         mb={6}
                     >
                         <Link
-                            href={`/brands?${product.name}=${product.name}`}>
-                        <Box
-                            width="342px"
-                            height={"242.44px"}
-                            mb={2}
-                            overflow="hidden"
-                            position="relative"
-                        >
-
+                            href={`/brands?${product.name}=${product.name}`} _hover={{textDecoration: 'none'}}>
+                            <Box
+                                width="342px"
+                                height={"242.44px"}
+                                mb={2}
+                                overflow="hidden"
+                                position="relative"
+                            >
                                 <Box
                                     width="100%"
                                     height="100%"
@@ -154,9 +151,9 @@ export const ProductsSection = () => {
                                     _hover={{
                                         transform: "scale(1.1)",
                                         cursor: 'pointer',
+                                        textDecoration: 'none',
                                     }}
                                 >
-
                                     <Image
                                         src={product.imgSrc}
                                         alt={product.name}
@@ -164,16 +161,15 @@ export const ProductsSection = () => {
                                         objectFit="cover"
                                     />
                                 </Box>
-                        </Box>
-                        <Text fontWeight="semi-bold" fontSize={["24px", "24px", "24px"]}
-                              mt={2}>{product.name}</Text>
-                        <Text fontSize={["16px", "sm", "18px"]} color="gray.600">
-                            {product.description}
-                        </Text>
-                    </Link>
-
+                            </Box>
+                            <Text fontWeight="semi-bold" fontSize={["24px", "24px", "24px"]}
+                                  mt={2}>{product.name}</Text>
+                            <Text fontSize={["16px", "sm", "18px"]} color="gray.600">
+                                {product.description}
+                            </Text>
+                        </Link>
                     </Flex>
-                    ))}
+                ))}
             </Flex>
         </Box>
     );

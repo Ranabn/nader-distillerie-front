@@ -207,7 +207,12 @@ const CloseIcon = ({color = "black"}) => (
 const MenuIcon = ({background, toggle}) => (
     <Flex p={[2, 0]} w={'100%'} justify={'space-between'} alignContent={'center'} alignItems={'center'}>
         <Link href={'/'}>
-            <LogoHorizontal background={background.color}/>
+            <Box display={['none','flex','flex']}>
+                <LogoHorizontal background={background.color}/>
+            </Box>
+            <Box display={['flex','none','none']} width={'120px'}>
+                <LogoHorizontal background={background.color}/>
+            </Box>
         </Link>
         <Box onClick={toggle}>
             <svg
@@ -359,7 +364,7 @@ const MenuLinks = ({background, brands}) => {
                                 >
                                     <Link
                                         href={`/brands/${brand.slug}`}
-                                        style={{ textDecoration: "none" }}
+                                        style={{textDecoration: "none"}}
                                     >
                                         <Text
                                             color="black"
@@ -494,7 +499,7 @@ const MenuLinks = ({background, brands}) => {
                     Our Story
                 </MenuItem>
                 <MenuItem to="/contact" isLast isActive={pathname === '/contact'} background={background}>
-                {pathname !== '/contact' && (
+                    {pathname !== '/contact' && (
                         <Btn size="md" variant={buttonVariant} text="WORK TOGETHER"/>
 
                     )}

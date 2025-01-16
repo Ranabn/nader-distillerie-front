@@ -157,7 +157,7 @@ const ContactForm = () => {
             </FormControl>
 
             <Flex justifyContent="flex-end">
-                <Box>
+                <Box width={['100%', 200, 200]}>
                     <Btn size="md" variant="primaryBlack" text="Send message"/>
                 </Box>
             </Flex>

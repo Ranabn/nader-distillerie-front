@@ -2,8 +2,8 @@
 'use client'
 import {Box, Flex, Heading, Text, Button, Image, VStack, Link, useQuery} from "@chakra-ui/react";
 import React from "react";
-import Craft from "@/app/assets/images/services/usine01.png"
-import craft2 from "@/app/assets/images/services/usine02.png"
+import Craft from "@/app/assets/images/services/craft-your-identity.jpg"
+import craft2 from "@/app/assets/images/services/usine02.jpg"
 import Noel from "@/app/assets/images/noel.png"
 
 import {Btn} from "@/app/components/ui/Btn";
