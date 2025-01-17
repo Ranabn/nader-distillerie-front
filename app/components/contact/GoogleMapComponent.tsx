@@ -92,7 +92,7 @@ const GoogleMapComponent = ({ apiKey, center, zoom }) => {
         libraries: ['places'],
     });
 
-    const mapHeight = useBreakpointValue({ base: '195px', md: '445px' });
+    const mapHeight = useBreakpointValue({ base: '195px', md: '420px' });
 
     if (!isLoaded) {
         return <Text>Loading Map...</Text>;
