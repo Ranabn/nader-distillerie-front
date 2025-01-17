@@ -4,16 +4,19 @@
 import React, {useRef, useEffect} from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {EffectFade, Mousewheel} from "swiper/modules";
-import {Box, Text, Link, Flex} from "@chakra-ui/react";
+import {Box, Text, Link, Flex, useBreakpointValue, Icon, Image} from "@chakra-ui/react";
+import ArrowDown from "@/app/assets/images/arrow-down-products.png";
+
 import "swiper/css";
 import "swiper/css/effect-fade";
 import {gsap} from "gsap";
 import {keyframes} from "@emotion/react";
+import { FaChevronDown } from "react-icons/fa";
 
 export const Product3DSection = ({sections}: any) => {
     const textsRefs = useRef<Array<HTMLLIElement | null>>([]);
     const containerRef = useRef<HTMLDivElement>(null);
-
+    const isMobile = useBreakpointValue({base: true, md: false});
     const handleSlideChange = (swiper: any) => {
         const activeIndex = swiper.activeIndex;
         const lastContentSlideIndex = sections.length - 1;
@@ -50,7 +53,7 @@ export const Product3DSection = ({sections}: any) => {
             }
         }
     };
-
+    console.log(isMobile)
     const lineAnimation = keyframes`
         0% {
             width: 0;
@@ -86,17 +89,7 @@ export const Product3DSection = ({sections}: any) => {
                 }}
             >
                 {sections.map((sec: any, index: number) => {
-                    // Calculate font size
-                    const fontSize = index === 0
-                        ? "503"
-                        : index === 1
-                            ? "536.28"
-                            : index === 2
-                                ? "384.07"
-                                : index === 3
-                                    ? "433"
-                                    : "120";
-
+                    console.log(sec.id, index)
                     return (
                         <SwiperSlide
                             key={sec.id}
@@ -105,25 +98,24 @@ export const Product3DSection = ({sections}: any) => {
                                 width: "100%",
                                 height: "100%",
                             }}
+                            
                         >
                             <Box
                                 style={{
+                                    backgroundRepeat: 'no-repeat',
                                     backgroundImage: `url(${sec.imageUrl})`,
-                                    backgroundSize:
-                                        index === 1 ? "100%" : index === 3 ? "110%" : "cover",
-                                    backgroundPosition:
-                                        index === 1
-                                            ? "bottom -800px right"
-                                            : index === 3
-                                                ? "top"
-                                                : "center",
+                                    backgroundSize:isMobile ? "cover" : sec.backgroundSize || "cover",
+                                    backgroundPosition: isMobile ? sec.mobileBackgroundPosition || "center" : sec.backgroundPosition || "center",
                                     width: "100%",
                                     height: "100%",
                                     backgroundColor: "rgba(0, 0, 0, 0.4)",
                                     backgroundBlendMode: "overlay",
-                                    transform: index === 1 ? "scaleX(-1)" : "none",
+                                    transform: isMobile ? "none" : sec.transform || "none",
+
                                 }}
                             />
+
+
                             <Flex
                                 flexDir="column"
                                 gap={4}
@@ -226,7 +218,6 @@ export const Product3DSection = ({sections}: any) => {
 
                             </Flex>
                             <Text
-                                display={['none', 'flex', 'flex']}
                                 className="animated-text"
                                 style={{
                                     position: "absolute",
@@ -239,30 +230,18 @@ export const Product3DSection = ({sections}: any) => {
                                     fontWeight: 800,
                                     lineHeight: "0.8",
                                 }}
-                                fontSize={fontSize + 'px'}
+                                fontSize={[sec.mobileFontSize, sec.fontSize]}
                                 ref={(el) => (textsRefs.current[index] = el)}
                             >
                                 {sec.text}
                             </Text>
-                            <Text
-                                display={['flex', 'none', 'none']}
-                                className="animated-text"
-                                style={{
-                                    position: "absolute",
-                                    bottom: "15vh",
-                                    left: "50%",
-                                    transform: "translateX(-50%)",
-                                    color: "white",
-                                    textAlign: "center",
-                                    fontFamily: "EB Garamond",
-                                    fontWeight: 800,
-                                    lineHeight: "0.8",
-                                }}
-                                fontSize={fontSize - 320 + 'px'}
-                                ref={(el) => (textsRefs.current[index] = el)}
-                            >
-                                {sec.text}
-                            </Text>
+                            <Flex position={"absolute"} bottom="20px" width={"100%"} justifyContent={"center"} flexDirection={"column"} alignItems={"center"}>
+                                <Text fontSize={["18px", "18px"]} color={"white"}
+                                    fontWeight={400}
+                                > Scroll down </Text>
+                                <Image src={ArrowDown.src} alt="arrow-down" width={"20px"} height={"auto"} mt={"10px"}
+                                animation={"upDownFade 2s infinite"} />
+                            </Flex>
                         </SwiperSlide>
                     );
                 })}
