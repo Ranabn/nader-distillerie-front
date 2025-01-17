@@ -19,10 +19,16 @@ import {
 import {Btn} from '@/app/components/ui/Btn';
 import {usePathname, useSearchParams} from "next/navigation";
 
+const CTAOptions ={
+    "gift": "Order gifts",
+    "reseller": "Become a reseller",
+    "ethanol": "Purchase ethanol",
+    "brand": "Build my brand",
+}
+
 const ContactForm = () => {
     const searchParams = useSearchParams();
-    const [isCTA, setIsCTA] = useState(searchParams.get('CTA') ? true : false);
-    const [selectedReason, setSelectedReason] = useState(isCTA ? "Become a reseller" : "");
+    const [selectedReason, setSelectedReason] = useState("");
     const inputStyles = {
         _focus: {
             borderColor: 'black',
@@ -39,7 +45,10 @@ const ContactForm = () => {
             "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=console.debug&libraries=maps,marker&v=beta";
         script.async = true;
         document.body.appendChild(script);
-
+        const CTA = searchParams.get('CTA');
+        if(CTA){
+            setSelectedReason(CTAOptions[CTA]);
+        }
         return () => {
             document.body.removeChild(script);
         };
