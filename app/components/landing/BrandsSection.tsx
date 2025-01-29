@@ -116,8 +116,8 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
             <Flex pl={8} pt={[2,2,10]} gap={[4, 8]} alignContent={'center'} alignItems={'center'}>
                 {allCategories.map((category) => (
                     <Radio
-                        borderColor={'black'}
-                        border={'1px solid black'}
+                        // borderColor={'black'}
+                        // border={'none'}
                         key={category}
                         size="md"
                         value={category}
@@ -192,7 +192,7 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                 ))}
             </Flex>
             {showArrows && (
-                <Flex justifyContent={'end'} mt={[0, 0, 12]} gap={12} pr={8} pt={[0, 0, 8]} zIndex={9999}>
+                <Flex justifyContent={'end'}  gap={12} pr={8} pt={[0, 0, 8]} zIndex={9999}>
                     {canScrollLeft && (
                         <Box _hover={{cursor: 'pointer'}}>
                             <svg onClick={scrollLeft} width="60" height="16" viewBox="0 0 69 16" fill="none"
@@ -219,7 +219,7 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
             )}
             {isLanding && (
                 <Link _hover={{textDecoration: "none"}} href={`/brands`}>
-                    <Box width={["92%", "100%", "18%"]} mt={[8, 0, 6]} pl={6}>
+                    <Box width={["92%", "100%", "18%"]} mt={[8, 0, 6]} pl={6} ml={3}>
                         <Btn size={'md'} variant={'primaryBlack'} text={'Discover our brands'}/>
                     </Box>
                 </Link>

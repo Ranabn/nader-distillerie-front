@@ -87,9 +87,10 @@ export const SocialBrands = ({
                     </Box>
 
                     {technicalSheetUrl && (
-                        <Link href={technicalSheetUrl}>
+                        <Box zIndex={9999}>
+                            <Text fontSize={["20px", "24px", "24px"]} mb={2}>Technical data</Text>
+                        <Link href={technicalSheetUrl} >
                             <Box fontSize="18px">
-                                <Text fontSize={["20px", "24px", "24px"]} mb={2}>Technical data</Text>
                                 <Flex gap={4}>
                                     <Text fontSize={["16px", "18px"]} mb={4}>
                                         Download our technical data sheets
@@ -109,6 +110,8 @@ export const SocialBrands = ({
                                 </Flex>
                             </Box>
                         </Link>
+                        </Box>
+
                     )}
 
                     <Flex flexDirection={'column'} mt={[4, 0]} zIndex={9999} id="social-brands-section">

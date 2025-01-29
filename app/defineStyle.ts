@@ -131,7 +131,8 @@ const Button = defineStyleConfig({
             _hover: {
                 color: 'white',
                 animation: `${fillAnimationIn} 0.3s forwards`,
-                textDecoration: "none"
+                textDecoration: "none",
+                border:'none'
             },
             _disabled: {
                 animation: 'none',        // Disable animation

@@ -74,8 +74,9 @@ export const ExploreMore = ({brands}: any) => {
 
                 >
                     <Link
-                        href={'/brands'}
                         onMouseEnter={handleMouseEnter}
+
+                        href={'/brands'}
                         _hover={{
                             textDecoration: "none",
                             _after: {

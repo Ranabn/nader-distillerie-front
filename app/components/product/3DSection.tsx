@@ -6,6 +6,8 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {EffectFade, Mousewheel} from "swiper/modules";
 import {Box, Text, Link, Flex, useBreakpointValue, Icon, Image} from "@chakra-ui/react";
 import ArrowDown from "@/app/assets/images/arrow-down-products.png";
+// import {useRouter } from "next/router"; // Import useRouter from Next.js
+import { useSearchParams } from 'next/navigation'
 
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -17,6 +19,28 @@ export const Product3DSection = ({sections}: any) => {
     const textsRefs = useRef<Array<HTMLLIElement | null>>([]);
     const containerRef = useRef<HTMLDivElement>(null);
     const isMobile = useBreakpointValue({base: true, md: false});
+    const router = useSearchParams(); // Initialize useRouter
+    const product  = router.get('product'); // Extract the product query parameter
+
+    // Determine the initial slide index based on the product
+    console.log(router.get('product'))
+    const getInitialSlideIndex = (product: string) => {
+        switch (product) {
+            case 'Spirits':
+                return 0;
+            case 'Wines':
+                return 1;
+            case 'Vinegars':
+                return 2;
+            case 'Ethanol':
+                return sections.length - 1;
+            default:
+                return 0;
+        }
+    };
+
+    const initialSlideIndex = getInitialSlideIndex(product);
+
     const handleSlideChange = (swiper: any) => {
         const activeIndex = swiper.activeIndex;
         const lastContentSlideIndex = sections.length - 1;
@@ -53,7 +77,7 @@ export const Product3DSection = ({sections}: any) => {
             }
         }
     };
-    console.log(isMobile)
+
     const lineAnimation = keyframes`
         0% {
             width: 0;
@@ -83,13 +107,13 @@ export const Product3DSection = ({sections}: any) => {
                 slidesPerView={1}
                 speed={1000}
                 onSlideChange={handleSlideChange}
+                initialSlide={initialSlideIndex} // Set the initial slide index
                 style={{
                     width: "100%",
                     height: "100vh",
                 }}
             >
                 {sections.map((sec: any, index: number) => {
-                    console.log(sec.id, index)
                     return (
                         <SwiperSlide
                             key={sec.id}
@@ -98,7 +122,6 @@ export const Product3DSection = ({sections}: any) => {
                                 width: "100%",
                                 height: "100%",
                             }}
-                            
                         >
                             <Box
                                 style={{
@@ -111,10 +134,8 @@ export const Product3DSection = ({sections}: any) => {
                                     backgroundColor: "rgba(0, 0, 0, 0.4)",
                                     backgroundBlendMode: "overlay",
                                     transform: isMobile ? "none" : sec.transform || "none",
-
                                 }}
                             />
-
 
                             <Flex
                                 flexDir="column"
@@ -237,10 +258,10 @@ export const Product3DSection = ({sections}: any) => {
                             </Text>
                             <Flex position={"absolute"} bottom="20px" width={"100%"} justifyContent={"center"} flexDirection={"column"} alignItems={"center"}>
                                 <Text fontSize={["18px", "18px"]} color={"white"}
-                                    fontWeight={400}
+                                      fontWeight={400}
                                 > Scroll down </Text>
                                 <Image src={ArrowDown.src} alt="arrow-down" width={"20px"} height={"auto"} mt={"10px"}
-                                animation={"upDownFade 2s infinite"} />
+                                       animation={"upDownFade 2s infinite"} />
                             </Flex>
                         </SwiperSlide>
                     );

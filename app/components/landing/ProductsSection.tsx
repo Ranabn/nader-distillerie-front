@@ -46,20 +46,19 @@ const lineAnimation = keyframes`
 `;
 
 export const ProductsSection = () => {
-    const arrowRefs = useRef(null);
+    const arrowRefsExplore = useRef(null);
 
     const handleMouseEnter = () => {
-        console.log(arrowRefs.current); // Check if this logs the arrow element properly
-        if (arrowRefs.current) {
+        if (arrowRefsExplore.current) {
             // First animation: move to the right and fade out
-            gsap.to(arrowRefs.current, {
+            gsap.to(arrowRefsExplore.current, {
                 x: 10, // Moves the arrow to the right
                 opacity: 0,
                 ease: "power1.inOut",
                 onComplete: () => {
                     // Second animation: reset position and fade in from the left
                     gsap.fromTo(
-                        arrowRefs.current,
+                        arrowRefsExplore.current,
                         {
                             x: -10, // Start position (from the left)
                             opacity: 0,
@@ -117,7 +116,7 @@ export const ProductsSection = () => {
                     >
                         <Text fontSize={["16px", "sm", "18px"]} _hover={{cursor: 'pointer'}}>See all products</Text>
                     </Link>
-                    <Box ref={arrowRefs}>
+                    <Box ref={arrowRefsExplore}>
                         <FiArrowRight/>
                     </Box>
                 </Flex>
@@ -136,7 +135,7 @@ export const ProductsSection = () => {
                         mb={6}
                     >
                         <Link
-                            href={`/brands?${product.name}=${product.name}`} _hover={{textDecoration: 'none'}}>
+                            href={`/products?product=${product.name}`} _hover={{textDecoration: 'none'}}>
                             <Box
                                 width="342px"
                                 height={"242.44px"}

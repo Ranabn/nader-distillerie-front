@@ -122,7 +122,7 @@ const ContactForm = () => {
                         </MenuList>
                     </Menu>
                     <Flex className='reason-label' position={'absolute'} left={4}>
-                        {selectedReason ? selectedReason : "Select a reason"}
+                        {selectedReason ? selectedReason : "Select subject"}
                     </Flex>
                     <Flex className='reason-label' position={'absolute'} right={4}>
                         <Icon viewBox="0 0 24 24" w="24px" h="auto" color="white" fill="none" stroke="currentColor"
