@@ -12,7 +12,7 @@ interface SocialBrandsProps {
     brandWebsiteUrl?: string;
     facebookUrl?: string;
     instagramUrl?: string;
-    brandName?:string;
+    brandName?: string;
 }
 
 export const SocialBrands = ({
@@ -45,7 +45,7 @@ export const SocialBrands = ({
                 opacity: 0.04,
             }}
         >
-            <Flex flexDirection="column" w="100%" p={[4, 8, 8]} mt={[6,0,0]} gap={[2,0,8]}>
+            <Flex flexDirection="column" w="100%" p={[4, 8, 8]} mt={[6, 0, 0]} gap={[2, 0, 8]}>
                 {(facebookUrl || instagramUrl) && (
                     <Flex gap={4} alignItems="center" mb={4} mt={4} zIndex={9999}>
                         {instagramUrl && (
@@ -69,7 +69,7 @@ export const SocialBrands = ({
                     mt={[6, 0, 0]}
                     w={["100%", "50%", "50%"]}
                     gap={8}
-                    pb={[8,0,0]}
+                    pb={[8, 0, 0]}
                     justifyContent="center"
                 >
                     <Box>
@@ -77,39 +77,42 @@ export const SocialBrands = ({
                             fontSize={["24px", "3xl", "32px"]}
                             fontWeight="300"
                             textTransform="uppercase"
-                            mb={[2,0,0]}
+                            mb={[2, 0, 0]}
                         >
-                            {quote}
+                            Elevate expectations with our creations
                         </Text>
                         <Text fontSize={["16px", "18px", "18px"]}>
-                            {description}
+                            Our brands showcase the depth of our expertise and the diverse range of products we can
+                            create. Whether you are a distributor, a retailer, a food service professional, or enjoying
+                            our products at home, they will be a perfect addition to your bar. Become a reseller and
+                            share in our legacy.
                         </Text>
                     </Box>
 
                     {technicalSheetUrl && (
                         <Box zIndex={9999}>
                             <Text fontSize={["20px", "24px", "24px"]} mb={2}>Technical data</Text>
-                        <Link href={technicalSheetUrl} >
-                            <Box fontSize="18px">
-                                <Flex gap={4}>
-                                    <Text fontSize={["16px", "18px"]} mb={4}>
-                                        Download our technical data sheets
-                                    </Text>
-                                    <svg
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M11.363 2C15.518 2 14 8 14 8C14 8 20 6.35 20 10.457V22H4V2H11.363ZM12.189 0H2V24H22V9.614C22 7.223 15.352 0 12.189 0ZM17 13H14.372V16.686H15.279V15.214H16.769V14.482H15.279V13.784H17V13ZM12.1 13H10.501V16.686H12.1C12.637 16.686 13.061 16.505 13.362 16.151C13.917 15.493 13.949 14.117 13.3 13.459C13.002 13.159 12.588 13 12.1 13ZM11.408 13.783H11.904C12.377 13.783 12.706 13.956 12.819 14.427C12.883 14.694 12.896 15.106 12.798 15.375C12.67 15.726 12.417 15.903 12.044 15.903H11.407V13.783H11.408ZM8.668 13H7V16.686H7.907V15.409H8.668C9.287 15.409 9.732 15.132 9.892 14.646C9.987 14.355 9.987 14.049 9.892 13.761C9.732 13.277 9.286 13 8.668 13ZM7.907 13.732H8.453C8.688 13.732 8.92 13.76 9.029 13.96C9.096 14.083 9.096 14.326 9.029 14.449C8.92 14.648 8.688 14.676 8.453 14.676H7.907V13.732Z"
-                                            fill="white"
-                                        />
-                                    </svg>
-                                </Flex>
-                            </Box>
-                        </Link>
+                            <Link href={technicalSheetUrl}>
+                                <Box fontSize="18px">
+                                    <Flex gap={4}>
+                                        <Text fontSize={["16px", "18px"]} mb={4}>
+                                            Download our technical data sheets
+                                        </Text>
+                                        <svg
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M11.363 2C15.518 2 14 8 14 8C14 8 20 6.35 20 10.457V22H4V2H11.363ZM12.189 0H2V24H22V9.614C22 7.223 15.352 0 12.189 0ZM17 13H14.372V16.686H15.279V15.214H16.769V14.482H15.279V13.784H17V13ZM12.1 13H10.501V16.686H12.1C12.637 16.686 13.061 16.505 13.362 16.151C13.917 15.493 13.949 14.117 13.3 13.459C13.002 13.159 12.588 13 12.1 13ZM11.408 13.783H11.904C12.377 13.783 12.706 13.956 12.819 14.427C12.883 14.694 12.896 15.106 12.798 15.375C12.67 15.726 12.417 15.903 12.044 15.903H11.407V13.783H11.408ZM8.668 13H7V16.686H7.907V15.409H8.668C9.287 15.409 9.732 15.132 9.892 14.646C9.987 14.355 9.987 14.049 9.892 13.761C9.732 13.277 9.286 13 8.668 13ZM7.907 13.732H8.453C8.688 13.732 8.92 13.76 9.029 13.96C9.096 14.083 9.096 14.326 9.029 14.449C8.92 14.648 8.688 14.676 8.453 14.676H7.907V13.732Z"
+                                                fill="white"
+                                            />
+                                        </svg>
+                                    </Flex>
+                                </Box>
+                            </Link>
                         </Box>
 
                     )}

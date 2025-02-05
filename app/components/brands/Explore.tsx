@@ -1,23 +1,19 @@
 // @ts-nocheck
 'use client'
 
-import {Card, Flex, Text, CardBody, Image, Box, Link} from "@chakra-ui/react";
-import {FiArrowRight} from "react-icons/fi";
-import React, {useRef} from "react";
-import {gsap} from "gsap";
-import {keyframes} from "@emotion/react";
+import { Card, Flex, Text, CardBody, Image, Box, Link } from "@chakra-ui/react";
+import { FiArrowRight } from "react-icons/fi";
+import React, { useRef } from "react";
+import { gsap } from "gsap";
+import { keyframes } from "@emotion/react";
 
-interface Brand {
-    category: string;
-    name: string;
-    imageSrc: string;
-}
-
-// Define the props type for the ExploreMore component
-interface ExploreMoreProps {
-    brands: Brand[];
-}
-
+type ExploreMoreItem = {
+    title: string;
+    description: string;
+    imageUrl: string;
+    alt: string;
+    link: string;
+};
 
 const lineAnimation = keyframes`
     0% {
@@ -28,27 +24,24 @@ const lineAnimation = keyframes`
     }
 `;
 
-// Define the ExploreMore component with typed props
-export const ExploreMore = ({brands}: any) => {
+export const ExploreMore = ({ exploreMore }) => {
     const arrowRef = useRef(null);
 
     const handleMouseEnter = () => {
         if (arrowRef.current) {
-            // First animation: move to the right and fade out
             gsap.to(arrowRef.current, {
-                x: 10, // Moves the arrow to the right
+                x: 10,
                 opacity: 0,
                 ease: "power1.inOut",
                 onComplete: () => {
-                    // Second animation: reset position and fade in from the left
                     gsap.fromTo(
                         arrowRef.current,
                         {
-                            x: -10, // Start position (from the left)
+                            x: -10,
                             opacity: 0,
                         },
                         {
-                            x: 0, // Move to the initial position
+                            x: 0,
                             opacity: 1,
                             duration: 0.6,
                             ease: "power1.inOut",
@@ -58,6 +51,7 @@ export const ExploreMore = ({brands}: any) => {
             });
         }
     };
+
     return (
         <Flex flexDirection="column" p={[4, 12, 8]} pt={4} pb={[6, 8, 16]} backgroundColor="#F6F4ED">
             <Flex alignItems={'center'} alignContent={'center'} justifyContent={'space-between'} width={'100%'}>
@@ -71,11 +65,9 @@ export const ExploreMore = ({brands}: any) => {
                     gap={2}
                     position="relative"
                     mt={[2, 0]}
-
                 >
                     <Link
                         onMouseEnter={handleMouseEnter}
-
                         href={'/brands'}
                         _hover={{
                             textDecoration: "none",
@@ -99,13 +91,14 @@ export const ExploreMore = ({brands}: any) => {
                             }
                         }}
                     >
-                        <Text fontSize={["16px", "sm", "18px"]} _hover={{cursor: 'pointer'}}>See all brands</Text>
+                        <Text fontSize={["16px", "sm", "18px"]} _hover={{ cursor: 'pointer' }}>See all brands</Text>
                     </Link>
                     <Box ref={arrowRef}>
-                        <FiArrowRight/>
+                        <FiArrowRight />
                     </Box>
                 </Flex>
             </Flex>
+
             <Box
                 backgroundColor="black"
                 height="1px"
@@ -113,29 +106,43 @@ export const ExploreMore = ({brands}: any) => {
                 mb={10}
                 mt={2}
             />
+
+            {/* Desktop/Tablet View */}
             <Flex
-                flexDirection={["column", "row", "row"]} display={["none", "flex", "flex"]}
-                justifyContent={'space-between'}>
-                {/*@ts-ignore*/}
-                {brands.slice(0, 3).map((brand, index) => ( // Limit to 3 items
-                    <Card border={["2px", "0px", "0px"]} borderColor={["#224452"]} key={index} boxShadow="none"
-                          borderRadius="none" width={["100%", "33%", "453px"]} height={["469px", "624px", "624px"]}>
+                flexDirection={["column", "row", "row"]}
+                display={["none", "flex", "flex"]}
+                justifyContent={'space-between'}
+            >
+                {exploreMore.map((item, index) => (
+                    <Card
+                        border={["2px", "0px", "0px"]}
+                        borderColor={["#224452"]}
+                        key={index}
+                        boxShadow="none"
+                        borderRadius="none"
+                        width={["100%", "33%", "453px"]}
+                        height={["469px", "624px", "624px"]}
+                    >
                         <CardBody>
-                            <Flex flexDirection="column" height={"100%"} justifyContent="space-between"
-                                  textAlign="center">
+                            <Flex
+                                flexDirection="column"
+                                height={"100%"}
+                                justifyContent="space-between"
+                                textAlign="center"
+                            >
                                 <Flex flexDirection="column">
-                                    {/*@ts-ignore*/}
-                                    <Text
-                                        fontSize={["xl", "18px"]}>{String(brand?.categories || '').toUpperCase()}</Text>
+                                    <Text fontSize={["xl", "18px"]}>
+                                        {item.description}
+                                    </Text>
                                     <Text fontSize={["xl", "32px"]} fontFamily="EB Garamond" fontWeight="800">
-                                        {brand.brand_name}
+                                        {item.title}
                                     </Text>
                                 </Flex>
                                 <Image
-                                    src={brand.mainImage}
-                                    alt={brand.name}
-                                    width={["303px","453px"]}
-                                    height={["303px","453px"]}
+                                    src={item.imageUrl}
+                                    alt={item.alt}
+                                    width={["303px", "453px"]}
+                                    height={["303px", "453px"]}
                                     objectFit={['cover', 'contain']}
                                     aspectRatio={1}
                                 />
@@ -145,25 +152,42 @@ export const ExploreMore = ({brands}: any) => {
                     </Card>
                 ))}
             </Flex>
-            <Flex width="max-content" gap={8} flexDirection={["row", "row", "row"]} display={["flex", "none", "none"]}>
-                {/*@ts-ignore*/}
-                {brands.slice(0, 2).map((brand, index) => ( // Limit to 3 items
-                    <Card border={["2px", "0px", "0px"]} borderColor={["#224452"]} key={index} boxShadow="none"
-                          borderRadius="none" width={["300px", "33%", "453px"]} height={["469px", "624px", "624px"]}>
+
+            {/* Mobile View */}
+            <Flex
+                width="max-content"
+                gap={8}
+                flexDirection={["row", "row", "row"]}
+                display={["flex", "none", "none"]}
+            >
+                {exploreMore.map((item, index) => (
+                    <Card
+                        border={["2px", "0px", "0px"]}
+                        borderColor={["#224452"]}
+                        key={index}
+                        boxShadow="none"
+                        borderRadius="none"
+                        width={["300px", "33%", "453px"]}
+                        height={["469px", "624px", "624px"]}
+                    >
                         <CardBody>
-                            <Flex flexDirection="column" height={"100%"} justifyContent="space-between"
-                                  textAlign="center">
+                            <Flex
+                                flexDirection="column"
+                                height={"100%"}
+                                justifyContent="space-between"
+                                textAlign="center"
+                            >
                                 <Flex flexDirection="column">
-                                    {/*@ts-ignore*/}
-                                    <Text
-                                        fontSize={["xl", "18px"]}>{String(brand?.categories || '').toUpperCase()}</Text>
+                                    <Text fontSize={["xl", "18px"]}>
+                                        {item.description}
+                                    </Text>
                                     <Text fontSize={["xl", "32px"]} fontFamily="EB Garamond" fontWeight="800">
-                                        {brand.brand_name}
+                                        {item.title}
                                     </Text>
                                 </Flex>
                                 <Image
-                                    src={brand.mainImage}
-                                    alt={brand.name}
+                                    src={item.imageUrl}
+                                    alt={item.alt}
                                     objectFit="contain"
                                     width="100%"
                                     maxHeight="400px"
@@ -174,8 +198,9 @@ export const ExploreMore = ({brands}: any) => {
                         </CardBody>
                     </Card>
                 ))}
-
             </Flex>
+
+            {/* Mobile "See all brands" link */}
             <Flex
                 alignItems="center"
                 alignContent={'center'}
@@ -185,7 +210,6 @@ export const ExploreMore = ({brands}: any) => {
                 mt={[10, 0]}
                 justifyContent="flex-end"
                 mb={[6, 0]}
-
             >
                 <Link
                     href={'/brands'}
@@ -212,10 +236,10 @@ export const ExploreMore = ({brands}: any) => {
                         }
                     }}
                 >
-                    <Text fontSize={["16px", "sm", "18px"]} _hover={{cursor: 'pointer'}}>See all brands</Text>
+                    <Text fontSize={["16px", "sm", "18px"]} _hover={{ cursor: 'pointer' }}>See all brands</Text>
                 </Link>
                 <Box display={['flex', 'none', 'none']} pb={1} ref={arrowRef}>
-                    <FiArrowRight/>
+                    <FiArrowRight />
                 </Box>
             </Flex>
         </Flex>

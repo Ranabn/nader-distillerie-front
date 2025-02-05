@@ -113,7 +113,7 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
 
     return (
         <Box position="relative" pb={8} bg={'white'} color={'#000000'}>
-            <Flex pl={8} pt={[2,2,10]} gap={[4, 8]} alignContent={'center'} alignItems={'center'}>
+            <Flex pl={8} pt={[2, 2, 10]} gap={[4, 8]} alignContent={'center'} alignItems={'center'}>
                 {allCategories.map((category) => (
                     <Radio
                         // borderColor={'black'}
@@ -161,8 +161,8 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                     >
                         <Flex flexDirection='column' alignItems={'center'}>
                             <Box
-                                width="149px"
-                                height="320px"
+                                width="309px"
+                                height="350px"
                                 position="relative"
                                 mb={2}
                             >
@@ -192,7 +192,7 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                 ))}
             </Flex>
             {showArrows && (
-                <Flex justifyContent={'end'}  gap={12} pr={8} pt={[0, 0, 8]} zIndex={9999}>
+                <Flex justifyContent={'end'} gap={12} pr={8} pt={[0, 0, 8]} zIndex={9999}>
                     {canScrollLeft && (
                         <Box _hover={{cursor: 'pointer'}}>
                             <svg onClick={scrollLeft} width="60" height="16" viewBox="0 0 69 16" fill="none"

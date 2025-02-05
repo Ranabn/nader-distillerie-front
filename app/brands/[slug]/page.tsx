@@ -55,7 +55,15 @@ const BRAND_QUERY = `*[_type == "brands" && slug.current == $slug][0]{
   tertiaryImage{asset->, alt},
   brand_short_desc,
   categories[]->{title},
+  exploreMore[]{
+    title,
+    description,
+    "imageUrl": image.asset->url,
+    "alt": image.alt,
+    link
+  }
 }`;
+
 
 const BRANDS_FOOTER = `*[_type == "brands"] {
   brand_name,
@@ -64,10 +72,10 @@ const BRANDS_FOOTER = `*[_type == "brands"] {
   "categories": categories[]->title
 }`;
 
-const BrandPage = async ({params}: { params: { slug: string } }) => {
+const BrandPage = async ({ params }: { params: { slug: string } }) => {
     const brand = await sanityFetch<Brand>({
         query: BRAND_QUERY,
-        params: {slug: params.slug},
+        params: { slug: params.slug },
     });
 
     const brands = await sanityFetch<BrandFooter[]>({
@@ -94,11 +102,11 @@ const BrandPage = async ({params}: { params: { slug: string } }) => {
 
     return (
         <>
-            <Navbar brands={brands}/>
+            <Navbar brands={brands} />
 
             <Flex mt={[16, 32, 32]} flexDirection="column" position="relative" overflowX={'hidden'}>
-                <HeaderBrands brand={brand}/>
-                <Box display={['none', 'none','none', 'flex']}>
+                <HeaderBrands brand={brand} />
+                <Box display={['none', 'none', 'none', 'flex']}>
                     <StickyImage
                         imageAlts={imageAlts}
                         imageUrls={imageUrls}
@@ -108,7 +116,7 @@ const BrandPage = async ({params}: { params: { slug: string } }) => {
                 <Box display={['flex', 'flex', 'flex', 'none']}>
                     <StickyImageMobile imageAlts={imageAlts}
                                        imageUrls={imageUrls}
-                                       brandName={brand?.brand_name}/>
+                                       brandName={brand?.brand_name} />
                 </Box>
 
                 {/* Pass social media links as props to SocialBrands */}
@@ -121,12 +129,13 @@ const BrandPage = async ({params}: { params: { slug: string } }) => {
                     instagramUrl={brand.link_to_brand_instagram || ""}
                     brandName={brand?.brand_name}
                 />
-                <ExploreMore brands={brands}/>
-                <OurStorySection storyImg={storyImg}/>
+                <ExploreMore exploreMore={brand.exploreMore} />
+                <OurStorySection storyImg={storyImg} />
             </Flex>
-            <Footer brands={brands}/>
+            <Footer brands={brands} />
         </>
     );
 };
 
 export default BrandPage;
+
