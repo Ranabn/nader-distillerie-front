@@ -13,6 +13,7 @@ import {HeaderBrands} from "@/app/components/brands/Header";
 import {urlFor} from '@/app/sanity/urlFor';
 import OurStory from "@/app/assets/images/our_story_brands.png";
 import {StickyImageMobile} from "@/app/components/brands/StickyImageMobile";
+import CustomBox from "@/app/components/ui/CustomBox";
 
 type Brand = {
     brand_name: string;
@@ -72,10 +73,10 @@ const BRANDS_FOOTER = `*[_type == "brands"] {
   "categories": categories[]->title
 }`;
 
-const BrandPage = async ({ params }: { params: { slug: string } }) => {
+const BrandPage = async ({params}: { params: { slug: string } }) => {
     const brand = await sanityFetch<Brand>({
         query: BRAND_QUERY,
-        params: { slug: params.slug },
+        params: {slug: params.slug},
     });
 
     const brands = await sanityFetch<BrandFooter[]>({
@@ -102,22 +103,24 @@ const BrandPage = async ({ params }: { params: { slug: string } }) => {
 
     return (
         <>
-            <Navbar brands={brands} />
-
+            <Navbar brands={brands}/>
             <Flex mt={[16, 32, 32]} flexDirection="column" position="relative" overflowX={'hidden'}>
-                <HeaderBrands brand={brand} />
-                <Box display={['none', 'none', 'none', 'flex']}>
-                    <StickyImage
-                        imageAlts={imageAlts}
-                        imageUrls={imageUrls}
-                        brandName={brand?.brand_name}
-                    />
-                </Box>
-                <Box display={['flex', 'flex', 'flex', 'none']}>
-                    <StickyImageMobile imageAlts={imageAlts}
-                                       imageUrls={imageUrls}
-                                       brandName={brand?.brand_name} />
-                </Box>
+                <CustomBox>
+
+                    <HeaderBrands brand={brand}/>
+                    <Box display={['none', 'none', 'none', 'flex']}>
+                        <StickyImage
+                            imageAlts={imageAlts}
+                            imageUrls={imageUrls}
+                            brandName={brand?.brand_name}
+                        />
+                    </Box>
+                    <Box display={['flex', 'flex', 'flex', 'none']}>
+                        <StickyImageMobile imageAlts={imageAlts}
+                                           imageUrls={imageUrls}
+                                           brandName={brand?.brand_name}/>
+                    </Box>
+                </CustomBox>
 
                 {/* Pass social media links as props to SocialBrands */}
                 <SocialBrands
@@ -129,10 +132,19 @@ const BrandPage = async ({ params }: { params: { slug: string } }) => {
                     instagramUrl={brand.link_to_brand_instagram || ""}
                     brandName={brand?.brand_name}
                 />
-                <ExploreMore exploreMore={brand.exploreMore} />
-                <OurStorySection storyImg={storyImg} />
+                <Box backgroundColor="#F6F4ED">
+                    <CustomBox>
+                        <ExploreMore exploreMore={brand.exploreMore}/>
+                    </CustomBox>
+                </Box>
+                <Box>
+                    <CustomBox>
+                        <OurStorySection storyImg={storyImg}/>
+                    </CustomBox>
+                </Box>
+
             </Flex>
-            <Footer brands={brands} />
+            <Footer brands={brands}/>
         </>
     );
 };

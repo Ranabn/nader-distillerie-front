@@ -11,6 +11,7 @@ import {Btn} from '@/app/components/ui/Btn';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {useParams, usePathname} from "next/navigation";
+import CustomBox from "@/app/components/ui/CustomBox";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,7 +28,7 @@ export const OurStorySection = ({storyImg}: any) => {
     const [isAbsoluteBars, setIsAbsoluteBars] = useState(false)
 
     useEffect(() => {
-        setTimeout(() =>{
+        setTimeout(() => {
             setIsAbsoluteBars(true)
         }, 200)
     }, [isAbsoluteBars]);
@@ -59,7 +60,6 @@ export const OurStorySection = ({storyImg}: any) => {
             p={[4, 8, 8]} mb={[10, 10, 10]} mt={[16, 0, 20]} bg="white" ref={containerRef} color={'#000000'}
 
         >
-
             <Image
                 display={[params.slug ? "flex" : "none", "none", "none"]}
                 src={storyImg || OurStory.src}
@@ -86,16 +86,17 @@ export const OurStorySection = ({storyImg}: any) => {
                     fontSize="18px"
                     ref={textRef}
                 >
-
                     <Flex mt={20} flexDirection={'column'} justifyContent={'space-between'} gap={6}>
                         {!isBrandPage && (
 
-                                <>
-                                    <Box display={["none","none", isAbsoluteBars ? "inline-block" : "none" ] } top={'-180px'} width={'100vw'} bg={'white'} position={'absolute'} height={'80px'}
-                                    ></Box>
-                                    <Box  display={["none","none", isAbsoluteBars ? "inline-block" : "none" ] } top={'600px'} width={'100vw'} bg={'white'} position={'absolute'} height={'520px'}
-                                    ></Box>
-                                </>
+                            <>
+                                <Box display={["none", "none", isAbsoluteBars ? "inline-block" : "none"]} top={'-180px'}
+                                     width={'100vw'} bg={'white'} position={'absolute'} height={'80px'}
+                                ></Box>
+                                <Box display={["none", "none", isAbsoluteBars ? "inline-block" : "none"]} top={'600px'}
+                                     width={'100vw'} bg={'white'} position={'absolute'} height={'520px'}
+                                ></Box>
+                            </>
 
                         )}
                         <Heading
@@ -140,7 +141,6 @@ export const OurStorySection = ({storyImg}: any) => {
                         objectFit="cover"
                         width={["325px", "600px", "600px"]}
                         height={["325px", "600px", "600px"]}
-
                     />
                     {!isBrandPage && (
                         <>
@@ -160,16 +160,12 @@ export const OurStorySection = ({storyImg}: any) => {
                             />
                         </>
                     )}
-
                 </Flex>
             </Flex>
             {!storyImg && (
-
                 !isSmallScreen && (
                     <Flex justifyContent="space-between" ref={imageContainerRef}>
-
                         <Flex flexDirection="column" gap={8} mt={8}>
-
                         </Flex>
                     </Flex>
                 )

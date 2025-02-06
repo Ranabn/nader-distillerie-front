@@ -1,13 +1,13 @@
-
-import { Navbar } from "@/app/components/navigation/navbar";
-import { BrandsSection } from "@/app/components/landing/BrandsSection";
-import { Footer } from "@/app/components/footer/Footer";
-import { Box, Flex } from "@chakra-ui/react";
-import { ExternalBox } from "@/app/components/ui/ExternalBoxe";
-import { sanityFetch } from "@/app/sanity/client";
-import { urlFor } from "@/app/sanity/urlFor";
+import {Navbar} from "@/app/components/navigation/navbar";
+import {BrandsSection} from "@/app/components/landing/BrandsSection";
+import {Footer} from "@/app/components/footer/Footer";
+import {Box, Flex} from "@chakra-ui/react";
+import {ExternalBox} from "@/app/components/ui/ExternalBoxe";
+import {sanityFetch} from "@/app/sanity/client";
+import {urlFor} from "@/app/sanity/urlFor";
 import SmoothScroll from "@/app/SmoothScroll";
-import React, { Suspense } from "react";
+import React, {Suspense} from "react";
+import CustomBox from "@/app/components/ui/CustomBox";
 
 interface Brand {
     brand_name: string;
@@ -40,10 +40,12 @@ const BrandsPage = async () => {
             <Flex flexDir='column'>
                 <Navbar brands={brands}/>
                 {/*<SmoothScroll>*/}
-                <Box mt={28}>
-                    <BrandsSection isLanding={false} brands={brands} imageUrls={imageUrls}/>
-                </Box>
-                <ExternalBox/>
+                <CustomBox>
+                    <Box mt={28}>
+                        <BrandsSection isLanding={false} brands={brands} imageUrls={imageUrls}/>
+                    </Box>
+                    <ExternalBox/>
+                </CustomBox>
                 <Footer brands={brands}/>
                 {/*</SmoothScroll>*/}
             </Flex>
