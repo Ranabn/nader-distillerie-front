@@ -8,6 +8,7 @@ import Noel from "@/app/assets/images/noel.png"
 
 import {Btn} from "@/app/components/ui/Btn";
 import {usePathname} from "next/navigation";
+import CustomBox from "../ui/CustomBox";
 
 export const SectionItem = ({subtitle, title, description, buttonText, imageSrc, link, isLast}) => (
     <Flex
@@ -53,33 +54,36 @@ const ServiceSection = () => {
             >
                 Our Services
             </Heading>
-            <SectionItem
-                subtitle="Private Label"
-                title="Craft your identity"
-                description="Craft your unique identity with our private label offerings. We excel at tailoring products, whether premium or entry level, to meet the distinctive needs of our clients. Together we can shape your brand."
-                buttonText="Build your brand"
-                link={"label-drinks"}
-                imageSrc={Craft.src}
-            />
+            <CustomBox>
 
-            <SectionItem
-                subtitle="Raw Material"
-                title="Ethanol for every industry"
-                description="Supply your industry with our versatile ethanol. Catering to pharmaceuticals, perfumery, home care, and beverages, we provide the perfect ethanol solution for your specific needs."
-                buttonText="Purchase ethanol"
-                link={"ethanol"}
-                imageSrc={craft2.src}
-            />
+                <SectionItem
+                    subtitle="Private Label"
+                    title="Craft your identity"
+                    description="Craft your unique identity with our private label offerings. We excel at tailoring products, whether premium or entry level, to meet the distinctive needs of our clients. Together we can shape your brand."
+                    buttonText="Build your brand"
+                    link={"label-drinks"}
+                    imageSrc={Craft.src}
+                />
 
-            <SectionItem
-                subtitle="Events"
-                title="Customize your gifts"
-                description="Make your events memorable with our customized gifts. Be it company gifts, wedding giveaways, or any special occasion, we design gifts that leave a lasting impression. Your vision is our inspiration."
-                buttonText="Order your gifts"
-                link={"gift"}
-                imageSrc={Noel.src}
-                isLast={true}
-            />
+                <SectionItem
+                    subtitle="Raw Material"
+                    title="Ethanol for every industry"
+                    description="Supply your industry with our versatile ethanol. Catering to pharmaceuticals, perfumery, home care, and beverages, we provide the perfect ethanol solution for your specific needs."
+                    buttonText="Purchase ethanol"
+                    link={"ethanol"}
+                    imageSrc={craft2.src}
+                />
+
+                <SectionItem
+                    subtitle="Events"
+                    title="Customize your gifts"
+                    description="Make your events memorable with our customized gifts. Be it company gifts, wedding giveaways, or any special occasion, we design gifts that leave a lasting impression. Your vision is our inspiration."
+                    buttonText="Order your gifts"
+                    link={"gift"}
+                    imageSrc={Noel.src}
+                    isLast={true}
+                    />
+            </CustomBox>
         </Box>
     );
 };

@@ -10,6 +10,7 @@ import {Test} from "@/app/components/Test";
 import React, {Suspense} from "react";
 import {sanityFetch} from '@/app/sanity/client';
 import {urlFor} from "@/app/sanity/urlFor";
+import CustomBox from "./components/ui/CustomBox";
 
 const BRANDS_QUERY = `*[_type == "brands"] {
   brand_name,
@@ -34,16 +35,21 @@ export default async function Home() {
                 <Navbar brands={brands}/>
                 {/*<SmoothScroll>*/}
                 <HeroBanner/>
-                <BrandsSection isLanding={true} brands={brands} imageUrls={imageUrls}/>
+                <CustomBox>
+                    <BrandsSection isLanding={true} brands={brands} imageUrls={imageUrls}/>
+                </CustomBox>
 
                 <Box>
-                    <OurStorySection/>
-
+                    <CustomBox>
+                        <OurStorySection/>
+                    </CustomBox>
                 </Box>
 
 
                 <Box position="relative">
-                    <Test brands={brands}/>
+                    <CustomBox>
+                        <Test brands={brands}/>
+                    </CustomBox>
                     <Footer brands={brands}/>
                 </Box>
                 {/*</SmoothScroll>*/}

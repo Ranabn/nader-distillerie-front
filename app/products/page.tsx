@@ -10,6 +10,7 @@ import {Footer} from "@/app/components/footer/Footer";
 import {sanityFetch} from "@/app/sanity/client";
 import {Product3DSection} from "@/app/components/product/3DSection";
 import {CraftIdentity} from "@/app/components/product/CraftIdentity";
+import CustomBox from "../components/ui/CustomBox";
 
 const BRANDS_QUERY = `*[_type == "brands"] {
   brand_name,
@@ -83,7 +84,9 @@ export default async function HomeProduct() {
             {/*    bg="white"*/}
             {/*    top="100vh"*/}
             {/*>*/}
-            <CraftIdentity/>
+            <CustomBox>
+                <CraftIdentity/>
+            </CustomBox>
             <Footer brands={brands}/>
             {/*</Box>*/}
             {/*</SmoothScroll>*/}

@@ -91,9 +91,9 @@ export const OurStorySection = ({storyImg}: any) => {
                         {!isBrandPage && (
 
                                 <>
-                                    <Box display={isAbsoluteBars ? "inline-block" : "none"} top={'-180px'} width={'100vw'} bg={'white'} position={'absolute'} height={'80px'}
+                                    <Box display={["none","none", isAbsoluteBars ? "inline-block" : "none" ] } top={'-180px'} width={'100vw'} bg={'white'} position={'absolute'} height={'80px'}
                                     ></Box>
-                                    <Box display={isAbsoluteBars ? "inline-block" : "none"} top={'600px'} width={'100vw'} bg={'white'} position={'absolute'} height={'520px'}
+                                    <Box  display={["none","none", isAbsoluteBars ? "inline-block" : "none" ] } top={'600px'} width={'100vw'} bg={'white'} position={'absolute'} height={'520px'}
                                     ></Box>
                                 </>
 
