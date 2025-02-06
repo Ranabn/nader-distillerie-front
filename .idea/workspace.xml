@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Arrow working">
+      <change afterPath="$PROJECT_DIR$/app/components/navigation/navbar2.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/brands/Explore.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Explore.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/brands/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/landing/BrandsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/BrandsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/landing/OurStorySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/OurStorySection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/landing/ProductsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/ProductsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/navigation/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation/navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/defineStyle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/defineStyle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +100,7 @@
       <workItem from="1736788607730" duration="48042000" />
       <workItem from="1738072025800" duration="17551000" />
       <workItem from="1738241414514" duration="609000" />
-      <workItem from="1738598265139" duration="21680000" />
+      <workItem from="1738598265139" duration="29340000" />
     </task>
     <task id="LOCAL-00001" summary="Restriction age css">
       <option name="closed" value="true" />
@@ -377,7 +382,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738864144764</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Arrow working">
+      <option name="closed" value="true" />
+      <created>1738864378946</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1738864378946</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

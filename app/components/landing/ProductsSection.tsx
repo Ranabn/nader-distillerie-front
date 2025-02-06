@@ -85,7 +85,7 @@ export const ProductsSection = () => {
                 <Flex
                     alignItems="center"
                     alignContent={'center'}
-                    gap={2}
+                    gap={[0,0,2]}
                     position="relative"
                     mt={[2, 0]} // Add spacing for smaller screens
                 >

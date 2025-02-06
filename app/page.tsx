@@ -35,9 +35,7 @@ export default async function Home() {
                 <Navbar brands={brands}/>
                 {/*<SmoothScroll>*/}
                 <HeroBanner/>
-                <CustomBox>
                     <BrandsSection isLanding={true} brands={brands} imageUrls={imageUrls}/>
-                </CustomBox>
 
                 <Box>
                     <CustomBox>

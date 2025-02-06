@@ -1,5 +1,4 @@
 // @ts-nocheck
-
 'use client'
 
 import React, {useEffect, useState} from "react";
@@ -54,7 +53,6 @@ export const Navbar = ({brands}) => {
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
-        setStyles(isOpen ? getInitialStyles(pathname) : {color: "white", background: "black"});
     };
 
     return (
@@ -74,7 +72,72 @@ export const Navbar = ({brands}) => {
                 <MenuToggle toggle={toggleMenu} isOpen={isOpen} styles={styles}/>
                 {!isOpen && <MenuLinks brands={brands} styles={styles}/>}
             </NavBarContainer>
+            <MobileMenu isOpen={isOpen} toggleMenu={toggleMenu} styles={styles} brands={brands} />
         </Flex>
+    );
+};
+
+// New MobileMenu component to handle mobile navigation
+const MobileMenu = ({ isOpen, toggleMenu, styles, brands }) => {
+    if (!isOpen) return null;
+
+    return (
+        <motion.div
+            initial={{opacity: 0, x: "100%"}}
+            animate={{opacity: 1, x: 0}}
+            exit={{opacity: 0, x: "100%"}}
+            transition={{duration: 0.3}}
+            style={{
+                position: "fixed",
+                top: 0,
+                right: 0,
+                width: "100%",
+                height: "100vh",
+                background: "#12191F",
+                color: "white",
+                zIndex: 999,
+                display: "flex",
+                flexDirection: "column",
+                padding: "20px",
+            }}
+        >
+
+            <Flex justifyContent="space-between" alignItems="center" mb={8}>
+
+                <Text fontSize="48px" fontWeight="bold" fontFamily={"EB Garamond"}>Menu</Text>
+                <Box onClick={toggleMenu} cursor="pointer">
+                    <Text fontSize="24px">✕</Text>
+                </Box>
+            </Flex>
+            <SimpleGrid columns={[2, 2]} spacing={10}>
+                <Flex flexDirection="column" gap={4}>
+                    <Link href={'/brands'}>
+                        <Text fontWeight="bold" fontSize="18px">Brands</Text>
+                    </Link>
+                    {brands.map((brand, index) => (
+                        <Link key={index} href={`/brands/${brand.slug}`} color="white">
+                            <Text fontSize="16px">{brand.brand_name}</Text>
+                        </Link>
+                    ))}
+                </Flex>
+                <Flex flexDirection="column" gap={6}>
+                    <Link href="/products">
+                        <Text fontWeight="bold" fontSize="18px">Products</Text>
+                    </Link>
+                </Flex>
+                <Flex flexDirection="column" gap={4}>
+                    <Link href={'/services'}><Text fontWeight="bold" fontSize="18px">Services</Text></Link>
+                    <Link href="/services/label-drinks" color="white"><Text fontSize="16px">Private Label</Text></Link>
+                    <Link href="/services/ethanol" color="white"><Text fontSize="16px">Raw Material</Text></Link>
+                    <Link href="/services/gift" color="white"><Text fontSize="16px">Events</Text></Link>
+                </Flex>
+                <Flex flexDirection="column" gap={2}>
+                    <Link href="/our-story">
+                        <Text fontWeight="bold" fontSize="18px">Our Story</Text>
+                    </Link>
+                </Flex>
+            </SimpleGrid>
+        </motion.div>
     );
 };
 
@@ -84,15 +147,6 @@ const MenuToggle = ({toggle, isOpen, styles}) => (
     </Box>
 );
 
-const MenuIcon = ({styles}) => (
-    <Flex p={[2, 0]} justify="space-between" alignItems="center">
-        <Link href="/">
-            <Box display={['flex']} width={'120px'}>
-                <LogoHorizontal background={styles.color}/>
-            </Box>
-        </Link>
-    </Flex>
-);
 const MenuItemWithDropdown = ({label, items, to, isActive, styles}) => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -119,7 +173,9 @@ const MenuItemWithDropdown = ({label, items, to, isActive, styles}) => {
             position="relative"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            display={['none', 'inline-block', 'inline-block']}
         >
+
             <Link href={to} _hover={{textDecoration: "none"}} position="relative">
                 <Text
                     display={'flex'}
@@ -159,7 +215,6 @@ const MenuItemWithDropdown = ({label, items, to, isActive, styles}) => {
                         viewBox="0 0 10 6"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-
                     >
                         <path d="M0 0.5L5 5.5L10 0.5H0Z" fill={styles?.color}/>
                     </svg>
@@ -211,6 +266,18 @@ const MenuItemWithDropdown = ({label, items, to, isActive, styles}) => {
     );
 };
 
+const MenuIcon = ({styles}) => (
+    <Flex justifyContent={'space-between'} alignItems={'center'} p={2}>
+
+    <LogoHorizontal background={styles.color}/>
+
+<svg width="36" height="25" viewBox="0 0 36 25" fill={styles?.color} xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 24.7622H36V20.7622H0V24.7622ZM0 14.7622H36V10.7622H0V14.7622ZM0 0.762207V4.76221H36V0.762207H0Z" />
+    </svg>
+    </Flex>
+
+);
+
 const MenuLinks = ({styles, brands}) => {
     const pathname = usePathname();
 
@@ -223,7 +290,7 @@ const MenuLinks = ({styles, brands}) => {
             </Link>
             <Flex gap={10} align="center" fontSize="18px">
                 <MenuItemWithDropdown
-                    styles={styles ? styles : ''}
+                    styles={styles}
                     label="Brands"
                     to="/brands"
                     isActive={pathname.startsWith("/brands")}
@@ -233,7 +300,7 @@ const MenuLinks = ({styles, brands}) => {
                     Products
                 </MenuItem>
                 <MenuItemWithDropdown
-                    styles={styles ? styles : ''}
+                    styles={styles}
                     label="Services"
                     to="/services"
                     isActive={pathname.startsWith("/services")}
@@ -247,20 +314,20 @@ const MenuLinks = ({styles, brands}) => {
                     Our Story
                 </MenuItem>
                 <MenuItem to="/contact" isLast>
-                    {pathname === "/contact" && (
-                        <Btn size="md" variant={"primaryBlue"}
-                             text="WORK TOGETHER"/>
-                    )}
-                    {pathname !== "/contact" && (
-                        <Btn size="md" variant={styles.buttonBg === "white" ? "primaryWhite" : "primaryBlack"}
-                             text="WORK TOGETHER"/>
+                    {pathname === "/contact" ? (
+                        <Btn size="md" variant="primaryBlue" text="WORK TOGETHER"/>
+                    ) : (
+                        <Btn
+                            size="md"
+                            variant={styles.buttonBg === "white" ? "primaryWhite" : "primaryBlack"}
+                            text="WORK TOGETHER"
+                        />
                     )}
                 </MenuItem>
             </Flex>
         </Flex>
     );
 };
-
 
 const MenuItem = ({children, to, isActive, isLast}) => {
     const pathname = usePathname();
@@ -271,10 +338,10 @@ const MenuItem = ({children, to, isActive, isLast}) => {
                 _after={{
                     content: '""',
                     position: "absolute",
-                    width: isActive && !isLast ? "40%" : "0", // No width for active last item
-                    height: "1px", // Line height
-                    bottom: "-6px", // Adjust spacing below the text
-                    left: "0", // Align the line to the start
+                    width: isActive && !isLast ? "40%" : "0",
+                    height: "1px",
+                    bottom: "-6px",
+                    left: "0",
                     backgroundColor: isActive
                         ? pathname === "/" || pathname === "/products"
                             ? "#D2CDBF"
@@ -286,12 +353,12 @@ const MenuItem = ({children, to, isActive, isLast}) => {
                         _after: {
                             content: '""',
                             position: 'absolute',
-                            width: '6px', // Dot width
-                            height: '6px', // Dot height
-                            borderRadius: '50%', // Make it a circle
-                            bottom: '-6px', // Adjust spacing below the text
-                            left: '50%', // Center horizontally
-                            transform: 'translateX(-50%)', // Center alignment
+                            width: '6px',
+                            height: '6px',
+                            borderRadius: '50%',
+                            bottom: '-6px',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
                             backgroundColor: pathname === '/' || pathname === '/products'
                                 ? '#D2CDBF'
                                 : '#224452',
@@ -304,7 +371,6 @@ const MenuItem = ({children, to, isActive, isLast}) => {
         </Link>
     );
 };
-
 
 const NavBarContainer = ({children, isOpen, styles}) => (
     <Flex
@@ -322,4 +388,3 @@ const NavBarContainer = ({children, isOpen, styles}) => (
         {children}
     </Flex>
 );
-

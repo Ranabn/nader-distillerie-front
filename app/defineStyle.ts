@@ -48,6 +48,7 @@ const Button = defineStyleConfig({
             height: '61px',
             fontSize: '20px',
         },
+
         lg: {
             padding: '24px',
             width: '240px',

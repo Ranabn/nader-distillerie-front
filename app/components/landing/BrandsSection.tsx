@@ -6,7 +6,7 @@ import {Box, Flex, Text, Radio, Divider, Link, RadioGroup} from "@chakra-ui/reac
 import {Btn} from "@/app/components/ui/Btn";
 import Image from "next/image";
 import {useSearchParams} from 'next/navigation';
-
+import CustomBox from "@/app/components/ui/CustomBox";
 export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
     const searchParams = useSearchParams();
     const scrollContainerRef = useRef(null);
@@ -112,7 +112,9 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
     );
 
     return (
-        <Box position="relative" pb={8} bg={'white'} color={'#000000'} w={['auto','1512px']}>
+        <Box mt={[20,0,0]} position="relative" pb={8} bg={'white'} color={'#000000'} width={['100%']}>
+            <CustomBox>
+
             <Flex pl={8} pt={[2, 2, 10]} gap={[4, 8]} alignContent={'center'} alignItems={'center'}>
                     {allCategories.map((category) => (
                         <Radio
@@ -220,11 +222,12 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
             )}
             {isLanding && (
                 <Link _hover={{textDecoration: "none"}} href={`/brands`}>
-                    <Box width={["92%", "100%", "18%"]} mt={[8, 0, 6]} pl={6} ml={3}>
+                    <Box width={["100%", "100%", "18%"]} mt={[8, 0, 6]} pl={[0,0, 6]} p={[4,0,0]} ml={[0,0,3]}>
                         <Btn size={'md'} variant={'primaryBlack'} text={'Discover our brands'}/>
                     </Box>
                 </Link>
             )}
+            </CustomBox>
         </Box>
     );
 };

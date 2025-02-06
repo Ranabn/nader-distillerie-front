@@ -57,7 +57,7 @@ export const OurStorySection = ({storyImg}: any) => {
     return (
 
         <Box
-            p={[4, 8, 8]} mb={[10, 10, 10]} mt={[16, 0, 20]} bg="white" ref={containerRef} color={'#000000'}
+            p={[4, 8, 8]} mb={[10, 10, 10]} mt={[0, 0, 20]} bg="white" ref={containerRef} color={'#000000'}
 
         >
             <Image
@@ -139,12 +139,13 @@ export const OurStorySection = ({storyImg}: any) => {
                         src={storyImg || OurStory.src}
                         alt="Our Story"
                         objectFit="cover"
-                        width={["325px", "600px", "600px"]}
+                        width={["100%", "600px", "600px"]}
                         height={["325px", "600px", "600px"]}
                     />
                     {!isBrandPage && (
                         <>
                             <Image
+                                display={['none','inline-block','inline-block']}
                                 src={storyImg || OurStory2.src}
                                 alt="Our Story"
                                 objectFit="cover"
@@ -152,6 +153,7 @@ export const OurStorySection = ({storyImg}: any) => {
                                 height="600px"
                             />
                             <Image
+                                display={['none','inline-block','inline-block']}
                                 src={storyImg || OurStory3.src}
                                 alt="Our Story"
                                 objectFit="cover"
