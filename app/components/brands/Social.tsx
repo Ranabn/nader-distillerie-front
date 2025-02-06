@@ -45,7 +45,7 @@ export const SocialBrands = ({
                 opacity: 0.04,
             }}
         >
-            <Flex flexDirection="column" w="100%" p={[4, 8, 8]} mt={[6, 0, 0]} gap={[2, 0, 8]}>
+            <Flex flexDirection="column" w="100%" p={[4, 8, 8]} mb={10} mt={[6, 0, 10]} gap={[2, 0, 8]}>
                 {(facebookUrl || instagramUrl) && (
                     <Flex gap={4} alignItems="center" mb={4} mt={4} zIndex={9999}>
                         {instagramUrl && (

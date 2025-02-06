@@ -1,4 +1,3 @@
-// @ts-nocheck
 'use client'
 
 import { Card, Flex, Text, CardBody, Image, Box, Link } from "@chakra-ui/react";
@@ -141,8 +140,8 @@ export const ExploreMore = ({ exploreMore }) => {
                                 <Image
                                     src={item.imageUrl}
                                     alt={item.alt}
-                                    width={["303px", "453px"]}
-                                    height={["303px", "453px"]}
+                                    width={["350px", "500px"]} // Increased width
+                                    height={["350px", "550px"]} // Increased height
                                     objectFit={['cover', 'contain']}
                                     aspectRatio={1}
                                 />
@@ -190,7 +189,7 @@ export const ExploreMore = ({ exploreMore }) => {
                                     alt={item.alt}
                                     objectFit="contain"
                                     width="100%"
-                                    maxHeight="400px"
+                                    maxHeight="500px" // Increased height
                                     aspectRatio={1}
                                 />
                                 <Flex></Flex>

@@ -2,7 +2,7 @@
 
 'use client';
 
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Box, Flex, Text, Image, Heading, Link, useMediaQuery} from '@chakra-ui/react';
 import OurStory from '@/app/assets/images/our-story-landing.png';
 import OurStory2 from '@/app/assets/images/our-story-landing-2.png';
@@ -24,6 +24,14 @@ export const OurStorySection = ({storyImg}: any) => {
     const isBrandPage = pathname.includes('/brands');
 
     const [isSmallScreen] = useMediaQuery('(max-width: 768px)');
+    const [isAbsoluteBars, setIsAbsoluteBars] = useState(false)
+
+    useEffect(() => {
+        setTimeout(() =>{
+            setIsAbsoluteBars(true)
+        }, 200)
+    }, [isAbsoluteBars]);
+
 
     useEffect(() => {
         if (isSmallScreen) return; // Skip GSAP animations on small screens
@@ -82,12 +90,13 @@ export const OurStorySection = ({storyImg}: any) => {
                     <Flex mt={20} flexDirection={'column'} justifyContent={'space-between'} gap={6}>
                         {!isBrandPage && (
 
-                            <>
-                                <Box top={'-180px'} width={'100vw'} bg={'white'} position={'absolute'} height={'80px'}
-                                ></Box>
-                                <Box top={'600px'} width={'100vw'} bg={'white'} position={'absolute'} height={'520px'}
-                                ></Box>
-                            </>
+                                <>
+                                    <Box display={isAbsoluteBars ? "inline-block" : "none"} top={'-180px'} width={'100vw'} bg={'white'} position={'absolute'} height={'80px'}
+                                    ></Box>
+                                    <Box display={isAbsoluteBars ? "inline-block" : "none"} top={'600px'} width={'100vw'} bg={'white'} position={'absolute'} height={'520px'}
+                                    ></Box>
+                                </>
+
                         )}
                         <Heading
                             fontSize={['28px', '48px', '48px']}

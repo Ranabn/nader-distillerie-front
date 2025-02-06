@@ -49,6 +49,7 @@ export const StickyImage = ({ imageUrls, imageAlts, brandName }) => {
         // Clean up on unmount
         return () => ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     }, []);
+
     return (
         <Box
             mt={6}
@@ -74,10 +75,12 @@ export const StickyImage = ({ imageUrls, imageAlts, brandName }) => {
                             width: "100%",
                             height: "100%",
                             objectFit: "contain",
+                            display: "block",
+                            margin: "0 auto",
                         }}
                     />
                 </Box>
-                <Flex alignItems="center" justifyContent="center" width="100%" gap={14}>
+                <Flex alignItems="center" justifyContent="center" width="100%" gap={14} mt={4}>
                     <Image
                         onClick={handlePrevImage}
                         w="2%"

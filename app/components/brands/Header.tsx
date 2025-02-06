@@ -14,7 +14,7 @@ export const HeaderBrands = ({brand}: { brand: Brand }) => {
     if (!brand) return null;
 
     return (
-        <Box p={[4, 8]} w={['100%', '45%']} mb={[0, 16]}>
+        <Box p={[4, 8]} w={['100%', '45%']} mb={[0, 6]}>
             <Text fontSize={["48px", "5xl", "60px"]} fontFamily="EB Garamond" fontWeight="800">
                 {brand.brand_name}
             </Text>
