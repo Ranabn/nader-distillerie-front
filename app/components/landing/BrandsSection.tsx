@@ -2,7 +2,7 @@
 
 "use client"
 import React, {useState, useEffect, useRef} from "react";
-import {Box, Flex, Text, Radio, Divider, Link} from "@chakra-ui/react";
+import {Box, Flex, Text, Radio, Divider, Link, RadioGroup} from "@chakra-ui/react";
 import {Btn} from "@/app/components/ui/Btn";
 import Image from "next/image";
 import {useSearchParams} from 'next/navigation';
@@ -112,25 +112,26 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
     );
 
     return (
-        <Box position="relative" pb={8} bg={'white'} color={'#000000'}>
+        <Box position="relative" pb={8} bg={'white'} color={'#000000'} w={['auto','1512px']}>
             <Flex pl={8} pt={[2, 2, 10]} gap={[4, 8]} alignContent={'center'} alignItems={'center'}>
-                {allCategories.map((category) => (
-                    <Radio
-                        // borderColor={'black'}
-                        // border={'none'}
-                        key={category}
-                        size="md"
-                        value={category}
-                        onChange={() => handleRadioClick(category)}
-                        isChecked={selectedCategory === category}
-                    >
-                        <Text minWidth={["67px", "100%", "100%"]}
-                              fontWeight={selectedCategory === category ? '800' : ''}
-                              fontSize={['16px', '18px', '18px']}>
-                            {category}
-                        </Text>
-                    </Radio>
-                ))}
+                    {allCategories.map((category) => (
+                        <Radio
+                            // borderColor={'none'}
+                            // border={'none'}
+                            key={category}
+                            size="md"
+                            value={category}
+                            onChange={() => handleRadioClick(category)}
+                            isChecked={selectedCategory === category}
+                            _hover={{borderColor: 'none'}}
+                        >
+                            <Text minWidth={["67px", "100%", "100%"]}
+                                  fontWeight={selectedCategory === category ? '800' : ''}
+                                  fontSize={['16px', '18px', '18px']}>
+                                {category}
+                            </Text>
+                        </Radio>
+                    ))}
             </Flex>
             <Divider ml={8} pl={8} pt={4} mb={8} color={'black'}/>
             <Flex
