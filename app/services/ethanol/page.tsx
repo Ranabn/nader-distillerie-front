@@ -9,6 +9,7 @@ import {Navbar} from "@/app/components/navigation/navbar";
 import {Footer} from "@/app/components/footer/Footer";
 import {sanityFetch} from "@/app/sanity/client";
 import {Ethanol} from "@/app/components/services/Ethanol";
+import CustomBox from "@/app/components/ui/CustomBox";
 const BRANDS_QUERY = `*[_type == "brands"] {
   brand_name,
   "slug": slug.current,

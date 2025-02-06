@@ -2,7 +2,7 @@
 
 import {Card, Flex, Text, CardBody, Image, Box, Link} from "@chakra-ui/react";
 import {FiArrowRight} from "react-icons/fi";
-import React, {useRef} from "react";
+import React, {useRef, useEffect} from "react";
 import {gsap} from "gsap";
 import {keyframes} from "@emotion/react";
 import CustomBox from "@/app/components/ui/CustomBox";
@@ -24,17 +24,21 @@ const lineAnimation = keyframes`
 `;
 
 export const ExploreMore = ({exploreMore}) => {
-    const arrowRef = useRef(null);
-
+    const arrowRefExplore = useRef(null);
+    useEffect(() => {
+        if (arrowRefExplore.current) {
+            gsap.set(arrowRefExplore.current, { opacity: 1, x: 0 }); // Ensure initial state
+        }
+    }, []);
     const handleMouseEnter = () => {
-        if (arrowRef.current) {
-            gsap.to(arrowRef.current, {
+        if (arrowRefExplore.current) {
+            gsap.to(arrowRefExplore.current, {
                 x: 10,
                 opacity: 0,
                 ease: "power1.inOut",
                 onComplete: () => {
                     gsap.fromTo(
-                        arrowRef.current,
+                        arrowRefExplore.current,
                         {
                             x: -10,
                             opacity: 0,
@@ -67,6 +71,7 @@ export const ExploreMore = ({exploreMore}) => {
                         mt={[2, 0]}
                     >
                         <Link
+                            zIndex={9999}
                             onMouseEnter={handleMouseEnter}
                             href={'/brands'}
                             _hover={{
@@ -91,9 +96,9 @@ export const ExploreMore = ({exploreMore}) => {
                                 }
                             }}
                         >
-                            <Text fontSize={["16px", "sm", "18px"]} _hover={{cursor: 'pointer'}}>See all brands</Text>
+                            <Text  fontSize={["16px", "sm", "18px"]} _hover={{cursor: 'pointer'}}>See all brands</Text>
                         </Link>
-                        <Box ref={arrowRef}>
+                        <Box ref={arrowRefExplore}>
                             <FiArrowRight/>
                         </Box>
                     </Flex>
@@ -239,7 +244,7 @@ export const ExploreMore = ({exploreMore}) => {
                         <Text fontSize={["16px", "sm", "18px"]} zIndex={9999} _hover={{cursor: 'pointer'}}>See all
                             brands</Text>
                     </Link>
-                    <Box display={['flex', 'none', 'none']} pb={1} ref={arrowRef}>
+                    <Box display={['flex', 'none', 'none']} pb={1}>
                         <FiArrowRight/>
                     </Box>
                 </Flex>

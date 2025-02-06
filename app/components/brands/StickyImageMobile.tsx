@@ -28,6 +28,7 @@ export const StickyImageMobile = ({ imageUrls, imageAlts, brandName }) => {
     return (
 
             <Flex
+                zIndex={1}
                 mt={8}
                 width={'100%'}
                 color="white"
