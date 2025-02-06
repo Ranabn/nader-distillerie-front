@@ -48,7 +48,7 @@ export const JourneyTimeline = ({timeline}: any) => {
     }, [timeline]); // Add timeline to dependency array
 
     return (
-        <Box ref={wrapperRef} position="relative" height="100vh" width="100%">
+        <Box ref={wrapperRef} position="relative" height="100vh" width="100%" mt={10}>
             <Box
                 ref={containerRef}
                 display="flex"

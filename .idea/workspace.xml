@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Adding Explore more">
-      <change afterPath="$PROJECT_DIR$/app/assets/fonts/EB_Garamond/static/EBGaramond-ExtraBold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/fonts/EB_Garamond/static/EBGaramond-ExtraBoldItalic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/fonts/Varta/static/Varta-Regular.woff2" afterDir="false" />
+    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Push everyting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/brands/Explore.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Explore.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/brands/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/brands/Social.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Social.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/brands/StickyImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/StickyImage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/OurStorySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/OurStorySection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/our-story/JourneyTimeLine.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/JourneyTimeLine.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/alcohol-restriction.json" beforeDir="false" afterPath="$PROJECT_DIR$/utils/alcohol-restriction.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +95,7 @@
       <workItem from="1736788607730" duration="48042000" />
       <workItem from="1738072025800" duration="17551000" />
       <workItem from="1738241414514" duration="609000" />
-      <workItem from="1738598265139" duration="13044000" />
+      <workItem from="1738598265139" duration="14211000" />
     </task>
     <task id="LOCAL-00001" summary="Restriction age css">
       <option name="closed" value="true" />
@@ -344,7 +337,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738779998014</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Push everyting">
+      <option name="closed" value="true" />
+      <created>1738838039660</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1738838039660</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +376,8 @@
     <MESSAGE value="Last element Item margin" />
     <MESSAGE value="Adding a lot of things" />
     <MESSAGE value="Adding Explore more" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Explore more" />
+    <MESSAGE value="Push everyting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Push everyting" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
