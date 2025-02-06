@@ -18,6 +18,7 @@ const OurServicePage = async () => {
     const brands = await sanityFetch({
         query: BRANDS_QUERY,
     });
+
     return (
         <Flex flexDir='column'>
             <Navbar brands={brands}/>
