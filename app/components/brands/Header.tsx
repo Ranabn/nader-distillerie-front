@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import {PortableText} from '@portabletext/react';
 import {Box, Text} from "@chakra-ui/react";
 

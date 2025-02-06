@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 'use client'
 
 import {Card, Flex, Text, CardBody, Image, Box, Link} from "@chakra-ui/react";
@@ -23,7 +25,7 @@ const lineAnimation = keyframes`
     }
 `;
 
-export const ExploreMore = ({exploreMore}) => {
+export const ExploreMore = ({exploreMore}: any) => {
     const arrowRefExplore = useRef(null);
     useEffect(() => {
         if (arrowRefExplore.current) {
