@@ -42,10 +42,8 @@ const BrandsPage = async () => {
                 {/*<SmoothScroll>*/}
                 <Box mt={28}>
                     <CustomBox>
-
                         <BrandsSection isLanding={false} brands={brands} imageUrls={imageUrls}/>
                     </CustomBox>
-
                 </Box>
                 <ExternalBox/>
                 <Footer brands={brands}/>
