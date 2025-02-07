@@ -1,19 +1,24 @@
+// CustomBox.tsx
+import React, { forwardRef } from "react";
 import { Box } from "@chakra-ui/react";
-import React from "react";
 
 type Props = {
   children: React.ReactNode;
 };
 
-const CustomBox = ({ children }: Props) => {
-  const width = {
-    "max-width": "1512px",
+const CustomBox = forwardRef<HTMLDivElement, Props>(({ children }, ref) => {
+  const widthStyle = {
+    maxWidth: "1512px",
     margin: "0 auto",
+  };
 
-  }
-  return <Box
-    style={width}
-  >{children}</Box>;
-};
+  return (
+    <Box ref={ref} style={widthStyle}>
+      {children}
+    </Box>
+  );
+});
+
+CustomBox.displayName = "CustomBox";
 
 export default CustomBox;
