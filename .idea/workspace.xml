@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Product">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/BrandsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/BrandsSection.tsx" afterDir="false" />
+    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Dynamic links ok">
       <change beforePath="$PROJECT_DIR$/app/components/product/3DSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/product/3DSection.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +94,7 @@
       <workItem from="1738072025800" duration="17551000" />
       <workItem from="1738241414514" duration="609000" />
       <workItem from="1738598265139" duration="30886000" />
-      <workItem from="1738918837348" duration="6154000" />
+      <workItem from="1738918837348" duration="6283000" />
     </task>
     <task id="LOCAL-00001" summary="Restriction age css">
       <option name="closed" value="true" />
@@ -418,14 +416,21 @@
       <option name="project" value="LOCAL" />
       <updated>1738931372655</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Dynamic links ok">
+      <option name="closed" value="true" />
+      <created>1738932152632</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1738932152632</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="work on animations" />
     <MESSAGE value="Add imgs" />
     <MESSAGE value="Responsive" />
     <MESSAGE value="v1" />
@@ -450,7 +455,8 @@
     <MESSAGE value="Menu responsive" />
     <MESSAGE value="Menu responsive + suspense" />
     <MESSAGE value="Product" />
-    <option name="LAST_COMMIT_MESSAGE" value="Product" />
+    <MESSAGE value="Dynamic links ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dynamic links ok" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

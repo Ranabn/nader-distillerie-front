@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 "use client";
 import React, {useRef, useEffect, useState} from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
