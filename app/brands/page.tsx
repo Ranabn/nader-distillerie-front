@@ -40,12 +40,14 @@ const BrandsPage = async () => {
             <Flex flexDir='column'>
                 <Navbar brands={brands}/>
                 {/*<SmoothScroll>*/}
-                <CustomBox>
-                    <Box mt={28}>
+                <Box mt={28}>
+                    <CustomBox>
+
                         <BrandsSection isLanding={false} brands={brands} imageUrls={imageUrls}/>
-                    </Box>
-                    <ExternalBox/>
-                </CustomBox>
+                    </CustomBox>
+
+                </Box>
+                <ExternalBox/>
                 <Footer brands={brands}/>
                 {/*</SmoothScroll>*/}
             </Flex>
