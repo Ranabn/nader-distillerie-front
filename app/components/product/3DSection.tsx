@@ -1,7 +1,7 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectFade, Mousewheel } from "swiper/modules";
+import React, {useRef, useEffect, useState} from "react";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {EffectFade, Mousewheel} from "swiper/modules";
 import {
     Box,
     Text,
@@ -10,21 +10,21 @@ import {
     useBreakpointValue,
     Image,
 } from "@chakra-ui/react";
-import { FiArrowRight } from "react-icons/fi";
+import {FiArrowRight} from "react-icons/fi";
 import ArrowDown from "@/app/assets/images/arrow-down-products.png";
-import { useSearchParams } from "next/navigation";
-import { gsap } from "gsap";
-import { keyframes } from "@emotion/react";
+import {useSearchParams} from "next/navigation";
+import {gsap} from "gsap";
+import {keyframes} from "@emotion/react";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
 
-export const Product3DSection = ({ sections }: any) => {
+export const Product3DSection = ({sections}: any) => {
     const [isTopOfPage, setIsTopOfPage] = useState(true);
     const arrowRefs = useRef<(HTMLDivElement | null)[]>([]);
     const textsRefs = useRef<Array<HTMLLIElement | null>>([]);
     const containerRef = useRef<HTMLDivElement>(null);
-    const isMobile = useBreakpointValue({ base: true, md: false });
+    const isMobile = useBreakpointValue({base: true, md: false});
     const router = useSearchParams();
     const product = router.get("product");
 
@@ -69,11 +69,16 @@ export const Product3DSection = ({ sections }: any) => {
 
     const getInitialSlideIndex = (product: string) => {
         switch (product) {
-            case "Spirits": return 0;
-            case "Wines": return 1;
-            case "Vinegars": return 2;
-            case "Ethanol": return sections.length - 1;
-            default: return 0;
+            case "Spirits":
+                return 0;
+            case "Wines":
+                return 1;
+            case "Vinegars":
+                return 2;
+            case "Ethanol":
+                return sections.length - 1;
+            default:
+                return 0;
         }
     };
 
@@ -84,15 +89,15 @@ export const Product3DSection = ({ sections }: any) => {
         if (textsRefs.current[activeIndex]) {
             gsap.fromTo(
                 textsRefs.current[activeIndex],
-                { y: 200, opacity: 1 },
-                { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
+                {y: 200, opacity: 1},
+                {y: 0, opacity: 1, duration: 0.8, ease: "power3.out"}
             );
         }
 
         textsRefs.current.forEach((el, index) => {
             if (el && index !== activeIndex) {
                 if (!(index === lastContentSlideIndex && activeIndex === sections.length)) {
-                    gsap.set(el, { y: 100, opacity: 0 });
+                    gsap.set(el, {y: 100, opacity: 0});
                 }
             }
         });
@@ -110,8 +115,12 @@ export const Product3DSection = ({ sections }: any) => {
     };
 
     const lineAnimation = keyframes`
-        0% { width: 0; }
-        100% { width: 25%; }
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 25%;
+        }
     `;
 
     return (
@@ -158,7 +167,7 @@ export const Product3DSection = ({ sections }: any) => {
                                 backgroundPosition: isMobile ? sec.mobileBackgroundPosition || "center" : sec.backgroundPosition || "center",
                                 width: "100%",
                                 height: "100%",
-                                objectFit:'contain',
+                                objectFit: 'contain',
                                 backgroundColor: "rgba(0, 0, 0, 0.4)",
                                 backgroundBlendMode: "overlay",
                                 transform: isMobile ? "none" : sec.transform || "none",
@@ -184,7 +193,7 @@ export const Product3DSection = ({ sections }: any) => {
                                 </Text>
                             )}
                             <Link
-                                href="/brands"
+                                href={`/brands?filter=${sec.text}`}
                                 _hover={{
                                     textDecoration: "none",
                                     _after: {
@@ -214,7 +223,7 @@ export const Product3DSection = ({ sections }: any) => {
                                         {sec.discover}
                                     </Text>
                                     <Box ref={el => arrowRefs.current[index * 2] = el}>
-                                        <FiArrowRight />
+                                        <FiArrowRight/>
                                     </Box>
                                 </Flex>
                             </Link>
@@ -238,7 +247,7 @@ export const Product3DSection = ({ sections }: any) => {
                                             {sec.discover2}
                                         </Text>
                                         <Box ref={el => arrowRefs.current[index * 2 + 1] = el}>
-                                            <FiArrowRight />
+                                            <FiArrowRight/>
                                         </Box>
                                     </Flex>
                                 </Link>
