@@ -1,7 +1,7 @@
 // @ts-nocheck
 
 "use client";
-import React, {useRef, useEffect} from "react";
+import React, {useRef, useEffect, useState} from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {EffectFade, Mousewheel} from "swiper/modules";
 import {Box, Text, Link, Flex, useBreakpointValue, Icon, Image} from "@chakra-ui/react";
@@ -16,6 +16,22 @@ import {keyframes} from "@emotion/react";
 import { FaChevronDown } from "react-icons/fa";
 
 export const Product3DSection = ({sections}: any) => {
+    const [isTopOfPage, setIsTopOfPage] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsTopOfPage(window.scrollY === 0);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    useEffect(() => {
+        console.log("Is at top of page:", isTopOfPage);
+    }, [isTopOfPage]);
+
+
     const textsRefs = useRef<Array<HTMLLIElement | null>>([]);
     const containerRef = useRef<HTMLDivElement>(null);
     const isMobile = useBreakpointValue({base: true, md: false});
@@ -92,12 +108,13 @@ export const Product3DSection = ({sections}: any) => {
             ref={containerRef}
             style={{
                 width: "100%",
-                height: "100vh",
+                height: isTopOfPage ? "100vh" : "0",
                 overflow: "hidden",
             }}
         >
+
             <Swiper
-                modules={[EffectFade, Mousewheel]}
+                modules={isTopOfPage ? [EffectFade, Mousewheel] : []}
                 mousewheel={{
                     sensitivity: 1,
                     releaseOnEdges: true,
