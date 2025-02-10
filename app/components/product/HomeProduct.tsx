@@ -6,7 +6,7 @@ import { Box } from "@chakra-ui/react";
 import { Navbar } from "@/app/components/navigation/navbar";
 import Spirits from "@/app/assets/images/Spirits.png";
 import Grape from "@/app/assets/images/wines.png";
-import Vinegars from "@/app/assets/images/vinegars.png";
+import Vinegars from "@/app/assets/images/vinegars.jpg";
 import Eth from "@/app/assets/images/ethanol.png";
 import { Footer } from "@/app/components/footer/Footer";
 import { Product3DSection } from "@/app/components/product/3DSection";

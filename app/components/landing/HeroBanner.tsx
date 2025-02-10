@@ -35,7 +35,7 @@ export const HeroBanner = () => {
                     objectPosition={{base: 'center', md: 'bottom'}}
                     width="100%"
                     height="100%"
-                    transform="scale(1.01)"
+                    transform="scale(1)"
                 />
                 <Box
                     display={["flex", "flex", "none"]}
