@@ -6,7 +6,7 @@ import {Btn} from "@/app/components/ui/Btn";
 import {ExternalBox} from "@/app/components/ui/ExternalBoxe";
 import LabelDrinks from "@/app/assets/images/label-drinks.png"
 import {FiChevronRight} from "react-icons/fi";
-import EthanolImg from "@/app/assets/images/ethanol_service.png"
+import EthanolImg from "@/app/assets/images/services/2.jpg"
 import CustomBox from "@/app/components/ui/CustomBox";
 export const Ethanol = () => {
 

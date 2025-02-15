@@ -6,14 +6,14 @@ import React from "react";
 import {Btn} from "@/app/components/ui/Btn";
 import {FiChevronRight} from "react-icons/fi";
 import gifts from "@/app/assets/images/gifts.png"
-import testimony1 from "../../assets/images/gift-sliders/pres-1.png";
-import pres2 from "../../assets/images/gift-sliders/pres-2.png";
-import pres3 from "../../assets/images/gift-sliders/pres-3.png";
-import pres4 from "../../assets/images/gift-sliders/pres-4.png";
-import testimony2 from "../../assets/images/gift-sliders/bottle-1.png";
-import bottle2 from "../../assets/images/gift-sliders/bottle-2.png";
-import bottle3 from "../../assets/images/gift-sliders/bottle-3.png";
-import bottle4 from "../../assets/images/gift-sliders/bottle-4.png";
+import testimony1 from "../../assets/images/gift-sliders/7.jpg";
+import box from "../../assets/images/gift-sliders/7b.jpg";
+import bottle5 from "../../assets/images/gift-sliders/10.jpg";
+import pres3 from "../../assets/images/gift-sliders/8.jpg";
+import pres4 from "../../assets/images/gift-sliders/9.jpg";
+import testimony2 from "../../assets/images/gift-sliders/6.jpg";
+import bottle3 from "../../assets/images/gift-sliders/4.jpg";
+import bottle4 from "../../assets/images/gift-sliders/5.jpg";
 import quotes from "@/app/assets/images/quotes.png";
 import arrowright from "@/app/assets/images/arrowright.png";
 import arrowleft from "@/app/assets/images/arrowleft.png";
@@ -177,39 +177,43 @@ export const Gifts = () => {
                                 >
                                     <SwiperSlide>
                                         <Image
-                                            src={pres3.src}
+                                            src={box.src}
                                             alt="Our Story"
                                             objectFit="cover"
                                             width="100%"
-                                            height="100%"
+                                            height="600px"
                                         />
                                     </SwiperSlide>
 
                                     <SwiperSlide>
                                         <Image
-                                            src={testimony1.src}
+                                            src={pres3.src}
                                             alt="Our Story"
                                             objectFit="cover"
+                                            objectPosition={"bottom"}
                                             width="100%"
-                                            height="100%"
+                                            height="600px"
                                         />
                                     </SwiperSlide>
+
+
                                     <SwiperSlide>
                                         <Image
                                             src={pres4.src}
                                             alt="Our Story"
                                             objectFit="cover"
+                                            objectPosition={"center 70%"}
                                             width="100%"
-                                            height="100%"
+                                            height="600px"
                                         />
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <Image
-                                            src={testimony1.src}
+                                            src={bottle5.src}
                                             alt="Our Story"
                                             objectFit="cover"
                                             width="100%"
-                                            height="100%"
+                                            height="600px"
                                         />
                                     </SwiperSlide>
                                 </Swiper>
@@ -305,7 +309,7 @@ export const Gifts = () => {
                                             alt="Testimonial 2 Slide 1"
                                             objectFit="cover"
                                             width="100%"
-                                            height="100%"
+                                            height="600px"
                                         />
                                     </SwiperSlide>
                                     <SwiperSlide>
@@ -314,7 +318,7 @@ export const Gifts = () => {
                                             alt="Testimonial 2 Slide 1"
                                             objectFit="cover"
                                             width="100%"
-                                            height="100%"
+                                            height="600px"
                                         />
                                     </SwiperSlide>
                                     <SwiperSlide>
@@ -323,17 +327,16 @@ export const Gifts = () => {
                                             alt="Testimonial 2 Slide 1"
                                             objectFit="cover"
                                             width="100%"
-                                            height="100%"
+                                            height="600px"
                                         />
                                     </SwiperSlide>
-
                                     <SwiperSlide>
                                         <Image
-                                            src={testimony2.src}
-                                            alt="Testimonial 2 Slide 2"
+                                            src={testimony1.src}
+                                            alt="Our Story"
                                             objectFit="cover"
                                             width="100%"
-                                            height="100%"
+                                            height="600px"
                                         />
                                     </SwiperSlide>
                                 </Swiper>
