@@ -300,7 +300,7 @@ export const Product3DSection = ({sections}: any) => {
                     </SwiperSlide>
                 ))}
                 <SwiperSlide>
-                    <Box height="100vh"></Box>
+                    <Box height="20vh"></Box>
                 </SwiperSlide>
             </Swiper>
         </div>
