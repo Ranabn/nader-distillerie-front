@@ -5,28 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Replace images">
-      <change afterPath="$PROJECT_DIR$/app/assets/images/age-restriction-not-allowed.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/age-restriction.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/our_story_brands.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/products/spirit.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/products/vinegars.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/privacy-policy/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/brands/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/brands/[slug]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/brands/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/brands/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/brands/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/brands/Social.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Social.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/brands/StickyImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/StickyImage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/footer/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/BrandsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/BrandsSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/HeroBanner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/HeroBanner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/OurStorySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/OurStorySection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/navigation/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation/navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/product/3DSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/product/3DSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/images/products/ethanol.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/images/products/ethanol_1920.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/images/products/ethanol.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/images/products/spirit.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/images/products/spirit_big.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/images/products/vinegars.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/images/products/vinegars_1920.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/landing/ProductsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/ProductsSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/product/HomeProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/product/HomeProduct.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/restriction-age/NotAllowed.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/restriction-age/NotAllowed.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/restriction-age/RestrictionAge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/restriction-age/RestrictionAge.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +111,7 @@
       <workItem from="1739884340305" duration="13000" />
       <workItem from="1740057853901" duration="6246000" />
       <workItem from="1740140637909" duration="941000" />
-      <workItem from="1740142148443" duration="3739000" />
+      <workItem from="1740142148443" duration="4120000" />
     </task>
     <task id="LOCAL-00001" summary="Restriction age css">
       <option name="closed" value="true" />
@@ -504,7 +489,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739642423811</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Replace images">
+      <option name="closed" value="true" />
+      <created>1740147799754</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1740147799755</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

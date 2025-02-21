@@ -10,8 +10,8 @@ import {gsap} from "gsap";
 
 import Spirits from "@/app/assets/images/products/spirits.png";
 import Wines from "@/app/assets/images/wines.png";
-import Vinegars from "@/app/assets/images/vinegars.jpg";
-import Ethanol from "@/app/assets/images/products/ethanol.jpg";
+import Vinegars from "@/app/assets/images/products/vinegars_1920.jpg";
+import Ethanol from "@/app/assets/images/products/ethanol_1920.jpg";
 
 const products = [
     {

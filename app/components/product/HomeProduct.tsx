@@ -4,10 +4,10 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
 import { Navbar } from "@/app/components/navigation/navbar";
-import Spirits from "@/app/assets/images/products/spirit.jpg";
-import Grape from "@/app/assets/images/products/wine.jpg";
-import Vinegars from "@/app/assets/images/products/vinegars.jpg";
-import Eth from "@/app/assets/images/products/ethanol.jpg";
+import Spirits from "@/app/assets/images/products/spirit_big.jpg";
+import Grape from "@/app/assets/images/products/wine_big.jpg";
+import Vinegars from "@/app/assets/images/products/vinegars_1920.jpg";
+import Eth from "@/app/assets/images/products/ethanol_1920.jpg";
 import { Footer } from "@/app/components/footer/Footer";
 import { Product3DSection } from "@/app/components/product/3DSection";
 import { CraftIdentity } from "@/app/components/product/CraftIdentity";
