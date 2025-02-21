@@ -125,7 +125,7 @@ export const ProductsSection = () => {
             <Flex
                 wrap="wrap"
                 gap={[4, 5, 6]}
-                justify="space-between"
+                justify={["space-between"]}
             >
                 {products.map((product, index) => (
                     <Flex
@@ -133,6 +133,7 @@ export const ProductsSection = () => {
                         flexDir="column"
                         flexBasis={{base: "100%", md: "45%", lg: "23%"}}
                         mb={6}
+
                     >
                         <Link
                             href={`/products?product=${product.name}`} _hover={{textDecoration: 'none'}}>

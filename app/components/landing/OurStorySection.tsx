@@ -51,14 +51,14 @@ export const OurStorySection = ({storyImg}: any) => {
     }, [isSmallScreen]);
 
     return (
-        <Box p={[4, 8, 8]} mb={[10, 10, 10]} mt={[0, 0, 20]} bg="white" ref={containerRef} color={'#000000'}>
+        <Box p={[4, 8, 8]} mb={[10, 10, 10]} mt={[16, 0, 20]} bg="white" ref={containerRef} color={'#000000'}>
             <Image
                 display={[params.slug ? "flex" : "none", "none", "none"]}
                 src={storyImg || OurStory.src}
                 alt="Our Story"
                 objectFit="cover"
-                width={["325px", "800px", "800px"]}
-                height={["200px", "800px", "800px"]}
+                width={["100%", "100%", "800px"]}
+                height={["100%", "100%", "800px"]}
             />
 
             {/* Main Layout: Text & Images */}
@@ -66,7 +66,7 @@ export const OurStorySection = ({storyImg}: any) => {
                 direction={isSmallScreen ? 'column-reverse' : 'row'} // Images go below text if screen < 1050px
                 justifyContent="space-between"
                 width="100%"
-                mt={[2, 10, 10]}
+                mt={[0, 10, 10]}
                 gap={4}
                 pb={4}
             >
@@ -79,7 +79,7 @@ export const OurStorySection = ({storyImg}: any) => {
                     fontSize="18px"
                     ref={textRef}
                 >
-                    <Flex mt={20} flexDirection={'column'} justifyContent={'space-between'} gap={6}>
+                    <Flex mt={[0,0,0,20]} flexDirection={'column'} justifyContent={'space-between'} gap={6}>
                         {!isBrandPage && (
                             <>
                                 <Box display={isSmallScreen ? "none" : "inline-block"} // Hide below 1050px

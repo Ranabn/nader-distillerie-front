@@ -117,8 +117,10 @@ export const ExploreMore = ({exploreMore}: any) => {
                 {/* Desktop/Tablet View */}
                 <Flex
                     flexDirection={["column", "row", "row"]}
-                    display={["none", "flex", "flex"]}
+                    display={["none", "none", "flex"]}
                     justifyContent={'space-between'}
+                    gap={[4,4,4,4]}
+
                 >
                     {exploreMore.map((item, index) => (
                         <Card
@@ -160,34 +162,39 @@ export const ExploreMore = ({exploreMore}: any) => {
                     ))}
                 </Flex>
 
-                {/* Mobile View */}
-                <Flex
-                    width="max-content"
-                    gap={8}
-                    flexDirection={["row", "row", "row"]}
-                    display={["flex", "none", "none"]}
-                >
+            {/* Mobile View with Horizontal Scroll */}
+            <Flex
+                width="100%"
+                overflowX="auto" // Enables horizontal scrolling
+                scrollSnapType="x mandatory" // Ensures smooth snapping
+                css={{
+                    '&::-webkit-scrollbar': { display: 'none' }, // Hides scrollbar
+                    '-ms-overflow-style': 'none',
+                    'scrollbar-width': 'none',
+                }}
+            >
+                <Flex gap={8} flexDirection="row" display={["flex", "flex", "none"]}>
                     {exploreMore.map((item, index) => (
                         <Card
+                            key={index}
                             border={["2px", "0px", "0px"]}
                             borderColor={["#224452"]}
-                            key={index}
                             boxShadow="none"
                             borderRadius="none"
-                            width={["300px", "33%", "453px"]}
+                            width={["300px", "300px", "300px"]} // Ensuring same width for smooth scrolling
                             height={["469px", "624px", "624px"]}
+                            flexShrink={0} // Prevents shrinking of cards
+                            scrollSnapAlign="start" // Ensures snapping when scrolling
                         >
                             <CardBody>
                                 <Flex
                                     flexDirection="column"
-                                    height={"100%"}
+                                    height="100%"
                                     justifyContent="space-between"
                                     textAlign="center"
                                 >
                                     <Flex flexDirection="column">
-                                        <Text fontSize={["xl", "18px"]}>
-                                            {item.description}
-                                        </Text>
+                                        <Text fontSize={["xl", "18px"]}>{item.description}</Text>
                                         <Text fontSize={["xl", "32px"]} fontFamily="EB Garamond" fontWeight="800">
                                             {item.title}
                                         </Text>
@@ -197,7 +204,7 @@ export const ExploreMore = ({exploreMore}: any) => {
                                         alt={item.alt}
                                         objectFit="contain"
                                         width="100%"
-                                        maxHeight="500px" // Increased height
+                                        maxHeight="500px"
                                         aspectRatio={1}
                                     />
                                     <Flex></Flex>
@@ -206,8 +213,9 @@ export const ExploreMore = ({exploreMore}: any) => {
                         </Card>
                     ))}
                 </Flex>
+            </Flex>
 
-                {/* Mobile "See all brands" link */}
+            {/* Mobile "See all brands" link */}
                 <Flex
                     alignItems="center"
                     alignContent={'center'}

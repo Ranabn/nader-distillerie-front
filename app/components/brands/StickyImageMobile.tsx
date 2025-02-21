@@ -29,7 +29,7 @@ export const StickyImageMobile = ({ imageUrls, imageAlts, brandName }) => {
 
             <Flex
                 zIndex={1}
-                mt={8}
+                mt={[0,8]}
                 width={'100%'}
                 color="white"
                 flexDirection="column"
@@ -48,7 +48,7 @@ export const StickyImageMobile = ({ imageUrls, imageAlts, brandName }) => {
                         }}
                     />
                 </Box>
-                <Flex alignItems="center" justifyContent="center" width="100%" gap={12}>
+                <Flex p={2} alignItems="center" justifyContent="center" width="100%" gap={12}>
                     <Image
                         onClick={handlePrevImage}
                         w="2%"
@@ -58,7 +58,7 @@ export const StickyImageMobile = ({ imageUrls, imageAlts, brandName }) => {
                     />
                     <Box textAlign="center">
                         <Text
-                            color={["black", "white", "white"]}
+                            color={["black", "black", "black",'white']}
                             width="100%"
                             fontSize={["28px", "4xl", "48px"]}
                             fontFamily="EB Garamond"
@@ -67,7 +67,7 @@ export const StickyImageMobile = ({ imageUrls, imageAlts, brandName }) => {
                             {brandName}
                         </Text>
                         <Text
-                            color={["black", "white", "white"]}
+                            color={["black", "black", "black",'white']}
                             width="100%"
                             fontSize={["20px", "lg", "24px"]}
                         >
