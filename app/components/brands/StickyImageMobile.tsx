@@ -68,7 +68,7 @@ export const StickyImageMobile = ({ imageUrls, imageAlts, brandName }) => {
                         </Text>
                         <Text
                             color={["black", "black", "black",'white']}
-                            width="100%"
+                            width="250px"
                             fontSize={["20px", "lg", "24px"]}
                         >
                             {imageAlts[currentImageIndex] || "No description available"}
