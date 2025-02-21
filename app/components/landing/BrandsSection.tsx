@@ -121,27 +121,46 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
     });
 
     return (
-        <Box mt={[20,0,0]} position="relative" pb={8} bg={'white'} color={'#000000'} width={['100%']}>
-                <Flex pl={8} pt={[2, 2, 10]} gap={[4, 8]} alignContent={'center'} alignItems={'center'}>
-                    {allCategories.map((category) => (
-                        <Radio
-                            key={category}
-                            size="md"
-                            value={category}
-                            onChange={() => handleRadioClick(category)}
-                            isChecked={selectedCategory === category}
-                            _hover={{borderColor: 'none'}}
+        <Box mt={[20, 0, 0]} position="relative" pb={8} bg="white" color="#000000" width="100%">
+            {/* Responsive Radio Group */}
+            <Flex
+                pl={8}
+                pt={[2, 2, 10]}
+                gap={[4, 8]}
+                alignContent="center"
+                alignItems="center"
+                flexWrap="wrap" // Allows wrapping on smaller screens
+                overflowX={['auto', 'visible', 'visible']} // Enables horizontal scrolling on very small screens
+                css={{
+                    '&::-webkit-scrollbar': { display: 'none' } // Hides scrollbar on WebKit browsers
+                }}
+            >
+                {allCategories.map((category) => (
+                    <Radio
+                        key={category}
+                        size="md"
+                        value={category}
+                        onChange={() => handleRadioClick(category)}
+                        isChecked={selectedCategory === category}
+                        _hover={{ borderColor: 'none' }}
+                        flexShrink={0} // Prevents radios from shrinking too much
+                        mr={[2, 4, 4]} // Adds spacing between items
+                        mb={[2, 0, 0]} // Adds vertical spacing on small screens
+                    >
+                        <Text
+                            minWidth={["67px", "100%", "100%"]}
+                            fontWeight={selectedCategory === category ? "800" : ""}
+                            fontSize={["14px", "16px", "18px"]} // Adjusted font sizes for better readability
                         >
-                            <Text minWidth={["67px", "100%", "100%"]}
-                                  fontWeight={selectedCategory === category ? '800' : ''}
-                                  fontSize={['16px', '18px', '18px']}>
-                                {category}
-                            </Text>
-                        </Radio>
-                    ))}
-                </Flex>
-                <Divider ml={8} pl={8} pt={4} mb={8} color={'black'}/>
-                <Flex
+                            {category}
+                        </Text>
+                    </Radio>
+                ))}
+            </Flex>
+
+            <Divider ml={8} pl={8} pt={4} mb={8} color="black" />
+
+    <Flex
                     ref={scrollContainerRef}
                     overflowX="auto"
                     scrollSnapType="x mandatory"
