@@ -37,7 +37,7 @@ const BrandsPage = async () => {
 
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <Flex flexDir='column'>
+            <Flex flexDir='column' overflowX={'hidden'} overflow={'hidden'}>
                 <Navbar brands={brands}/>
                 {/*<SmoothScroll>*/}
                 <Box mt={28}>
