@@ -85,7 +85,7 @@ export const ProductsSection = () => {
                 <Flex
                     alignItems="center"
                     alignContent={'center'}
-                    gap={[0,0,2]}
+                    gap={[0, 0, 2]}
                     position="relative"
                     mt={[2, 0]} // Add spacing for smaller screens
                 >
@@ -137,7 +137,7 @@ export const ProductsSection = () => {
                         <Link
                             href={`/products?product=${product.name}`} _hover={{textDecoration: 'none'}}>
                             <Box
-                                width="342px"
+                                width={["100%", "100%", "342px"]}
                                 height={"242.44px"}
                                 mb={2}
                                 overflow="hidden"

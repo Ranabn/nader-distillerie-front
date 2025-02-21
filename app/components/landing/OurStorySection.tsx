@@ -118,10 +118,10 @@ export const OurStorySection = ({storyImg}: any) => {
                             </Link>
                         </Box>
 
-                        {!storyImg && (
-                            <Box display={['none', 'none', 'inline']} width={'100vw'} height={'600px'} bg={'white'}
-                                 position={'absolute'} bottom={'-500px'}></Box>
-                        )}
+                        {/*{!storyImg && (*/}
+                        {/*    <Box display={['none', 'none', 'inline']} width={'100vw'} height={'600px'} bg={'white'}*/}
+                        {/*         position={'absolute'} bottom={'-500px'}></Box>*/}
+                        {/*)}*/}
                     </Flex>
                 </Flex>
 

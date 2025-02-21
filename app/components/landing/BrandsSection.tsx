@@ -227,7 +227,7 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                 )}
                 {isLanding && (
                     <Link _hover={{textDecoration: "none"}} href={`/brands`}>
-                        <Box width={["100%", "100%", "18%"]} mt={[8, 0, 6]} pl={[4,0, 6]} p={[4,0,4]} ml={[0,0,3]}>
+                        <Box width={["100%", "100%", "18%"]} mt={[8, 8, 6]} pl={[4,0, 6]} p={[4,4,4]} ml={[0,0,3]}>
                             <Btn size={'md'} variant={'primaryBlack'} text={'Discover our brands'}/>
                         </Box>
                     </Link>

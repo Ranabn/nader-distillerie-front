@@ -31,7 +31,7 @@ export default async function Home() {
 
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <Flex direction="column" overflow={'hidden'}>
+            <Flex direction="column" overflow={'hidden'} overflowX={'hidden'}>
                 <Navbar brands={brands}/>
                 {/*<SmoothScroll>*/}
                 <HeroBanner/>
@@ -42,8 +42,6 @@ export default async function Home() {
                         <OurStorySection/>
                     </CustomBox>
                 </Box>
-
-
                 <Box position="relative">
                     <CustomBox>
                         <Test brands={brands}/>
