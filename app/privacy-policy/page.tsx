@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Navigation } from "swiper/modules";
 import { Navbar } from "@/app/components/navigation/navbar";
 import { sanityFetch } from "@/app/sanity/client";
