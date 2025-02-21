@@ -95,7 +95,7 @@ const MobileMenu = ({ isOpen, toggleMenu, styles, brands }) => {
                 height: "100vh",
                 background: "#12191F",
                 color: "white",
-                zIndex: 999,
+                zIndex: 9999,
                 display: "flex",
                 flexDirection: "column",
                 padding: "20px",
@@ -142,7 +142,7 @@ const MobileMenu = ({ isOpen, toggleMenu, styles, brands }) => {
 };
 
 const MenuToggle = ({toggle, isOpen, styles}) => (
-    <Box display={{base: "block", md: "none"}} zIndex={9999} width="100vw" role="button" onClick={toggle}>
+    <Box  display={{base: "block", md: "none"}} zIndex={9999} width="100vw" role="button" onClick={toggle}>
         {!isOpen && <MenuIcon styles={styles}/>}
     </Box>
 );

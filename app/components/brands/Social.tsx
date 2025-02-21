@@ -49,7 +49,7 @@ export const SocialBrands = ({
             <CustomBox>
                 <Flex flexDirection="column" w="100%" p={[4, 8, 8]} mb={10} mt={[6, 0, 10]} gap={[2, 0, 8]}>
                     {(facebookUrl || instagramUrl) && (
-                        <Flex gap={4} alignItems="center" mb={4} mt={4} zIndex={9999}>
+                        <Flex gap={4} alignItems="center" mb={4} mt={4} zIndex={999}>
                             {instagramUrl && (
                                 <Link href={instagramUrl} isExternal>
                                     <FaInstagram size="35px"/>
@@ -93,7 +93,7 @@ export const SocialBrands = ({
                         </Box>
 
                         {technicalSheetUrl && (
-                            <Box zIndex={9999}>
+                            <Box zIndex={999}>
                                 <Text fontSize={["20px", "24px", "24px"]} mb={2}>Technical data</Text>
                                 <Link href={technicalSheetUrl}>
                                     <Box fontSize="18px">
@@ -120,7 +120,7 @@ export const SocialBrands = ({
 
                         )}
 
-                        <Flex flexDirection={'column'} mt={[4, 0]} zIndex={9999} id="social-brands-section">
+                        <Flex flexDirection={'column'} mt={[4, 0]} zIndex={999} id="social-brands-section">
                             <Box w="25%">
                                 <Btn variant="tertWhite" size="md" text="BECOME A RESELLER"/>
                             </Box>

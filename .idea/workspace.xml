@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Radio responsive">
+    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="brands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/brands/Explore.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Explore.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/brands/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/brands/StickyImageMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/StickyImageMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/OurStorySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/OurStorySection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/ProductsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/ProductsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/brands/Social.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Social.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/navigation/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation/navbar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,15 +107,7 @@
       <workItem from="1739884340305" duration="13000" />
       <workItem from="1740057853901" duration="6246000" />
       <workItem from="1740140637909" duration="941000" />
-      <workItem from="1740142148443" duration="8194000" />
-    </task>
-    <task id="LOCAL-00006" summary="our story animation done">
-      <option name="closed" value="true" />
-      <created>1732729014565</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1732729014565</updated>
+      <workItem from="1740142148443" duration="8565000" />
     </task>
     <task id="LOCAL-00007" summary="Products + nav animations + our story animation">
       <option name="closed" value="true" />
@@ -504,14 +493,21 @@
       <option name="project" value="LOCAL" />
       <updated>1740150189815</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="brands">
+      <option name="closed" value="true" />
+      <created>1740152734458</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1740152734458</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixing stuff" />
     <MESSAGE value="fixing a lot of stuff" />
     <MESSAGE value="Adding dropdown menu navbar + animations" />
     <MESSAGE value="white bar" />
@@ -536,7 +532,8 @@
     <MESSAGE value="Replace images" />
     <MESSAGE value="Responsive landing" />
     <MESSAGE value="Radio responsive" />
-    <option name="LAST_COMMIT_MESSAGE" value="Radio responsive" />
+    <MESSAGE value="brands" />
+    <option name="LAST_COMMIT_MESSAGE" value="brands" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
