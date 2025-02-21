@@ -2,7 +2,7 @@
 
 'use client'
 import {Box, Button, Flex, Input, Select, Text, VStack, Link, useBreakpointValue, Image} from "@chakra-ui/react";
-import Background from "@/app/assets/images/age-restriction-not-allowed.png";
+import Background from "@/app/assets/images/age-restriction-not-allowed.jpg";
 import {Logo} from "@/app/components/ui/Logo";
 import LogoSM from '@/app/assets/images/LogoSM.png';
 
@@ -30,7 +30,7 @@ export const NotAllowed = () => {
                 />
                 <Flex p={[4, 0]} direction="column" justifyContent={'top'} gap={10} position="absolute"
                       width={["100%", "70%"]}
-                      mt={"40px"}
+                      mt={"0px"}
                       height="80%">
                     <Flex justify={'center'}>
                         {isSmallScreen ?
@@ -42,7 +42,7 @@ export const NotAllowed = () => {
                         }
                     </Flex>
                     <Box textAlign="center" p={0}>
-                        <Text color="white" fontSize={["28px", "48px"]} as={"h1"} lineHeight={["44.8px", "56px"]} >
+                        <Text color="white" mt={10} fontSize={["28px", "48px"]} as={"h1"} lineHeight={["44.8px", "56px"]} >
                             Unfortunately, due to your age or location 
                             we cannot let you enter our site at this time
                         </Text>

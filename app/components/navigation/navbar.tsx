@@ -142,7 +142,7 @@ const MobileMenu = ({ isOpen, toggleMenu, styles, brands }) => {
 };
 
 const MenuToggle = ({toggle, isOpen, styles}) => (
-    <Box display={{base: "block", md: "none"}} zIndex={9999} width="100%" role="button" onClick={toggle}>
+    <Box display={{base: "block", md: "none"}} zIndex={9999} width="100vw" role="button" onClick={toggle}>
         {!isOpen && <MenuIcon styles={styles}/>}
     </Box>
 );
@@ -175,7 +175,6 @@ const MenuItemWithDropdown = ({label, items, to, isActive, styles}) => {
             onMouseLeave={() => setIsHovered(false)}
             display={['none', 'inline-block', 'inline-block']}
         >
-
             <Link href={to} _hover={{textDecoration: "none"}} position="relative">
                 <Text
                     display={'flex'}
@@ -266,17 +265,28 @@ const MenuItemWithDropdown = ({label, items, to, isActive, styles}) => {
     );
 };
 
-const MenuIcon = ({styles}) => (
-    <Flex justifyContent={'space-between'} alignItems={'center'} p={2}>
+const MenuIcon = ({styles, toggle}) => {
+    const router = useRouter(); // Import useRouter for navigation
 
-    <LogoHorizontal background={styles.color}/>
+    return (
+        <Flex maxWidth={'95vw'}  justifyContent={'space-between'} alignItems={'center'} p={2}>
+            {/* Clicking on the logo redirects to the homepage without triggering the menu */}
+            <Box w="10%" cursor="pointer" onClick={(e) => {
+                e.stopPropagation(); // Prevent menu toggle from being triggered
+                router.push('/');
+            }}>
+                <LogoHorizontal background={styles.color}/>
+            </Box>
 
-<svg width="36" height="25" viewBox="0 0 36 25" fill={styles?.color} xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 24.7622H36V20.7622H0V24.7622ZM0 14.7622H36V10.7622H0V14.7622ZM0 0.762207V4.76221H36V0.762207H0Z" />
-    </svg>
-    </Flex>
-
-);
+            {/* Clicking on the menu icon still opens the menu */}
+            <Box onClick={toggle} cursor="pointer">
+                <svg width="36" height="25" viewBox="0 0 36 25" fill={styles?.color} xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 24.7622H36V20.7622H0V24.7622ZM0 14.7622H36V10.7622H0V14.7622ZM0 0.762207V4.76221H36V0.762207H0Z"/>
+                </svg>
+            </Box>
+        </Flex>
+    );
+};
 
 const MenuLinks = ({styles, brands}) => {
     const pathname = usePathname();

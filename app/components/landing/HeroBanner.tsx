@@ -32,9 +32,9 @@ export const HeroBanner = () => {
                     alt={"background"}
                     quality={100}
                     objectFit="cover"
-                    objectPosition={{base: 'center', md: 'bottom'}}
+                    objectPosition={{base: 'top', md: 'bottom'}}
                     width="100%"
-                    height="100%"
+                    height={["100%","100%", "100%", '100%', '100%','115%']}
                     transform="scale(1)"
                 />
                 <Box

@@ -12,7 +12,7 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
     const scrollContainerRef = useRef(null);
 
     // Define main category filters
-    const mainCategories = ['All brands', 'Spirits', 'Wines', 'Ethanol', 'Vinegars'];
+    const mainCategories = ['All brands', 'Spirits', 'Wines', 'Vinegars', 'Ethanol'];
 
     // Get subcategories excluding main categories
     const subcategories = Array.from(
@@ -122,7 +122,6 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
 
     return (
         <Box mt={[20,0,0]} position="relative" pb={8} bg={'white'} color={'#000000'} width={['100%']}>
-            <CustomBox>
                 <Flex pl={8} pt={[2, 2, 10]} gap={[4, 8]} alignContent={'center'} alignItems={'center'}>
                     {allCategories.map((category) => (
                         <Radio
@@ -233,7 +232,6 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                         </Box>
                     </Link>
                 )}
-            </CustomBox>
         </Box>
     );
 };

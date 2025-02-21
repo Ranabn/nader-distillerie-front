@@ -20,6 +20,7 @@ import {keyframes} from "@emotion/react";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
+import CustomBox from "@/app/components/ui/CustomBox";
 
 export const Product3DSection = ({sections}: any) => {
     const [isTopOfPage, setIsTopOfPage] = useState(true);
@@ -169,12 +170,13 @@ export const Product3DSection = ({sections}: any) => {
                                 backgroundPosition: isMobile ? sec.mobileBackgroundPosition || "center" : sec.backgroundPosition || "center",
                                 width: "100%",
                                 height: "100%",
-                                objectFit: 'contain',
+                                objectFit: 'cover',
                                 backgroundColor: "rgba(0, 0, 0, 0.4)",
                                 backgroundBlendMode: "overlay",
                                 transform: isMobile ? "none" : sec.transform || "none",
                             }}
                         />
+                        <CustomBox>
 
                         <Flex
                             flexDir="column"
@@ -188,9 +190,9 @@ export const Product3DSection = ({sections}: any) => {
                             }}
                             top={["18%", index === 2 ? "30%" : index === 3 ? "18%" : "25%"]}
                         >
-                            <Text fontSize={["16px", "18px"]}>{sec.description}</Text>
+                            <Text fontSize={["16px", "18px"]} >{sec.description}</Text>
                             {sec.description2 && (
-                                <Text fontSize={["16px", "18px"]} mt="15px">
+                                <Text fontSize={["16px", "18px"]}  mt="15px">
                                     {sec.description2}
                                 </Text>
                             )}
@@ -255,6 +257,8 @@ export const Product3DSection = ({sections}: any) => {
                                 </Link>
                             )}
                         </Flex>
+                        </CustomBox>
+
                         <Text
                             className="animated-text"
                             style={{

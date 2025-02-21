@@ -11,7 +11,7 @@ import {StickyImage} from "@/app/components/brands/StickyImage";
 import {sanityFetch} from '@/app/sanity/client';
 import {HeaderBrands} from "@/app/components/brands/Header";
 import {urlFor} from '@/app/sanity/urlFor';
-import OurStory from "@/app/assets/images/our_story_brands.png";
+import OurStory from "@/app/assets/images/our_story_brands.jpg";
 import {StickyImageMobile} from "@/app/components/brands/StickyImageMobile";
 import CustomBox from "@/app/components/ui/CustomBox";
 
@@ -106,7 +106,6 @@ const BrandPage = async ({params}: { params: { slug: string } }) => {
             <Navbar brands={brands}/>
             <Flex mt={[16, 32, 32]} flexDirection="column" position="relative" overflowX={'hidden'}>
                 <CustomBox>
-
                     <HeaderBrands brand={brand}/>
                     <Box display={['none', 'none', 'none', 'flex']}>
                         <StickyImage

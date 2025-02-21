@@ -4,10 +4,10 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
 import { Navbar } from "@/app/components/navigation/navbar";
-import Spirits from "@/app/assets/images/Spirits.png";
-import Grape from "@/app/assets/images/wines.png";
-import Vinegars from "@/app/assets/images/vinegars.jpg";
-import Eth from "@/app/assets/images/ethanol.png";
+import Spirits from "@/app/assets/images/products/spirit.jpg";
+import Grape from "@/app/assets/images/products/wine.jpg";
+import Vinegars from "@/app/assets/images/products/vinegars.jpg";
+import Eth from "@/app/assets/images/products/ethanol.jpg";
 import { Footer } from "@/app/components/footer/Footer";
 import { Product3DSection } from "@/app/components/product/3DSection";
 import { CraftIdentity } from "@/app/components/product/CraftIdentity";
@@ -24,8 +24,8 @@ const sections = [
     fontSize: "503px",
     mobileFontSize: "120px",
     discover: "Discover our spirits brands",
-    backgroundSize: "100%",
-    backgroundPosition: "bottom -550px right 0px",
+    backgroundSize: "auto",
+    backgroundPosition: "bottom -1700px right 0px",
   },
   {
     id: 2,
@@ -37,7 +37,8 @@ const sections = [
     mobileFontSize: "127.15px",
     discover: "Discover our wines brands",
     transform: "scaleX(-1)",
-    backgroundPosition: "bottom -800px right 0px",
+
+    // backgroundPosition: "bottom -800px right 0px",
     mobileBackgroundPosition: "bottom right -75px",
   },
   {
@@ -49,7 +50,7 @@ const sections = [
     fontSize: "384.07px",
     mobileFontSize: "91.13px",
     discover: "Discover our vinegars brands",
-    backgroundSize: "220%",
+    // backgroundSize: "220%",
   },
   {
     id: 4,
@@ -63,8 +64,8 @@ const sections = [
     mobileFontSize: "91.13px",
     discover: "Discover our medical brands",
     discover2: "Discover our raw material service",
-    backgroundSize: "110%",
-    backgroundPosition: "top",
+    backgroundSize: "auto",
+    // backgroundPosition: "top",
   },
 ];
 
@@ -92,6 +93,7 @@ const HomeProduct = ({ brands = [] }) => {
   return (
     <Box>
       <Navbar brands={brands} />
+
       <Product3DSection sections={sections} />
       <CustomBox>
         <CraftIdentity />

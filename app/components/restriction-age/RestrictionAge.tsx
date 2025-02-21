@@ -3,7 +3,7 @@
 
 'use client';
 import {useState, useRef, useEffect} from 'react';
-import Background from '@/app/assets/images/age-restriction.jpeg';
+import Background from '@/app/assets/images/age-restriction.jpg';
 import LogoSM from '@/app/assets/images/LogoSM.png';
 import {useRouter} from "next/navigation";
 import AlcoholRestrictionList from "@/utils/alcohol-restriction.json";

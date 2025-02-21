@@ -5,18 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Replace images">
-      <change afterPath="$PROJECT_DIR$/app/assets/images/gift-sliders/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/gift-sliders/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/gift-sliders/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/gift-sliders/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/gift-sliders/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/gift-sliders/7b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/gift-sliders/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/gift-sliders/9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/services/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/age-restriction-not-allowed.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/age-restriction.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/our_story_brands.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/products/spirit.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/products/vinegars.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/privacy-policy/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/services/Ethanol.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/services/Ethanol.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/services/Gifts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/services/Gifts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/brands/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/brands/[slug]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/brands/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/brands/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/brands/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/brands/Social.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Social.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/brands/StickyImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/StickyImage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/footer/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/landing/BrandsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/BrandsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/landing/HeroBanner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/HeroBanner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/landing/OurStorySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/OurStorySection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/navigation/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation/navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/product/3DSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/product/3DSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/product/HomeProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/product/HomeProduct.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/restriction-age/NotAllowed.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/restriction-age/NotAllowed.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/restriction-age/RestrictionAge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/restriction-age/RestrictionAge.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +60,7 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/maximepalmino/Documents/nader-distillerie-front/app/assets/images/gift-sliders",
+    "last_opened_file_path": "/Users/maximepalmino/Documents/nader-distillerie-front/app/assets/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -63,18 +73,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/assets/images/gift-sliders" />
-      <recent name="$PROJECT_DIR$/app/assets/images/services" />
       <recent name="$PROJECT_DIR$/app/assets/images" />
       <recent name="$PROJECT_DIR$/app/assets/images/products" />
+      <recent name="$PROJECT_DIR$/app/assets/images/gift-sliders" />
+      <recent name="$PROJECT_DIR$/app/assets/images/services" />
       <recent name="$PROJECT_DIR$/app/assets/fonts/Varta/static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets/images/products" />
+      <recent name="$PROJECT_DIR$/app/assets/images/spirit" />
+      <recent name="$PROJECT_DIR$/app/assets/images/spiritsjpg" />
       <recent name="$PROJECT_DIR$/app/assets/images" />
       <recent name="$PROJECT_DIR$/app/assets/landing" />
-      <recent name="$PROJECT_DIR$/app/assets" />
-      <recent name="$PROJECT_DIR$/app/assets/images/gift-sliders" />
-      <recent name="$PROJECT_DIR$/app/components/services" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -109,7 +119,14 @@
       <workItem from="1738598265139" duration="30886000" />
       <workItem from="1738918837348" duration="7290000" />
       <workItem from="1739211653371" duration="1949000" />
-      <workItem from="1739636435061" duration="3613000" />
+      <workItem from="1739636435061" duration="4241000" />
+      <workItem from="1739652396424" duration="126000" />
+      <workItem from="1739720301430" duration="604000" />
+      <workItem from="1739813826435" duration="605000" />
+      <workItem from="1739884340305" duration="13000" />
+      <workItem from="1740057853901" duration="6246000" />
+      <workItem from="1740140637909" duration="941000" />
+      <workItem from="1740142148443" duration="3739000" />
     </task>
     <task id="LOCAL-00001" summary="Restriction age css">
       <option name="closed" value="true" />
@@ -479,7 +496,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739640572879</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Replace images">
+      <option name="closed" value="true" />
+      <created>1739642423811</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1739642423811</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

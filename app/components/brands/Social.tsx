@@ -69,7 +69,7 @@ export const SocialBrands = ({
                     <Flex
                         flexDirection="column"
                         mt={[6, 0, 0]}
-                        w={["100%", "50%", "50%"]}
+                        w={["100%","100%","100%", "50%", "50%"]}
                         gap={8}
                         pb={[8, 0, 0]}
                         justifyContent="center"

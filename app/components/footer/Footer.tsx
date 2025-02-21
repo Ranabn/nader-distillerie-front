@@ -121,7 +121,7 @@ export const Footer = ({brands}: any) => {
                 <Text fontSize="xs" textAlign={["center", "left"]}>© Nader Distilleries 2024. All rights
                     reserved.</Text>
                 <HStack spacing={4} >
-                    <Link href="#" fontSize="xs">Privacy Policy</Link>
+                    <Link href="/privacy-policy" fontSize="xs">Privacy Policy</Link>
                     <Link href="#" fontSize="xs">Terms & Conditions</Link>
                 </HStack>
             </Flex>

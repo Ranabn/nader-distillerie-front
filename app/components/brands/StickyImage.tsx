@@ -90,7 +90,7 @@ export const StickyImage = ({ imageUrls, imageAlts, brandName }) => {
                     />
                     <Box textAlign="center">
                         <Text
-                            color={["black", "white", "white"]}
+                            color={["black","black", "black", "white"]}
                             width="100%"
                             fontSize={["28px", "4xl", "48px"]}
                             fontFamily="EB Garamond"
@@ -99,7 +99,7 @@ export const StickyImage = ({ imageUrls, imageAlts, brandName }) => {
                             {brandName}
                         </Text>
                         <Text
-                            color={["black", "white", "white"]}
+                            color={["black","black", "black", "white"]}
                             width="100%"
                             fontSize={["20px", "lg", "24px"]}
                         >
