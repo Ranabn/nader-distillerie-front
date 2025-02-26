@@ -16,7 +16,7 @@ export const OurStoryHeader = ({header, imageUrlHeader}) => {
             height={["90vh", "100vh"]}
             position="relative"
             overflow="hidden"
-            mt={[10,0,0 ]}
+            mt={[24,0,0 ]}
         >
             <Image
                 src={imageUrlHeader}
@@ -40,13 +40,13 @@ export const OurStoryHeader = ({header, imageUrlHeader}) => {
                          as={"h2"}>
                     {header.title}
                 </Heading>
-                <Text fontSize={["16px", "md", "18px"]} mb={4} color={'black'}>
+                <Text fontSize={["15px","16px", "md", "18px"]} mb={4} color={'black'}>
                     From the heart of our family, we invite you to share in our passion. We are not just about our
                     products; we are about being there for life&#39;`s special moments. Whether it is a heartfelt
                     conversation, a spontaneous toast, or a cherished celebration, our products are your companions in
                     these memorable experiences, bringing people together and creating lasting bonds.
                 </Text>
-                <Text fontSize={["16px", "md", "18px"]} mb={4} color={'black'}>
+                <Text fontSize={["15px","16px", "md", "18px"]} mb={4} color={'black'}>
 
                     Life’s precious moments deserve nothing less than perfection, nature crafted in a bottle.<br/>
                     Guided by enduring values of integrity, adaptability, and an unwavering commitment to quality, we
