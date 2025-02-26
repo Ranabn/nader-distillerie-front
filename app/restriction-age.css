@@ -1,17 +1,24 @@
 
 .background-image {
+    position: fixed;
     top: 0;
     left: 0;
-
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Prevents background movement */
+    z-index: -1;
 }
 
 .overlay {
-    position: absolute;
+    position: fixed; /* Fixed position to prevent movement */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
 }
 
 .content-wrapper {
