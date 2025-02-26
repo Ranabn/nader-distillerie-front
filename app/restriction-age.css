@@ -150,10 +150,14 @@
 
 @media screen and (max-width: 768px) {
     .content-wrapper {
-        width: 80%;
+        width: 95%;
         padding: 0 24px;
     }
 
+    .content-section{
+        gap: 20px;
+
+    }
     .year-input {
         font-size: 4rem;
         height: 120px;
@@ -167,7 +171,6 @@
 @media screen and (max-width: 480px) {
     .content-wrapper {
         padding: 0 16px;
-        overflow-x: hidden;
     }
 
     .year-input {

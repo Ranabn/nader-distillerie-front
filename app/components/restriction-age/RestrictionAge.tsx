@@ -108,7 +108,7 @@ export const RestrictionAge = () => {
                 objectFit="cover"
                 transform={isSmallScreen ? "scale(1.3)" : "scale(1)"}
                 width={'100%'}
-                h={['120vh','100vh']}
+                h={['120vh', '100vh']}
             />
             <div className="overlay"/>
             <Flex className="content-wrapper" justify={'justify-around'} gap={[10, 10]} mt={["64px", "64px"]}>
@@ -117,7 +117,7 @@ export const RestrictionAge = () => {
                     :
                     <Image width={'231px'} height={'223px'} src={LogoSM.src} alt={'logo'}/>
                 }
-                <Box className="content-section" mt={[10, 12]}>
+                <Box className="content-section" mt={[0, 10, 12]}>
                     <Text className="description-text" fontSize={['16px', '18px']} style={{wordSpacing: '0.07164vw'}}>
                         To visit our website, you must be of legal drinking/purchasing age in your location of
                         <br/>residence. If there is no legal age for consuming alcohol in your location, you must be
