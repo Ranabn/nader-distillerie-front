@@ -2,11 +2,12 @@
 
 'use client'
 
-import {Card, Flex, Text, CardBody, Image, Box, Link} from "@chakra-ui/react";
+import {Card, Flex, Text, CardBody, Image, Box,Link} from "@chakra-ui/react";
 import {FiArrowRight} from "react-icons/fi";
 import React, {useRef, useEffect} from "react";
 import {gsap} from "gsap";
 import {keyframes} from "@emotion/react";
+
 import CustomBox from "@/app/components/ui/CustomBox";
 type ExploreMoreItem = {
     title: string;
@@ -29,7 +30,7 @@ export const ExploreMore = ({exploreMore}: any) => {
     const arrowRefExplore = useRef(null);
     useEffect(() => {
         if (arrowRefExplore.current) {
-            gsap.set(arrowRefExplore.current, { opacity: 1, x: 0 }); // Ensure initial state
+            gsap.set(arrowRefExplore.current, {opacity: 1, x: 0}); // Ensure initial state
         }
     }, []);
     const handleMouseEnter = () => {
@@ -60,79 +61,79 @@ export const ExploreMore = ({exploreMore}: any) => {
     return (
         <Flex flexDirection="column" p={[4, 12, 8]} pt={4} pb={[6, 8, 16]}>
             {/*<CustomBox>*/}
-                <Flex alignItems={'center'} alignContent={'center'} justifyContent={'space-between'} width={'100%'}>
-                    <Text mt={[4, 0, 0]} fontSize={["28px", "48px"]} fontFamily="EB Garamond" fontWeight="800">
-                        Explore more brands
-                    </Text>
-                    <Flex
-                        alignItems="center"
-                        alignContent={'center'}
-                        display={["none", "flex", "flex"]}
-                        gap={2}
-                        position="relative"
-                        mt={[2, 0]}
-                    >
-                        <Link
-                            zIndex={9999}
-                            onMouseEnter={handleMouseEnter}
-                            href={'/brands'}
-                            _hover={{
-                                textDecoration: "none",
-                                _after: {
-                                    content: '""',
-                                    display: 'block',
-                                    width: '0',
-                                    height: '0.8px',
-                                    backgroundColor: 'currentColor',
-                                    animation: `${lineAnimation} 0.3s forwards`,
-                                },
-                                position: 'relative',
-                                _before: {
-                                    content: '""',
-                                    position: 'absolute',
-                                    bottom: '-2px',
-                                    left: 0,
-                                    width: '100%',
-                                    height: '0.8px',
-                                    backgroundColor: 'transparent',
-                                }
-                            }}
-                        >
-                            <Text  fontSize={["16px", "sm", "18px"]} _hover={{cursor: 'pointer'}}>See all brands</Text>
-                        </Link>
-                        <Box ref={arrowRefExplore}>
-                            <FiArrowRight/>
-                        </Box>
-                    </Flex>
-                </Flex>
-
-                <Box
-                    backgroundColor="black"
-                    height="1px"
-                    width="100%"
-                    mb={10}
-                    mt={2}
-                />
-
-                {/* Desktop/Tablet View */}
+            <Flex alignItems={'center'} alignContent={'center'} justifyContent={'space-between'} width={'100%'}>
+                <Text mt={[4, 0, 0]} fontSize={["28px", "48px"]} fontFamily="EB Garamond" fontWeight="800">
+                    Explore more brands
+                </Text>
                 <Flex
-                    flexDirection={["column", "row", "row"]}
-                    display={["none", "none", "flex"]}
-                    justifyContent={'space-between'}
-                    gap={[4,4,4,4]}
-
+                    alignItems="center"
+                    alignContent={'center'}
+                    display={["none", "flex", "flex"]}
+                    gap={2}
+                    position="relative"
+                    mt={[2, 0]}
                 >
-                    {exploreMore.map((item, index) => (
-                        <Card
-                            border={["2px", "0px", "0px"]}
-                            borderColor={["#224452"]}
-                            key={index}
-                            boxShadow="none"
-                            borderRadius="none"
-                            width={["100%", "33%", "453px"]}
-                            height={["469px", "624px", "624px"]}
-                        >
-                            <CardBody>
+                    <Link
+                        zIndex={9999}
+                        onMouseEnter={handleMouseEnter}
+                        href={'/brands'}
+                        _hover={{
+                            textDecoration: "none",
+                            _after: {
+                                content: '""',
+                                display: 'block',
+                                width: '0',
+                                height: '0.8px',
+                                backgroundColor: 'currentColor',
+                                animation: `${lineAnimation} 0.3s forwards`,
+                            },
+                            position: 'relative',
+                            _before: {
+                                content: '""',
+                                position: 'absolute',
+                                bottom: '-2px',
+                                left: 0,
+                                width: '100%',
+                                height: '0.8px',
+                                backgroundColor: 'transparent',
+                            }
+                        }}
+                    >
+                        <Text fontSize={["16px", "sm", "18px"]} _hover={{cursor: 'pointer'}}>See all brands</Text>
+                    </Link>
+                    <Box ref={arrowRefExplore}>
+                        <FiArrowRight/>
+                    </Box>
+                </Flex>
+            </Flex>
+            <Box
+                backgroundColor="black"
+                height="1px"
+                width="100%"
+                mb={10}
+                mt={2}
+            />
+
+            {/* Desktop/Tablet View */}
+            <Flex
+                flexDirection={["column", "row", "row"]}
+                display={["none", "none", "flex"]}
+                justifyContent={'space-between'}
+                gap={[4, 4, 4, 4]}
+
+            >
+                {exploreMore.map((item, index) => (
+                    <Card
+                        border={["2px", "0px", "0px"]}
+                        borderColor={["#224452"]}
+                        key={index}
+                        boxShadow="none"
+                        borderRadius="none"
+                        width={["100%", "33%", "453px"]}
+                        height={["469px", "624px", "624px"]}
+                    >
+                        <CardBody>
+                            <Link href={`/brands${item.link}`}>
                                 <Flex
                                     flexDirection="column"
                                     height={"100%"}
@@ -157,10 +158,11 @@ export const ExploreMore = ({exploreMore}: any) => {
                                     />
                                     <Flex></Flex>
                                 </Flex>
-                            </CardBody>
-                        </Card>
-                    ))}
-                </Flex>
+                            </Link>
+                        </CardBody>
+                    </Card>
+                ))}
+            </Flex>
 
             {/* Mobile View with Horizontal Scroll */}
             <Flex
@@ -168,7 +170,7 @@ export const ExploreMore = ({exploreMore}: any) => {
                 overflowX="auto" // Enables horizontal scrolling
                 scrollSnapType="x mandatory" // Ensures smooth snapping
                 css={{
-                    '&::-webkit-scrollbar': { display: 'none' }, // Hides scrollbar
+                    '&::-webkit-scrollbar': {display: 'none'}, // Hides scrollbar
                     '-ms-overflow-style': 'none',
                     'scrollbar-width': 'none',
                 }}
@@ -216,48 +218,48 @@ export const ExploreMore = ({exploreMore}: any) => {
             </Flex>
 
             {/* Mobile "See all brands" link */}
-                <Flex
-                    alignItems="center"
-                    alignContent={'center'}
-                    gap={2}
-                    display={["flex", "none", "none"]}
-                    position="relative"
-                    mt={[10, 0]}
-                    justifyContent="flex-end"
-                    mb={[6, 0]}
+            <Flex
+                alignItems="center"
+                alignContent={'center'}
+                gap={2}
+                display={["flex", "none", "none"]}
+                position="relative"
+                mt={[10, 0]}
+                justifyContent="flex-end"
+                mb={[6, 0]}
+            >
+                <Link
+                    href={'/brands'}
+                    onMouseEnter={handleMouseEnter}
+                    _hover={{
+                        textDecoration: "none",
+                        _after: {
+                            content: '""',
+                            display: 'block',
+                            width: '0',
+                            height: '0.8px',
+                            backgroundColor: 'currentColor',
+                            animation: `${lineAnimation} 0.3s forwards`,
+                        },
+                        position: 'relative',
+                        _before: {
+                            content: '""',
+                            position: 'absolute',
+                            bottom: '-2px',
+                            left: 0,
+                            width: '100%',
+                            height: '0.8px',
+                            backgroundColor: 'transparent',
+                        }
+                    }}
                 >
-                    <Link
-                        href={'/brands'}
-                        onMouseEnter={handleMouseEnter}
-                        _hover={{
-                            textDecoration: "none",
-                            _after: {
-                                content: '""',
-                                display: 'block',
-                                width: '0',
-                                height: '0.8px',
-                                backgroundColor: 'currentColor',
-                                animation: `${lineAnimation} 0.3s forwards`,
-                            },
-                            position: 'relative',
-                            _before: {
-                                content: '""',
-                                position: 'absolute',
-                                bottom: '-2px',
-                                left: 0,
-                                width: '100%',
-                                height: '0.8px',
-                                backgroundColor: 'transparent',
-                            }
-                        }}
-                    >
-                        <Text fontSize={["16px", "sm", "18px"]} zIndex={9999} _hover={{cursor: 'pointer'}}>See all
-                            brands</Text>
-                    </Link>
-                    <Box display={['flex', 'none', 'none']} pb={1}>
-                        <FiArrowRight/>
-                    </Box>
-                </Flex>
+                    <Text fontSize={["16px", "sm", "18px"]} zIndex={9999} _hover={{cursor: 'pointer'}}>See all
+                        brands</Text>
+                </Link>
+                <Box display={['flex', 'none', 'none']} pb={1}>
+                    <FiArrowRight/>
+                </Box>
+            </Flex>
             {/*</CustomBox>*/}
         </Flex>
     );

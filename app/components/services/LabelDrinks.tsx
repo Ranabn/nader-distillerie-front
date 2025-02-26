@@ -13,10 +13,10 @@ export const LabelDrinks = () => {
     return (
         <CustomBox>
             <Box>
-                <Box p={[4, 8, 10]} maxWidth={["1200px", 'auto']} mx="auto">
+                <Box  p={[4, 8, 10]} maxWidth={["1200px", 'auto']} mx="auto">
                     {/* Header Section */}
                     <Flex flexDirection={"column"} align="stretch" fontSize={["16px", "18px"]}>
-                        <Text fontSize={["28px", "5xl", "48px"]} mb={4} fontWeight="bold" fontFamily={"EB Garamond"}>
+                        <Text mt={[8, 0,0,0]} fontSize={["28px", "5xl", "48px"]} mb={4} fontWeight="bold" fontFamily={"EB Garamond"}>
                             Craft your unique private label drinks
                         </Text>
                         <Text mb={4}>

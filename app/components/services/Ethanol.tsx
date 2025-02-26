@@ -16,7 +16,7 @@ export const Ethanol = () => {
                 <Box p={[4, 8, 10]} maxWidth="1200px" mx="auto">
                     {/* Header Section */}
                     <Flex flexDirection={"column"} align="stretch" fontSize={["16px", "18px"]}>
-                        <Text fontSize={["28px", "5xl", "48px"]} mb={4} fontWeight="bold" fontFamily={"EB Garamond"}>
+                        <Text mt={[8, 0,0,0]}  fontSize={["28px", "5xl", "48px"]} mb={4} fontWeight="bold" fontFamily={"EB Garamond"}>
                             Find the right ethanol grade for your needs
                         </Text>
 

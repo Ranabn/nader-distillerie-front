@@ -60,7 +60,7 @@ export const Gifts = () => {
                 <Box p={[4, 8, 10]} maxWidth="1200px" mx="auto">
                     {/* Header Section */}
                     <Flex flexDirection={"column"} align="stretch" fontSize={["16px", "18px"]}>
-                        <Text fontSize={["28px", "5xl", "48px"]} mb={4} fontWeight="bold" fontFamily={"EB Garamond"}>
+                        <Text mt={[8, 0,0,0]}  fontSize={["28px", "5xl", "48px"]} mb={4} fontWeight="bold" fontFamily={"EB Garamond"}>
                             Personalization for memorable gifts
                         </Text>
 
@@ -180,8 +180,9 @@ export const Gifts = () => {
                                             src={box.src}
                                             alt="Our Story"
                                             objectFit="cover"
-                                            width="100%"
-                                            height="600px"
+                                            margin={'0 auto'}
+                                            width={["335px","auto","100%"]}
+                                            height={["335px","auto","600px"]}
                                         />
                                     </SwiperSlide>
 
@@ -191,8 +192,8 @@ export const Gifts = () => {
                                             alt="Our Story"
                                             objectFit="cover"
                                             objectPosition={"bottom"}
-                                            width="100%"
-                                            height="600px"
+                                            width={["335px","auto","100%"]}
+                                            height={["335px","auto","600px"]}
                                         />
                                     </SwiperSlide>
 
@@ -203,8 +204,8 @@ export const Gifts = () => {
                                             alt="Our Story"
                                             objectFit="cover"
                                             objectPosition={"center 70%"}
-                                            width="100%"
-                                            height="600px"
+                                            width={["335px","auto","100%"]}
+                                            height={["335px","auto","600px"]}
                                         />
                                     </SwiperSlide>
                                     <SwiperSlide>
@@ -212,8 +213,8 @@ export const Gifts = () => {
                                             src={bottle5.src}
                                             alt="Our Story"
                                             objectFit="cover"
-                                            width="100%"
-                                            height="600px"
+                                            width={["335px","auto","100%"]}
+                                            height={["335px","auto","600px"]}
                                         />
                                     </SwiperSlide>
                                 </Swiper>
@@ -308,8 +309,9 @@ export const Gifts = () => {
                                             src={bottle3.src}
                                             alt="Testimonial 2 Slide 1"
                                             objectFit="cover"
-                                            width="100%"
-                                            height="600px"
+                                            margin={'0 auto'}
+                                            width={["335px","auto","100%"]}
+                                            height={["335px","auto","600px"]}
                                         />
                                     </SwiperSlide>
                                     <SwiperSlide>
@@ -317,8 +319,9 @@ export const Gifts = () => {
                                             src={bottle4.src}
                                             alt="Testimonial 2 Slide 1"
                                             objectFit="cover"
-                                            width="100%"
-                                            height="600px"
+                                            margin={'0 auto'}
+                                            width={["335px","auto","100%"]}
+                                            height={["335px","auto","600px"]}
                                         />
                                     </SwiperSlide>
                                     <SwiperSlide>
@@ -326,8 +329,9 @@ export const Gifts = () => {
                                             src={testimony2.src}
                                             alt="Testimonial 2 Slide 1"
                                             objectFit="cover"
-                                            width="100%"
-                                            height="600px"
+                                            margin={'0 auto'}
+                                            width={["335px","auto","100%"]}
+                                            height={["335px","auto","600px"]}
                                         />
                                     </SwiperSlide>
                                     <SwiperSlide>
@@ -335,8 +339,9 @@ export const Gifts = () => {
                                             src={testimony1.src}
                                             alt="Our Story"
                                             objectFit="cover"
-                                            width="100%"
-                                            height="600px"
+                                            margin={'0 auto'}
+                                            width={["335px","auto","100%"]}
+                                            height={["335px","auto","600px"]}
                                         />
                                     </SwiperSlide>
                                 </Swiper>
