@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Test restriction">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/restriction-age.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/restriction-age.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/restriction-age/NotAllowed.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/restriction-age/NotAllowed.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,15 +106,7 @@
       <workItem from="1739884340305" duration="13000" />
       <workItem from="1740057853901" duration="6246000" />
       <workItem from="1740140637909" duration="941000" />
-      <workItem from="1740142148443" duration="15422000" />
-    </task>
-    <task id="LOCAL-00015" summary="fixing a lot of stuff">
-      <option name="closed" value="true" />
-      <created>1736880799000</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1736880799000</updated>
+      <workItem from="1740142148443" duration="15525000" />
     </task>
     <task id="LOCAL-00016" summary="Adding dropdown menu navbar + animations">
       <option name="closed" value="true" />
@@ -500,7 +492,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740600893501</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Test restriction">
+      <option name="closed" value="true" />
+      <created>1740601132939</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1740601132939</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -15,11 +15,11 @@ export const NotAllowed = () => {
         <>
             <Flex justify="center" height="100vh" position="relative" overflow="hidden">
                 <Box position="absolute" top={0} left={0} width="100%" height="100%"
-                        backgroundImage={Background.src}
-                        backgroundPosition={['42% 100%', 'center'] }
-                        backgroundSize={['350%', 'cover']}
-                        backgroundRepeat={'no-repeat'}
-                        />
+                     backgroundImage={Background.src}
+                     backgroundPosition={['42% 100%', 'center']}
+                     backgroundSize={['350%', 'cover']}
+                     backgroundRepeat={'no-repeat'}
+                />
                 <Box
                     position="absolute"
                     top={0}
@@ -34,7 +34,8 @@ export const NotAllowed = () => {
                       height="80%">
                     <Flex justify={'center'}>
                         {isSmallScreen ?
-                            <Flex justify={'center'} width={'150px'} height={'145px'}><Image src={LogoSM.src} alt={'logo'}/></Flex>
+                            <Flex mt={[28, 0, 0]} justify={'center'} width={'150px'} height={'145px'}><Image
+                                src={LogoSM.src} alt={'logo'}/></Flex>
                             :
                             <Box mt={20} mb={16}>
                                 <Logo/>
@@ -42,19 +43,22 @@ export const NotAllowed = () => {
                         }
                     </Flex>
                     <Box textAlign="center" p={0}>
-                        <Text color="white" mt={10} fontSize={["28px", "48px"]} as={"h1"} lineHeight={["44.8px", "56px"]} >
-                            Unfortunately, due to your age or location 
+                        <Text color="white" mt={10} fontSize={["28px", "48px"]} as={"h1"}
+                              lineHeight={["44.8px", "56px"]}>
+                            Unfortunately, due to your age or location
                             we cannot let you enter our site at this time
                         </Text>
                     </Box>
 
-                    <Flex textAlign="center" color="white" fontSize={["16px", "18px"]} mt={['40px', '50px']} flexDirection={'column'}>
-                        This info is all part of our commitment to responsible drinking. 
-                        
+                    <Flex textAlign="center" color="white" fontSize={["16px", "18px"]} mt={['40px', '50px']}
+                          flexDirection={'column'}>
+                        This info is all part of our commitment to responsible drinking.
+
                         <Text color={'white'}
-                            mt={["20px", "0px"]}
+                              mt={["20px", "0px"]}
                         > More information on {' '}
-                        <Link href={'http://www.responsibledrinking.org/'} textDecoration="underline">responsibledrinking.org</Link></Text>
+                            <Link href={'http://www.responsibledrinking.org/'}
+                                  textDecoration="underline">responsibledrinking.org</Link></Text>
                     </Flex>
 
                 </Flex>
