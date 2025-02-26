@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Test restriction">
-      <change beforePath="$PROJECT_DIR$/app/components/restriction-age/NotAllowed.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/restriction-age/NotAllowed.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/our-story/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/Header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,15 +105,7 @@
       <workItem from="1739884340305" duration="13000" />
       <workItem from="1740057853901" duration="6246000" />
       <workItem from="1740140637909" duration="941000" />
-      <workItem from="1740142148443" duration="15793000" />
-    </task>
-    <task id="LOCAL-00018" summary="Brands slugs animation">
-      <option name="closed" value="true" />
-      <created>1736961718743</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1736961718743</updated>
+      <workItem from="1740142148443" duration="15965000" />
     </task>
     <task id="LOCAL-00019" summary="corrections">
       <option name="closed" value="true" />
@@ -499,7 +491,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740601339574</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Test restriction">
+      <option name="closed" value="true" />
+      <created>1740601509525</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1740601509525</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

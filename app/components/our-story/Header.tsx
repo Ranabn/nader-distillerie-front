@@ -16,7 +16,7 @@ export const OurStoryHeader = ({header, imageUrlHeader}) => {
             height={["90vh", "100vh"]}
             position="relative"
             overflow="hidden"
-            mt={[24,0,0 ]}
+            mt={[20,0,0 ]}
         >
             <Image
                 src={imageUrlHeader}
