@@ -9,7 +9,19 @@ import {useRouter} from "next/navigation";
 import AlcoholRestrictionList from "@/utils/alcohol-restriction.json";
 import '../../restriction-age.css';
 import {Btn} from "@/app/components/ui/Btn";
-import {Text, useBreakpointValue, Image, Flex, Box, Input, Icon, Menu, MenuButton, MenuList, MenuItem} from "@chakra-ui/react";
+import {
+    Text,
+    useBreakpointValue,
+    Image,
+    Flex,
+    Box,
+    Input,
+    Icon,
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem
+} from "@chakra-ui/react";
 
 export const RestrictionAge = () => {
     const [year, setYear] = useState(['', '', '', '']);
@@ -52,7 +64,7 @@ export const RestrictionAge = () => {
             const newYear = [...year];
             newYear[index] = value;
             setYear(newYear);
-    
+
             if (value && index < 3) {
                 inputRefs[index + 1]?.current?.focus();
             } else if (!value && index > 0) {
@@ -60,7 +72,7 @@ export const RestrictionAge = () => {
             }
         }
     };
-    
+
     // @ts-ignore
     const handleKeyDown = (index, e) => {
         if (e.key === "Backspace" && !year[index] && index > 0) {
@@ -89,23 +101,21 @@ export const RestrictionAge = () => {
     const isSmallScreen = useBreakpointValue({base: true, md: false});
 
     return (
-        <Flex h={'100vh'} alignItems={'top'} alignContent={'center'} justify={'center'} overflow={'hidden'}>
+        <Flex maxHeight={'120vh'} alignItems={'top'} alignContent={'center'} justify={'center'} overflow={'hidden'}>
             <Image
                 src={Background.src}
                 alt="background"
                 objectFit="cover"
                 transform={isSmallScreen ? "scale(1.3)" : "scale(1)"}
                 width={'100%'}
-                h={'100%'}
+                h={['120vh','100vh']}
             />
             <div className="overlay"/>
-
-
             <Flex className="content-wrapper" justify={'justify-around'} gap={[10, 10]} mt={["64px", "64px"]}>
 
                 {isSmallScreen ? <Image width={'150px'} height={'145px'} src={LogoSM.src} alt={'logo'}/>
                     :
-                        <Image width={'231px'} height={'223px'} src={LogoSM.src} alt={'logo'}/>
+                    <Image width={'231px'} height={'223px'} src={LogoSM.src} alt={'logo'}/>
                 }
                 <Box className="content-section" mt={[10, 12]}>
                     <Text className="description-text" fontSize={['16px', '18px']} style={{wordSpacing: '0.07164vw'}}>
@@ -128,12 +138,12 @@ export const RestrictionAge = () => {
                                 onChange={(e) => handleYearChange(index, e.target.value)}
                                 onKeyDown={(e) => handleKeyDown(index, e)}
                                 className="year-input"
-                                _focusVisible={{ borderColor: 'none', outline: 'none' }}
+                                _focusVisible={{borderColor: 'none', outline: 'none'}}
                                 placeholder="Y"
                                 type="text"
                                 maxLength={1}
                                 inputMode="numeric"
-                                pattern="\d*"        
+                                pattern="\d*"
                             />
                         ))}
                     </Box>
@@ -153,13 +163,17 @@ export const RestrictionAge = () => {
                                     <span>COUNTRY</span>
                                     <span>{selectedCountry.country}</span>
                                 </div>
-                                <Icon viewBox="0 0 24 24" w="24px" h="auto" width="20px" color="white" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" className='country-select-icon'>
-                                    <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <Icon viewBox="0 0 24 24" w="24px" h="auto" width="20px" color="white" fill="none"
+                                      stroke="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                      className='country-select-icon'>
+                                    <svg width="20" height="10" viewBox="0 0 20 10" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0 0L10 10L20 0H0Z" fill="white"/>
                                     </svg>
                                 </Icon>
                             </MenuButton>
-                            <MenuList bg="black" border="1px solid white" maxHeight="200px" overflowY="auto" className='country-select-list' borderRadius={'none'}>
+                            <MenuList bg="black" border="1px solid white" maxHeight="200px" overflowY="auto"
+                                      className='country-select-list' borderRadius={'none'}>
                                 {AlcoholRestrictionList.countries.map((country, index) => (
                                     <MenuItem
                                         key={index}
@@ -167,8 +181,8 @@ export const RestrictionAge = () => {
                                         border={'none'}
                                         color="white"
                                         bg="black"
-                                        _hover={{ bg: 'white', color: 'black' }}
-                                        _focus={{ bg: 'white', color: 'black' }}
+                                        _hover={{bg: 'white', color: 'black'}}
+                                        _focus={{bg: 'white', color: 'black'}}
                                     >
                                         {country.country}
                                     </MenuItem>
@@ -177,7 +191,8 @@ export const RestrictionAge = () => {
                         </Menu>
                     </div>
                     {/*@ts-ignore*/}
-                    <Btn text={"Enter the website"} size={'sm'} onClick={(e) =>isBtnDisabled? e.preventDefault() : handleAgeResponse(Date.now())}
+                    <Btn text={"Enter the website"} size={'sm'}
+                         onClick={(e) => isBtnDisabled ? e.preventDefault() : handleAgeResponse(Date.now())}
                         //  isDisabled={isBtnDisabled}
                     />
 

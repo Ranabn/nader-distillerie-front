@@ -166,8 +166,8 @@
 
 @media screen and (max-width: 480px) {
     .content-wrapper {
-        width: 100%;
         padding: 0 16px;
+        overflow-x: hidden;
     }
 
     .year-input {
