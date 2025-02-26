@@ -34,7 +34,7 @@ export const NotAllowed = () => {
                       height="80%">
                     <Flex justify={'center'}>
                         {isSmallScreen ?
-                            <Flex mt={[28, 0, 0]} justify={'center'} width={'150px'} height={'145px'}><Image
+                            <Flex mt={[20, 0, 0]} justify={'center'} width={'150px'} height={'145px'}><Image
                                 src={LogoSM.src} alt={'logo'}/></Flex>
                             :
                             <Box mt={20} mb={16}>
