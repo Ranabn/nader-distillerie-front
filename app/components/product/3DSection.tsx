@@ -24,6 +24,7 @@ import CustomBox from "@/app/components/ui/CustomBox";
 
 export const Product3DSection = ({sections}: any) => {
     const [isTopOfPage, setIsTopOfPage] = useState(true);
+    const [scrollYPosition, setScrollYPosition] = useState(window.scrollY)
     const arrowRefs = useRef<(HTMLDivElement | null)[]>([]);
     const textsRefs = useRef<Array<HTMLLIElement | null>>([]);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -64,7 +65,8 @@ export const Product3DSection = ({sections}: any) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsTopOfPage(window.scrollY === 0);
+            // setIsTopOfPage(window.scrollY === 0);
+            setScrollYPosition(window.scrollY)
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
@@ -118,6 +120,18 @@ export const Product3DSection = ({sections}: any) => {
                 });
             }
         }
+
+        console.log(scrollYPosition, activeIndex, window.scrollY)
+
+        if(activeIndex == 4 &&  window.scrollY > scrollYPosition){
+            setIsTopOfPage(false)
+        }
+
+        if(activeIndex == 4 &&  window.scrollY == scrollYPosition){
+
+            setIsTopOfPage(true)
+
+        }
     };
 
     const lineAnimation = keyframes`
@@ -145,8 +159,7 @@ export const Product3DSection = ({sections}: any) => {
                 height={"100vh"}
                 position={"absolute"}
                 background="white"
-                zIndex={10}
-                opacity={0}
+                zIndex={99999999}
                 display={isTopOfPage ? "none" : "block"}
             ></Box>
             <Swiper
