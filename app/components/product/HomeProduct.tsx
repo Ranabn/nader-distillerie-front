@@ -94,11 +94,8 @@ const HomeProduct = ({ brands = [] }) => {
     <Box>
       <Navbar brands={brands} />
 
-      <Product3DSection sections={sections} />
-      <CustomBox>
-        <CraftIdentity />
-      </CustomBox>
-      <Footer brands={brands} />
+      <Product3DSection brands={brands} sections={sections} />
+
     </Box>
   );
 };
