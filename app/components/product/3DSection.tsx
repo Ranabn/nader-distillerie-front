@@ -24,7 +24,7 @@ import CustomBox from "@/app/components/ui/CustomBox";
 
 export const Product3DSection = ({sections, isResponsive}: any) => {
     const [isTopOfPage, setIsTopOfPage] = useState(true);
-    const [scrollYPosition, setScrollYPosition] = useState(window.scrollY)
+    const [scrollYPosition, setScrollYPosition] = useState(0);
     const arrowRefs = useRef<(HTMLDivElement | null)[]>([]);
     const textsRefs = useRef<Array<HTMLLIElement | null>>([]);
     const containerRef = useRef<HTMLDivElement>(null);
