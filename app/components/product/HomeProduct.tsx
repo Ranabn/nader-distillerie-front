@@ -1,7 +1,7 @@
 // @ts-nocheck
 "use client";
 
-import React from "react";
+import React, {useRef} from "react";
 // Import Chakra UI components and hook for media query
 import {Box, useMediaQuery} from "@chakra-ui/react";
 import {Navbar} from "@/app/components/navigation/navbar";
@@ -93,6 +93,7 @@ export const BrandsData = async () => {
 const HomeProduct = ({brands = []}) => {
     // Use the useMediaQuery hook to check if the viewport width is 1140px or below
     const [isLessThan1140] = useMediaQuery("(max-width: 1140px)");
+    const craftRef = useRef(null)
 
     return (
         <Box>
@@ -102,8 +103,9 @@ const HomeProduct = ({brands = []}) => {
             {isLessThan1140 ? (
                 // For screen widths 1140px and below, display an alternative Box
                 <>
-                    <Product3DSection sections={sections} isResponsive={true} brands={brands}/>
+                    <Product3DSection craftRef={craftRef} sections={sections} isResponsive={true} brands={brands}/>
                     <CustomBox>
+                        <Box ref={craftRef}></Box>
                         <CraftIdentity/>
                     </CustomBox>
                     <Footer brands={brands}/>

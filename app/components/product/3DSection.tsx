@@ -23,8 +23,12 @@ import "swiper/css/effect-fade";
 import CustomBox from "@/app/components/ui/CustomBox";
 import {CraftIdentity} from "@/app/components/product/CraftIdentity";
 import {Footer} from "@/app/components/footer/Footer";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
 
-export const Product3DSection = ({sections, isResponsive, brands}: any) => {
+// Register the ScrollToPlugin with GSAP so that the scrollTo functionality is available.
+gsap.registerPlugin(ScrollToPlugin);
+
+export const Product3DSection = ({sections, isResponsive, brands, craftRef}: any) => {
     // Flag for when we are at the top of the page (used for overlay)
     const [isTopOfPage, setIsTopOfPage] = useState(true);
     // Track scroll position for animation logic
@@ -100,27 +104,52 @@ export const Product3DSection = ({sections, isResponsive, brands}: any) => {
 
     // Called when the slide changes
     const handleSlideChange = (swiper: any) => {
+        // Get the current active slide index from the swiper instance.
         const activeIndex = swiper.activeIndex;
+        // Calculate the last slide index based on the sections array length.
         const lastContentSlideIndex = sections.length - 1;
 
-        // Animate text of active slide (if applicable)
+        // If the active index is 3 and craftRef.current exists, scroll to that element.
+        if (activeIndex === 4 && craftRef.current) {
+            // Calculate the element's position relative to the document.
+            // getBoundingClientRect().top gives the position relative to the viewport.
+            // window.pageYOffset adds the current vertical scroll position.
+            const targetY = craftRef.current.getBoundingClientRect().top + window.pageYOffset;
+
+            // Use GSAP's scrollTo plugin to animate the window scroll to the calculated position.
+            gsap.to(window, {
+                // The scrollTo property accepts an object with a numeric y value.
+                scrollTo: { y: targetY, offsetY: 0 },
+                duration: 0.8,         // Duration of the scroll animation in seconds.
+                ease: "power3.out",    // Easing function for smooth animation.
+            });
+        }
+
+        // Log the active slide index for debugging purposes.
+        console.log(activeIndex);
+
+        // If the active slide is not index 3, handle text animations.
         if (activeIndex !== 3) {
+            // If the text reference for the active slide exists, animate it.
             if (textsRefs.current[activeIndex]) {
                 gsap.fromTo(
                     textsRefs.current[activeIndex],
-                    {y: 200, opacity: 1},
-                    {y: 0, opacity: 1, duration: 0.8, ease: "power3.out"}
+                    { y: 200, opacity: 1 },             // Starting properties: shifted down and visible.
+                    { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }  // Animate to original position.
                 );
             }
-            // Reset animations for other texts
+            // Reset animations for text elements that are not active.
             textsRefs.current.forEach((el, index) => {
                 if (el && index !== activeIndex) {
+                    // Do not reset the animation for the last slide if activeIndex equals sections.length.
                     if (!(index === lastContentSlideIndex && activeIndex === sections.length)) {
-                        gsap.set(el, {y: 100, opacity: 0});
+                        gsap.set(el, { y: 100, opacity: 0 });
                     }
                 }
             });
         }
+
+        // Specifically animate the last content slide if it's active.
         if (activeIndex === lastContentSlideIndex && textsRefs.current[lastContentSlideIndex]) {
             gsap.to(textsRefs.current[lastContentSlideIndex], {
                 y: 0,
@@ -130,7 +159,7 @@ export const Product3DSection = ({sections, isResponsive, brands}: any) => {
             });
         }
 
-        // Example logic to update isTopOfPage (this might be customized further)
+        // Update isTopOfPage state based on the active slide index and scroll position.
         if (activeIndex === 4 && window.scrollY > scrollYPosition) {
             setIsTopOfPage(false);
         }
@@ -138,10 +167,10 @@ export const Product3DSection = ({sections, isResponsive, brands}: any) => {
             setIsTopOfPage(true);
         }
 
-        // Check if the active slide is the footer slide and update state accordingly
+        // If the active slide is the footer slide, update state and adjust swiper auto height.
         if (activeIndex === footerSlideIndex) {
             setIsFooterActive(true);
-            // If the swiper instance exists, update its auto height so the container can expand
+            // If the swiper instance exists, update its auto height for container adjustment.
             if (swiperInstance) {
                 swiperInstance.updateAutoHeight();
             }
@@ -340,6 +369,7 @@ export const Product3DSection = ({sections, isResponsive, brands}: any) => {
                         </Flex>
                     </SwiperSlide>
                 ))}
+                <SwiperSlide></SwiperSlide>
 
             </Swiper>
         </Box>
