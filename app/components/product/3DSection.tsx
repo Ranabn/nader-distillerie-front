@@ -3,7 +3,7 @@
 "use client";
 import React, {useRef, useEffect, useState} from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {EffectFade, Mousewheel} from "swiper/modules";
+import {EffectFade, Mousewheel, Parallax, Thumbs} from "swiper/modules";
 import {
     Box,
     Text,
@@ -163,7 +163,7 @@ export const Product3DSection = ({sections}: any) => {
                 display={isTopOfPage ? "none" : "block"}
             ></Box>
             <Swiper
-                modules={isTopOfPage ? [EffectFade, Mousewheel] : []}
+                modules={isTopOfPage ? [Parallax, Mousewheel, Thumbs] : []}
                 mousewheel={{
                     sensitivity: 1,
                     releaseOnEdges: true,
