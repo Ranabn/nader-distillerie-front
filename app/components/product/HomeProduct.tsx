@@ -102,16 +102,17 @@ const HomeProduct = ({brands = []}) => {
             {isLessThan1140 ? (
                 // For screen widths 1140px and below, display an alternative Box
                 <>
-                    <Product3DSection sections={sections} isResponsive={true}/>
+                    <Product3DSection sections={sections} isResponsive={true} brands={brands}/>
                     <CustomBox>
                         <CraftIdentity/>
                     </CustomBox>
                     <Footer brands={brands}/>
+
                 </>
             ) : (
                 // For larger screens, display the Product3DSection and CraftIdentity components
                 <>
-                    <Product3DSection sections={sections} isResponsive={false}/>
+                    <Product3DSection sections={sections} isResponsive={false} brands={brands}/>
                     <CustomBox>
                         <CraftIdentity/>
                     </CustomBox>
