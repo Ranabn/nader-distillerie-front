@@ -105,8 +105,7 @@ const HomeProduct = ({brands = []}) => {
                 <>
                     <Product3DSection craftRef={craftRef} sections={sections} isResponsive={true} brands={brands}/>
                     <CustomBox>
-                        <Box ref={craftRef}></Box>
-                        <CraftIdentity/>
+                        <CraftIdentity craftRef={craftRef}/>
                     </CustomBox>
                     <Footer brands={brands}/>
 

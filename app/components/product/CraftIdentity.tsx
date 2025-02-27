@@ -8,11 +8,11 @@ import OurStory3 from '@/app/assets/images/our-story-landing-3.png';
 import {Btn} from '@/app/components/ui/Btn';
 import craft from "@/app/assets/images/craft-identity.png";
 
-export const CraftIdentity = ({storyImg}: any) => {
+export const CraftIdentity = ({storyImg, craftRef}: any) => {
 
 
     return (
-        <Box p={[4, 8, 8]} mt={20} mb={[10, 10, 10]} bg="white" >
+        <Box p={[4, 8, 8]} mt={20} mb={[10, 10, 10]} bg="white" ref={craftRef}>
             <Image
                 display={["flex","none", "none"]}
                 src={craft.src}

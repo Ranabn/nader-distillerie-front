@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Parallax">
+    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Parallax v1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/product/3DSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/product/3DSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/product/CraftIdentity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/product/CraftIdentity.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/product/HomeProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/product/HomeProduct.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,14 +109,6 @@
       <workItem from="1740057853901" duration="6246000" />
       <workItem from="1740140637909" duration="941000" />
       <workItem from="1740142148443" duration="18963000" />
-    </task>
-    <task id="LOCAL-00025" summary="push img">
-      <option name="closed" value="true" />
-      <created>1737057569963</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1737057569963</updated>
     </task>
     <task id="LOCAL-00026" summary="push img">
       <option name="closed" value="true" />
@@ -501,14 +494,21 @@
       <option name="project" value="LOCAL" />
       <updated>1740673425588</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Parallax v1">
+      <option name="closed" value="true" />
+      <created>1740683604898</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1740683604898</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Brands slugs animation" />
     <MESSAGE value="corrections" />
     <MESSAGE value="// @ts-nocheck" />
     <MESSAGE value="anime" />
@@ -533,7 +533,8 @@
     <MESSAGE value="new vers" />
     <MESSAGE value="Test restriction" />
     <MESSAGE value="Parallax" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parallax" />
+    <MESSAGE value="Parallax v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parallax v1" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

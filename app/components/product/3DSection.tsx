@@ -110,7 +110,7 @@ export const Product3DSection = ({sections, isResponsive, brands, craftRef}: any
         const lastContentSlideIndex = sections.length - 1;
 
         // If the active index is 3 and craftRef.current exists, scroll to that element.
-        if (activeIndex === 4 && craftRef.current) {
+        if (activeIndex === 4 && craftRef) {
             // Calculate the element's position relative to the document.
             // getBoundingClientRect().top gives the position relative to the viewport.
             // window.pageYOffset adds the current vertical scroll position.
@@ -120,7 +120,7 @@ export const Product3DSection = ({sections, isResponsive, brands, craftRef}: any
             gsap.to(window, {
                 // The scrollTo property accepts an object with a numeric y value.
                 scrollTo: { y: targetY, offsetY: 0 },
-                duration: 0.8,         // Duration of the scroll animation in seconds.
+                duration: 2,         // Duration of the scroll animation in seconds.
                 ease: "power3.out",    // Easing function for smooth animation.
             });
         }
@@ -221,9 +221,9 @@ export const Product3DSection = ({sections, isResponsive, brands, craftRef}: any
             <Swiper
                 onSwiper={setSwiperInstance} // Store the swiper instance here
                 // Use different modules based on responsive state
-                modules={isTopOfPage ? [isResponsive ? Parallax : EffectFade, Mousewheel, Thumbs] : []}
+                modules={isTopOfPage ? [isResponsive ? EffectFade : EffectFade, Mousewheel, Thumbs] : []}
                 mousewheel={{sensitivity: 1, releaseOnEdges: true}}
-                effect={isResponsive ? "fade" : "none"}
+                effect={isResponsive ? "fade" : "fade"}
                 direction="vertical"
                 slidesPerView={1}
                 speed={1000}
@@ -369,7 +369,7 @@ export const Product3DSection = ({sections, isResponsive, brands, craftRef}: any
                         </Flex>
                     </SwiperSlide>
                 ))}
-                <SwiperSlide></SwiperSlide>
+                <SwiperSlide style={{height: "0vh"}}></SwiperSlide>
 
             </Swiper>
         </Box>
