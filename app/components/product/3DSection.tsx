@@ -355,9 +355,7 @@ export const Product3DSection = ({ sections }: any) => {
                     </SwiperSlide>
                 ))}
                 {/* Extra slide for spacing */}
-                <SwiperSlide>
-                    <Box height="20vh"></Box>
-                </SwiperSlide>
+
             </Swiper>
         </Box>
     );
