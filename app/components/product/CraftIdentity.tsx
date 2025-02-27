@@ -12,7 +12,7 @@ export const CraftIdentity = ({storyImg, craftRef}: any) => {
 
 
     return (
-        <Box p={[4, 8, 8]} mt={20} mb={[10, 10, 10]} bg="white" ref={craftRef}>
+        <Box p={[4, 8, 8]} mt={[10,20]} mb={[10, 10, 10]} bg="white" ref={craftRef}>
             <Image
                 display={["flex","none", "none"]}
                 src={craft.src}
