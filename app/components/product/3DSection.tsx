@@ -120,7 +120,7 @@ export const Product3DSection = ({sections, isResponsive, brands, craftRef}: any
             gsap.to(window, {
                 // The scrollTo property accepts an object with a numeric y value.
                 scrollTo: { y: targetY, offsetY: 0 },
-                duration: 2,         // Duration of the scroll animation in seconds.
+                duration: .8,         // Duration of the scroll animation in seconds.
                 ease: "power3.out",    // Easing function for smooth animation.
             });
         }
