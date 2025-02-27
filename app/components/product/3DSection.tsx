@@ -86,8 +86,11 @@ export const Product3DSection = ({sections}: any) => {
     };
 
     const handleSlideChange = (swiper: any) => {
-        const activeIndex = swiper.activeIndex;
+        let activeIndex = swiper.activeIndex;
         const lastContentSlideIndex = sections.length - 1;
+        console.log(activeIndex)
+        if (activeIndex !== 3) {
+
 
         if (textsRefs.current[activeIndex]) {
             gsap.fromTo(
@@ -104,7 +107,7 @@ export const Product3DSection = ({sections}: any) => {
                 }
             }
         });
-
+        }
         if (activeIndex === lastContentSlideIndex) {
             if (textsRefs.current[lastContentSlideIndex]) {
                 gsap.to(textsRefs.current[lastContentSlideIndex], {
@@ -127,15 +130,25 @@ export const Product3DSection = ({sections}: any) => {
     `;
 
     return (
-        <div
+        <Box
             ref={containerRef}
             style={{
                 width: "100%",
-                height: isTopOfPage ? "100vh" : "50vh",
+                height: "100vh", // second fix scroll uncomment this
                 transition: "height 1s ease-in-out",
                 overflow: "hidden",
             }}
+            postion="relative"
         >
+            <Box
+                width={"100%"}
+                height={"100vh"}
+                position={"absolute"}
+                background="white"
+                zIndex={10}
+                opacity={0}
+                display={isTopOfPage ? "none" : "block"}
+            ></Box>
             <Swiper
                 modules={isTopOfPage ? [EffectFade, Mousewheel] : []}
                 mousewheel={{
@@ -178,85 +191,85 @@ export const Product3DSection = ({sections}: any) => {
                         />
                         <CustomBox>
 
-                        <Flex
-                            flexDir="column"
-                            gap={4}
-                            pl={[4, 8, 8]}
-                            width={["100%", "800px", "800px"]}
-                            style={{
-                                position: "absolute",
-                                color: "white",
-                                zIndex: 9999,
-                            }}
-                            top={["18%", index === 2 ? "30%" : index === 3 ? "18%" : "25%"]}
-                        >
-                            <Text fontSize={["16px", "18px"]} >{sec.description}</Text>
-                            {sec.description2 && (
-                                <Text fontSize={["16px", "18px"]}  mt="15px">
-                                    {sec.description2}
-                                </Text>
-                            )}
-                            <Link
-                                href={`/brands?filter=${sec.text}`}
-                                _hover={{
-                                    textDecoration: "none",
-                                    _after: {
-                                        content: '""',
-                                        display: "block",
-                                        width: "0",
-                                        height: "0.8px",
-                                        backgroundColor: "currentColor",
-                                        animation: `${lineAnimation} 0.3s forwards`,
-                                    },
+                            <Flex
+                                flexDir="column"
+                                gap={4}
+                                pl={[4, 8, 8]}
+                                width={["100%", "800px", "800px"]}
+                                style={{
+                                    position: "absolute",
+                                    color: "white",
+                                    zIndex: 9999,
                                 }}
+                                top={["18%", index === 2 ? "30%" : index === 3 ? "18%" : "25%"]}
                             >
-                                <Flex
-                                    alignItems="center"
-                                    gap={2}
-                                    mt={6}
-                                >
-                                    <Text
-                                        onMouseEnter={() => handleArrowAnimation(index * 2)}
-                                        fontSize={["20px", "18px"]}
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            fontWeight: 400,
-                                        }}
-                                    >
-                                        {sec.discover}
+                                <Text fontSize={["16px", "18px"]}>{sec.description}</Text>
+                                {sec.description2 && (
+                                    <Text fontSize={["16px", "18px"]} mt="15px">
+                                        {sec.description2}
                                     </Text>
-                                    <Box ref={el => arrowRefs.current[index * 2] = el}>
-                                        <FiArrowRight/>
-                                    </Box>
-                                </Flex>
-                            </Link>
-                            {sec.discover2 && (
-                                <Link href="/services/ethanol">
+                                )}
+                                <Link
+                                    href={`/brands?filter=${sec.text}`}
+                                    _hover={{
+                                        textDecoration: "none",
+                                        _after: {
+                                            content: '""',
+                                            display: "block",
+                                            width: "0",
+                                            height: "0.8px",
+                                            backgroundColor: "currentColor",
+                                            animation: `${lineAnimation} 0.3s forwards`,
+                                        },
+                                    }}
+                                >
                                     <Flex
                                         alignItems="center"
-                                        alignContent="center"
                                         gap={2}
+                                        mt={6}
                                     >
                                         <Text
-                                            onMouseEnter={() => handleArrowAnimation(index * 2 + 1)}
+                                            onMouseEnter={() => handleArrowAnimation(index * 2)}
                                             fontSize={["20px", "18px"]}
                                             style={{
                                                 display: "flex",
                                                 alignItems: "center",
                                                 fontWeight: 400,
-                                                marginTop: "10px",
                                             }}
                                         >
-                                            {sec.discover2}
+                                            {sec.discover}
                                         </Text>
-                                        <Box ref={el => arrowRefs.current[index * 2 + 1] = el}>
+                                        <Box ref={el => arrowRefs.current[index * 2] = el}>
                                             <FiArrowRight/>
                                         </Box>
                                     </Flex>
                                 </Link>
-                            )}
-                        </Flex>
+                                {sec.discover2 && (
+                                    <Link href="/services/ethanol">
+                                        <Flex
+                                            alignItems="center"
+                                            alignContent="center"
+                                            gap={2}
+                                        >
+                                            <Text
+                                                onMouseEnter={() => handleArrowAnimation(index * 2 + 1)}
+                                                fontSize={["20px", "18px"]}
+                                                style={{
+                                                    display: "flex",
+                                                    alignItems: "center",
+                                                    fontWeight: 400,
+                                                    marginTop: "10px",
+                                                }}
+                                            >
+                                                {sec.discover2}
+                                            </Text>
+                                            <Box ref={el => arrowRefs.current[index * 2 + 1] = el}>
+                                                <FiArrowRight/>
+                                            </Box>
+                                        </Flex>
+                                    </Link>
+                                )}
+                            </Flex>
                         </CustomBox>
 
                         <Text
@@ -307,6 +320,6 @@ export const Product3DSection = ({sections}: any) => {
                     <Box height="20vh"></Box>
                 </SwiperSlide>
             </Swiper>
-        </div>
+        </Box>
     );
 };
