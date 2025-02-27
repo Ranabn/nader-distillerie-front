@@ -3,7 +3,7 @@
 "use client";
 import React, {useRef, useEffect, useState} from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {EffectFade, Mousewheel} from "swiper/modules";
+import {EffectFade, Mousewheel, Parallax} from "swiper/modules";
 import {
     Box,
     Text,
@@ -22,7 +22,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import CustomBox from "@/app/components/ui/CustomBox";
 
-export const Product3DSection = ({sections}: any) => {
+export const Product3DSection = ({sections, isResponsive}: any) => {
     const [isTopOfPage, setIsTopOfPage] = useState(true);
     const [scrollYPosition, setScrollYPosition] = useState(window.scrollY)
     const arrowRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -94,21 +94,21 @@ export const Product3DSection = ({sections}: any) => {
         if (activeIndex !== 3) {
 
 
-        if (textsRefs.current[activeIndex]) {
-            gsap.fromTo(
-                textsRefs.current[activeIndex],
-                {y: 200, opacity: 1},
-                {y: 0, opacity: 1, duration: 0.8, ease: "power3.out"}
-            );
-        }
-
-        textsRefs.current.forEach((el, index) => {
-            if (el && index !== activeIndex) {
-                if (!(index === lastContentSlideIndex && activeIndex === sections.length)) {
-                    gsap.set(el, {y: 100, opacity: 0});
-                }
+            if (textsRefs.current[activeIndex]) {
+                gsap.fromTo(
+                    textsRefs.current[activeIndex],
+                    {y: 200, opacity: 1},
+                    {y: 0, opacity: 1, duration: 0.8, ease: "power3.out"}
+                );
             }
-        });
+
+            textsRefs.current.forEach((el, index) => {
+                if (el && index !== activeIndex) {
+                    if (!(index === lastContentSlideIndex && activeIndex === sections.length)) {
+                        gsap.set(el, {y: 100, opacity: 0});
+                    }
+                }
+            });
         }
         if (activeIndex === lastContentSlideIndex) {
             if (textsRefs.current[lastContentSlideIndex]) {
@@ -123,11 +123,11 @@ export const Product3DSection = ({sections}: any) => {
 
         console.log(scrollYPosition, activeIndex, window.scrollY)
 
-        if(activeIndex == 4 &&  window.scrollY > scrollYPosition){
+        if (activeIndex == 4 && window.scrollY > scrollYPosition) {
             setIsTopOfPage(false)
         }
 
-        if(activeIndex == 4 &&  window.scrollY == scrollYPosition){
+        if (activeIndex == 4 && window.scrollY == scrollYPosition) {
 
             setIsTopOfPage(true)
 
@@ -163,12 +163,12 @@ export const Product3DSection = ({sections}: any) => {
                 display={isTopOfPage ? "none" : "block"}
             ></Box>
             <Swiper
-                modules={isTopOfPage ? [EffectFade, Mousewheel] : []}
+                modules={isTopOfPage ? [isResponsive ? Parallax : EffectFade, Mousewheel] : []}
                 mousewheel={{
                     sensitivity: 1,
                     releaseOnEdges: true,
                 }}
-                effect="fade"
+                effect={isResponsive ? "fade" : 'none'}
                 direction="vertical"
                 slidesPerView={1}
                 speed={1000}
@@ -298,7 +298,7 @@ export const Product3DSection = ({sections}: any) => {
                                 fontWeight: 800,
                                 lineHeight: "0.8",
                             }}
-                            fontSize={[sec.mobileFontSize, sec.fontSize]}
+                            fontSize={[sec.mobileFontSize, isResponsive ? '16rem' : sec.fontSize]}
                             ref={(el) => (textsRefs.current[index] = el)}
                         >
                             {sec.text}
@@ -329,9 +329,10 @@ export const Product3DSection = ({sections}: any) => {
                         </Flex>
                     </SwiperSlide>
                 ))}
-                <SwiperSlide>
-                    <Box height="20vh"></Box>
-                </SwiperSlide>
+
+                {/*<SwiperSlide>*/}
+                {/*    <Box height="0vh"></Box>*/}
+                {/*</SwiperSlide>*/}
             </Swiper>
         </Box>
     );
