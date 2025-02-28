@@ -281,9 +281,9 @@ export const Product3DSection = ({ sections, isResponsive, brands, craftRef }: a
                                 }}
                                 top={["18%", index === 2 ? "30%" : index === 3 ? "18%" : "25%"]}
                             >
-                                <Text fontSize={["16px", "18px"]}>{sec.description}</Text>
+                                <Text fontSize={["15px", "18px"]}>{sec.description}</Text>
                                 {sec.description2 && (
-                                    <Text fontSize={["16px", "18px"]} mt="15px">
+                                    <Text fontSize={["15px", "18px"]} mt="15px">
                                         {sec.description2}
                                     </Text>
                                 )}
@@ -301,7 +301,7 @@ export const Product3DSection = ({ sections, isResponsive, brands, craftRef }: a
                                         },
                                     }}
                                 >
-                                    <Flex alignItems="center" gap={2} mt={6}>
+                                    <Flex alignItems="center" gap={2} mt={[0,6,6]}>
                                         <Text
                                             onMouseEnter={() => handleArrowAnimation(index * 2)}
                                             fontSize={["20px", "18px"]}
