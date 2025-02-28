@@ -47,7 +47,7 @@ export const SocialBrands = ({
             }}
         >
             <CustomBox>
-                <Flex flexDirection="column" w="100%" p={[4, 8, 8]} mb={10} mt={[6, 0, 10]} gap={[2, 0, 8]}>
+                <Flex flexDirection="column" w="100%" p={[4, 8, 8]} mb={[0,0,10]} mt={[6, 0, 10]} gap={[2, 0, 8]}>
                     {(facebookUrl || instagramUrl) && (
                         <Flex gap={4} alignItems="center" mb={4} mt={4} zIndex={999}>
                             {instagramUrl && (
@@ -128,10 +128,10 @@ export const SocialBrands = ({
                                 <Link href={brandWebsiteUrl}>
                                     <Flex alignItems={'center'} gap={4}
                                     >
-                                        <Text mt={5} fontSize={["16px", "18px"]}>
+                                        <Text mt={5} mb={2} fontSize={["16px", "18px"]}>
                                             Learn more on {brandName} website
                                         </Text>
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M2.66667 0C1.20925 0 0 1.20925 0 2.66667V21.3333C0 22.7908 1.20925 24 2.66667 24H21.3333C22.7908 24 24 22.7908 24 21.3333V12H21.3333V21.3333H2.66667V2.66667H12V0H2.66667ZM14.6667 0V2.66667H19.4479L7.05729 15.0573L8.94271 16.9427L21.3333 4.55208V9.33333H24V0H14.6667Z"

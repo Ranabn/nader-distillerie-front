@@ -78,14 +78,14 @@ export const ProductsSection = () => {
 
     return (
         <Box p={[4, 8, 8]} bg={'white'}>
-            <Flex alignItems="center" justifyContent="space-between" mb={4} alignContent={'center'}>
+            <Flex alignItems="center" justifyContent="space-between" mb={[10,4,4]} alignContent={'center'}>
                 <Heading fontSize={["28px", "48px", "48px"]} fontWeight="800" fontFamily="EB Garamond">
                     Our Products
                 </Heading>
                 <Flex
                     alignItems="center"
                     alignContent={'center'}
-                    gap={[0, 0, 2]}
+                    gap={[2, 0, 2]}
                     position="relative"
                     mt={[2, 0]} // Add spacing for smaller screens
                 >

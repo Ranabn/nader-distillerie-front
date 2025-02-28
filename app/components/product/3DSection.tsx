@@ -66,7 +66,7 @@ export const Product3DSection = ({ sections, isResponsive, brands, craftRef }: a
                     gsap.fromTo(
                         arrowRef,
                         { x: -10, opacity: 0 },
-                        { x: 0, opacity: 1, duration: 0.6, ease: "power1.inOut" }
+                        { x: 0, opacity: 1, duration: 1.2, ease: "power1.inOut" }
                     );
                 },
             });

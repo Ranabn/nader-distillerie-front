@@ -8,6 +8,7 @@ import LabelDrinks from "@/app/assets/images/label-drinks.png"
 import {FiChevronRight} from "react-icons/fi";
 import EthanolImg from "@/app/assets/images/services/2.jpg"
 import CustomBox from "@/app/components/ui/CustomBox";
+
 export const Ethanol = () => {
 
     return (
@@ -16,7 +17,8 @@ export const Ethanol = () => {
                 <Box p={[4, 8, 10]} maxWidth="1200px" mx="auto">
                     {/* Header Section */}
                     <Flex flexDirection={"column"} align="stretch" fontSize={["16px", "18px"]}>
-                        <Text mt={[8, 0,0,0]}  fontSize={["28px", "5xl", "48px"]} mb={4} fontWeight="bold" fontFamily={"EB Garamond"}>
+                        <Text mt={[8, 0, 0, 0]} fontSize={["28px", "5xl", "48px"]} mb={4} fontWeight="bold"
+                              fontFamily={"EB Garamond"}>
                             Find the right ethanol grade for your needs
                         </Text>
 
@@ -29,7 +31,7 @@ export const Ethanol = () => {
                         <Image mt={4}
                                src={EthanolImg.src}
                                alt="Bottles"
-                               width={["335px", '1100px']}
+                               width={["100%", "335px", '1100px']}
                                height={["200px", '618px']}
                         />
                     </Flex>
@@ -94,7 +96,7 @@ export const Ethanol = () => {
                     <Flex
                         m={[4, 10]}
                         justifyContent={'center'}
-                        height={["335px", "250px"]}
+                        height={["282px","500px", "250px"]}
                     >
                         <Flex borderWidth="1px"
                               borderColor={'black'}
@@ -134,7 +136,7 @@ export const Ethanol = () => {
                     <Flex
                         justifyContent={'center'}
                         m={[4, 10]}
-                        height={["335px", "250px"]}
+                        height={["282px","500px", "250px"]}
                         width={["auto", '50%']}
                     >
                         <Flex borderWidth="1px"

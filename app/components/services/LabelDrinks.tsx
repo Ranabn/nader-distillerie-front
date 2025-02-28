@@ -31,7 +31,7 @@ export const LabelDrinks = () => {
                         <Image mt={4}
                                src={LabelDrink.src}
                                alt="Bottles"
-                               width={["335px", '1100px']}
+                               width={["100%","335px", '1100px']}
                                height={["200px", '618px']}
                         />
                     </Flex>
@@ -125,7 +125,7 @@ export const LabelDrinks = () => {
                     <Flex
                         m={[4, 10]}
                         justifyContent={'center'}
-                        height={["335px", "320px"]}
+                        height={["282px","500px", "250px"]}
 
                     >
                         <Flex borderWidth="1px"
@@ -167,7 +167,7 @@ export const LabelDrinks = () => {
                     <Flex
                         justifyContent={'center'}
                         m={[4, 10]}
-                        height={["335px", "320px"]}
+                        height={["282px","500px", "250px"]}
                     >
                         <Flex borderWidth="1px"
                               borderColor={'black'}

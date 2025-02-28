@@ -56,21 +56,10 @@ export const Footer = ({brands}: any) => {
                 </Flex>
                 <Flex width={'5%'}></Flex>
 
-                {/*<Flex flexDirection={["column", "row"]} alignItems="center" gap={[2, 4]} mt={4}>*/}
-                {/*    <Text fontSize={'xs'} mb={[2, 0]} display={['none', 'flex']}>Follow us on social Media</Text>*/}
-                {/*    <HStack spacing={4} fontSize={['4xl', 'md']}>*/}
-                {/*        <Link href="#" aria-label="Instagram">*/}
-                {/*            <FaInstagram/>*/}
-                {/*        </Link>*/}
-                {/*        <Link href="#" aria-label="Facebook">*/}
-                {/*            <FaFacebook/>*/}
-                {/*        </Link>*/}
-                {/*    </HStack>*/}
-                {/*</Flex>*/}
             </Flex>
 
-            <SimpleGrid columns={[1, 2, 3, 5]} gap={34} mb={8}>
-                <Flex w={['100%', '80%']}>
+            <SimpleGrid columns={[1, 2, 3, 4]} gap={50} mb={8}>
+                <Flex w={['100%', '80%']} gap={34}>
                     <Link href={'/contact'} _hover={{textDecoration: 'none'}} width={["100%", "30%"]} mb={4}
                           display={['flex', 'none']}>
                         <Btn size={'md'} variant="primaryWhite" text="WORK TOGETHER"/>
@@ -79,9 +68,10 @@ export const Footer = ({brands}: any) => {
                         <Btn size={'xs'} variant="primaryWhite" text="WORK TOGETHER"/>
                     </Link>
                 </Flex>
-                <Flex gap={[20, 10]}>
-                    <Flex flexDirection={'column'} fontSize={"18px"} gap={4}>
-                        <Link href={"/brands"}> <Text fontWeight="bold" fontSize={"20px"} mb={2}>Brands</Text>
+                <Flex gap={[30, 10]}>
+                    <Flex width={['200px', 'auto', 'auto']} flexDirection={'column'} fontSize={"18px"} gap={4}>
+                        <Link href={"/brands"}>
+                            <Text fontWeight="bold" fontSize={"20px"} mb={2}>Brands</Text>
                         </Link>
                         {/*@ts-ignore*/}
                         {brands.map((brand) => (
@@ -91,14 +81,14 @@ export const Footer = ({brands}: any) => {
                         ))}
                     </Flex>
 
-                    <Flex align="flex-start" flexDirection={'column'}>
+                    <Flex  align="flex-start" flexDirection={'column'} width={['200px', 'auto', 'auto']}>
                         <Link href={"/products"}>
                             <Text fontWeight="bold" fontSize={"20px"} mb={2}>Products</Text>
                         </Link>
                     </Flex>
                 </Flex>
-                <Flex gap={[20, 10]}>
-                    <Flex align="flex-start" flexDirection={'column'} fontSize={"18px"} gap={4}>
+                <Flex gap={[10, 10]}>
+                    <Flex ml={[0,0,10]} width={['200px', 'auto', 'auto']} align="flex-start" flexDirection={'column'} fontSize={"18px"} gap={4}>
                         <Link href={"/services"}>
                             <Text fontWeight="bold" fontSize={"20px"} mb={2}>Services</Text>
                         </Link>
@@ -107,7 +97,7 @@ export const Footer = ({brands}: any) => {
                         <Link href={"/services/gift"}>Events</Link>
                     </Flex>
 
-                    <Flex align="flex-start" flexDirection={'column'}>
+                    <Flex ml={[0,0,10]} width={['200px', 'auto', 'auto']} align="flex-start" flexDirection={'column'}>
                         <Link href={"/our-story"}>
                             <Text fontWeight="bold" fontSize={"20px"} mb={2}>Our story</Text>
                         </Link>

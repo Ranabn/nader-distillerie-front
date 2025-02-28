@@ -60,7 +60,8 @@ export const Gifts = () => {
                 <Box p={[4, 8, 10]} maxWidth="1200px" mx="auto">
                     {/* Header Section */}
                     <Flex flexDirection={"column"} align="stretch" fontSize={["16px", "18px"]}>
-                        <Text mt={[8, 0,0,0]}  fontSize={["28px", "5xl", "48px"]} mb={4} fontWeight="bold" fontFamily={"EB Garamond"}>
+                        <Text mt={[8, 0, 0, 0]} fontSize={["28px", "5xl", "48px"]} mb={4} fontWeight="bold"
+                              fontFamily={"EB Garamond"}>
                             Personalization for memorable gifts
                         </Text>
 
@@ -72,7 +73,7 @@ export const Gifts = () => {
                         <Image mt={4}
                                src={gifts.src}
                                alt="Bottles"
-                               width={["335px", '1100px']}
+                               width={["100%", "335px", '1100px']}
                                height={["200px", '618px']}
                         />
                     </Flex>
@@ -111,8 +112,11 @@ export const Gifts = () => {
 
                     {/* Call to Action */}
                     <Flex flexDir='column' align="center" mt={24} gap={4} mb={14}>
-                        <Text fontSize={["20px", "lg", "24px"]} textAlign="center">
+                        <Text display={['none', 'flex', 'flex']} fontSize={["20px", "lg", "24px"]} textAlign="center">
                             Planning an upcoming event? Don’t wait until the last moment.
+                        </Text>
+                        <Text display={['flex', 'none', 'none']} fontSize={["20px", "lg", "24px"]} textAlign="center">
+                            Planning an upcoming event? <br/> Don’t wait until the last moment.
                         </Text>
                         <Box w={["100%", "50%", "20%"]} mr={[0, 12]}>
 
@@ -122,346 +126,346 @@ export const Gifts = () => {
                         </Box>
                     </Flex>
                 </Box>
-                    <Flex flexDirection={"column"} p={[4, 8, 8]} gap={[4, 20]} mb={[20]}>
-                        <Flex justify={'center'} mb={[4, 14]}>
-                            <Text fontSize={["28px", "48px", '48px']} fontWeight="bold" fontFamily={"EB Garamond"}>Customer
-                                testimony</Text>
-                        </Flex>
-                        <Flex flexDirection={["column", "row"]} justifyContent="space-between" alignItems="center"
-                              gap={[6, 20]} mb={[10, 0]}>
-                            <Flex flexDirection={"column"} width={["100%", "44%"]} gap={[2, 10]} order={[1, 0]}>
-                                <Image
-                                    display={["none", "inline"]}
-                                    src={quotes.src}
-                                    alt="Our Story"
-                                    objectFit="cover"
-                                    width="49px"
-                                />
-                                <Text fontSize={["16px", "24px"]} mb={[0, 4]}>It was an absolute pleasure working with
-                                    Nader
-                                    Distilleries on
-                                    these super special
-                                    customized
-                                    wedding giveaways. The attention to detail, dedication and care they put into each
-                                    and
-                                    every
-                                    aspect, even down to the packaging, was like no other. Guests were raving about
-                                    these
-                                    giveaways
-                                    and still do to this day! I can&lsquo;t recommend them enough.</Text>
-                                <Text fontWeight={"bold"} fontSize={["18px", "20px"]} textAlign={"right"}>Melissa
-                                    T.</Text>
-                            </Flex>
-                            <Box width={["100%", "44%"]} order={[0, 1]}>
-                                <Swiper
-                                    onSwiper={(swiper) => {
-                                        swiperRef1.current = swiper;
-                                        swiper.slideTo(0, 0); // Set initial slide to 2 without animation
-                                        setActiveIndex(2);   // Set the activeIndex state
-                                        updatePaginationPosition(swiper); // Update the pagination position
-                                    }}
-                                    onSlideChange={(swiper) => {
-                                        setActiveIndex(swiper.activeIndex);
-                                        updatePaginationPosition(swiper);
-                                    }}
-                                    initialSlide={[0, 2]} // Ensure Swiper starts at index 2
-                                    pagination={{
-                                        clickable: true,
-                                        el: ".custom-pagination",
-                                        renderBullet: (index, className) => `<span class="${className}"></span>`,
-                                    }}
-                                    loop={true}
-                                    modules={[Pagination]}
-                                    className="mySwiper"
-                                    spaceBetween={0}
-                                >
-                                    <SwiperSlide>
-                                        <Image
-                                            src={box.src}
-                                            alt="Our Story"
-                                            objectFit="cover"
-                                            margin={'0 auto'}
-                                            width={["100%","auto","100%"]}
-                                            height={["400px","auto","600px"]}
-                                        />
-                                    </SwiperSlide>
-
-                                    <SwiperSlide>
-                                        <Image
-                                            src={pres3.src}
-                                            alt="Our Story"
-                                            objectFit="cover"
-                                            objectPosition={"bottom"}
-                                            width={["100%","auto","100%"]}
-                                            height={["400px","auto","600px"]}
-                                        />
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <Image
-                                            src={pres4.src}
-                                            alt="Our Story"
-                                            objectFit="cover"
-                                            objectPosition={"center 70%"}
-                                            width={["100%","auto","100%"]}
-                                            height={["400px","auto","600px"]}
-                                        />
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <Image
-                                            src={bottle5.src}
-                                            alt="Our Story"
-                                            objectFit="cover"
-                                            width={["100%","auto","100%"]}
-                                            height={["400px","auto","600px"]}
-                                        />
-                                    </SwiperSlide>
-                                </Swiper>
-                                <Flex
-                                    mt={6}
-                                    justifyContent="center" // Ensures everything is centered
-                                    alignItems="center"     // Aligns items vertically centered
-                                    gap={[0, 4]}            // Provides spacing between items
-                                >
-                                    <Image
-                                        // display={["none", "inline"]}
-                                        src={arrowleft.src}
-                                        alt="Previous"
-                                        width={["51px", "68px"]}
-                                        height={["12px", "16px"]}
-                                        onClick={() => swiperRef1.current?.slidePrev()}
-                                        style={{cursor: "pointer"}}
-                                        opacity={[0, 1]}
-
-                                    />
-                                    <div
-                                        className="custom-pagination"
-                                        style={{
-                                            flex: 1,
-                                            textAlign: "center"
-                                        }} // Ensures this div takes the center space
-                                    />
-                                    <Image
-                                        src={arrowright.src}
-                                        alt="Next"
-                                        width={["51px", "68px"]}
-                                        height={["12px", "16px"]}
-                                        onClick={() => swiperRef1.current?.slideNext()}
-                                        style={{cursor: "pointer"}}
-                                        mb={4}
-                                    />
-                                </Flex>
-
-                            </Box>
-
-                        </Flex>
-                        <Flex flexDirection={["column", "row"]} justifyContent={"space-between"} alignItems={"center"}
-                              gap={[6, 20]}>
-                            <Flex flexDirection={"column"} width={["100%", "44%"]} gap={[2, 10]} order={[1, 0]}>
-                                <Image
-                                    display={["none", "inline"]}
-                                    src={quotes.src}
-                                    alt="Our Story"
-                                    objectFit="cover"
-                                    width="49px"
-                                />
-                                <Text fontSize={["16px", "24px"]} mb={[0, 4]}>It was an absolute pleasure working with
-                                    Nader
-                                    Distilleries on
-                                    We were absolutely thrilled with the wedding gifts from Nader Distilleries. The
-                                    personalized
-                                    guidance and support in bringing our vision to life were invaluable. Nader
-                                    Distilleries
-                                    exceeded
-                                    our expectations! The beautiful bottles and truly qualitative beverages left a
-                                    lasting
-                                    impression, and our guests continued to inquire about them even after the
-                                    wedding.</Text>
-                                <Text fontWeight={"bold"} fontSize={["18px", "20px"]} textAlign={"right"}>Nada C.</Text>
-
-                            </Flex>
-                            <Box width={["100%", "44%"]} order={[0, 1]}>
-                                <Swiper
-                                    onSwiper={(swiper) => {
-                                        swiperRef2.current = swiper;
-                                        swiper.slideTo(0, 0); // Set initial slide to 2 without animation
-                                        setActiveIndex(2);   // Set the activeIndex state
-                                        updatePaginationPosition(swiper); // Update the pagination position
-                                    }}
-                                    onSlideChange={(swiper) => {
-                                        setActiveIndex(swiper.activeIndex);
-                                        updatePaginationPosition(swiper);
-                                    }}
-                                    initialSlide={2} // Ensure Swiper starts at index 2
-                                    pagination={{
-                                        clickable: true,
-                                        el: ".custom-pagination-2",
-                                        renderBullet: (index, className) => `<span class="${className}"></span>`,
-                                    }}
-                                    loop={true}
-                                    modules={[Pagination]}
-                                    className="mySwiper"
-                                    spaceBetween={0}
-                                >
-                                    <SwiperSlide>
-                                        <Image
-                                            src={bottle3.src}
-                                            alt="Testimonial 2 Slide 1"
-                                            objectFit="cover"
-                                            margin={'0 auto'}
-                                            width={["100%","auto","100%"]}
-                                            height={["400px","auto","600px"]}
-                                        />
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <Image
-                                            src={bottle4.src}
-                                            alt="Testimonial 2 Slide 1"
-                                            objectFit="cover"
-                                            margin={'0 auto'}
-                                            width={["100%","auto","100%"]}
-                                            height={["400px","auto","600px"]}
-                                        />
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <Image
-                                            src={testimony2.src}
-                                            alt="Testimonial 2 Slide 1"
-                                            objectFit="cover"
-                                            margin={'0 auto'}
-                                            width={["100%","auto","100%"]}
-                                            height={["400px","auto","600px"]}
-                                        />
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <Image
-                                            src={testimony1.src}
-                                            alt="Our Story"
-                                            objectFit="cover"
-                                            margin={'0 auto'}
-                                            width={["100%","auto","100%"]}
-                                            height={["400px","auto","600px"]}
-                                        />
-                                    </SwiperSlide>
-                                </Swiper>
-                                <Flex mt={6} justifyContent="center" gap={4}>
-                                    <Image
-                                        src={arrowleft.src}
-                                        alt="Previous"
-                                        width={["51px", "68px"]}
-                                        height={["12px", "16px"]}
-                                        onClick={() => swiperRef2.current?.slidePrev()}
-                                        style={{cursor: "pointer"}}
-                                        opacity={[0, 1]}
-
-                                    />
-                                    <div className={"custom-pagination-2"}/>
-                                    <Image
-                                        src={arrowright.src}
-                                        alt="Next"
-                                        width={["51px", "68px"]}
-                                        height={["12px", "16px"]}
-                                        onClick={() => swiperRef2.current?.slideNext()}
-                                        style={{cursor: "pointer"}}
-                                        mb={4}
-
-                                    />
-                                </Flex>
-                            </Box>
-                        </Flex>
+                <Flex flexDirection={"column"} p={[4, 8, 8]} gap={[4, 20]} mb={[20]}>
+                    <Flex justify={'center'} mb={[4, 14]}>
+                        <Text fontSize={["28px", "48px", '48px']} fontWeight="bold" fontFamily={"EB Garamond"}>Customer
+                            testimony</Text>
                     </Flex>
-                    <Flex mb={12} flexDirection={['column', 'row']}>
-                        <Flex
-                            m={[4, 10]}
-                            justifyContent={'center'}
-                            height={["335px", "250px"]}
-                            width={["auto", '50%']}
+                    <Flex flexDirection={["column", "row"]} justifyContent="space-between" alignItems="center"
+                          gap={[6, 20]} mb={[10, 0]}>
+                        <Flex flexDirection={"column"} width={["100%", "44%"]} gap={[2, 10]} order={[1, 0]}>
+                            <Image
+                                display={["none", "inline"]}
+                                src={quotes.src}
+                                alt="Our Story"
+                                objectFit="cover"
+                                width="49px"
+                            />
+                            <Text fontSize={["16px", "24px"]} mb={[0, 4]}>It was an absolute pleasure working with
+                                Nader
+                                Distilleries on
+                                these super special
+                                customized
+                                wedding giveaways. The attention to detail, dedication and care they put into each
+                                and
+                                every
+                                aspect, even down to the packaging, was like no other. Guests were raving about
+                                these
+                                giveaways
+                                and still do to this day! I can&lsquo;t recommend them enough.</Text>
+                            <Text fontWeight={"bold"} fontSize={["18px", "20px"]} textAlign={"right"}>Melissa
+                                T.</Text>
+                        </Flex>
+                        <Box width={["100%", "44%"]} order={[0, 1]}>
+                            <Swiper
+                                onSwiper={(swiper) => {
+                                    swiperRef1.current = swiper;
+                                    swiper.slideTo(0, 0); // Set initial slide to 2 without animation
+                                    setActiveIndex(2);   // Set the activeIndex state
+                                    updatePaginationPosition(swiper); // Update the pagination position
+                                }}
+                                onSlideChange={(swiper) => {
+                                    setActiveIndex(swiper.activeIndex);
+                                    updatePaginationPosition(swiper);
+                                }}
+                                initialSlide={[0, 2]} // Ensure Swiper starts at index 2
+                                pagination={{
+                                    clickable: true,
+                                    el: ".custom-pagination",
+                                    renderBullet: (index, className) => `<span class="${className}"></span>`,
+                                }}
+                                loop={true}
+                                modules={[Pagination]}
+                                className="mySwiper"
+                                spaceBetween={0}
+                            >
+                                <SwiperSlide>
+                                    <Image
+                                        src={box.src}
+                                        alt="Our Story"
+                                        objectFit="cover"
+                                        margin={'0 auto'}
+                                        width={["100%", "auto", "100%"]}
+                                        height={["400px", "auto", "600px"]}
+                                    />
+                                </SwiperSlide>
+
+                                <SwiperSlide>
+                                    <Image
+                                        src={pres3.src}
+                                        alt="Our Story"
+                                        objectFit="cover"
+                                        objectPosition={"bottom"}
+                                        width={["100%", "auto", "100%"]}
+                                        height={["400px", "auto", "600px"]}
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Image
+                                        src={pres4.src}
+                                        alt="Our Story"
+                                        objectFit="cover"
+                                        objectPosition={"center 70%"}
+                                        width={["100%", "auto", "100%"]}
+                                        height={["400px", "auto", "600px"]}
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Image
+                                        src={bottle5.src}
+                                        alt="Our Story"
+                                        objectFit="cover"
+                                        width={["100%", "auto", "100%"]}
+                                        height={["400px", "auto", "600px"]}
+                                    />
+                                </SwiperSlide>
+                            </Swiper>
+                            <Flex
+                                mt={6}
+                                justifyContent="center" // Ensures everything is centered
+                                alignItems="center"     // Aligns items vertically centered
+                                gap={[0, 4]}            // Provides spacing between items
+                            >
+                                <Image
+                                    // display={["none", "inline"]}
+                                    src={arrowleft.src}
+                                    alt="Previous"
+                                    width={["51px", "68px"]}
+                                    height={["12px", "16px"]}
+                                    onClick={() => swiperRef1.current?.slidePrev()}
+                                    style={{cursor: "pointer"}}
+                                    opacity={[0, 1]}
+
+                                />
+                                <div
+                                    className="custom-pagination"
+                                    style={{
+                                        flex: 1,
+                                        textAlign: "center"
+                                    }} // Ensures this div takes the center space
+                                />
+                                <Image
+                                    src={arrowright.src}
+                                    alt="Next"
+                                    width={["51px", "68px"]}
+                                    height={["12px", "16px"]}
+                                    onClick={() => swiperRef1.current?.slideNext()}
+                                    style={{cursor: "pointer"}}
+                                    mb={4}
+                                />
+                            </Flex>
+
+                        </Box>
+
+                    </Flex>
+                    <Flex flexDirection={["column", "row"]} justifyContent={"space-between"} alignItems={"center"}
+                          gap={[6, 20]}>
+                        <Flex flexDirection={"column"} width={["100%", "44%"]} gap={[2, 10]} order={[1, 0]}>
+                            <Image
+                                display={["none", "inline"]}
+                                src={quotes.src}
+                                alt="Our Story"
+                                objectFit="cover"
+                                width="49px"
+                            />
+                            <Text fontSize={["16px", "24px"]} mb={[0, 4]}>It was an absolute pleasure working with
+                                Nader
+                                Distilleries on
+                                We were absolutely thrilled with the wedding gifts from Nader Distilleries. The
+                                personalized
+                                guidance and support in bringing our vision to life were invaluable. Nader
+                                Distilleries
+                                exceeded
+                                our expectations! The beautiful bottles and truly qualitative beverages left a
+                                lasting
+                                impression, and our guests continued to inquire about them even after the
+                                wedding.</Text>
+                            <Text fontWeight={"bold"} fontSize={["18px", "20px"]} textAlign={"right"}>Nada C.</Text>
+
+                        </Flex>
+                        <Box width={["100%", "44%"]} order={[0, 1]}>
+                            <Swiper
+                                onSwiper={(swiper) => {
+                                    swiperRef2.current = swiper;
+                                    swiper.slideTo(0, 0); // Set initial slide to 2 without animation
+                                    setActiveIndex(2);   // Set the activeIndex state
+                                    updatePaginationPosition(swiper); // Update the pagination position
+                                }}
+                                onSlideChange={(swiper) => {
+                                    setActiveIndex(swiper.activeIndex);
+                                    updatePaginationPosition(swiper);
+                                }}
+                                initialSlide={2} // Ensure Swiper starts at index 2
+                                pagination={{
+                                    clickable: true,
+                                    el: ".custom-pagination-2",
+                                    renderBullet: (index, className) => `<span class="${className}"></span>`,
+                                }}
+                                loop={true}
+                                modules={[Pagination]}
+                                className="mySwiper"
+                                spaceBetween={0}
+                            >
+                                <SwiperSlide>
+                                    <Image
+                                        src={bottle3.src}
+                                        alt="Testimonial 2 Slide 1"
+                                        objectFit="cover"
+                                        margin={'0 auto'}
+                                        width={["100%", "auto", "100%"]}
+                                        height={["400px", "auto", "600px"]}
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Image
+                                        src={bottle4.src}
+                                        alt="Testimonial 2 Slide 1"
+                                        objectFit="cover"
+                                        margin={'0 auto'}
+                                        width={["100%", "auto", "100%"]}
+                                        height={["400px", "auto", "600px"]}
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Image
+                                        src={testimony2.src}
+                                        alt="Testimonial 2 Slide 1"
+                                        objectFit="cover"
+                                        margin={'0 auto'}
+                                        width={["100%", "auto", "100%"]}
+                                        height={["400px", "auto", "600px"]}
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Image
+                                        src={testimony1.src}
+                                        alt="Our Story"
+                                        objectFit="cover"
+                                        margin={'0 auto'}
+                                        width={["100%", "auto", "100%"]}
+                                        height={["400px", "auto", "600px"]}
+                                    />
+                                </SwiperSlide>
+                            </Swiper>
+                            <Flex mt={6} justifyContent="center" gap={4}>
+                                <Image
+                                    src={arrowleft.src}
+                                    alt="Previous"
+                                    width={["51px", "68px"]}
+                                    height={["12px", "16px"]}
+                                    onClick={() => swiperRef2.current?.slidePrev()}
+                                    style={{cursor: "pointer"}}
+                                    opacity={[0, 1]}
+
+                                />
+                                <div className={"custom-pagination-2"}/>
+                                <Image
+                                    src={arrowright.src}
+                                    alt="Next"
+                                    width={["51px", "68px"]}
+                                    height={["12px", "16px"]}
+                                    onClick={() => swiperRef2.current?.slideNext()}
+                                    style={{cursor: "pointer"}}
+                                    mb={4}
+
+                                />
+                            </Flex>
+                        </Box>
+                    </Flex>
+                </Flex>
+                <Flex mb={12} flexDirection={['column', 'row']}>
+                    <Flex
+                        m={[4, 10]}
+                        justifyContent={'center'}
+                        height={["282px", "500px", "250px"]}
+                        width={["auto", '50%']}
+
+                    >
+                        <Flex borderWidth="1px"
+                              borderColor={'black'}
+                              direction="column"
+                              p={[8, 12]}
+                              pt={[0, 14]}
+                              pb={[0, 14]}
+                              alignContent={'center'}
+                              justifyContent={'center'}
+                              _hover={{
+                                  color: 'black',
+                                  bg: '#D2CDBF',
+                                  border: '1px solid transparent',
+                                  textDecoration: "none",
+                                  cursor: 'pointer',
+                                  transition: 'all 0.3s ease'
+                              }}
 
                         >
-                            <Flex borderWidth="1px"
-                                  borderColor={'black'}
-                                  direction="column"
-                                  p={[8, 12]}
-                                  pt={[0, 14]}
-                                  pb={[0, 14]}
-                                  alignContent={'center'}
-                                  justifyContent={'center'}
-                                  _hover={{
-                                      color: 'black',
-                                      bg: '#D2CDBF',
-                                      border: '1px solid transparent',
-                                      textDecoration: "none",
-                                      cursor: 'pointer',
-                                      transition: 'all 0.3s ease'
-                                  }}
-
-                            >
-                                <Link href={'/services/ethanol'} _hover={{textDecoration: 'none'}}>
-                                    <Flex alignItems={'center'} justifyContent={'space-between'} mb={4}
-                                          fontSize={["24px", "xl", "28px"]}>
-                                        <Text fontWeight="800" fontFamily={"EB Garamond"} color={"#333333"}>
-                                            Ethanol for every industry
-                                        </Text>
-                                        <FiChevronRight/>
-                                    </Flex>
-
-                                    <Text mb={2} fontSize={["16px", "md", "18px"]} color={"#333333"}>
-                                        Our ethanol caters to various industries, including pharmaceuticals, perfumery,
-                                        home
-                                        care, and beverages. Discover the perfect ethanol solution for your industry
-                                        with
-                                        us.
+                            <Link href={'/services/ethanol'} _hover={{textDecoration: 'none'}}>
+                                <Flex alignItems={'center'} justifyContent={'space-between'} mb={4}
+                                      fontSize={["24px", "xl", "28px"]}>
+                                    <Text fontWeight="800" fontFamily={"EB Garamond"} color={"#333333"}>
+                                        Ethanol for every industry
                                     </Text>
-                                </Link>
+                                    <FiChevronRight/>
+                                </Flex>
 
-                            </Flex>
-                        </Flex>
-                        <Flex
-                            justifyContent={'center'}
-                            m={[4, 10]}
-                            height={["335px", "250px"]}
-                            width={["auto", '50%']}
-                        >
-                            <Flex borderWidth="1px"
-                                  borderColor={'black'}
-                                  direction="column"
-                                  pl={[8, 12]}
-                                  pr={[8, 12]}
-                                  pt={[0, 14]}
-                                  pb={[0, 14]}
-                                  alignContent={'center'}
-                                  justifyContent={'center'}
-                                  height={"100%"}
-                                  _hover={{
-                                      color: 'black',
-                                      bg: '#D2CDBF',
-                                      border: '1px solid transparent',
-                                      textDecoration: "none",
-                                      cursor: 'pointer',
-                                      transition: 'all 0.3s ease'
-                                  }}
+                                <Text mb={2} fontSize={["16px", "md", "18px"]} color={"#333333"}>
+                                    Our ethanol caters to various industries, including pharmaceuticals, perfumery,
+                                    home
+                                    care, and beverages. Discover the perfect ethanol solution for your industry
+                                    with
+                                    us.
+                                </Text>
+                            </Link>
 
-                            >
-                                <Link href={'/services/label-drinks'} _hover={{textDecoration: 'none'}}>
-                                    <Flex alignItems={'center'} justifyContent={'space-between'} mb={4}
-                                          fontSize={["24px", "xl", "28px"]}>
-                                        <Text fontWeight="800" fontFamily={"EB Garamond"} color={"#333333"}>
-                                            Craft your identity
-                                        </Text>
-                                        <FiChevronRight/>
-                                    </Flex>
-
-                                    <Text mb={2} fontSize={["16px", "md", "18px"]} color={"#333333"}>
-                                        Craft your unique identity with our private label offerings. Let us shape your
-                                        brand
-                                        together.
-                                    </Text>
-                                </Link>
-
-                            </Flex>
                         </Flex>
                     </Flex>
+                    <Flex
+                        justifyContent={'center'}
+                        m={[4, 10]}
+                        height={["282px", "500px", "250px"]}
+                        width={["auto", '50%']}
+                    >
+                        <Flex borderWidth="1px"
+                              borderColor={'black'}
+                              direction="column"
+                              pl={[8, 12]}
+                              pr={[8, 12]}
+                              pt={[0, 14]}
+                              pb={[0, 14]}
+                              alignContent={'center'}
+                              justifyContent={'center'}
+                              height={"100%"}
+                              _hover={{
+                                  color: 'black',
+                                  bg: '#D2CDBF',
+                                  border: '1px solid transparent',
+                                  textDecoration: "none",
+                                  cursor: 'pointer',
+                                  transition: 'all 0.3s ease'
+                              }}
+
+                        >
+                            <Link href={'/services/label-drinks'} _hover={{textDecoration: 'none'}}>
+                                <Flex alignItems={'center'} justifyContent={'space-between'} mb={4}
+                                      fontSize={["24px", "xl", "28px"]}>
+                                    <Text fontWeight="800" fontFamily={"EB Garamond"} color={"#333333"}>
+                                        Craft your identity
+                                    </Text>
+                                    <FiChevronRight/>
+                                </Flex>
+
+                                <Text mb={2} fontSize={["16px", "md", "18px"]} color={"#333333"}>
+                                    Craft your unique identity with our private label offerings. Let us shape your
+                                    brand
+                                    together.
+                                </Text>
+                            </Link>
+
+                        </Flex>
+                    </Flex>
+                </Flex>
             </Box>
         </CustomBox>
 
-)
+    )
 }

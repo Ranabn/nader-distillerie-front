@@ -19,7 +19,7 @@ export const SectionItem = ({subtitle, title, description, buttonText, imageSrc,
         gap={[4, 12, 32]}
         alignItems="center"
     >
-        <Image src={imageSrc} alt={title} width={["100%","100%","100%","100%",650]} minWidth={"815px"} objectFit="cover"
+        <Image src={imageSrc} alt={title} width={["100%","100%","100%","100%",650]} minWidth={["100vw","815px","815px"]} objectFit="cover"
                height={["200px", "459px", "459px"]}/>
         <Flex flexDirection={'column'} width={'100%'}>
             <Text fontSize={["20px", "24px", "24px"]} color={'#12191F'}>{subtitle}</Text>
@@ -46,7 +46,7 @@ const ServiceSection = () => {
     const pathname = usePathname()
     return (
         <Box as="section" mb={pathname === '/services' ? 10 : 0} py={[6, 8, 12]} p={[4, 8, 8]} bg={'white'}>
-            <Heading display={[pathname === '/services' ? "none" : "flex", 'none']}
+            <Heading mb={[10,0,0]} display={[pathname === '/services' ? "none" : "flex", 'none']}
                      fontSize="28px"
                      mb={[4, 14, 14]}
                      fontWeight="bold"

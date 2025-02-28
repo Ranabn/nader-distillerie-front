@@ -70,7 +70,7 @@ export const JourneyTimeline = ({timeline}: any) => {
                         fontFamily="EB Garamond"
                         fontWeight="bold"
                         mr={'45px'}
-                        mb={40}
+                        mb={[40]}
                     >
                         A journey of growth, <br/> skill, and unwavering dedication
                     </Flex>

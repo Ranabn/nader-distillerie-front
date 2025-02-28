@@ -6,7 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Parallax v4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/brands/Social.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Social.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/footer/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/landing/ProductsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/ProductsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/landing/ServicesSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/ServicesSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/navigation/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation/navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/our-story/JourneyTimeLine.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/JourneyTimeLine.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/our-story/OurStoryClientWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/OurStoryClientWrapper.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/our-story/ResponsiveJourneyTimeline.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/ResponsiveJourneyTimeline.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/product/3DSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/product/3DSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/services/Ethanol.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/services/Ethanol.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/services/Gifts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/services/Gifts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/services/LabelDrinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/services/LabelDrinks.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,14 +118,6 @@
       <workItem from="1740057853901" duration="6246000" />
       <workItem from="1740140637909" duration="941000" />
       <workItem from="1740142148443" duration="18963000" />
-    </task>
-    <task id="LOCAL-00031" summary="Push everyting">
-      <option name="closed" value="true" />
-      <created>1738838039660</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1738838039660</updated>
     </task>
     <task id="LOCAL-00032" summary="Push everyting">
       <option name="closed" value="true" />
@@ -500,7 +503,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740735001744</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Parallax v4">
+      <option name="closed" value="true" />
+      <created>1740744033200</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1740744033201</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
