@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Responsive">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/ServicesSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/ServicesSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/our-story/ResponsiveJourneyTimeline.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/ResponsiveJourneyTimeline.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,14 +107,6 @@
       <workItem from="1740057853901" duration="6246000" />
       <workItem from="1740140637909" duration="941000" />
       <workItem from="1740142148443" duration="18963000" />
-    </task>
-    <task id="LOCAL-00033" summary="Responsive big screens">
-      <option name="closed" value="true" />
-      <created>1738845193636</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1738845193636</updated>
     </task>
     <task id="LOCAL-00034" summary="Arrow working">
       <option name="closed" value="true" />
@@ -500,7 +492,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740750530351</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Responsive">
+      <option name="closed" value="true" />
+      <created>1740750661122</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1740750661122</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
