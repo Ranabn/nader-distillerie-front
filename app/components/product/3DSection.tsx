@@ -1,9 +1,9 @@
 // @ts-nocheck
 
 "use client";
-import React, {useRef, useEffect, useState} from "react";
-import {Swiper, SwiperSlide} from "swiper/react";
-import {EffectFade, Mousewheel, Parallax, Thumbs} from "swiper/modules";
+import React, { useRef, useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFade, Mousewheel, Parallax, Thumbs } from "swiper/modules";
 import {
     Box,
     Text,
@@ -12,30 +12,30 @@ import {
     useBreakpointValue,
     Image,
 } from "@chakra-ui/react";
-import {FiArrowRight} from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 import ArrowDown from "@/app/assets/images/arrow-down-products.png";
-import {useSearchParams} from "next/navigation";
-import {gsap} from "gsap";
-import {keyframes} from "@emotion/react";
+import { useSearchParams } from "next/navigation";
+import { gsap } from "gsap";
+import { keyframes } from "@emotion/react";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
 import CustomBox from "@/app/components/ui/CustomBox";
-import {CraftIdentity} from "@/app/components/product/CraftIdentity";
-import {Footer} from "@/app/components/footer/Footer";
+import { CraftIdentity } from "@/app/components/product/CraftIdentity";
+import { Footer } from "@/app/components/footer/Footer";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 // Register the ScrollToPlugin with GSAP so that the scrollTo functionality is available.
 gsap.registerPlugin(ScrollToPlugin);
 
-export const Product3DSection = ({sections, isResponsive, brands, craftRef}: any) => {
+export const Product3DSection = ({ sections, isResponsive, brands, craftRef }: any) => {
     // Flag for when we are at the top of the page (used for overlay)
     const [isTopOfPage, setIsTopOfPage] = useState(true);
     // Track scroll position for animation logic
     const [scrollYPosition, setScrollYPosition] = useState(0);
     // State to determine if the footer slide is active
     const [isFooterActive, setIsFooterActive] = useState(false);
-    // Store the swiper instance so we can call updateAutoHeight later
+    // Store the swiper instance so we can call updateAutoHeight later and control slide changes
     const [swiperInstance, setSwiperInstance] = useState(null);
     // Refs for arrow elements (for hover animations)
     const arrowRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -44,7 +44,7 @@ export const Product3DSection = ({sections, isResponsive, brands, craftRef}: any
     // Ref for the main container wrapping the Swiper
     const containerRef = useRef<HTMLDivElement>(null);
     // Check for mobile responsiveness
-    const isMobile = useBreakpointValue({base: true, md: false});
+    const isMobile = useBreakpointValue({ base: true, md: false });
     // Get search params (for initial slide selection)
     const router = useSearchParams();
     const product = router.get("product");
@@ -65,22 +65,38 @@ export const Product3DSection = ({sections, isResponsive, brands, craftRef}: any
                 onComplete: () => {
                     gsap.fromTo(
                         arrowRef,
-                        {x: -10, opacity: 0},
-                        {x: 0, opacity: 1, duration: 0.6, ease: "power1.inOut"}
+                        { x: -10, opacity: 0 },
+                        { x: 0, opacity: 1, duration: 0.6, ease: "power1.inOut" }
                     );
                 },
             });
         }
     };
 
-    // Update scrollYPosition on window scroll
+    // Update scrollYPosition on window scroll and if at top, assign active slide index 3
     useEffect(() => {
+        // Only attach the scroll event if swiperInstance is available
+        if (!swiperInstance) return;
+
+        // Define the scroll event handler
         const handleScroll = () => {
-            setScrollYPosition(window.scrollY);
+            // Get the current vertical scroll position
+            const currentScrollY = window.scrollY;
+            // Update the scrollYPosition state
+            setScrollYPosition(currentScrollY);
+            // When the page is scrolled to the top (scrollY === 0)
+            if (currentScrollY === 0) {
+                console.log("Scroll is at top page");
+                // Programmatically change the active slide to index 3
+                swiperInstance.slideTo(3);
+            }
         };
+
+        // Add the scroll event listener to the window
         window.addEventListener("scroll", handleScroll);
+        // Cleanup function: remove the event listener when the component unmounts or when swiperInstance changes
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [swiperInstance]);
 
     // Determine the initial slide index based on the "product" query parameter
     const getInitialSlideIndex = (product: string) => {
@@ -109,18 +125,14 @@ export const Product3DSection = ({sections, isResponsive, brands, craftRef}: any
         // Calculate the last slide index based on the sections array length.
         const lastContentSlideIndex = sections.length - 1;
 
-        // If the active index is 3 and craftRef.current exists, scroll to that element.
+        // If the active index is 4 and craftRef.current exists, scroll to that element.
         if (activeIndex === 4 && craftRef) {
             // Calculate the element's position relative to the document.
-            // getBoundingClientRect().top gives the position relative to the viewport.
-            // window.pageYOffset adds the current vertical scroll position.
             const targetY = craftRef.current.getBoundingClientRect().top + window.pageYOffset;
-
             // Use GSAP's scrollTo plugin to animate the window scroll to the calculated position.
             gsap.to(window, {
-                // The scrollTo property accepts an object with a numeric y value.
                 scrollTo: { y: targetY, offsetY: 0 },
-                duration: .8,         // Duration of the scroll animation in seconds.
+                duration: 0.8,         // Duration of the scroll animation in seconds.
                 ease: "power3.out",    // Easing function for smooth animation.
             });
         }
@@ -188,13 +200,13 @@ export const Product3DSection = ({sections, isResponsive, brands, craftRef}: any
 
     // Keyframes for the link underline animation
     const lineAnimation = keyframes`
-        0% {
-            width: 0;
-        }
-        100% {
-            width: 25%;
-        }
-    `;
+      0% {
+          width: 0;
+      }
+      100% {
+          width: 25%;
+      }
+  `;
 
     return (
         // Main container wraps the Swiper.
@@ -222,14 +234,14 @@ export const Product3DSection = ({sections, isResponsive, brands, craftRef}: any
                 onSwiper={setSwiperInstance} // Store the swiper instance here
                 // Use different modules based on responsive state
                 modules={isTopOfPage ? [isResponsive ? EffectFade : EffectFade, Mousewheel, Thumbs] : []}
-                mousewheel={{sensitivity: 1, releaseOnEdges: true}}
+                mousewheel={{ sensitivity: 1, releaseOnEdges: true }}
                 effect={isResponsive ? "fade" : "fade"}
                 direction="vertical"
                 slidesPerView={1}
                 speed={1000}
                 onSlideChange={handleSlideChange} // Handle slide changes
                 initialSlide={getInitialSlideIndex(product)}
-                style={{width: "100%", height: "100vh"}}
+                style={{ width: "100%", height: "100vh" }}
             >
                 {sections.map((sec: any, index: number) => (
                     <SwiperSlide
@@ -302,7 +314,7 @@ export const Product3DSection = ({sections, isResponsive, brands, craftRef}: any
                                             {sec.discover}
                                         </Text>
                                         <Box ref={(el) => (arrowRefs.current[index * 2] = el)}>
-                                            <FiArrowRight/>
+                                            <FiArrowRight />
                                         </Box>
                                     </Flex>
                                 </Link>
@@ -322,7 +334,7 @@ export const Product3DSection = ({sections, isResponsive, brands, craftRef}: any
                                                 {sec.discover2}
                                             </Text>
                                             <Box ref={(el) => (arrowRefs.current[index * 2 + 1] = el)}>
-                                                <FiArrowRight/>
+                                                <FiArrowRight />
                                             </Box>
                                         </Flex>
                                     </Link>
@@ -369,8 +381,7 @@ export const Product3DSection = ({sections, isResponsive, brands, craftRef}: any
                         </Flex>
                     </SwiperSlide>
                 ))}
-                <SwiperSlide style={{height: "0vh"}}></SwiperSlide>
-
+                <SwiperSlide style={{ height: "0vh" }}></SwiperSlide>
             </Swiper>
         </Box>
     );
