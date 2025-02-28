@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Parallax v4">
+    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Responsive">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/brands/Social.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Social.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/footer/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/ProductsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/ProductsSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/landing/ServicesSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/ServicesSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/navigation/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navigation/navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/our-story/JourneyTimeLine.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/JourneyTimeLine.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/our-story/OurStoryClientWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/OurStoryClientWrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/our-story/ResponsiveJourneyTimeline.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/ResponsiveJourneyTimeline.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/product/3DSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/product/3DSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/services/Ethanol.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/services/Ethanol.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/services/Gifts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/services/Gifts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/services/LabelDrinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/services/LabelDrinks.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,14 +107,6 @@
       <workItem from="1740057853901" duration="6246000" />
       <workItem from="1740140637909" duration="941000" />
       <workItem from="1740142148443" duration="18963000" />
-    </task>
-    <task id="LOCAL-00032" summary="Push everyting">
-      <option name="closed" value="true" />
-      <created>1738839312817</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1738839312817</updated>
     </task>
     <task id="LOCAL-00033" summary="Responsive big screens">
       <option name="closed" value="true" />
@@ -511,14 +492,21 @@
       <option name="project" value="LOCAL" />
       <updated>1740744033201</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Responsive">
+      <option name="closed" value="true" />
+      <created>1740750530351</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1740750530351</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="responsive" />
     <MESSAGE value="push img" />
     <MESSAGE value="Footer &amp; other stuff" />
     <MESSAGE value="Last element Item margin" />
@@ -543,7 +531,8 @@
     <MESSAGE value="Parallax v2" />
     <MESSAGE value="Parallax v3" />
     <MESSAGE value="Parallax v4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parallax v4" />
+    <MESSAGE value="Responsive" />
+    <option name="LAST_COMMIT_MESSAGE" value="Responsive" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

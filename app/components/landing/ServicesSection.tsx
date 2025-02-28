@@ -46,9 +46,9 @@ const ServiceSection = () => {
     const pathname = usePathname()
     return (
         <Box as="section" mb={pathname === '/services' ? 10 : 0} py={[6, 8, 12]} p={[4, 8, 8]} bg={'white'}>
-            <Heading mb={[10,0,0]} display={[pathname === '/services' ? "none" : "flex", 'none']}
+            <Heading  display={[pathname === '/services' ? "none" : "flex", 'none']}
                      fontSize="28px"
-                     mb={[4, 14, 14]}
+                     mb={[10, 14, 14]}
                      fontWeight="bold"
                      fontFamily='EB Garamond, serif'
             >
