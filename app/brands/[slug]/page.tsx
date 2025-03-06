@@ -49,7 +49,7 @@ const BRAND_QUERY = `*[_type == "brands" && slug.current == $slug][0]{
   link_to_brand_facebook,
   brand_quote_social_section,
   brand_description_first_p_technical,
-  link_to_technical_sheet,
+    "technicalSheetUrl": technicalSheet.asset->url,
   link_to_brand,
   mainImage{asset->, alt},
   secondaryImage{asset->, alt},
@@ -125,7 +125,7 @@ const BrandPage = async ({params}: { params: { slug: string } }) => {
                 <SocialBrands
                     quote={brand?.brand_quote_social_section}
                     description={brand?.brand_description_first_p_technical}
-                    technicalSheetUrl={brand?.link_to_technical_sheet || ""}
+                    technicalSheetUrl={brand?.technicalSheetUrl || ""}
                     brandWebsiteUrl={brand?.link_to_brand}
                     facebookUrl={brand.link_to_brand_facebook || ""}
                     instagramUrl={brand.link_to_brand_instagram || ""}

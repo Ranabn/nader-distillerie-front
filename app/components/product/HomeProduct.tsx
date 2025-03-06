@@ -29,8 +29,8 @@ const sections = [
         fontSize: "503px",
         mobileFontSize: "120px",
         discover: "Discover our spirits brands",
-        backgroundSize: "auto",
-        backgroundPosition: "bottom -1700px right 0px",
+        backgroundSize: "100%",
+        backgroundPosition: "center",
     },
     {
         id: 2,

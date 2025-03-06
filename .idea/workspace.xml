@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Responsive" />
+    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Responsive">
+      <change afterPath="$PROJECT_DIR$/app/assets/google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/noel.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/cookies-policy/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/terms-condition/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/images/noel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/brands/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/brands/[slug]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/brands/Social.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Social.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/brands/StickyImageMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/StickyImageMobile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/contact/ContactForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/contact/ContactForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/footer/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/landing/ServicesSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/ServicesSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/our-story/Gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/Gallery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/our-story/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/our-story/Numbers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/Numbers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/our-story/OurStoryClientWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/OurStoryClientWrapper.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/product/HomeProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/product/HomeProduct.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/restriction-age/RestrictionAge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/restriction-age/RestrictionAge.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/contact/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/contact/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/our-story/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/our-story/page.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,34 +50,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/maximepalmino/Documents/nader-distillerie-front/app/assets/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/maximepalmino/Documents/nader-distillerie-front/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/maximepalmino/Documents/nader-distillerie-front/app/assets",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "show.migrate.to.gradle.popup": "false",
+    "ts.external.directory.path": "/Users/maximepalmino/Documents/nader-distillerie-front/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets" />
       <recent name="$PROJECT_DIR$/app/assets/images" />
       <recent name="$PROJECT_DIR$/app/assets/images/products" />
       <recent name="$PROJECT_DIR$/app/assets/images/gift-sliders" />
       <recent name="$PROJECT_DIR$/app/assets/images/services" />
-      <recent name="$PROJECT_DIR$/app/assets/fonts/Varta/static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/assets/images/products" />
@@ -104,15 +127,9 @@
       <workItem from="1740057853901" duration="6246000" />
       <workItem from="1740140637909" duration="941000" />
       <workItem from="1740142148443" duration="18963000" />
-      <workItem from="1740751476911" duration="512000" />
-    </task>
-    <task id="LOCAL-00035" summary="Arrow working">
-      <option name="closed" value="true" />
-      <created>1738864144764</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1738864144764</updated>
+      <workItem from="1740751476911" duration="726000" />
+      <workItem from="1740908418518" duration="1446000" />
+      <workItem from="1741200952438" duration="8976000" />
     </task>
     <task id="LOCAL-00036" summary="Arrow working">
       <option name="closed" value="true" />
@@ -498,7 +515,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740751514507</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Responsive">
+      <option name="closed" value="true" />
+      <created>1740752174673</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1740752174673</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

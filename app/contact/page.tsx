@@ -1,7 +1,8 @@
 import {
     Flex,
     Box,
-    Text
+    Text,
+    Image
 } from '@chakra-ui/react';
 import {Navbar} from "@/app/components/navigation/navbar";
 import {Footer} from "@/app/components/footer/Footer";
@@ -10,7 +11,7 @@ import React, {Fragment, Suspense} from "react";
 import ContactForm from "@/app/components/contact/ContactForm";
 import GoogleMapComponent from "@/app/components/contact/GoogleMapComponent";
 import CustomBox from '../components/ui/CustomBox';
-
+import Google from '../assets/images/google.png'
 const BRANDS_QUERY = `*[_type == "brands"] {
   brand_name,
   "slug": slug.current,
@@ -69,7 +70,8 @@ const ContactPage = async () => {
                                     </Box>
 
                                     <Box  width={'100%'} mt={[0, 6]} order={[0, 1]}>
-                                        <GoogleMapComponent apiKey={API_KEY} center={center} zoom={12}/>
+                                        {/*<GoogleMapComponent apiKey={API_KEY} center={center} zoom={12}/>*/}
+                                        <Image src={Google.src}/>
                                     </Box>
                                 </Flex>
                             </Flex>

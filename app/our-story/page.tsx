@@ -33,6 +33,7 @@ const OurStoryPage = async () => {
         query: OUR_STORY_QUERY,
     });
 
+
     const timelineWithImages = ourStory.timeline.map(item => ({
         ...item,
         imageUrl: item.image ? urlFor(item.image).url() : null
@@ -42,8 +43,11 @@ const OurStoryPage = async () => {
 
     const galleryWithImages = ourStory.gallery.map(item => ({
         ...item,
-        imageUrl: item ? urlFor(item).url() : null
+        imageUrl: item.image ? urlFor(item.image).url() : null,
+        altText: item.alt || '',
     }));
+
+
 
     return (
         <>

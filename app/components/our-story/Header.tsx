@@ -1,13 +1,31 @@
-// @ts-nocheck
-
 'use client'
 
-import {Box, Flex, Heading, Icon, Image, Text} from "@chakra-ui/react";
-import {Btn} from "@/app/components/ui/Btn";
-import React from "react";
-import {FiChevronDown} from "react-icons/fi";
+import { Box, Flex, Heading, Icon, Image, Text } from "@chakra-ui/react";
+import React, {useEffect} from "react";
+import { FiChevronDown } from "react-icons/fi";
+import { PortableText } from '@portabletext/react';
 
-export const OurStoryHeader = ({header, imageUrlHeader}) => {
+const portableTextComponents = {
+    marks: {
+        link: ({ children, value }) => {
+            const target = value.blank ? '_blank' : '_self';
+            return (
+                <a
+                    href={value.href}
+                    target={target}
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'underline' }}
+                >
+                    {children}
+                </a>
+            );
+        },
+    },
+};
+
+
+export const OurStoryHeader = ({ header, imageUrlHeader }) => {
+
     return (
         <Flex
             justify="center"
@@ -16,11 +34,11 @@ export const OurStoryHeader = ({header, imageUrlHeader}) => {
             height={["90vh", "100vh"]}
             position="relative"
             overflow="hidden"
-            mt={[20,0,0 ]}
+            mt={[20, 0, 0]}
         >
             <Image
                 src={imageUrlHeader}
-                alt={"background"}
+                alt="background"
                 layout="fill"
                 objectFit="cover"
                 quality={100}
@@ -31,34 +49,26 @@ export const OurStoryHeader = ({header, imageUrlHeader}) => {
             <Flex
                 position="absolute"
                 zIndex={1}
-                justifyContent={'center'}
-                flexDirection='column'
+                justifyContent="center"
+                flexDirection="column"
                 maxW={['90%', "90%", '66%']}
             >
-                <Heading color={'black'} fontFamily={"EB Garamond"} fontSize={["28px", "4xl", "48px"]} fontWeight="bold"
-                         mb={8}
-                         as={"h2"}>
+                <Heading
+                    color="black"
+                    fontFamily="EB Garamond"
+                    fontSize={["28px", "4xl", "48px"]}
+                    fontWeight="bold"
+                    mb={8}
+                    as="h2"
+                >
                     {header.title}
                 </Heading>
-                <Text fontSize={["15px","16px", "md", "18px"]} mb={4} color={'black'}>
-                    From the heart of our family, we invite you to share in our passion. We are not just about our
-                    products; we are about being there for life&#39;`s special moments. Whether it is a heartfelt
-                    conversation, a spontaneous toast, or a cherished celebration, our products are your companions in
-                    these memorable experiences, bringing people together and creating lasting bonds.
-                </Text>
-                <Text fontSize={["15px","16px", "md", "18px"]} mb={4} color={'black'}>
-
-                    Life’s precious moments deserve nothing less than perfection, nature crafted in a bottle.<br/>
-                    Guided by enduring values of integrity, adaptability, and an unwavering commitment to quality, we
-                    have earned a regional reputation for excellence and trust in the beverage industry, distributing
-                    our products worldwide, and reaching enthusiasts across the globe.
-                </Text>
-                {/*<Text fontSize={["md", "18px"]} mb={4} color={'black'}>*/}
-                {/*    {header.description}*/}
-                {/*</Text>*/}
-                {/*<Text fontSize={["md", "18px"]} mb={4} color={'black'}>*/}
-                {/*    {header.description2}*/}
-                {/*</Text>*/}
+                <Box color="black" mb={4}>
+                    <PortableText value={header.description} components={portableTextComponents} />
+                </Box>
+                <Box color="black" mb={4}>
+                    <PortableText value={header.description2} components={portableTextComponents} />
+                </Box>
             </Flex>
             <Box
                 position="absolute"
@@ -68,15 +78,8 @@ export const OurStoryHeader = ({header, imageUrlHeader}) => {
                 width="100%"
                 textAlign="center"
             >
-                <Text fontSize="sm">
-                    Scroll down
-                </Text>
-                <Icon
-                    as={FiChevronDown as any}
-                    w={6}
-                    h={6}
-                    animation="upDownFade 2s infinite"
-                />
+                <Text fontSize="sm">Scroll down</Text>
+                <Icon as={FiChevronDown} w={6} h={6} animation="upDownFade 2s infinite" />
             </Box>
             <style jsx global>{`
                 @keyframes upDownFade {

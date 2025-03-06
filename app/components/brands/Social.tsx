@@ -5,6 +5,7 @@ import {Btn} from "@/app/components/ui/Btn";
 import Background from "@/app/assets/images/background-brands.png";
 import {FaFacebook, FaInstagram} from "react-icons/fa";
 import CustomBox from "@/app/components/ui/CustomBox";
+import {useEffect} from "react";
 
 interface SocialBrandsProps {
     quote: string;
@@ -25,6 +26,11 @@ export const SocialBrands = ({
                                  technicalSheetUrl,
                                  brandName
                              }: SocialBrandsProps) => {
+
+    useEffect(() => {
+        console.log(technicalSheetUrl)
+
+    }, []);
     return (
         <Flex
             mt={8}
@@ -95,7 +101,7 @@ export const SocialBrands = ({
                         {technicalSheetUrl && (
                             <Box zIndex={999}>
                                 <Text fontSize={["20px", "24px", "24px"]} mb={2}>Technical data</Text>
-                                <Link href={technicalSheetUrl}>
+                                <Link href={technicalSheetUrl} isExternal aria-label="Download technical data sheet">
                                     <Box fontSize="18px">
                                         <Flex gap={4}>
                                             <Text fontSize={["16px", "18px"]} mb={4}>

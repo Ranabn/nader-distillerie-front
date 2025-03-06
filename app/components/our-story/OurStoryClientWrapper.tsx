@@ -7,9 +7,12 @@ import {Footer} from "@/app/components/footer/Footer";
 import {ResponsiveJourneyTimeline} from "@/app/components/our-story/ResponsiveJourneyTimeline";
 import Gallery from "@/app/components/our-story/Gallery";
 import CustomBox from "../ui/CustomBox";
+import {useEffect} from "react";
 
 export const OurStoryClientWrapper = ({timelineWithImages, galleryWithImages, brands}) => {
-
+    useEffect(() => {
+        console.log(galleryWithImages)
+    }, []);
     return (
         <>
             <Flex direction="column" maxWidth="100%" mb={[20]} overflow="hidden" display={['none', 'flex']}>
@@ -22,7 +25,8 @@ export const OurStoryClientWrapper = ({timelineWithImages, galleryWithImages, br
             </Flex>
             <CustomBox>
                 <Box position="relative">
-                    <Gallery images={galleryWithImages}/>
+                    <Gallery images={galleryWithImages || []} />
+
                 </Box>
             </CustomBox>
             <Footer brands={brands}/>

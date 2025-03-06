@@ -112,7 +112,7 @@ export const Footer = ({brands}: any) => {
                     reserved.</Text>
                 <HStack spacing={4} >
                     <Link href="/privacy-policy" fontSize="xs">Privacy Policy</Link>
-                    <Link href="#" fontSize="xs">Terms & Conditions</Link>
+                    <Link href="/terms-condition" fontSize="xs">Terms & Conditions</Link>
                 </HStack>
             </Flex>
             <style jsx global>{`
