@@ -5,28 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Responsive">
-      <change afterPath="$PROJECT_DIR$/app/assets/google.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/google.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/noel.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/cookies-policy/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/terms-condition/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/noel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/brands/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/brands/[slug]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/brands/Social.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/Social.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/brands/StickyImageMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/brands/StickyImageMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/contact/ContactForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/contact/ContactForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/footer/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/ServicesSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/ServicesSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/our-story/Gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/Gallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/our-story/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/our-story/Numbers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/Numbers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/our-story/OurStoryClientWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/OurStoryClientWrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/product/HomeProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/product/HomeProduct.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/restriction-age/RestrictionAge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/restriction-age/RestrictionAge.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/contact/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/contact/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/our-story/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/our-story/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/terms-condition/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/terms-condition/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,15 +109,7 @@
       <workItem from="1740142148443" duration="18963000" />
       <workItem from="1740751476911" duration="726000" />
       <workItem from="1740908418518" duration="1446000" />
-      <workItem from="1741200952438" duration="8976000" />
-    </task>
-    <task id="LOCAL-00036" summary="Arrow working">
-      <option name="closed" value="true" />
-      <created>1738864378946</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1738864378946</updated>
+      <workItem from="1741200952438" duration="9645000" />
     </task>
     <task id="LOCAL-00037" summary="Menu responsive">
       <option name="closed" value="true" />
@@ -523,7 +495,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740752174673</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Responsive">
+      <option name="closed" value="true" />
+      <created>1741262561924</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1741262561925</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
