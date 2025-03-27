@@ -206,7 +206,6 @@ export const BrandsSection = ({isLanding, brands, imageUrls}: any) => {
                                 <Text fontSize={["2xl", "32px"]} fontWeight="bold" fontFamily={"EB Garamond"}
                                       mb={[6, 0, 10]}>{brand.brand_name}</Text>
                             </Flex>
-
                             <Link display={['none', 'flex', 'flex']} _hover={{textDecoration: "none"}}
                                   href={`/brands/${brand.slug}`}>
                                 <Btn size={'sm'} variant="secondary" text={`Discover ${brand.brand_name}`}/>
