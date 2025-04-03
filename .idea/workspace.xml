@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Adding analytics">
+    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Varta input restriction">
+      <change afterPath="$PROJECT_DIR$/app/components/ClientRedirect.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/restriction-age/RestrictionAge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/restriction-age/RestrictionAge.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,15 +112,7 @@
       <workItem from="1740908418518" duration="1446000" />
       <workItem from="1741200952438" duration="10882000" />
       <workItem from="1741681454079" duration="1421000" />
-      <workItem from="1743082208897" duration="3841000" />
-    </task>
-    <task id="LOCAL-00040" summary="Product">
-      <option name="closed" value="true" />
-      <created>1738931372655</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1738931372655</updated>
+      <workItem from="1743082208897" duration="4445000" />
     </task>
     <task id="LOCAL-00041" summary="Dynamic links ok">
       <option name="closed" value="true" />
@@ -505,14 +498,21 @@
       <option name="project" value="LOCAL" />
       <updated>1743082412280</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="Varta input restriction">
+      <option name="closed" value="true" />
+      <created>1743674789976</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1743674789976</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Footer &amp; other stuff" />
     <MESSAGE value="Last element Item margin" />
     <MESSAGE value="Adding a lot of things" />
     <MESSAGE value="Adding Explore more" />
@@ -537,7 +537,8 @@
     <MESSAGE value="Parallax v4" />
     <MESSAGE value="Responsive" />
     <MESSAGE value="Adding analytics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding analytics" />
+    <MESSAGE value="Varta input restriction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Varta input restriction" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
