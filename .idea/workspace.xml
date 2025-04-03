@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Responsive">
+    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Adding analytics">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/BrandsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/BrandsSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/restriction-age/RestrictionAge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/restriction-age/RestrictionAge.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,15 +111,7 @@
       <workItem from="1740908418518" duration="1446000" />
       <workItem from="1741200952438" duration="10882000" />
       <workItem from="1741681454079" duration="1421000" />
-      <workItem from="1743082208897" duration="185000" />
-    </task>
-    <task id="LOCAL-00039" summary="Menu responsive + suspense">
-      <option name="closed" value="true" />
-      <created>1738921328448</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1738921328448</updated>
+      <workItem from="1743082208897" duration="3841000" />
     </task>
     <task id="LOCAL-00040" summary="Product">
       <option name="closed" value="true" />
@@ -506,14 +497,21 @@
       <option name="project" value="LOCAL" />
       <updated>1741262996223</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Adding analytics">
+      <option name="closed" value="true" />
+      <created>1743082412280</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1743082412280</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="push img" />
     <MESSAGE value="Footer &amp; other stuff" />
     <MESSAGE value="Last element Item margin" />
     <MESSAGE value="Adding a lot of things" />
@@ -538,7 +536,8 @@
     <MESSAGE value="Parallax v3" />
     <MESSAGE value="Parallax v4" />
     <MESSAGE value="Responsive" />
-    <option name="LAST_COMMIT_MESSAGE" value="Responsive" />
+    <MESSAGE value="Adding analytics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding analytics" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

@@ -130,6 +130,7 @@ export const RestrictionAge = () => {
                                 height={["93px", '204px']}
                                 borderRadius={'none'}
                                 key={index}
+                                fontFamily={'EB Garamond'}
                                 ref={inputRefs[index]}
                                 border={['0.27px white solid', '0.4px white solid']}
                                 borderWidth="1px"
