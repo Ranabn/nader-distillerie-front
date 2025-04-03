@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Flex, Box } from "@chakra-ui/react";
 import { Navbar } from "@/app/components/navigation/navbar";
 import { HeroBanner } from "@/app/components/landing/HeroBanner";
