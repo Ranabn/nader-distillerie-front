@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Varta input restriction">
-      <change afterPath="$PROJECT_DIR$/app/components/ClientRedirect.tsx" afterDir="false" />
+    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="restriction age redirect clean ts no check">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,23 +110,7 @@
       <workItem from="1740908418518" duration="1446000" />
       <workItem from="1741200952438" duration="10882000" />
       <workItem from="1741681454079" duration="1421000" />
-      <workItem from="1743082208897" duration="4445000" />
-    </task>
-    <task id="LOCAL-00041" summary="Dynamic links ok">
-      <option name="closed" value="true" />
-      <created>1738932152632</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1738932152632</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Dynamic links ok">
-      <option name="closed" value="true" />
-      <created>1738932230852</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1738932230852</updated>
+      <workItem from="1743082208897" duration="5547000" />
     </task>
     <task id="LOCAL-00043" summary="Dynamic links ok">
       <option name="closed" value="true" />
@@ -506,15 +488,29 @@
       <option name="project" value="LOCAL" />
       <updated>1743674789976</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="restriction age redirect clean">
+      <option name="closed" value="true" />
+      <created>1743675518140</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1743675518140</updated>
+    </task>
+    <task id="LOCAL-00091" summary="restriction age redirect clean ts no check">
+      <option name="closed" value="true" />
+      <created>1743675647484</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1743675647484</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Last element Item margin" />
-    <MESSAGE value="Adding a lot of things" />
     <MESSAGE value="Adding Explore more" />
     <MESSAGE value="Push everyting" />
     <MESSAGE value="Responsive big screens" />
@@ -538,7 +534,9 @@
     <MESSAGE value="Responsive" />
     <MESSAGE value="Adding analytics" />
     <MESSAGE value="Varta input restriction" />
-    <option name="LAST_COMMIT_MESSAGE" value="Varta input restriction" />
+    <MESSAGE value="restriction age redirect clean" />
+    <MESSAGE value="restriction age redirect clean ts no check" />
+    <option name="LAST_COMMIT_MESSAGE" value="restriction age redirect clean ts no check" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

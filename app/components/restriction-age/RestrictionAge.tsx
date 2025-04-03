@@ -65,13 +65,14 @@ export const RestrictionAge = () => {
             newYear[index] = value;
             setYear(newYear);
 
-            if (value && index < 3) {
+            // Se déplacer vers le champ suivant uniquement lorsque la saisie est valide (non vide)
+            if (value !== '' && index < 3) {
                 inputRefs[index + 1]?.current?.focus();
-            } else if (!value && index > 0) {
-                inputRefs[index - 1]?.current?.focus();
             }
+            // En cas de suppression, ne changez pas le focus
         }
     };
+
 
     // @ts-ignore
     const handleKeyDown = (index, e) => {
