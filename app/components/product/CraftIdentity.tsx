@@ -64,7 +64,7 @@ export const CraftIdentity = ({storyImg, craftRef}: any) => {
                         </Text>
                         <Box w={['100%', '40%', '40%']} mt={4}>
                             <Link _hover={{textDecoration: 'none'}} href={'/services/label-drinks'}>
-                                <Btn size="md" variant="secondary" text="Build your own brand"/>
+                                <Btn size="md" variant="secondary" text="Build your brand"/>
                             </Link>
                         </Box>
                     </Flex>
