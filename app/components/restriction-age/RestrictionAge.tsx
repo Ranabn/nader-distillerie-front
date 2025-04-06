@@ -200,9 +200,9 @@ export const RestrictionAge = () => {
 
                     <p className="terms-text">
                         By entering this site, you are agreeing to our{' '}
-                        <a href="#">Terms & Conditions</a>,{' '}
+                        <a href="/terms-condition">Terms & Conditions</a>,{' '}
                         <a href="/privacy-policy">Privacy Policy</a> and{' '}
-                        <a href="#">Cookies Policy</a>.
+                        <a href="/cookies-policies">Cookies Policy</a>.
                     </p>
                 </Box>
             </Flex>
