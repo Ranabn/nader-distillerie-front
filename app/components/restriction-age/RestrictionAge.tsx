@@ -202,7 +202,7 @@ export const RestrictionAge = () => {
                         By entering this site, you are agreeing to our{' '}
                         <a href="/terms-condition">Terms & Conditions</a>,{' '}
                         <a href="/privacy-policy">Privacy Policy</a> and{' '}
-                        <a href="/cookies-policies">Cookies Policy</a>.
+                        <a href="/cookies-policy">Cookies Policy</a>.
                     </p>
                 </Box>
             </Flex>
