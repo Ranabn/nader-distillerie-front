@@ -22,6 +22,8 @@ const ContactForm = () => {
     const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+
     const inputStyles = {
         _focus: {
             borderColor: 'black',
@@ -42,20 +44,26 @@ const ContactForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
+        setError('');
+
         try {
             const res = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
             });
+
             if (res.ok) {
                 setSubmitted(true);
             } else {
-                console.error('Erreur lors de l’envoi du formulaire');
+                const errData = await res.json();
+                setError(errData.message || 'An error occurred while submitting the form.');
             }
-        } catch (error) {
-            console.error('Erreur:', error);
+        } catch (err) {
+            console.error('Erreur:', err);
+            setError('Unable to connect to the server. Please try again later.');
         }
+
         setLoading(false);
     };
 
@@ -72,6 +80,12 @@ const ContactForm = () => {
     return (
         <form onSubmit={handleSubmit}>
             <Flex direction="column" gap={6} fontSize="18px" maxWidth="1512px">
+                {error && (
+                    <Box color="red.500" fontWeight="bold" mb={2}>
+                        {error}
+                    </Box>
+                )}
+
                 <FormControl id="reason">
                     <Flex position="relative" alignItems="center" style={{ cursor: 'pointer' }}>
                         <Menu>
@@ -84,9 +98,7 @@ const ContactForm = () => {
                                 textAlign="left"
                                 bg="white"
                                 {...inputStyles}
-                            >
-                                {/* Vous pouvez afficher ici une icône ou un placeholder */}
-                            </MenuButton>
+                            />
                             <MenuList border="1px solid black" borderRadius="none" bg="black">
                                 {["Become a reseller", "Purchase ethanol", "Build my brand", "Order gifts", "Other"].map((option) => (
                                     <MenuItem
