@@ -1,11 +1,29 @@
 // @ts-nocheck
-import {useEffect, useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import {Box, Flex, Image, Text} from "@chakra-ui/react";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {PortableText} from '@portabletext/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const portableTextComponents = {
+    marks: {
+        link: ({children, value}) => {
+            const target = value.blank ? '_blank' : '_self';
+            return (
+                <a
+                    href={value.href}
+                    target={target}
+                    rel="noopener noreferrer"
+                    style={{textDecoration: 'underline'}}
+                >
+                    {children}
+                </a>
+            );
+        },
+    },
+};
 export const JourneyTimeline = ({timeline}: any) => {
     const containerRef = useRef(null);
     const wrapperRef = useRef(null);
@@ -97,12 +115,15 @@ export const JourneyTimeline = ({timeline}: any) => {
                                     _hover={{transform: "scale(1.1)"}}
                                 />
                             </Box>
-                            <Flex flexDirection="column" >
-                                <Text lineHeight="0" mt={12}  fontSize={["24px"]}>{item.year}</Text>
-                                <Text  fontSize={["4xl", "48px"]} fontFamily="EB Garamond" fontWeight="bold">
+                            <Flex flexDirection="column">
+                                <Text lineHeight="0" mt={12} fontSize={["24px"]}>{item.year}</Text>
+                                <Text fontSize={["4xl", "48px"]} fontFamily="EB Garamond" fontWeight="bold">
                                     {item.title}
                                 </Text>
-                                <Text mt={2} fontSize={["18px"]}>{item.description}</Text>
+                                <Text mt={2} fontSize={["18px"]}>
+
+                                    <PortableText value={item.description} components={portableTextComponents}/>
+                                </Text>
                             </Flex>
                         </Flex>
                     ))}

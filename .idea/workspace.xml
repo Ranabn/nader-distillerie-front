@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Adding logic for node mailer and responsive service section" />
+    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Adding logic for node mailer and responsive service section">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/our-story/JourneyTimeLine.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/JourneyTimeLine.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/our-story/ResponsiveJourneyTimeline.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/our-story/ResponsiveJourneyTimeline.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,13 +68,6 @@
       <recent name="$PROJECT_DIR$/app/assets/landing" />
     </key>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-53826d6a" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -110,6 +107,7 @@
       <workItem from="1741681454079" duration="1421000" />
       <workItem from="1743082208897" duration="6218000" />
       <workItem from="1744037513393" duration="1078000" />
+      <workItem from="1744048481026" duration="781000" />
     </task>
     <task id="LOCAL-00045" summary="IMGS">
       <option name="closed" value="true" />
