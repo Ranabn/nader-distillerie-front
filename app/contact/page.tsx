@@ -27,7 +27,7 @@ const ContactPage = async () => {
     const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
     const center = {
-        lat: 33.8767,  // Approximate coordinates for Sin El Fil
+        lat: 33.8767,
         lng: 35.5431
     };
 

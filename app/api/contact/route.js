@@ -1,38 +1,33 @@
-// app/api/contact/route.js
 import nodemailer from 'nodemailer';
 
 export async function POST(req) {
     try {
         const { name, email, subject, message } = await req.json();
 
-        // Créez le transporteur pour envoyer l'email
         const transporter = nodemailer.createTransport({
             host: process.env.SMTP_HOST,
             port: Number(process.env.SMTP_PORT),
-            secure: process.env.SMTP_SECURE === 'true', // true pour le port 465, false pour d'autres ports
+            secure: process.env.SMTP_SECURE === 'true',
             auth: {
                 user: process.env.SMTP_USER,
                 pass: process.env.SMTP_PASS,
             },
         });
 
-        // Email envoyé à l'adresse de contact
         const mailOptions = {
             from: `"Contact Form" <${process.env.SMTP_USER}>`,
-            to: process.env.CONTACT_EMAIL, // adresse de réception principale
+            to: process.env.CONTACT_EMAIL,
             subject: subject || 'Nouveau message depuis le formulaire de contact',
             text: `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
         };
 
-        // Email de confirmation envoyé à l'utilisateur
         const userCopyOptions = {
             from: `"Contact Form" <${process.env.SMTP_USER}>`,
-            to: email, // copie à l'expéditeur
+            to: email,
             subject: 'Copie de votre message',
             text: `Bonjour ${name},\n\nMerci de nous avoir contactés. Voici une copie de votre message :\n\n${message}`,
         };
 
-        // Envoyer les deux emails
         await transporter.sendMail(mailOptions);
         await transporter.sendMail(userCopyOptions);
 

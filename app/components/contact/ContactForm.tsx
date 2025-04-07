@@ -1,7 +1,6 @@
 // @ts-nocheck
 
 'use client';
-// app/components/contact/ContactForm.jsx
 import React, { useState } from 'react';
 import {
     Flex,
