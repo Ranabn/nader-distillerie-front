@@ -11,7 +11,8 @@ import React, {Fragment, Suspense} from "react";
 import ContactForm from "@/app/components/contact/ContactForm";
 import GoogleMapComponent from "@/app/components/contact/GoogleMapComponent";
 import CustomBox from '../components/ui/CustomBox';
-import Google from '../assets/images/google.png'
+import Google from '../assets/images/google.png';
+
 const BRANDS_QUERY = `*[_type == "brands"] {
   brand_name,
   "slug": slug.current,
@@ -39,16 +40,24 @@ const ContactPage = async () => {
 
                     <Flex direction="column">
                         <Flex mt={[12, 12, 28]} direction="column" justifyContent={'space-between'} p={8}>
-                            <Flex w={'100%'} gap={'137px'} flexDirection={["column", "row"]}>
-                                <Flex direction="column" w={["100%", '566px']}>
-                                    <Text fontSize={["28px", "5xl", "48px"]} fontFamily="EB Garamond" fontWeight="800">Get in
-                                        touch</Text>
-                                    <Text mb={[4, 8]} fontSize={["16px", "18px"]}>Tell us about your project, and we will
-                                        respond promptly.</Text>
+                            <Flex
+                                w={'100%'}
+                                gap={'137px'}
+                                flexDirection={["column", "row"]}
+                                maxW="1512px"
+                                mx="auto"
+                            >
+                                <Flex direction="column" w={["100%", '566px']} flex="0 0 566px">
+                                    <Text fontSize={["28px", "5xl", "48px"]} fontFamily="EB Garamond" fontWeight="800">
+                                        Get in touch
+                                    </Text>
+                                    <Text mb={[4, 8]} fontSize={["16px", "18px"]}>
+                                        Tell us about your project, and we will respond promptly.
+                                    </Text>
                                     <ContactForm/>
                                 </Flex>
-                                <Flex flexDirection='column' mt={[0, 8]} fontSize={["16px", "18px"]} direction="row"
-                                    w={["100%", '100%']}>
+
+                                <Flex flexDirection='column' mt={[0, 8]} fontSize={["16px", "18px"]} w="100%">
                                     <Box order={[1, 0]} mt={[8, 0]}>
                                         <Text fontSize={["24px"]}>Addresses</Text>
                                         <Text>Distillery: Mtein, Lebanon</Text>
@@ -69,9 +78,9 @@ const ContactPage = async () => {
                                         </Flex>
                                     </Box>
 
-                                    <Box  width={'100%'} mt={[0, 6]} order={[0, 1]}>
-                                        {/*<GoogleMapComponent apiKey={API_KEY} center={center} zoom={12}/>*/}
-                                        <Image src={Google.src}/>
+                                    <Box width={'100%'} mt={[0, 6]} order={[0, 1]}>
+                                        {/* <GoogleMapComponent apiKey={API_KEY} center={center} zoom={12}/> */}
+                                        <Image src={Google.src} />
                                     </Box>
                                 </Flex>
                             </Flex>
@@ -81,7 +90,6 @@ const ContactPage = async () => {
             </CustomBox>
             <Footer brands={brands}/>
         </Fragment>
-
     );
 }
 
