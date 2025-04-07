@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="restriction age logic input year">
-      <change afterPath="$PROJECT_DIR$/app/api/contact/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/contact/ContactForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/contact/ContactForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/landing/ServicesSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/landing/ServicesSection.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="8780071b-3f11-4a96-9f42-079760f467cb" name="Changes" comment="Adding logic for node mailer and responsive service section" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,27 +27,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "go.import.settings.migrated": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/maximepalmino/Documents/01 - Business/nader-distillerie-front",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "show.migrate.to.gradle.popup": "false",
-    "ts.external.directory.path": "/Users/maximepalmino/Documents/01 - Business/nader-distillerie-front/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/maximepalmino/Documents/01 - Business/nader-distillerie-front&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/maximepalmino/Documents/01 - Business/nader-distillerie-front/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/assets" />
@@ -115,14 +110,6 @@
       <workItem from="1741681454079" duration="1421000" />
       <workItem from="1743082208897" duration="6218000" />
       <workItem from="1744037513393" duration="1078000" />
-    </task>
-    <task id="LOCAL-00044" summary="Dynamic links ok">
-      <option name="closed" value="true" />
-      <created>1738932634016</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1738932634016</updated>
     </task>
     <task id="LOCAL-00045" summary="IMGS">
       <option name="closed" value="true" />
@@ -508,14 +495,21 @@
       <option name="project" value="LOCAL" />
       <updated>1743676876304</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Adding logic for node mailer and responsive service section">
+      <option name="closed" value="true" />
+      <created>1744039285534</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1744039285534</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Push everyting" />
     <MESSAGE value="Responsive big screens" />
     <MESSAGE value="Arrow working" />
     <MESSAGE value="Menu responsive" />
@@ -540,7 +534,8 @@
     <MESSAGE value="restriction age redirect clean" />
     <MESSAGE value="restriction age redirect clean ts no check" />
     <MESSAGE value="restriction age logic input year" />
-    <option name="LAST_COMMIT_MESSAGE" value="restriction age logic input year" />
+    <MESSAGE value="Adding logic for node mailer and responsive service section" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding logic for node mailer and responsive service section" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
