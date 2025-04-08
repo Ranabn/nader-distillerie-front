@@ -6,6 +6,7 @@ import {ChkraProvider} from "./providers";
 import "./globals.css";
 import {ColorModeProvider} from "@chakra-ui/react";
 import Script from "next/script";
+import CookieBanner from "@/app/components/CookieBanner";
 
 const ebGaramond = EB_Garamond({
     subsets: ["latin"],
@@ -38,7 +39,9 @@ export default function RootLayout({
         </head>
         <body>
         <ChkraProvider>
-            <ColorModeProvider forcedTheme="light">{children}</ColorModeProvider>
+            <ColorModeProvider forcedTheme="light">{children}
+                <CookieBanner/>
+            </ColorModeProvider>
         </ChkraProvider>
         </body>
         </html>

@@ -23,6 +23,7 @@
     "framer-motion-3d": "^11.3.18",
     "google-map-react": "^2.2.1",
     "gsap": "^3.12.5",
+    "lib": "^5.1.0",
     "locomotive-scroll": "^4.1.4",
     "next": "14.2.4",
     "next-sanity": "^9.4.2",
@@ -35,6 +36,7 @@
     "react-scroll-parallax": "^3.4.5",
     "resize-observer-polyfill": "^1.5.1",
     "sharp": "^0.33.5",
+    "storage-helper": "^1.4.1",
     "swiper": "^11.1.15",
     "three": "^0.167.0"
   },
