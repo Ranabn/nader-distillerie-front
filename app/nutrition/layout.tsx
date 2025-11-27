@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { ChkraProvider } from "../providers";
-import { ColorModeProvider } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
     title: "Nutrition Facts - Domaine des Princes",
@@ -17,9 +16,7 @@ export default function NutritionLayout({
 }) {
     return (
         <ChkraProvider>
-            <ColorModeProvider forcedTheme="light">
-                {children}
-            </ColorModeProvider>
+            {children}
         </ChkraProvider>
     );
 }

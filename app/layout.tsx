@@ -4,7 +4,6 @@ import type {Metadata} from "next";
 import {EB_Garamond} from "@next/font/google";
 import {ChkraProvider} from "./providers";
 import "./globals.css";
-import {ColorModeProvider} from "@chakra-ui/react";
 import Script from "next/script";
 import CookieBanner from "@/app/components/CookieBanner";
 
@@ -39,9 +38,8 @@ export default function RootLayout({
         </head>
         <body>
         <ChkraProvider>
-            <ColorModeProvider forcedTheme="light">{children}
-                <CookieBanner/>
-            </ColorModeProvider>
+            {children}
+            <CookieBanner/>
         </ChkraProvider>
         </body>
         </html>
